@@ -323,8 +323,6 @@ public class Anim2D : MonoBehaviour
                 .setEase(GetEaseType(speedMode))
                 .setOnUpdate((float t) => OnRotateUpdate?.Invoke(t))
                 .setOnComplete(() => OnRotateComplete?.Invoke());
-
-
      
             rotateTweenId = tween.uniqueId;
         }
