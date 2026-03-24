@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using UnityEditor.SceneManagement;
 
 /// <summary>
 /// Speed profiles for movement interpolation using LeanTween easing types.
@@ -134,8 +135,8 @@ public class Anim2D : MonoBehaviour
     private float[] initialImageAlphas = new float[0];
     private float[] initialSpriteAlphas = new float[0];
 
-    [SerializeField] private bool animateOnEnable;
-    [SerializeField] private bool animateOnDisable;
+    [SerializeField] private bool animateOnEnable = true;
+    [SerializeField] private bool animateOnDisable = true;
 
     [Header("OnEnable Animation Settings")]
     [SerializeField] private AnimEventSettings[] onEnableAnimations;
@@ -148,12 +149,22 @@ public class Anim2D : MonoBehaviour
 
     private Coroutine disableCoroutine;
 
+    private void Awake()
+    {
+        if (disableTarget == null)
+        {
+            disableTarget = gameObject;
+        }
+
+    }
+
     /// <summary>
     /// Called when the object is destroyed. Cancels all active tweens.
     /// </summary>
     private void OnDestroy()
     {
         CancelAll();
+
     }
 
     private void Update()
@@ -164,9 +175,13 @@ public class Anim2D : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayAnimations(onEnableAnimations, animateOnEnable);
-        disableTarget ??= gameObject;
-        
+        PlayAnimations(onEnableAnimations, animateOnEnable, false);
+
+
+    }
+
+    private void OnDisable()
+    {
     }
 
     public void AnimatedDisable()
@@ -176,7 +191,7 @@ public class Anim2D : MonoBehaviour
 
     private IEnumerator Delay()
     {
-        PlayAnimations(onDisableAnimations, animateOnDisable);
+        PlayAnimations(onDisableAnimations, animateOnDisable, true);
 
         // Wait until all tweens on this GameObject are finished
         yield return new WaitWhile(() =>
@@ -187,8 +202,11 @@ public class Anim2D : MonoBehaviour
     }
 
 
-    private void PlayAnimations(AnimEventSettings[] settingsArray, bool isEnable)
+    private void PlayAnimations(AnimEventSettings[] settingsArray, bool isEnable, bool isDisableAnim)
     {
+        if (disableCoroutine != null && !isDisableAnim)
+            return;
+
         if (!isEnable || settingsArray.Length == 0)
             return;
         foreach (var anim in settingsArray)
@@ -258,7 +276,7 @@ public class Anim2D : MonoBehaviour
                 .setOnComplete(() => OnMoveComplete?.Invoke());
 
             moveTweenId = tween.uniqueId;
-            
+
         }
         else
         {
@@ -323,7 +341,7 @@ public class Anim2D : MonoBehaviour
                 .setEase(GetEaseType(speedMode))
                 .setOnUpdate((float t) => OnRotateUpdate?.Invoke(t))
                 .setOnComplete(() => OnRotateComplete?.Invoke());
-     
+
             rotateTweenId = tween.uniqueId;
         }
         else
@@ -370,6 +388,7 @@ public class Anim2D : MonoBehaviour
         {
             images = GetComponentsInChildren<Image>(includeInactive: true);
             spriteRenderers = GetComponentsInChildren<SpriteRenderer>(includeInactive: true);
+
         }
         else
         {
@@ -396,22 +415,36 @@ public class Anim2D : MonoBehaviour
             initialSpriteAlphas[i] = spriteRenderers[i].color.a;
 
         // keep single initialAlpha for legacy CancelFade behavior when only one component present
+        float initGroupAlpha = 0;
         if (initialImageAlphas.Length > 0)
-            initialAlpha = initialImageAlphas[0];
+            { 
+            if (TryGetComponent<CanvasGroup>(out CanvasGroup group)) initGroupAlpha = group.alpha;
+            initialAlpha = initialImageAlphas[0]; 
+        }
+
         else if (initialSpriteAlphas.Length > 0)
             initialAlpha = initialSpriteAlphas[0];
 
-        fadeTweenId = LeanTween.value(gameObject, 0f, 1f, duration)
+        fadeTweenId = LeanTween.value(gameObject, 0, 1, duration)
             .setOnUpdate((float t) =>
             {
                 float adjustedT = ApplySpeedMode(t, speedMode);
 
-                for (int i = 0; i < images.Length; i++)
+                if (TryGetComponent<CanvasGroup>(out CanvasGroup group))
                 {
-                    Color c = images[i].color;
-                    float a = Mathf.Lerp(initialImageAlphas[i], targetAlpha, adjustedT);
-                    images[i].color = new Color(c.r, c.g, c.b, a);
+                    float a = Mathf.Lerp(initGroupAlpha, targetAlpha, adjustedT);
+                    group.alpha = a;
                 }
+                else
+                {
+                    for (int i = 0; i < images.Length; i++)
+                    {
+                        Color c = images[i].color;
+                        float a = Mathf.Lerp(initialImageAlphas[i], targetAlpha, adjustedT);
+                        images[i].color = new Color(c.r, c.g, c.b, a);
+                    }
+                }
+                
 
                 for (int i = 0; i < spriteRenderers.Length; i++)
                 {
@@ -427,6 +460,8 @@ public class Anim2D : MonoBehaviour
                 OnFadeComplete?.Invoke();
             })
             .uniqueId;
+
+
     }
 
 

@@ -14,16 +14,18 @@ public enum SaveKey
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Debug section")]
+    [SerializeField] GameObject quickDisable;
 
 
-
+    InputSystem_Actions inputActions;
+    InputSystem_Actions.DebugActions debugAction;
+  
     void Start()
     {
-
-
-        
-
+        inputActions = new();
+        inputActions.Enable();
+        debugAction = inputActions.Debug;
 
 
     }
@@ -32,5 +34,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+        if (debugAction.Test.WasPressedThisFrame())
+        {
+            if (quickDisable.activeSelf){
+                if (quickDisable.TryGetComponent<Anim2D>(out Anim2D component)) component.AnimatedDisable();
+                else quickDisable.SetActive(false); 
+            }
+            else quickDisable.SetActive(true);
+        }
+
     }
 }
