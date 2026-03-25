@@ -11,5 +11,6 @@ AssetOrigin:
   productId: 81519
   packageName: Save Game Free - Gold Update
   packageVersion: 2.4.0
-  assetPath: Assets/BayatGames/SaveGameFree/PressKit/Unity Package Key Images - Icon.ai
+  assetPath: Assets/Imports/Save system/SaveGameFree/PressKit/Unity Package Key Images
+    - Icon.ai
   uploadId: 490783

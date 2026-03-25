@@ -11,5 +11,6 @@ AssetOrigin:
   productId: 81519
   packageName: Save Game Free - Gold Update
   packageVersion: 2.4.0
-  assetPath: Assets/BayatGames/SaveGameFree/Examples/Save Rotation/Save Rotation.unity
+  assetPath: Assets/Imports/Save system/SaveGameFree/Examples/Save Rotation/Save
+    Rotation.unity
   uploadId: 490783

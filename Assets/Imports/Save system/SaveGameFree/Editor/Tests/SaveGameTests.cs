@@ -1,6 +1,8 @@
-﻿#if UNITY_EDITOR
+﻿using UnityEngine;
+using UnityEditor;
+using UnityEngine.TestTools;
 using NUnit.Framework;
-
+using System.Collections;
 
 namespace BayatGames.SaveGameFree.Tests
 {
@@ -128,4 +130,3 @@ namespace BayatGames.SaveGameFree.Tests
 	}
 
 }
-#endif

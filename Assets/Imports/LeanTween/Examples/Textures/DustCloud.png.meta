@@ -130,5 +130,5 @@ AssetOrigin:
   productId: 3595
   packageName: LeanTween
   packageVersion: 2.51
-  assetPath: Assets/LeanTween/Examples/Textures/DustCloud.png
+  assetPath: Assets/Imports/LeanTween/Examples/Textures/DustCloud.png
   uploadId: 469983

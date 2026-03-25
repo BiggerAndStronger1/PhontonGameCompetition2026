@@ -11,6 +11,6 @@ AssetOrigin:
   productId: 81519
   packageName: Save Game Free - Gold Update
   packageVersion: 2.4.0
-  assetPath: Assets/BayatGames/SaveGameFree/Documentation/Save Game Free Documentation
-    - Plain Text Version.txt
+  assetPath: Assets/Imports/Save system/SaveGameFree/Documentation/Save Game Free
+    Documentation - Plain Text Version.txt
   uploadId: 490783

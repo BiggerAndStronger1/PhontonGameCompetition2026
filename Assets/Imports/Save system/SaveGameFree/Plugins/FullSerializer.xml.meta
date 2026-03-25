@@ -11,5 +11,5 @@ AssetOrigin:
   productId: 81519
   packageName: Save Game Free - Gold Update
   packageVersion: 2.4.0
-  assetPath: Assets/BayatGames/SaveGameFree/Plugins/FullSerializer.xml
+  assetPath: Assets/Imports/Save system/SaveGameFree/Plugins/FullSerializer.xml
   uploadId: 490783
