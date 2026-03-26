@@ -155,7 +155,6 @@ public class Anim2D : MonoBehaviour
         {
             disableTarget = gameObject;
         }
-        print("w");
     }
 
     /// <summary>
