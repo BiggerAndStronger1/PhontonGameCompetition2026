@@ -16,7 +16,8 @@ namespace Assets.Scripts.Event_Systems
 {
     public enum GameEvents
     {
-        
+        PlayerDie,
+        WorldChanged
     }
     public abstract class EventManagerSingleParam<T> : MonoBehaviour
     {
