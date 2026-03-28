@@ -38,6 +38,7 @@ namespace DentedPixel.LTExamples
             Destroy(boxNoCollider.GetComponent(typeof(BoxCollider)) as Component);
         }
 
+        [System.Obsolete]
         void Start()
         {
             //          Time.timeScale = 0.25f;
@@ -291,6 +292,7 @@ namespace DentedPixel.LTExamples
             return cube;
         }
 
+        [System.Obsolete]
         IEnumerator timeBasedTesting()
         {
             yield return new WaitForEndOfFrame();
