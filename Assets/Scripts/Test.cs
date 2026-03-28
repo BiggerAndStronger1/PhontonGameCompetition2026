@@ -1,12 +1,22 @@
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Test : MonoBehaviour, ICanvasManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void ForcedAwake()
     {
         
     }
+
+    public void ForcedOnApplicationQuit()
+    {
+        
+    }
+
+    public void ForcedStart()
+    {
+        print("correct");
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -14,8 +24,5 @@ public class Test : MonoBehaviour
         
     }
 
-    public void OnClick()
-    {
-        print(name);
-    }
+    
 }

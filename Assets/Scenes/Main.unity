@@ -743,6 +743,8 @@ GameObject:
   m_Component:
   - component: {fileID: 597644108}
   - component: {fileID: 597644110}
+  - component: {fileID: 597644111}
+  - component: {fileID: 597644112}
   m_Layer: 5
   m_Name: settings menu
   m_TagString: Untagged
@@ -782,6 +784,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597644107}
   m_CullTransparentMesh: 1
+--- !u!114 &597644111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597644107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278bdb94dc814eb45b0df7c115d3988b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Anim2D
+  disableTarget: {fileID: 0}
+  animateOnEnable: 1
+  animateOnDisable: 1
+  onEnableAnimations:
+  - animationType: 3
+    duration: 1
+    speedMode: 0
+    targetFloat: 1
+    targetV3: {x: 0, y: 0, z: 0}
+  onDisableAnimations:
+  - animationType: 3
+    duration: 1
+    speedMode: 0
+    targetFloat: 0
+    targetV3: {x: 0, y: 0, z: 0}
+  fadeAll: 1
+--- !u!225 &597644112
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597644107}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &613586424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1897,7 @@ GameObject:
   - component: {fileID: 1035506814}
   - component: {fileID: 1035506813}
   - component: {fileID: 1035506812}
+  - component: {fileID: 1035506816}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1948,6 +1991,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1035506816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035506811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31398584a05208c47b597e1ed5917b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CanvasManager
+  settingsMenu: {fileID: 597644107}
 --- !u!1 &1174166708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,7 +2642,6 @@ GameObject:
   - component: {fileID: 1701030463}
   - component: {fileID: 1701030462}
   - component: {fileID: 1701030461}
-  - component: {fileID: 1701030464}
   m_Layer: 5
   m_Name: return button
   m_TagString: Untagged
@@ -2657,7 +2712,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1701030464}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Test, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -2707,18 +2762,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701030459}
   m_CullTransparentMesh: 1
---- !u!114 &1701030464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701030459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f5991b7af06044caa25fc4e21232fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Test
 --- !u!1001 &1729912057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3305,7 +3348,6 @@ GameObject:
   - component: {fileID: 2137919507}
   - component: {fileID: 2137919506}
   - component: {fileID: 2137919505}
-  - component: {fileID: 2137919508}
   m_Layer: 5
   m_Name: continue button
   m_TagString: Untagged
@@ -3376,7 +3418,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137919508}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Test, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -3426,18 +3468,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137919503}
   m_CullTransparentMesh: 1
---- !u!114 &2137919508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137919503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f5991b7af06044caa25fc4e21232fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Test
 --- !u!1001 &2658492628260305891
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
         _raycaster ??= raycaster;
         _eventSystem ??= eventSystem;
         inputActions = new InputSystem_Actions();
-        inputActions.Enable();
+        inputActions.Debug.Enable();
+        debugAction = inputActions.Debug;
     }
 
     private void Start()
@@ -51,6 +52,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (debugAction.Test.WasPressedThisFrame())
+        {
+            print("debug");
+            if (quickDisable && quickDisable.activeSelf)
+            {
+                quickDisable.SetActive(false);
+            }
+            else if (quickDisable && !quickDisable.activeSelf)
+            {
+                quickDisable.SetActive(true);
+            }
+        }
         // call an event on the UI object that has been clicked
         GameObject ui = GetUIObjectUnderCursor();
         GameObject twoD = Get2DObjectUnderCursor(debug);
