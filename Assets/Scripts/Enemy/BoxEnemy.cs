@@ -1,4 +1,4 @@
-using Assets.Scripts.Event_Systems;
+
 using UnityEngine;
 
 public class BoxEnemy : MonoBehaviour

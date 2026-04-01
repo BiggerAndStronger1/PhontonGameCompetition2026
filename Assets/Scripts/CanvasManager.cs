@@ -34,7 +34,7 @@ public class CanvasManager : MonoBehaviour
         if (actionsUI.Settings.WasPressedThisFrame())
         {
             if (settingsMenu.activeSelf) settingsMenu.GetComponent<Anim2D>().AnimatedDisable();
-            else if (!settingsMenu.activeSelf) settingsMenu.SetActive(true)
+            else if (!settingsMenu.activeSelf) settingsMenu.SetActive(true);
             
         }
     }

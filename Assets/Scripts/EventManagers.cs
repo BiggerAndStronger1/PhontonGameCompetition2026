@@ -13,8 +13,7 @@ using System.Collections.Generic;
 using System;
 
 
-public enum GameEvents
-{
+
     public enum GameEvents
     {
         PlayerDie,
