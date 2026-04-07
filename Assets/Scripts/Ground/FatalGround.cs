@@ -1,16 +1,17 @@
 
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class FatalGround : MonoBehaviour
 {
     private bool isCleared = false;
 
-    private SpriteRenderer sr;
+    private TilemapRenderer tr;
     private Collider2D cd;
 
     private void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
+        tr = GetComponent<TilemapRenderer>();
         cd = GetComponent<Collider2D>();
     }
 
@@ -43,14 +44,14 @@ public class FatalGround : MonoBehaviour
         if (isCleared) return;
 
         isCleared = true;
-        sr.enabled = false;
+        tr.enabled = false;
         cd.enabled = false;
     }
 
     private void ResetGround()
     {
         isCleared = false;
-        sr.enabled = true;
+        tr.enabled = true;
         cd.enabled = true;
     }
 }
