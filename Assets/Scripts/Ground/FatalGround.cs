@@ -6,12 +6,12 @@ public class FatalGround : MonoBehaviour
 {
     private bool isCleared = false;
 
-    private TilemapRenderer tr;
+    private SpriteRenderer sr;
     private Collider2D cd;
 
     private void Awake()
     {
-        tr = GetComponent<TilemapRenderer>();
+        sr = GetComponent<SpriteRenderer>();
         cd = GetComponent<Collider2D>();
     }
 
@@ -44,14 +44,14 @@ public class FatalGround : MonoBehaviour
         if (isCleared) return;
 
         isCleared = true;
-        tr.enabled = false;
+        sr.enabled = false;
         cd.enabled = false;
     }
 
     private void ResetGround()
     {
         isCleared = false;
-        tr.enabled = true;
+        sr.enabled = true;
         cd.enabled = true;
     }
 }

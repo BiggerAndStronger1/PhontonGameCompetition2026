@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
         airState = new PlayerAirState(this, stateMachine, "Jump");
         climbState = new PlayerClimbState(this, stateMachine, "Climb");
-
-        stats = GetComponent<PlayerStats>();
     }
 
     protected void Start()
@@ -66,7 +64,7 @@ public class Player : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        //stats = GetComponent<CharaterStats>();
+        stats = GetComponent<PlayerStats>();
 
         stateMachine.Initialize(idleState);
 
@@ -125,6 +123,7 @@ public class Player : MonoBehaviour
         sr.color = Color.white;
         stats.smallGearCount = 0;
         stats.largeGearCount = 0;
+        stats.boomGearCount = 0;
         stats.havePocketWatch = false;
         isDead = false;
     }
