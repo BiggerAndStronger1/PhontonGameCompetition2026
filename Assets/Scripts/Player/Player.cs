@@ -21,14 +21,12 @@ public class Player : MonoBehaviour
     [Header("Live Info")]
     public bool isDead = false;
 
-    [Header("Spike info")]
-    public LayerMask whatIsSpike;
-    public float detectRadius = 3f;
 
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
     public PlayerStats stats { get; private set; }
+    public SkillManager skill { get; private set; }
 
     #region State
     public PlayerStateMachine stateMachine { get; private set; }
@@ -37,6 +35,7 @@ public class Player : MonoBehaviour
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
     public PlayerClimbState climbState { get; private set; }
+    public PlayerAimGearState aimState { get; private set; }
     #endregion
 
     #region Component
@@ -49,6 +48,7 @@ public class Player : MonoBehaviour
 
     protected void Awake()
     {
+        skill = SkillManager.instance;
         stateMachine = new PlayerStateMachine();
 
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
@@ -56,6 +56,7 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
         airState = new PlayerAirState(this, stateMachine, "Jump");
         climbState = new PlayerClimbState(this, stateMachine, "Climb");
+        aimState = new PlayerAimGearState(this, stateMachine, "Aim");
     }
 
     protected void Start()
@@ -76,29 +77,8 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
         if (isDead) SetVelocity(0, 0);
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-            TryToClearSpike();
     }
 
-    private void TryToClearSpike()
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectRadius, whatIsSpike);
-
-        if (hits.Length == 0) return;
-
-        if (stats.smallGearCount <= 0)
-        {
-            print("小齿轮不足！");
-            return;
-        }
-        FatalGround fg = hits[0].GetComponent<FatalGround>();
-        if (fg != null)
-        {
-            fg.CleanFatalGround();
-            stats.AddSmallGear(-1);
-            print("清除一个地刺");
-        }
-    }
     private void Die()
     {
         isDead = true;

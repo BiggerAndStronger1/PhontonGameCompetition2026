@@ -1,8 +1,7 @@
-
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class FatalGround : MonoBehaviour
+public class FatalGround : MonoBehaviour, IDamageable
 {
     private bool isCleared = false;
 
@@ -54,4 +53,6 @@ public class FatalGround : MonoBehaviour
         sr.enabled = true;
         cd.enabled = true;
     }
+
+    public void TakeDamage() => CleanFatalGround();
 }
