@@ -7,8 +7,12 @@ public class ChangeSceneScript : MonoBehaviour
     private bool playerInside = false;
     private bool canSwitchScene = false;
     private float timer;
-    public float triggerTime = 1f;
+    public float triggerTime = 0.2f;
 
+    private Vector3 cameraDeltaX = new Vector3(18f, 0);
+    private Vector3 cameraDeltaY = new Vector3(0, 10f);
+    private Vector3 playerDeltaX = new Vector3(2f, 0);
+    private Vector3 playerDeltaY = new Vector3(0, 2.5f);
 
     private void Start()
     {
@@ -33,10 +37,7 @@ public class ChangeSceneScript : MonoBehaviour
 
         canSwitchScene = false;
         timer = 0f;
-        Vector3 cameraDeltaX = new Vector3(17.5f, 0);
-        Vector3 cameraDeltaY = new Vector3(0, 9.5f);
-        Vector3 playerDeltaX = new Vector3(2f, 0);
-        Vector3 playerDeltaY = new Vector3(0, 2.5f);
+        
 
         if (player.transform.position.y > Camera.main.transform.position.y + 3.8)
         {
@@ -60,13 +61,19 @@ public class ChangeSceneScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        playerInside = true;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerInside = true;
+        }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        playerInside = false;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerInside = false;
+        }
     }
 }

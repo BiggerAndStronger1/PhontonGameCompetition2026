@@ -35,7 +35,7 @@ public class Props : MonoBehaviour
 
     protected virtual void ResetItem()
     {
-        isCollected = false;
         gameObject.SetActive(true);
+        isCollected = false;
     }
 }
