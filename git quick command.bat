@@ -5,7 +5,7 @@ cd /d "%~dp0"
 git pull
 pause
 git add Assets/ Packages/ ProjectSettings/ .gitattributes "git quick command.bat" git_lfs_solution.bat ^
-README.md
+README.md .gitignore
 
 echo Files added to staging.
 

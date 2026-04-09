@@ -4,5 +4,5 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "AudioSO", menuName = "Scriptable Objects/AudioSO")]
 public class AudioSO : ScriptableObject
 {
-    public List<AudioClip> clipList;
+    public AudioClip[] clipList;
 }

@@ -2,7 +2,7 @@ using System;
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class CamSwitch : MonoBehaviour
 {
     public void ForcedAwake()
     {
