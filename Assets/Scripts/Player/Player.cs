@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     protected void Awake()
     {
-        skill = SkillManager.instance;
+        
         stateMachine = new PlayerStateMachine();
 
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
         stats = GetComponent<PlayerStats>();
 
         stateMachine.Initialize(idleState);
+        skill = SkillManager.instance;
 
         //transform.position = Vector3.zero;
     }

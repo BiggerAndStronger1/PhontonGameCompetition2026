@@ -1,4 +1,5 @@
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 public class PlayerAimGearState : PlayerState
 {
