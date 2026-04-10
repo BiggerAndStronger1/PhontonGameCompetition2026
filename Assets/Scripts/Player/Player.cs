@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Player : MonoBehaviour, IKillBySpike
+public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 {
     [Header("Collision Info")]
     [SerializeField] protected Transform groundCheck;
@@ -113,6 +113,12 @@ public class Player : MonoBehaviour, IKillBySpike
 
         PlayerDie();
     }
+
+    public void AddStress()
+    {
+
+    }
+
 
     #region Collision
     public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);

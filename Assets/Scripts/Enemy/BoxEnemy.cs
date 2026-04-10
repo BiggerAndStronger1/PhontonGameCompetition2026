@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
-public class BoxEnemy : MonoBehaviour
+public class BoxEnemy : MonoBehaviour, ICanAddStress
 {
     [Header("Move Info")]
     public Transform pointA;
@@ -100,6 +100,11 @@ public class BoxEnemy : MonoBehaviour
         transform.position = pointA.position;
         rb.bodyType = RigidbodyType2D.Kinematic;
         hasFallen = false;
+    }
+
+    public void AddStress()
+    {
+
     }
 
     private void OnDrawGizmos()

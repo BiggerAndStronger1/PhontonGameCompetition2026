@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class PeaceLadder : MonoBehaviour
+public class PeaceBox : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Collider2D cd;

@@ -11,18 +11,12 @@ public class Door : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         cd = GetComponent<Collider2D>();
-        CloseDoor();
-    }
-
-    private void CloseDoor()
-    {
-        isOpen = false;
-        cd.enabled = true;
-        sr.enabled = true;
     }
 
     private void Start()
     {
+        CloseDoor();
+
         EventManagerNoParam.StartListening(GameEvents.PlayerDie, CloseDoor);
     }
 
@@ -32,5 +26,12 @@ public class Door : MonoBehaviour
         isOpen = true;
         cd.enabled = false;
         sr.enabled = false;
+    }
+
+    public void CloseDoor()
+    {
+        isOpen = false;
+        cd.enabled = true;
+        sr.enabled = true;
     }
 }
