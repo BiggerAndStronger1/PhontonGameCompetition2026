@@ -1,15 +1,25 @@
 
+using System;
 using System.Collections.Generic;
+using Unity.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-
 using UnityEngine.UI;
 
 public enum SaveKey
 {
     
+}
+
+[Serializable]
+public class SceneRef
+{
+    public SceneAsset scene;
+    [ReadOnly]
+    public string scenePath;
 }
 
 public class GameManager : MonoBehaviour
@@ -26,13 +36,23 @@ public class GameManager : MonoBehaviour
     private static GraphicRaycaster _raycaster;
     private static EventSystem _eventSystem;
     private GameObject currentHover;
-
+    [SerializeField]private GameObject[] dontDestroyOnLoad;
     /// <summary>
     /// enable this to view clicked UI names (pending other functions...)
     /// </summary>
     [SerializeField] private bool debug;
 
-
+    [SerializeField] private SceneRef[] scenes;
+    private void OnValidate()
+    {
+#if UNITY_EDITOR
+        foreach (var s in scenes)
+        {
+            if (s.scene != null)
+                s.scenePath = AssetDatabase.GetAssetPath(s.scene);
+        }
+#endif
+    }
 
 
     private void Awake()
@@ -42,6 +62,11 @@ public class GameManager : MonoBehaviour
         inputActions = new InputSystem_Actions();
         inputActions.Debug.Enable();
         debugAction = inputActions.Debug;
+        DontDestroyOnLoad(gameObject);
+        foreach (var o in dontDestroyOnLoad)
+        {
+            DontDestroyOnLoad(o);
+        }
     }
 
     private void Start()
@@ -57,7 +82,14 @@ public class GameManager : MonoBehaviour
             print("debug");
             if (quickDisable && quickDisable.activeSelf)
             {
-                quickDisable.SetActive(false);
+                if (TryGetComponent<Anim2D>(out var anim2D))
+                {
+                    anim2D.AnimatedDisable();
+                }
+                else
+                {
+                    quickDisable.SetActive(false);
+                }
             }
             else if (quickDisable && !quickDisable.activeSelf)
             {
