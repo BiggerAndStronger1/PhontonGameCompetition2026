@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class FatalGround : MonoBehaviour, IDamageable
+public class Spike : MonoBehaviour, IFragile
 {
     private bool isCleared = false;
 
@@ -28,14 +28,9 @@ public class FatalGround : MonoBehaviour, IDamageable
     {
         if (isCleared) return;
 
-        if (collision.transform.CompareTag("Player"))
-        {
-            Player player = collision.transform.GetComponent<Player>();
-            if (player != null)
-            {
-                player.DamageByFatalGround();
-            }
-        }
+        IKillBySpike target = collision.transform.GetComponent<IKillBySpike>();
+        if (target != null)
+            target.KillBySpike();
     }
 
     public void CleanFatalGround()
@@ -54,5 +49,5 @@ public class FatalGround : MonoBehaviour, IDamageable
         cd.enabled = true;
     }
 
-    public void TakeDamage() => CleanFatalGround();
+    public void DestroyFragileGround() => CleanFatalGround();
 }

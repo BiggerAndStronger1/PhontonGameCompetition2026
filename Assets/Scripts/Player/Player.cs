@@ -1,10 +1,7 @@
-
 using System.Collections;
-
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKillBySpike
 {
     [Header("Collision Info")]
     [SerializeField] protected Transform groundCheck;
@@ -14,18 +11,16 @@ public class Player : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
 
     [Header("Move Info")]
-    public float moveSpeed = 8f;
-    public float jumpForce = 12f;
+    public float moveSpeed;
+    public float jumpForce;
     public bool canClimbLadder;
 
-    [Header("Live Info")]
     public bool isDead = false;
 
 
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
-    public PlayerStats stats { get; private set; }
     public SkillManager skill { get; private set; }
 
     #region State
@@ -43,12 +38,12 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     //public EntityFX fx { get; private set; }
     public SpriteRenderer sr { get; private set; }
-    //public CharaterStats stats { get; private set; }
+    public PlayerStats stats { get; private set; }
     #endregion
 
     protected void Awake()
     {
-        
+
         stateMachine = new PlayerStateMachine();
 
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
@@ -80,17 +75,19 @@ public class Player : MonoBehaviour
         if (isDead) SetVelocity(0, 0);
     }
 
-    private void Die()
+    public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
+
+    public void PlayerDie()
     {
         isDead = true;
         print("Player Die!");
         sr.color = Color.black;
         EventManagerNoParam.TriggerEvent(GameEvents.PlayerDie);
 
-        StartCoroutine(RespawnRoutine());
+        StartCoroutine(RebornCooldown());
     }
 
-    private IEnumerator RespawnRoutine()
+    private IEnumerator RebornCooldown()
     {
         yield return new WaitForSeconds(1f);
         PlayerReborn();
@@ -109,25 +106,12 @@ public class Player : MonoBehaviour
         isDead = false;
     }
 
-    public void DamageByFatalGround()
+    public void KillBySpike()
     {
-        if (isDead) return;
-        Die();
-    }
+        if (isDead) 
+            return;
 
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Ladder>() != null)
-            canClimbLadder = true;
-            
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Ladder>() != null)
-            canClimbLadder = false;
+        PlayerDie();
     }
 
     #region Collision

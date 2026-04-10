@@ -11,7 +11,7 @@ public class BoomGearSkillController : MonoBehaviour
     [Header("Explode Info")]
     private bool hasExploded = false;
     private float explosionRadius;
-    [SerializeField] private LayerMask whatIsDestructible;
+    [SerializeField] private LayerMask whatIsFragile;
 
 
     private void Awake()
@@ -43,14 +43,14 @@ public class BoomGearSkillController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, whatIsDestructible);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(rb.transform.position, explosionRadius, whatIsFragile);
 
         foreach (var hit in hits)
         {
-            IDamageable damageable = hit.GetComponent<IDamageable>();
-            if (damageable != null)
+            IFragile fragileFround = hit.GetComponentInParent<IFragile>();
+            if (fragileFround != null)
             {
-                damageable.TakeDamage();
+                fragileFround.DestroyFragileGround();
             }
         }
 

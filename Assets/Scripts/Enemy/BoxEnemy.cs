@@ -106,5 +106,6 @@ public class BoxEnemy : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerDetectorRadius);
+        Gizmos.DrawLine(pointA.position, pointB.position);
     }
 }
