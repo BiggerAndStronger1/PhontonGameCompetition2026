@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7083329177596451227}
   - component: {fileID: 8745361291760686067}
+  - component: {fileID: 6583202028376620052}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -53,6 +54,20 @@ MonoBehaviour:
   scenes:
   - scene: {fileID: 102900000, guid: 6753669ba5052e647a6a4d9dee9351da, type: 3}
     scenePath: Assets/Scenes/moyu/level 1.unity
+--- !u!114 &6583202028376620052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489696782049143010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60b7cc966aadb1458922208c18661c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldManager
+  currentWorld: 0
+  player: {fileID: 0}
 --- !u!1 &8453709464785589729
 GameObject:
   m_ObjectHideFlags: 0

@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7876a061b99124184020b3a819d63a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ladder
+  belongToSpecificWorld: 1
+  effectiveWorld: 0
 --- !u!114 &7585582822590496280
 MonoBehaviour:
   m_ObjectHideFlags: 0

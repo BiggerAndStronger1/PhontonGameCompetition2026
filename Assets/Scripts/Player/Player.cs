@@ -1,81 +1,58 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(PlayerStats))]
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 {
-    [Header("Collision Info")]
-    [SerializeField] protected Transform groundCheck;
-    [SerializeField] protected float groundCheckDistance;
-    [SerializeField] protected LayerMask whatIsGround;
-    [SerializeField] protected Transform wallCheck;
-    [SerializeField] protected float wallCheckDistance;
-
     [Header("Move Info")]
     public float moveSpeed;
     public float jumpForce;
     public bool canClimbLadder;
 
-    public bool isDead = false;
+    [Header("Check Info")]
+    [SerializeField] private LayerMask whatIsGround;
 
+    public bool isDead = false;
 
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
     public SkillManager skill { get; private set; }
 
-    #region State
-    public PlayerStateMachine stateMachine { get; private set; }
-    public PlayerIdleState idleState { get; private set; }
-    public PlayerMoveState moveState { get; private set; }
-    public PlayerJumpState jumpState { get; private set; }
-    public PlayerAirState airState { get; private set; }
-    public PlayerClimbState climbState { get; private set; }
-    public PlayerAimGearState aimState { get; private set; }
-    #endregion
-
     #region Component
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
-    //public EntityFX fx { get; private set; }
     public SpriteRenderer sr { get; private set; }
     public PlayerStats stats { get; private set; }
+    public Collider2D cd { get; private set; }
     #endregion
 
     protected void Awake()
     {
-
-        stateMachine = new PlayerStateMachine();
-
-        idleState = new PlayerIdleState(this, stateMachine, "Idle");
-        moveState = new PlayerMoveState(this, stateMachine, "Move");
-        jumpState = new PlayerJumpState(this, stateMachine, "Jump");
-        airState = new PlayerAirState(this, stateMachine, "Jump");
-        climbState = new PlayerClimbState(this, stateMachine, "Climb");
-        aimState = new PlayerAimGearState(this, stateMachine, "Aim");
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
+        stats = GetComponent<PlayerStats>();
+        cd = GetComponent<Collider2D>();
     }
 
     protected void Start()
     {
-        //fx = GetComponentInChildren<EntityFX>();
-        anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        stats = GetComponent<PlayerStats>();
-
-        stateMachine.Initialize(idleState);
         skill = SkillManager.instance;
-
-        //transform.position = Vector3.zero;
     }
-
 
     protected void Update()
     {
-        stateMachine.currentState.Update();
-        if (isDead) SetVelocity(0, 0);
+        if (isDead)
+        {
+            SetVelocity(0, 0);
+            return;
+        }
     }
-
-    public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     public void PlayerDie()
     {
@@ -119,16 +96,27 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     }
 
-
     #region Collision
-    public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
-    public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
-
-    protected virtual void OnDrawGizmos()
+    public bool IsGroundDetected()
     {
-        Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+        Vector2 boxCenter = new(cd.bounds.center.x, cd.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(cd.bounds.size.x * 0.9f, 0.1f);
+
+        return Physics2D.OverlapBox(boxCenter, boxSize, 0, whatIsGround);
     }
+
+    private void OnDrawGizmos()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+        if (col == null) return;
+
+        Vector2 boxCenter = new(col.bounds.center.x, col.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(col.bounds.size.x * 0.9f, 0.1f);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(boxCenter, boxSize);
+    }
+
     #endregion
 
     #region Flip

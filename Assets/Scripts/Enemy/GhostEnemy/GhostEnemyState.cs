@@ -1,43 +1,84 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GhostEnemyState
+public enum GhostStateType
 {
-    protected GhostEnemy ghostEnemy;
-    protected GhostEnemyStateMachine stateMachine;
-    protected Rigidbody2D rb;
+    Idle,
+    Hatred
+}
 
-    protected bool triggerCalled;
-    private string animBoolName;
-    protected float stateTimer;
+[RequireComponent(typeof(GhostEnemy))]
+[RequireComponent(typeof(Rigidbody2D))]
+public class GhostEnemyState : MonoBehaviour
+{
+    private GhostEnemy ghost;
+    private Rigidbody2D rb;
 
+    public GhostStateType currentState;
 
-    public GhostEnemyState(GhostEnemy _enemyBase, GhostEnemyStateMachine _stateMachine, string _animBoolName)
+    private void Awake()
     {
-        this.ghostEnemy = _enemyBase;
-        this.stateMachine = _stateMachine;
-        this.animBoolName = _animBoolName;
+        ghost = GetComponent<GhostEnemy>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-
-    public virtual void Enter()
+    private void Start()
     {
-        triggerCalled = false;
-        rb = ghostEnemy.rb;
-        ghostEnemy.anim.SetBool(animBoolName, true);
-    }
-    public virtual void Update()
-    {
-        //stateTimer -= Time.deltaTime;
+        currentState = GhostStateType.Idle;
     }
 
-    public virtual void Exit()
+    private void Update()
     {
-        ghostEnemy.anim.SetBool(animBoolName, false);
+        if (ghost.isDead)
+            return;
+
+        switch (currentState)
+        {
+            case GhostStateType.Idle:
+                IdleUpdate();
+                break;
+
+            case GhostStateType.Hatred:
+                HatredUpdate();
+                break;
+        }
+    }
+    private void IdleEnter()
+    {
+        rb.linearVelocity = Vector2.zero;
     }
 
-    public virtual void AnimationFinishTrigger()
+    private void IdleUpdate()
     {
-        triggerCalled = true;
+        if (ghost.canHatrePlayer &&
+            Vector2.Distance(ghost.transform.position, ghost.player.transform.position) < ghost.hatredRadius)
+        {
+            ChangeState(GhostStateType.Hatred);
+        }
+    }
+
+    private void HatredUpdate()
+    {
+        int playerDir = ghost.transform.position.x < ghost.player.transform.position.x ? 1 : -1;
+
+        ghost.SetVelocity(playerDir * ghost.moveSpeed, rb.linearVelocity.y);
+
+        if (!ghost.canHatrePlayer ||
+            Vector2.Distance(ghost.transform.position, ghost.player.transform.position) >= ghost.hatredRadius)
+        {
+            ChangeState(GhostStateType.Idle);
+        }
+    }
+
+    private void ChangeState(GhostStateType newState)
+    {
+        currentState = newState;
+
+        switch (newState)
+        {
+            case GhostStateType.Idle:
+                IdleEnter();
+                break;
+        }
     }
 }

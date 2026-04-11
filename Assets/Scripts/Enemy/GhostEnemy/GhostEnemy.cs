@@ -1,19 +1,14 @@
-using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
 
 public class GhostEnemy : MonoBehaviour, IKillBySpike
 {
-    [Header("Collision Info")]
-    [SerializeField] protected Transform groundCheck;
-    [SerializeField] protected float groundCheckDistance;
-    [SerializeField] protected LayerMask whatIsGround;
-    [SerializeField] protected Transform wallCheck;
-    [SerializeField] protected float wallCheckDistance;
-
     [Header("Move Info")]
+    [SerializeField] protected LayerMask whatIsGround;
     public float moveSpeed;
-    public float idleTime;
 
     [Header("Attack Info")]
     public Player player;
@@ -29,10 +24,6 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
-
-    public GhostEnemyStateMachine stateMachine { get; private set; }
-    public GhostIdleState idleState { get; private set; }
-    public GhostHatredState hatredState { get; private set; }
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     //public EntityFX fx { get; private set; }
@@ -41,10 +32,10 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void Awake()
     {
-        stateMachine = new GhostEnemyStateMachine();
-
-        idleState = new GhostIdleState(this, stateMachine, "Idle");
-        hatredState = new GhostHatredState(this, stateMachine, "Hatred");
+        anim = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        cd = GetComponent<Collider2D>();
     }
 
     private void OnEnable()
@@ -54,14 +45,8 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void Start()
     {
-        anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        cd = GetComponent<Collider2D>();
-
-        stateMachine.Initialize(idleState);
-
         player = PlayerManager.instance.player;
+
         originalPosition = transform.position;
     }
 
@@ -69,8 +54,6 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     {
         if (isDead || player.isDead)
             return;
-
-        stateMachine.currentState.Update();
     }
 
     public void KillBySpike()
@@ -103,27 +86,36 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
         transform.position = originalPosition;
     }
 
-    public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.GetComponent<Player>() != null)
             player.PlayerDie();
-
     }
 
 
     #region Collision
-    public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
-    public bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
-
-    protected virtual void OnDrawGizmos()
+    public bool IsGroundDetected()
     {
-        Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
+        Vector2 boxCenter = new(cd.bounds.center.x, cd.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(cd.bounds.size.x * 0.9f, 0.1f);
 
+        return Physics2D.OverlapBox(boxCenter, boxSize, 0, whatIsGround);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Collider2D col = GetComponent<Collider2D>();
+        if (col == null) return;
+
+        Vector2 boxCenter = new(col.bounds.center.x, col.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(col.bounds.size.x * 0.9f, 0.1f);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(boxCenter, boxSize);
         Gizmos.DrawWireSphere(transform.position, hatredRadius);
     }
+
     #endregion
 
     #region Flip
