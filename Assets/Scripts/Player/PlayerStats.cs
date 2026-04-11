@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
     public int smallGearCount;
     public int largeGearCount;
     public int boomGearCount;
+    public int mineGearCount;
     public int maxHp = 100;
     public int currentHp;
     public bool havePocketWatch = false;
@@ -31,6 +32,11 @@ public class PlayerStats : MonoBehaviour
     public void AddBoomGear(int _amount)
     {
         boomGearCount += _amount;
+    }
+
+    public void AddMineGear(int quantity)
+    {
+        mineGearCount+= quantity;
     }
 
     public void TakeDamage(int _damage)

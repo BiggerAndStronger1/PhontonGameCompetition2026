@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     [SerializeField] protected LayerMask whatIsGround;
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
+    
 
     [Header("Move Info")]
     public float moveSpeed;
@@ -39,13 +41,17 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     //public EntityFX fx { get; private set; }
     public SpriteRenderer sr { get; private set; }
     public PlayerStats stats { get; private set; }
+    private InputSystem_Actions actions;
+    public InputSystem_Actions.PlayerActions playerActions;
     #endregion
 
     protected void Awake()
     {
 
         stateMachine = new PlayerStateMachine();
-
+        actions = new InputSystem_Actions();
+        playerActions = actions.Player;
+        playerActions.Enable();
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
@@ -73,6 +79,11 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     {
         stateMachine.currentState.Update();
         if (isDead) SetVelocity(0, 0);
+    }
+
+    private void OnApplicationQuit()
+    {
+        playerActions.Disable();
     }
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
