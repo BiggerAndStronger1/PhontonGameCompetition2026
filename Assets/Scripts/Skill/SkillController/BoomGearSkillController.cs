@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CircleCollider2D))]
 public class BoomGearSkillController : MonoBehaviour
 {
     //private Animator anim;
@@ -55,6 +57,7 @@ public class BoomGearSkillController : MonoBehaviour
         }
 
         StartCoroutine(SelfDestroy(0.2f));
+
     }
 
     private IEnumerator SelfDestroy(float _seconds)
