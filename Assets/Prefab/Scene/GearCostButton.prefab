@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4224681423405273006}
   - component: {fileID: 3741175640072409360}
   m_Layer: 0
-  m_Name: GearTriggerButton
+  m_Name: GearCostButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 0}
-  needGearNum: 1
+  isPressed: 0
+  needSmallGearNum: 0
+  playerDetectorRadius: 0
 --- !u!61 &4224681423405273006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

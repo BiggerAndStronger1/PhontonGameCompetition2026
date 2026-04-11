@@ -20,8 +20,14 @@ public class PlayerGroundedState : PlayerState
     public override void Update()
     {
         base.Update();
-        if (!player.IsGroundDetected()) stateMachine.ChangeState(player.airState);
-        if (Keyboard.current.spaceKey.isPressed && player.IsGroundDetected()) stateMachine.ChangeState(player.jumpState);
-        if (player.canClimbLadder && Keyboard.current.wKey.wasPressedThisFrame) stateMachine.ChangeState(player.climbState);
+        if (Keyboard.current.digit2Key.wasPressedThisFrame)
+            stateMachine.ChangeState(player.aimState);
+            
+        if (!player.IsGroundDetected()) 
+            stateMachine.ChangeState(player.airState);
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && player.IsGroundDetected()) 
+            stateMachine.ChangeState(player.jumpState);
+        if (player.canClimbLadder && Keyboard.current.wKey.isPressed) 
+            stateMachine.ChangeState(player.climbState);
     }
 }

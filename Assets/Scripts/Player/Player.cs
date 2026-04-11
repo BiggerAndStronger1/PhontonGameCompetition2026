@@ -1,10 +1,7 @@
-
 using System.Collections;
-
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 {
     [Header("Collision Info")]
     [SerializeField] protected Transform groundCheck;
@@ -14,21 +11,17 @@ public class Player : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
 
     [Header("Move Info")]
-    public float moveSpeed = 8f;
-    public float jumpForce = 12f;
+    public float moveSpeed;
+    public float jumpForce;
     public bool canClimbLadder;
 
-    [Header("Live Info")]
     public bool isDead = false;
 
-    [Header("Spike info")]
-    public LayerMask whatIsSpike;
-    public float detectRadius = 3f;
 
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
-    public PlayerStats stats { get; private set; }
+    public SkillManager skill { get; private set; }
 
     #region State
     public PlayerStateMachine stateMachine { get; private set; }
@@ -37,6 +30,7 @@ public class Player : MonoBehaviour
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
     public PlayerClimbState climbState { get; private set; }
+    public PlayerAimGearState aimState { get; private set; }
     #endregion
 
     #region Component
@@ -44,11 +38,12 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     //public EntityFX fx { get; private set; }
     public SpriteRenderer sr { get; private set; }
-    //public CharaterStats stats { get; private set; }
+    public PlayerStats stats { get; private set; }
     #endregion
 
     protected void Awake()
     {
+
         stateMachine = new PlayerStateMachine();
 
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
@@ -56,6 +51,7 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
         airState = new PlayerAirState(this, stateMachine, "Jump");
         climbState = new PlayerClimbState(this, stateMachine, "Climb");
+        aimState = new PlayerAimGearState(this, stateMachine, "Aim");
     }
 
     protected void Start()
@@ -67,6 +63,7 @@ public class Player : MonoBehaviour
         stats = GetComponent<PlayerStats>();
 
         stateMachine.Initialize(idleState);
+        skill = SkillManager.instance;
 
         //transform.position = Vector3.zero;
     }
@@ -76,40 +73,21 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
         if (isDead) SetVelocity(0, 0);
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-            TryToClearSpike();
     }
 
-    private void TryToClearSpike()
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, detectRadius, whatIsSpike);
+    public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-        if (hits.Length == 0) return;
-
-        if (stats.smallGearCount <= 0)
-        {
-            print("小齿轮不足！");
-            return;
-        }
-        FatalGround fg = hits[0].GetComponent<FatalGround>();
-        if (fg != null)
-        {
-            fg.CleanFatalGround();
-            stats.AddSmallGear(-1);
-            print("清除一个地刺");
-        }
-    }
-    private void Die()
+    public void PlayerDie()
     {
         isDead = true;
         print("Player Die!");
         sr.color = Color.black;
         EventManagerNoParam.TriggerEvent(GameEvents.PlayerDie);
 
-        StartCoroutine(RespawnRoutine());
+        StartCoroutine(RebornCooldown());
     }
 
-    private IEnumerator RespawnRoutine()
+    private IEnumerator RebornCooldown()
     {
         yield return new WaitForSeconds(1f);
         PlayerReborn();
@@ -128,26 +106,19 @@ public class Player : MonoBehaviour
         isDead = false;
     }
 
-    public void DamageByFatalGround()
+    public void KillBySpike()
     {
-        if (isDead) return;
-        Die();
+        if (isDead) 
+            return;
+
+        PlayerDie();
     }
 
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AddStress()
     {
-        if (collision.GetComponent<Ladder>() != null)
-            canClimbLadder = true;
-            
+
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Ladder>() != null)
-            canClimbLadder = false;
-    }
 
     #region Collision
     public bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
