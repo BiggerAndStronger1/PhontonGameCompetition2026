@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 18696465573873620}
   - component: {fileID: 6537669173983202723}
   - component: {fileID: 6159140746973428796}
-  m_Layer: 0
-  m_Name: Square
+  m_Layer: 2
+  m_Name: CamCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

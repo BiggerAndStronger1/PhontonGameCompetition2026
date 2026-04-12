@@ -1,8 +1,15 @@
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 
 public class CamSwitch : MonoBehaviour
 {
+    private CinemachineCamera cam;
+    private void Awake()
+    {
+        cam = GetComponentInParent<CinemachineCamera>();
+    }
+
     public void ForcedAwake()
     {
 
@@ -21,14 +28,14 @@ public class CamSwitch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Player>() != null)
-            GetComponentInParent<CinemachineCamera>().Priority = 1;
+        if (other.GetComponent<Player>() != null && cam)
+            cam.Priority = 1;
 
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<Player>() != null)
-            GetComponentInParent<CinemachineCamera>().Priority = 0;
+        if (other.GetComponent<Player>() != null && cam)
+            cam.Priority = 0;
     }
 }

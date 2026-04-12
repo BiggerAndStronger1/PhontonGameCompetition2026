@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 
-public enum PlayerStateType
+public enum PlayerMotionType
 {
     Idle,
     Move,
@@ -15,12 +14,12 @@ public enum PlayerStateType
 
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerState : MonoBehaviour
+public class PlayerMotion : MonoBehaviour
 {
     protected Player player;
     protected Rigidbody2D rb;
 
-    public PlayerStateType currentState;
+    public PlayerMotionType currentState;
     private float defaultGravity;
 
     private void Awake()
@@ -31,37 +30,36 @@ public class PlayerState : MonoBehaviour
 
     private void Start()
     {
-        currentState = PlayerStateType.Idle;
+        currentState = PlayerMotionType.Idle;
     }
 
     private void Update()
     {
         float xInput = Keyboard.current.aKey.isPressed ? -1 :
                        Keyboard.current.dKey.isPressed ? 1 : 0;
-
         switch (currentState)
         {
-            case PlayerStateType.Idle:
+            case PlayerMotionType.Idle:
                 IdleUpdate(xInput);
                 break;
 
-            case PlayerStateType.Move:
+            case PlayerMotionType.Move:
                 MoveUpdate(xInput);
                 break;
 
-            case PlayerStateType.Jump:
+            case PlayerMotionType.Jump:
                 JumpUpdate(xInput);
                 break;
 
-            case PlayerStateType.Air:
+            case PlayerMotionType.Air:
                 AirUpdate(xInput);
                 break;
 
-            case PlayerStateType.Climb:
+            case PlayerMotionType.Climb:
                 ClimbUpdate(xInput);
                 break;
 
-            case PlayerStateType.Aim:
+            case PlayerMotionType.Aim:
                 AimUpdate();
                 break;
         }
@@ -72,19 +70,19 @@ public class PlayerState : MonoBehaviour
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
         if (xInput != 0)
-            ChangeState(PlayerStateType.Move);
+            ChangeState(PlayerMotionType.Move);
 
         if (!player.IsGroundDetected())
-            ChangeState(PlayerStateType.Air);
+            ChangeState(PlayerMotionType.Air);
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            ChangeState(PlayerStateType.Jump);
+            ChangeState(PlayerMotionType.Jump);
 
         if (player.canClimbLadder && Keyboard.current.wKey.isPressed)
-            ChangeState(PlayerStateType.Climb);
+            ChangeState(PlayerMotionType.Climb);
 
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
-            ChangeState(PlayerStateType.Aim);
+            ChangeState(PlayerMotionType.Aim);
     }
 
     private void MoveUpdate(float xInput)
@@ -92,16 +90,16 @@ public class PlayerState : MonoBehaviour
         player.SetVelocity(xInput * player.moveSpeed, rb.linearVelocity.y);
 
         if (xInput == 0)
-            ChangeState(PlayerStateType.Idle);
+            ChangeState(PlayerMotionType.Idle);
 
         if (!player.IsGroundDetected())
-            ChangeState(PlayerStateType.Air);
+            ChangeState(PlayerMotionType.Air);
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
-            ChangeState(PlayerStateType.Jump);
+            ChangeState(PlayerMotionType.Jump);
 
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
-            ChangeState(PlayerStateType.Aim);
+            ChangeState(PlayerMotionType.Aim);
     }
 
     private void JumpEnter()
@@ -115,7 +113,7 @@ public class PlayerState : MonoBehaviour
             player.SetVelocity(0.8f * xInput * player.moveSpeed, rb.linearVelocity.y);
 
         if (rb.linearVelocity.y < 0)
-            ChangeState(PlayerStateType.Air);
+            ChangeState(PlayerMotionType.Air);
     }
 
     private void AirUpdate(float xInput)
@@ -124,7 +122,7 @@ public class PlayerState : MonoBehaviour
             player.SetVelocity(0.8f * xInput * player.moveSpeed, rb.linearVelocity.y);
 
         if (player.IsGroundDetected())
-            ChangeState(PlayerStateType.Idle);
+            ChangeState(PlayerMotionType.Idle);
     }
 
     private void ClimbEnter()
@@ -148,7 +146,7 @@ public class PlayerState : MonoBehaviour
         player.SetVelocity(0.3f * xInput * player.moveSpeed, 3 * yInput);
 
         if (!player.canClimbLadder || Keyboard.current.spaceKey.isPressed)
-            ChangeState(PlayerStateType.Air);
+            ChangeState(PlayerMotionType.Air);
     }
 
     private void AimEnter()
@@ -165,24 +163,24 @@ public class PlayerState : MonoBehaviour
     {
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
-            ChangeState(PlayerStateType.Idle);
+            ChangeState(PlayerMotionType.Idle);
             return;
         }
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             player.skill.boomGear.CreateBoomGear();
-            ChangeState(PlayerStateType.Idle);
+            ChangeState(PlayerMotionType.Idle);
         }
     }
 
-    private void ChangeState(PlayerStateType newState)
+    private void ChangeState(PlayerMotionType newState)
     {
         // Exit
         switch (currentState)
         {
-            case PlayerStateType.Climb: ClimbExit(); break;
-            case PlayerStateType.Aim: AimExit(); break;
+            case PlayerMotionType.Climb: ClimbExit(); break;
+            case PlayerMotionType.Aim: AimExit(); break;
         }
 
         currentState = newState;
@@ -190,9 +188,9 @@ public class PlayerState : MonoBehaviour
         // Enter
         switch (newState)
         {
-            case PlayerStateType.Jump: JumpEnter(); break;
-            case PlayerStateType.Climb: ClimbEnter(); break;
-            case PlayerStateType.Aim: AimEnter(); break;
+            case PlayerMotionType.Jump: JumpEnter(); break;
+            case PlayerMotionType.Climb: ClimbEnter(); break;
+            case PlayerMotionType.Aim: AimEnter(); break;
         }
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum SaveKey
@@ -36,12 +37,10 @@ public class GameManager : MonoBehaviour
     private static GraphicRaycaster _raycaster;
     private static EventSystem _eventSystem;
     private GameObject currentHover;
-    [SerializeField]private GameObject[] dontDestroyOnLoad;
     /// <summary>
     /// enable this to view clicked UI names (pending other functions...)
     /// </summary>
     [SerializeField] private bool debug;
-
     [SerializeField] private SceneRef[] scenes;
     private void OnValidate()
     {
@@ -62,11 +61,13 @@ public class GameManager : MonoBehaviour
         inputActions = new InputSystem_Actions();
         inputActions.Debug.Enable();
         debugAction = inputActions.Debug;
-        DontDestroyOnLoad(gameObject);
-        foreach (var o in dontDestroyOnLoad)
-        {
-            DontDestroyOnLoad(o);
-        }
+        EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
+           
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Start()
@@ -96,6 +97,12 @@ public class GameManager : MonoBehaviour
                 quickDisable.SetActive(true);
             }
         }
+
+        if (debugAction.ReloadScene.WasPerformedThisFrame())
+        {
+            ReloadScene();
+        }
+
         // call an event on the UI object that has been clicked
         GameObject ui = GetUIObjectUnderCursor();
         GameObject twoD = Get2DObjectUnderCursor(debug);
@@ -227,9 +234,14 @@ public class GameManager : MonoBehaviour
         return worldPos;
     }
 
+    private void OnDestroy()
+    {
+        debugAction.Disable();
+    }
+
 
     private void OnApplicationQuit()
     {
-        inputActions.Disable();
+        debugAction.Disable();
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -22,7 +23,8 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     protected bool facingRight = true;
 
     public SkillManager skill { get; private set; }
-
+    private InputSystem_Actions action;
+    public InputSystem_Actions.PlayerActions playerActions { get; private set; }
     #region Component
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -38,6 +40,9 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         sr = GetComponent<SpriteRenderer>();
         stats = GetComponent<PlayerStats>();
         cd = GetComponent<Collider2D>();
+        action = new InputSystem_Actions();
+        playerActions = action.Player;
+        playerActions.Enable();
     }
 
     protected void Start()
@@ -52,6 +57,16 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
             SetVelocity(0, 0);
             return;
         }
+    }
+
+    private void OnDestroy()
+    {
+        playerActions.Disable();
+    }
+
+    private void OnApplicationQuit()
+    {
+        playerActions.Disable();
     }
 
     public void PlayerDie()

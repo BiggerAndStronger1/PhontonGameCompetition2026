@@ -20,7 +20,15 @@ using System;
         WorldChanged,
         ObjectClicked,
         ObjectHoverEnter,
-        ObjectHoverExit
+        ObjectHoverExit,
+        /// <summary>
+        /// an event triggered by mine gear after explosion (two param event: List<GameObject>, Vector 3)
+        /// </summary>
+        MineGearExploded,
+        /// <summary>
+        /// an event triggered proactively to reload a scene by the GameManager(no param event)
+        /// </summary>
+        SceneReload,
     }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {

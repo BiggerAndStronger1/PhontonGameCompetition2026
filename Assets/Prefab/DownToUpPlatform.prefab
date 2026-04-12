@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3954665281582272345}
   - component: {fileID: 510408907198444149}
   - component: {fileID: 6612335559660753614}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DownToUpPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

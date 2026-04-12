@@ -1044,6 +1044,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Reload Scene",
+                    "type": "Button",
+                    "id": "662e8cc5-fce0-43ac-8c08-343d30e510c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1055,6 +1064,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Test",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89d6bbc1-6f65-4299-adb9-00878710c278",
+                    "path": "<Keyboard>/r",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Reload Scene",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

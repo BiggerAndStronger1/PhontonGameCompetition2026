@@ -1,35 +1,61 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.Splines.ExtrusionShapes;
 
 public class MineGearSkill : Skill
 {
     [SerializeField] private GameObject mineGearPrefab;
+    public int explosionRadius;
+    [Tooltip("the duration of the mine before explosion")]
+    [SerializeField] private int duration;
+    private Rigidbody2D rb;
+
+    [Tooltip("the strength of the explosion received")]
+    [SerializeField]
+    private int receivedExplosionForce = 1;
+    [SerializeField] private LayerMask whatIsFragile;
 
     void Awake()
     {
-        
+
     }
 
-    
+
 
     protected override void Update()
     {
         base.Update();
-        if (player.playerActions.Mine.WasPressedThisFrame()&&player.stats.mineGearCount > 0)
+        if (player.playerActions.Mine.WasPressedThisFrame() && player.stats.mineGearCount > 0 && TryUseSkill())
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, Mathf.Infinity, LayerMask.GetMask("UniDirectional Platform"));
-            if (hit)
-            {
-                print("hit");
-                Assert.IsTrue(hit.transform.TryGetComponent<BoxCollider2D>(out var component), "no box collider found on a unidirectional platform");
-                GameObject go = Instantiate(mineGearPrefab, GetSpawnPointUnderBox(component, mineGearPrefab.GetComponent<CircleCollider2D>()), transform.rotation);
-            }
-            else Instantiate(mineGearPrefab, GetPlayerBottom(), transform.rotation);
+
             player.stats.mineGearCount--;
         }
     }
+
+    protected override void UseSkill()
+    {
+        base.UseSkill();
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, Mathf.Infinity, ~LayerMask.GetMask("Player", "Ignore Raycast"));
+        if (hit.transform.TryGetComponent<BoxCollider2D>(out var component))
+        {
+            MineGearController go = Instantiate(mineGearPrefab,
+                GetSpawnPointUnderBox(component, mineGearPrefab.GetComponent<CircleCollider2D>()),
+                transform.rotation).GetComponent<MineGearController>();
+            go.Detonate(explosionRadius, duration, receivedExplosionForce, whatIsFragile);
+        }
+        else
+        {
+            MineGearController go = Instantiate(mineGearPrefab, GetPlayerBottom(), transform.rotation).GetComponent<MineGearController>();
+            go.Detonate(explosionRadius, duration, receivedExplosionForce, whatIsFragile);
+        }
+
+
+
+
+    }
+
+
 
     Vector3 GetPlayerBottom()
     {

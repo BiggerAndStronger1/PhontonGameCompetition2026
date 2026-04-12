@@ -1130,6 +1130,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Reload Scene"",
+                    ""type"": ""Button"",
+                    ""id"": ""662e8cc5-fce0-43ac-8c08-343d30e510c9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1141,6 +1150,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89d6bbc1-6f65-4299-adb9-00878710c278"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": ""MultiTap"",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Reload Scene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1238,6 +1258,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Test = m_Debug.FindAction("Test", throwIfNotFound: true);
+        m_Debug_ReloadScene = m_Debug.FindAction("Reload Scene", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1722,6 +1743,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Debug;
     private List<IDebugActions> m_DebugActionsCallbackInterfaces = new List<IDebugActions>();
     private readonly InputAction m_Debug_Test;
+    private readonly InputAction m_Debug_ReloadScene;
     /// <summary>
     /// Provides access to input actions defined in input action map "Debug".
     /// </summary>
@@ -1737,6 +1759,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Debug/Test".
         /// </summary>
         public InputAction @Test => m_Wrapper.m_Debug_Test;
+        /// <summary>
+        /// Provides access to the underlying input action "Debug/ReloadScene".
+        /// </summary>
+        public InputAction @ReloadScene => m_Wrapper.m_Debug_ReloadScene;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1766,6 +1792,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Test.started += instance.OnTest;
             @Test.performed += instance.OnTest;
             @Test.canceled += instance.OnTest;
+            @ReloadScene.started += instance.OnReloadScene;
+            @ReloadScene.performed += instance.OnReloadScene;
+            @ReloadScene.canceled += instance.OnReloadScene;
         }
 
         /// <summary>
@@ -1780,6 +1809,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Test.started -= instance.OnTest;
             @Test.performed -= instance.OnTest;
             @Test.canceled -= instance.OnTest;
+            @ReloadScene.started -= instance.OnReloadScene;
+            @ReloadScene.performed -= instance.OnReloadScene;
+            @ReloadScene.canceled -= instance.OnReloadScene;
         }
 
         /// <summary>
@@ -2055,5 +2087,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTest(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Reload Scene" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnReloadScene(InputAction.CallbackContext context);
     }
 }
