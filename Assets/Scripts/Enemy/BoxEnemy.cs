@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class BoxEnemy : MonoBehaviour, ICanAddStress
 {
     [Header("Move Info")]

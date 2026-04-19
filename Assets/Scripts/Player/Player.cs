@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStats))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerManager))]
+[RequireComponent(typeof(PlayerMotion))]
 public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 {
     [Header("Move Info")]
