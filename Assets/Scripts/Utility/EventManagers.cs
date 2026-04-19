@@ -29,6 +29,10 @@ using System;
         /// an event triggered proactively to reload a scene by the GameManager(no param event)
         /// </summary>
         SceneReload,
+        /// <summary>
+        /// an event to activate the air trap (no param event)
+        /// </summary>
+        TriggerAirTrap,
     }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {
