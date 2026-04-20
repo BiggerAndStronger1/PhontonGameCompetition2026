@@ -33,7 +33,9 @@ using System;
         /// an event to activate the air trap (no param event)
         /// </summary>
         TriggerAirTrap,
-    }
+        PlatformVisible,
+        PlatformInvisible,
+}
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {
     private static readonly Dictionary<GameEvents, Action<T>> EventDictionary = new Dictionary<GameEvents, Action<T>>();
