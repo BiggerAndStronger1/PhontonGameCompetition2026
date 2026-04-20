@@ -9,7 +9,7 @@ public class Skill : MonoBehaviour
 
     protected virtual void Start()
     {
-        player = PlayerManager.instance.player;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     protected virtual void Update()

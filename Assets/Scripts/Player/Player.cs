@@ -7,7 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerStats))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(PlayerManager))]
 [RequireComponent(typeof(PlayerMotion))]
 public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 {
@@ -49,7 +48,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     protected void Start()
     {
-        skill = SkillManager.instance;
+        skill = GetComponentInChildren<SkillManager>();
     }
 
     protected void Update()
@@ -96,6 +95,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         stats.smallGearCount = 0;
         stats.largeGearCount = 0;
         stats.boomGearCount = 0;
+        stats.mineGearCount = 0;
         stats.havePocketWatch = false;
         isDead = false;
     }

@@ -573,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 1154990262}
   isPressed: 0
+  player: {fileID: 0}
   needSmallGearNum: 0
   playerDetectorRadius: 0
 --- !u!212 &119173275
@@ -2392,6 +2393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 2019095167}
   isPressed: 0
+  player: {fileID: 0}
   needSmallGearNum: 1
   playerDetectorRadius: 0
 --- !u!212 &429211717
@@ -2753,6 +2755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 0}
   isPressed: 0
+  player: {fileID: 0}
   needSmallGearNum: 1
   playerDetectorRadius: 0
 --- !u!212 &491803912
@@ -6357,6 +6360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 2019176462}
   isPressed: 0
+  player: {fileID: 0}
   needSmallGearNum: 0
   playerDetectorRadius: 0
 --- !u!212 &787083813
@@ -21034,6 +21038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 0}
   isPressed: 0
+  player: {fileID: 0}
   needSmallGearNum: 1
   playerDetectorRadius: 0
 --- !u!212 &1230095428
@@ -45797,6 +45802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearButton
   targetDoor: {fileID: 955170551}
   isPressed: 0
+  player: {fileID: 0}
   needSmallGearNum: 4
   playerDetectorRadius: 0
 --- !u!212 &1421954341
@@ -76630,11 +76636,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.71
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.01
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76667,6 +76673,14 @@ PrefabInstance:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536618188227937532, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: boomGearCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536618188227937532, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: mineGearCount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Name
@@ -77191,7 +77205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77224,6 +77238,10 @@ PrefabInstance:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773061877011192318, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
+      propertyPath: orthographic size
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9072909148645866641, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_Name

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,11 +21,12 @@ public class WorldManager : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame && PlayerManager.instance.player.stats.havePocketWatch) SwitchWorld();
+        if (Keyboard.current.tabKey.wasPressedThisFrame && player.stats.havePocketWatch) SwitchWorld();
     }
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
         currentWorld = WorldType.Peace;
         print("œ÷‘⁄ «£∫" + currentWorld);
     }
