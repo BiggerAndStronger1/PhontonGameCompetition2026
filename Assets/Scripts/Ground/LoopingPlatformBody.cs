@@ -18,7 +18,7 @@ public class LoopingPlatformBody : MonoBehaviour
     [SerializeField] private int platformInterval = 10;
     [SerializeField]
     private GameObject platformPrefab;
-    [Tooltip("if set to true the platform goes from left to right, otherwise it's inverted")]
+    [Tooltip("whether the initial direction is inverted, if set to true the platform goes from left to right, otherwise it's inverted")]
     [SerializeField] private bool invertDirection;
     [Tooltip("the delay in which the disappearance happen after they pass the check point, higher values means larger delay")]
     [SerializeField] private int disappearPadding = 1;
