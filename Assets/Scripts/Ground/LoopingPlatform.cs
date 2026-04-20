@@ -14,14 +14,22 @@ public class LoopingPlatform : MonoBehaviour
 {
     [SerializeField] private Transform left;
     [SerializeField] private Transform right;
+    [Tooltip("the distance between platforms")]
     [SerializeField] private int platformInterval = 10;
     [SerializeField]
     private GameObject platformPrefab;
-
-    [SerializeField] private int disapperPadding = 1;
+    [Tooltip("if set to true the platform goes from left to right, otherwise it's inverted")]
+    [SerializeField] private bool invertDirection;
+    [Tooltip("the delay in which the disappearance happen after they pass the check point, higher values means larger delay")]
+    [SerializeField] private int disappearPadding = 1;
     [SerializeField] private float speed = 0.1f;
+    [Tooltip("how many platforms should be spawned, optimally this number should be higher enough to fill the viewport")]
     [SerializeField] private int platformCount;
-    private Vector2 removePivot;
+    /// <summary>
+    /// the checkpoint in which the relocation of the platforms happen
+    /// </summary>
+    private Vector2 checkpoint;
+    //this is the backing field for isLeftToRight
     private bool _isLeftToRight;
     private List<GameObject> platforms = new List<GameObject>();
     private GameObject leftMost;
@@ -36,15 +44,15 @@ public class LoopingPlatform : MonoBehaviour
         get { return _isLeftToRight; }
         set
         {
-            removePivot = value ? right.position: left.position;
+            checkpoint = value ? right.position : left.position;
             _isLeftToRight = value;
         }
     }
 
-    
+
     void Awake()
     {
-        Vector2 pos = left.position;
+        Vector2 pos = right.position;
         for (int i = 0; i < platformCount; i++)
         {
             GameObject go = Instantiate(platformPrefab, transform);
@@ -56,12 +64,12 @@ public class LoopingPlatform : MonoBehaviour
             a.transform.position.x.CompareTo(b.transform.position.x));
         leftMost = platforms[0];
         rightMost = platforms[^1];
-        isLeftToRight = true;
+        isLeftToRight = !invertDirection;
     }
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -81,7 +89,7 @@ public class LoopingPlatform : MonoBehaviour
             }
 
             Vector3 dir = isLeftToRight ? Vector3.right : Vector3.left;
-            go.transform.position += dir * speed * Time.deltaTime;
+            go.transform.position += speed * Time.deltaTime * dir;
         }
 
         if (Keyboard.current.tKey.wasPressedThisFrame) isLeftToRight = !isLeftToRight;
@@ -89,19 +97,19 @@ public class LoopingPlatform : MonoBehaviour
 
     private bool Reached(Transform platform)
     {
-        if (SamePivot(removePivot, left.position) && IsOnLeft(platform, removePivot)) return true;
-        else if (SamePivot(removePivot, right.position) && IsOnRight(platform, removePivot)) return true;
+        if (SamePivot(checkpoint, left.position) && IsOnLeft(platform, checkpoint)) return true;
+        else if (SamePivot(checkpoint, right.position) && IsOnRight(platform, checkpoint)) return true;
         else return false;
     }
 
     bool IsOnRight(Transform t, Vector2 otherPos)
     {
-        return (t.position.x - disapperPadding)> otherPos.x;
+        return (t.position.x - disappearPadding) > otherPos.x;
     }
 
     bool IsOnLeft(Transform t, Vector2 otherPos)
     {
-        return (t.position.x + disapperPadding) < otherPos.x;
+        return (t.position.x + disappearPadding) < otherPos.x;
     }
 
     private void Action()
