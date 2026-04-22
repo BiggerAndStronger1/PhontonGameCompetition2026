@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     [Header("Check Info")]
     [SerializeField] private LayerMask whatIsGround;
+
+    [SerializeField] private bool isInClockTower = false;
 
     public bool isDead = false;
 
@@ -41,6 +44,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         sr = GetComponent<SpriteRenderer>();
         stats = GetComponent<PlayerStats>();
         cd = GetComponent<Collider2D>();
+
         action = new InputSystem_Actions();
         playerActions = action.Player;
         playerActions.Enable();
@@ -56,6 +60,12 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         if (isDead)
         {
             SetVelocity(0, 0);
+            return;
+        }
+
+        if (playerActions.SwitchWorld.triggered && stats.havePocketWatch)
+        {
+            EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
             return;
         }
     }

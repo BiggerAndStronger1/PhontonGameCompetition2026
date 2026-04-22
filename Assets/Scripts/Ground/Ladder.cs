@@ -23,7 +23,7 @@ public class Ladder : MonoBehaviour
         if (belongToSpecificWorld)
         {
             WorldCheck();
-            EventManagerNoParam.StartListening(GameEvents.WorldChanged, WorldCheck);
+            EventManagerNoParam.StartListening(GameEvents.SwitchWorld, WorldCheck);
         }
     }
 
@@ -45,7 +45,7 @@ public class Ladder : MonoBehaviour
 
     private void WorldCheck()
     {
-        isEffective = effectiveWorld == WorldManager.Instance.currentWorld;
+        isEffective = effectiveWorld == WorldManager.instance.currentWorld;
         tr.enabled = isEffective;
         cd.enabled = isEffective;
     }

@@ -5864,7 +5864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldManager
   currentWorld: 0
-  player: {fileID: 679478126}
 --- !u!4 &583022694
 Transform:
   m_ObjectHideFlags: 0
