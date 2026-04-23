@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class PocketWatch : Props
 {
+    private Player player;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+    }
+
     protected override void OnCollected(Collider2D collision)
     {
         base.OnCollected(collision);
@@ -15,6 +22,7 @@ public class PocketWatch : Props
     protected override void ResetItem()
     {
         base.ResetItem();
-        PlayerManager.instance.player.stats.havePocketWatch = false;
+
+        player.stats.havePocketWatch = false;
     }
 }

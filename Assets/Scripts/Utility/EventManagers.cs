@@ -17,7 +17,13 @@ using System;
     public enum GameEvents
     {
         PlayerDie,
-        WorldChanged,
+
+        /// <summary>
+        /// an event triggered by player using pocketwatch or the clock tower(no param event)
+        /// listened by world related mechanisms
+        /// </summary>
+        SwitchWorld,
+
         ObjectClicked,
         ObjectHoverEnter,
         ObjectHoverExit,

@@ -45,7 +45,7 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void Start()
     {
-        player = PlayerManager.instance.player;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
         originalPosition = transform.position;
     }

@@ -3,17 +3,18 @@ using UnityEngine.InputSystem;
 
 public class GearCostButton : Button
 {
+    public Player player;
+
     [Header("Gear Info")]
     [SerializeField]  private int needSmallGearNum;
     [SerializeField] private float playerDetectorRadius;
 
-    private Player player;
 
     protected override void Start()
     {
         base.Start();
 
-        player = PlayerManager.instance.player;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     private void Update()

@@ -16,17 +16,17 @@ public class PeaceBox : MonoBehaviour
     private void Start()
     {
         UpdateState();
-        EventManagerNoParam.StartListening(GameEvents.WorldChanged, UpdateState);
+        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, UpdateState);
     }
 
     private void OnDestroy()
     {
-        EventManagerNoParam.StopListening(GameEvents.WorldChanged, UpdateState);
+        EventManagerNoParam.StopListening(GameEvents.SwitchWorld, UpdateState);
     }
 
     private void UpdateState()
     {
-        bool isPeace = (WorldManager.Instance.currentWorld == WorldType.Peace);
+        bool isPeace = (WorldManager.instance.currentWorld == WorldType.Peace);
         sr.enabled = isPeace;
         cd.enabled = isPeace;
     }

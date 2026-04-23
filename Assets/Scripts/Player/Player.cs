@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(PlayerStats))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(PlayerManager))]
 [RequireComponent(typeof(PlayerMotion))]
 public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 {
@@ -18,6 +18,8 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     [Header("Check Info")]
     [SerializeField] private LayerMask whatIsGround;
+
+    [SerializeField] private bool isInClockTower = false;
 
     public bool isDead = false;
 
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         sr = GetComponent<SpriteRenderer>();
         stats = GetComponent<PlayerStats>();
         cd = GetComponent<Collider2D>();
+
         action = new InputSystem_Actions();
         playerActions = action.Player;
         playerActions.Enable();
@@ -49,7 +52,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     protected void Start()
     {
-        skill = SkillManager.instance;
+        skill = GetComponentInChildren<SkillManager>();
     }
 
     protected void Update()
@@ -57,6 +60,12 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         if (isDead)
         {
             SetVelocity(0, 0);
+            return;
+        }
+
+        if (playerActions.SwitchWorld.triggered && stats.havePocketWatch)
+        {
+            EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
             return;
         }
     }
@@ -96,6 +105,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         stats.smallGearCount = 0;
         stats.largeGearCount = 0;
         stats.boomGearCount = 0;
+        stats.mineGearCount = 0;
         stats.havePocketWatch = false;
         isDead = false;
     }
