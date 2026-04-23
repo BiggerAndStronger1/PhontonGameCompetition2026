@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 7088265103212110363}
   - component: {fileID: 2565679629281221882}
   - component: {fileID: 7536618188227937532}
-  - component: {fileID: 5184364732650496201}
   - component: {fileID: 3022865986171090042}
   m_Layer: 6
   m_Name: Player
@@ -290,6 +289,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
+  isInClockTower: 0
   isDead: 0
 --- !u!114 &7536618188227937532
 MonoBehaviour:
@@ -310,19 +310,6 @@ MonoBehaviour:
   maxHp: 100
   currentHp: 0
   havePocketWatch: 0
---- !u!114 &5184364732650496201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8259676102185292296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5ecd8d5932cc2428cc7edcf45d5a26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  player: {fileID: 2565679629281221882}
 --- !u!114 &3022865986171090042
 MonoBehaviour:
   m_ObjectHideFlags: 0
