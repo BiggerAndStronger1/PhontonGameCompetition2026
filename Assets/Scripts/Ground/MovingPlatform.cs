@@ -33,7 +33,7 @@ public class MovingPlatform : MonoBehaviour
         if (belongToSpecificWorld)
         {
             WorldCheck();
-            EventManagerNoParam.StartListening(GameEvents.WorldChanged, WorldCheck);
+            EventManagerNoParam.StartListening(GameEvents.SwitchWorld, WorldCheck);
         }
     }
 
@@ -66,7 +66,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void WorldCheck()
     {
-        isEffective = effectiveWorld == WorldManager.Instance.currentWorld;
+        isEffective = effectiveWorld == WorldManager.instance.currentWorld;
         sr.enabled = isEffective;
         cd.enabled = isEffective;
     }

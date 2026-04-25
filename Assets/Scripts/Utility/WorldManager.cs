@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,22 +10,23 @@ public enum WorldType
 
 public class WorldManager : MonoBehaviour
 {
-    public static WorldManager Instance;
+    public static WorldManager instance;
     public WorldType currentWorld;
-    public Player player;
+    private Player player;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame && PlayerManager.instance.player.stats.havePocketWatch) SwitchWorld();
+        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, SwitchWorld);
     }
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
         currentWorld = WorldType.Peace;
         print("现在是：" + currentWorld);
     }
@@ -33,8 +35,7 @@ public class WorldManager : MonoBehaviour
     {
         if (currentWorld == WorldType.Peace) currentWorld = WorldType.War;
         else currentWorld = WorldType.Peace;
-
-        EventManagerNoParam.TriggerEvent(GameEvents.WorldChanged);
+        
         print("现在是：" + currentWorld);
     }
 }

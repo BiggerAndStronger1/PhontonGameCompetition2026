@@ -17,7 +17,13 @@ using System;
     public enum GameEvents
     {
         PlayerDie,
-        WorldChanged,
+
+        /// <summary>
+        /// an event triggered by player using pocketwatch or the clock tower(no param event)
+        /// listened by world related mechanisms
+        /// </summary>
+        SwitchWorld,
+
         ObjectClicked,
         ObjectHoverEnter,
         ObjectHoverExit,
@@ -33,7 +39,9 @@ using System;
         /// an event to activate the air trap (no param event)
         /// </summary>
         TriggerAirTrap,
-    }
+        PlatformVisible,
+        PlatformInvisible,
+}
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {
     private static readonly Dictionary<GameEvents, Action<T>> EventDictionary = new Dictionary<GameEvents, Action<T>>();

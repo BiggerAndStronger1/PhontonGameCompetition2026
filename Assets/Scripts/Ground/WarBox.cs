@@ -15,17 +15,17 @@ public class WarLadder : MonoBehaviour
     private void Start()
     {
         UpdateState();
-        EventManagerNoParam.StartListening(GameEvents.WorldChanged, UpdateState);
+        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, UpdateState);
     }
 
     private void OnDestroy()
     {
-        EventManagerNoParam.StopListening(GameEvents.WorldChanged, UpdateState);
+        EventManagerNoParam.StopListening(GameEvents.SwitchWorld, UpdateState);
     }
 
     private void UpdateState()
     {
-        bool isWar = (WorldManager.Instance.currentWorld == WorldType.War);
+        bool isWar = (WorldManager.instance.currentWorld == WorldType.War);
         sr.enabled = isWar;
         cd.enabled = isWar;
     }

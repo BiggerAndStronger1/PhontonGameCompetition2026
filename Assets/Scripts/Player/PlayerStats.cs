@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour
         smallGearCount = 0;
         largeGearCount = 0;
         boomGearCount = 0;
+        mineGearCount = 0;
     }
 
     public void AddSmallGear(int _amount)

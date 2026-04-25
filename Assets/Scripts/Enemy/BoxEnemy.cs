@@ -37,7 +37,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
         EventManagerNoParam.StartListening(GameEvents.PlayerDie, Reset);
 
         rb.gravityScale = useGravity ? 1 : 0;
-        player = PlayerManager.instance.player;
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
     }
 
     private void Update()
