@@ -53,7 +53,7 @@ public class Sniper : MonoBehaviour
                 Debug.DrawRay(eyeTransform.position, (hit.transform.position - eyeTransform.position), Color.red, 1);
                 if (hit.transform.CompareTag("Player"))
                 {
-                    execution = StartCoroutine(Execution());
+                    execution = StartCoroutine(Execution(other.GetComponent<Player>()));
                     break;
                 }
             }
@@ -61,10 +61,10 @@ public class Sniper : MonoBehaviour
         }
     }
 
-    private IEnumerator Execution()
+    private IEnumerator Execution(Player player)
     {
         yield return new WaitForSeconds(executionTime);
-        print("executed");
+        player.PlayerDie();
     }
 
     public Vector2[] GetTargetRefV2(Collider2D col)
