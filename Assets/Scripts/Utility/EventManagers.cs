@@ -39,6 +39,9 @@ using System;
         /// an event to activate the air trap (no param event)
         /// </summary>
         TriggerAirTrap,
+        /// <summary>
+        /// dedicated to be triggered by looping platform don't use this event unless it is related to 
+        /// </summary>
         PlatformVisible,
         PlatformInvisible,
 }
