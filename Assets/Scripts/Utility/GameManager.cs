@@ -10,7 +10,6 @@ using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public enum SaveKey
@@ -44,11 +43,11 @@ public class GameManager : MonoBehaviour
     /// enable this to view clicked UI names (pending other functions...)
     /// </summary>
     [SerializeField] private bool debug;
-    [SerializeField] private SceneRef mainScene;
+    [SerializeField] private SceneRef main;
     private void OnValidate()
     {
 #if UNITY_EDITOR
-        if (mainScene.scene) mainScene.scenePath = AssetDatabase.GetAssetPath(mainScene.scene);
+        if (main.scene) main.scenePath = AssetDatabase.GetAssetPath(main.scene);
 #endif
     }
 
@@ -62,20 +61,13 @@ public class GameManager : MonoBehaviour
         EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
         EventManagerNoParam.StartListening(GameEvents.LoadNextScene, NextScene);
         EventManagerNoParam.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
-        if (SceneManager.GetActiveScene().path != mainScene.scenePath)
+        if (!dontDestroySet)
         {
-            Debug.LogWarning("GameManger is first loaded in a scene other than the main scene, this is not allowed in build.");
-        }
-        else
-        {
-            if (!dontDestroySet)
+            foreach (var o in dontDestroys)
             {
-                foreach (var o in dontDestroys)
-                {
-                    if (o) DontDestroyOnLoad(o);
-                }
-                dontDestroySet = true;
+                if (o) DontDestroyOnLoad(o);
             }
+            dontDestroySet = true;
         }
     }
 
@@ -92,7 +84,7 @@ public class GameManager : MonoBehaviour
     private void ReloadScene()
     {
         var activeScene = SceneManager.GetActiveScene();
-        if (activeScene.name == mainScene.scene.name)
+        if (activeScene.name == main.scene.name)
         {
             Debug.LogWarning("main scene should not be reloaded");
             return;

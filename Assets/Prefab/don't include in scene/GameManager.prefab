@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 489696782049143010}
   quickDisable: {fileID: 0}
   debug: 1
-  mainScene:
+  main:
     scene: {fileID: 102900000, guid: da1061530790b664298626a3734c08c3, type: 3}
     scenePath: Assets/Scenes/Level/main.unity
 --- !u!114 &6583202028376620052

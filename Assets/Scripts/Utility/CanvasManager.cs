@@ -29,15 +29,13 @@ public class CanvasManager : MonoBehaviour
         }
 
         fadeImage.GetComponent<Anim2D>().OnFadeComplete += (() => fadeImage.gameObject.SetActive(false));
-        SceneManager.sceneLoaded += SceneFadeIn;
-    }
-
-    private void SceneFadeIn(Scene scene, LoadSceneMode mode)
-    {
-        fadeImage.GetComponent<Anim2D>().CancelFade();
-        fadeImage.gameObject.SetActive(false);
-        fadeImage.GetComponent<Image>().color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
-        fadeImage.gameObject.SetActive(true);
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            fadeImage.GetComponent<Anim2D>().CancelFade();
+            fadeImage.gameObject.SetActive(false);
+            fadeImage.GetComponent<Image>().color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+            fadeImage.gameObject.SetActive(true);
+        };
     }
 
     // Update is called once per frame
@@ -54,7 +52,6 @@ public class CanvasManager : MonoBehaviour
     private void OnDestroy()
     {
         actionsUI.Disable();
-        SceneManager.sceneLoaded -= SceneFadeIn;
     }
 
     private void OnApplicationQuit()
