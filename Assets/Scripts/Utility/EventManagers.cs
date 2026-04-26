@@ -19,12 +19,18 @@ using System;
         PlayerDie,
 
         /// <summary>
+        /// an event triggered by gameobject entering teleport edge(two param event: Transform, Vector3)
+        /// listened by moveable gameobjects
+        /// </summary>
+        Teleport,
+
+        /// <summary>
         /// an event triggered by player using pocketwatch or the clock tower(no param event)
         /// listened by world related mechanisms
         /// </summary>
         SwitchWorld,
 
-        ObjectClicked,
+    ObjectClicked,
         ObjectHoverEnter,
         ObjectHoverExit,
         /// <summary>

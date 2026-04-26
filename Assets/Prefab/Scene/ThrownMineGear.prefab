@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 868224160025239436}
   - component: {fileID: 196532757825745546}
   - component: {fileID: 7245723857597728905}
+  - component: {fileID: 378411478848407451}
   m_Layer: 0
   m_Name: ThrownMineGear
   m_TagString: Untagged
@@ -172,3 +173,16 @@ MonoBehaviour:
   whatIsFragile:
     serializedVersion: 2
     m_Bits: 384
+--- !u!114 &378411478848407451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890054453055000372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dfdb4a9e43bd3489b836d8b72edb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleportable
+  teleportCooldown: 0.2
