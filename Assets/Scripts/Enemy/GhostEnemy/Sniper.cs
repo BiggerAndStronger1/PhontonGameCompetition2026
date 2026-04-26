@@ -1,15 +1,10 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.InputSystem.HID;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
-using static UnityEngine.UI.Image;
+
 [Serializable]
-public class Sniper : MonoBehaviour
+public class Sniper : MonoBehaviour, IFragile
 {
     [Tooltip("time required for player to be executed")]
     [SerializeField] private float executionTime = 3;
@@ -75,5 +70,11 @@ public class Sniper : MonoBehaviour
         Vector2 top = new Vector2(b.center.x, b.max.y);
         Vector2 bottom = new Vector2(b.center.x, b.min.y);
         return new Vector2[] { top, bottom, col.transform.position };
+    }
+
+    public void DestroyFragile()
+    {
+        StopAllCoroutines();
+        Destroy(gameObject);
     }
 }

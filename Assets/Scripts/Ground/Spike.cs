@@ -49,5 +49,5 @@ public class Spike : MonoBehaviour, IFragile
         cd.enabled = true;
     }
 
-    public void DestroyFragileGround() => CleanFatalGround();
+    public void DestroyFragile() => CleanFatalGround();
 }

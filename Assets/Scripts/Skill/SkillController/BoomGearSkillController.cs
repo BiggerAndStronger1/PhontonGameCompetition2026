@@ -8,7 +8,6 @@ public class BoomGearSkillController : MonoBehaviour
     //private Animator anim;
     private Rigidbody2D rb;
     private CircleCollider2D cd;
-    private Player player;
 
     [Header("Explode Info")]
     private bool hasExploded = false;
@@ -49,10 +48,10 @@ public class BoomGearSkillController : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            IFragile fragileFround = hit.GetComponentInParent<IFragile>();
-            if (fragileFround != null)
+            IFragile fragile = hit.GetComponentInParent<IFragile>();
+            if (fragile != null)
             {
-                fragileFround.DestroyFragileGround();
+                fragile.DestroyFragile();
             }
         }
 

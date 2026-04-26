@@ -14,7 +14,6 @@ public class MineGearSkill : Skill
     [Tooltip("the strength of the explosion received")]
     [SerializeField]
     private int receivedExplosionForce = 1;
-    [SerializeField] private LayerMask whatIsFragile;
 
     void Awake()
     {
@@ -42,12 +41,12 @@ public class MineGearSkill : Skill
             MineGearController go = Instantiate(mineGearPrefab,
                 GetSpawnPointUnderBox(component, mineGearPrefab.GetComponent<CircleCollider2D>()),
                 transform.rotation).GetComponent<MineGearController>();
-            go.Detonate(explosionRadius, duration, receivedExplosionForce, whatIsFragile);
+            go.Detonate(explosionRadius, duration, receivedExplosionForce);
         }
         else
         {
             MineGearController go = Instantiate(mineGearPrefab, GetPlayerBottom(), transform.rotation).GetComponent<MineGearController>();
-            go.Detonate(explosionRadius, duration, receivedExplosionForce, whatIsFragile);
+            go.Detonate(explosionRadius, duration, receivedExplosionForce);
         }
 
 

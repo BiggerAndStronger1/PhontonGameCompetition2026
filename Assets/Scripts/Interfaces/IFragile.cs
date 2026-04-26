@@ -1,4 +1,4 @@
 public interface IFragile
 {
-    void DestroyFragileGround();
+    void DestroyFragile();
 }
