@@ -1188,6 +1188,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""nextScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""273838ee-3a41-436c-a3d0-826f99a86d83"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""previousScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3475fed-a752-404b-b6da-c5ce8f153112"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1221,6 +1239,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""airtrap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""394bbfea-c323-4ee4-8cfe-994ec60a2698"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""nextScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""363122f2-9698-4d90-8407-6da4f62f63b7"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""previousScene"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1322,6 +1362,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Debug_Test = m_Debug.FindAction("Test", throwIfNotFound: true);
         m_Debug_ReloadScene = m_Debug.FindAction("Reload Scene", throwIfNotFound: true);
         m_Debug_airtrap = m_Debug.FindAction("airtrap", throwIfNotFound: true);
+        m_Debug_nextScene = m_Debug.FindAction("nextScene", throwIfNotFound: true);
+        m_Debug_previousScene = m_Debug.FindAction("previousScene", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1830,6 +1872,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Debug_Test;
     private readonly InputAction m_Debug_ReloadScene;
     private readonly InputAction m_Debug_airtrap;
+    private readonly InputAction m_Debug_nextScene;
+    private readonly InputAction m_Debug_previousScene;
     /// <summary>
     /// Provides access to input actions defined in input action map "Debug".
     /// </summary>
@@ -1853,6 +1897,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Debug/airtrap".
         /// </summary>
         public InputAction @airtrap => m_Wrapper.m_Debug_airtrap;
+        /// <summary>
+        /// Provides access to the underlying input action "Debug/nextScene".
+        /// </summary>
+        public InputAction @nextScene => m_Wrapper.m_Debug_nextScene;
+        /// <summary>
+        /// Provides access to the underlying input action "Debug/previousScene".
+        /// </summary>
+        public InputAction @previousScene => m_Wrapper.m_Debug_previousScene;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1888,6 +1940,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @airtrap.started += instance.OnAirtrap;
             @airtrap.performed += instance.OnAirtrap;
             @airtrap.canceled += instance.OnAirtrap;
+            @nextScene.started += instance.OnNextScene;
+            @nextScene.performed += instance.OnNextScene;
+            @nextScene.canceled += instance.OnNextScene;
+            @previousScene.started += instance.OnPreviousScene;
+            @previousScene.performed += instance.OnPreviousScene;
+            @previousScene.canceled += instance.OnPreviousScene;
         }
 
         /// <summary>
@@ -1908,6 +1966,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @airtrap.started -= instance.OnAirtrap;
             @airtrap.performed -= instance.OnAirtrap;
             @airtrap.canceled -= instance.OnAirtrap;
+            @nextScene.started -= instance.OnNextScene;
+            @nextScene.performed -= instance.OnNextScene;
+            @nextScene.canceled -= instance.OnNextScene;
+            @previousScene.started -= instance.OnPreviousScene;
+            @previousScene.performed -= instance.OnPreviousScene;
+            @previousScene.canceled -= instance.OnPreviousScene;
         }
 
         /// <summary>
@@ -2211,5 +2275,19 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAirtrap(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "nextScene" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnNextScene(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "previousScene" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPreviousScene(InputAction.CallbackContext context);
     }
 }

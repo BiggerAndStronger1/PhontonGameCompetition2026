@@ -14,36 +14,48 @@ using System;
 
 
 
-    public enum GameEvents
-    {
-        PlayerDie,
+public enum GameEvents
+{
+    PlayerDie,
 
-        /// <summary>
-        /// an event triggered by player using pocketwatch or the clock tower(no param event)
-        /// listened by world related mechanisms
-        /// </summary>
-        SwitchWorld,
+    /// <summary>
+    /// an event triggered by player using pocketwatch or the clock tower(no param event)
+    /// listened by world related mechanisms
+    /// </summary>
+    SwitchWorld,
 
-        ObjectClicked,
-        ObjectHoverEnter,
-        ObjectHoverExit,
-        /// <summary>
-        /// an event triggered by mine gear after explosion (two param event: List<GameObject>, Vector 3)
-        /// </summary>
-        MineGearExploded,
-        /// <summary>
-        /// an event triggered proactively to reload a scene by the GameManager(no param event)
-        /// </summary>
-        SceneReload,
-        /// <summary>
-        /// an event to activate the air trap (no param event)
-        /// </summary>
-        TriggerAirTrap,
-        /// <summary>
-        /// dedicated to be triggered by looping platform don't use this event unless it is related to 
-        /// </summary>
-        PlatformVisible,
-        PlatformInvisible,
+    ObjectClicked,
+    ObjectHoverEnter,
+    ObjectHoverExit,
+    /// <summary>
+    /// an event triggered by mine gear after explosion (two param event: List<GameObject>, Vector 3)
+    /// </summary>
+    MineGearExploded,
+    /// <summary>
+    /// an event triggered proactively to reload a scene by the GameManager(no param event)
+    /// </summary>
+    SceneReload,
+    /// <summary>
+    /// an event triggered proactively to load the next scene by the GameManager(no param event)
+    /// </summary>
+    LoadNextScene,
+    /// <summary>
+    /// an event triggered proactively to load the previous scene by the GameManager(no param event)
+    /// </summary>
+    LoadPreviousScene,
+    /// <summary>
+    /// an event to activate the air trap (no param event)
+    /// </summary>
+    TriggerAirTrap,
+    /// <summary>
+    /// dedicated to be triggered by looping platform to make a looping platform visible 
+    /// </summary>
+    PlatformVisible,
+    /// <summary>
+    /// dedicated to be triggered by looping platform to make a looping platform invisible 
+    /// </summary>
+    PlatformInvisible,
+
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {

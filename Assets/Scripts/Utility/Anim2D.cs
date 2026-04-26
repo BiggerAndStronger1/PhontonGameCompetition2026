@@ -200,7 +200,12 @@ public class Anim2D : MonoBehaviour
         disableTarget.SetActive(false);
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="settingsArray"></param>
+    /// <param name="isEnable">whether animations are enabled to play</param>
+    /// <param name="isDisableAnim">whether the played animation is a disable animation</param>
     private void PlayAnimations(AnimEventSettings[] settingsArray, bool isEnable, bool isDisableAnim)
     {
         if (disableCoroutine != null && !isDisableAnim)
