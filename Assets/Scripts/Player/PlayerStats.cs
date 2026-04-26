@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -17,24 +16,52 @@ public class PlayerStats : MonoBehaviour
         
     }
 
-    public void AddSmallGear(int _amount)
+    public bool AddSmallGear(int _amount)
     {
+        if (smallGearCount + _amount < 0)
+        {
+            Debug.Log("Ð¡³ÝÂÖ²»¹»");
+            return false;
+        }
+
         smallGearCount += _amount;
+        return true;
     }
 
-    public void AddLargeGear(int _amount)
+    public bool AddLargeGear(int _amount)
     {
+        if (largeGearCount + _amount < 0)
+        {
+            Debug.Log("´ó³ÝÂÖ²»¹»");
+            return false;
+        }
+
         largeGearCount += _amount;
+        return true;
     }
 
-    public void AddBoomGear(int _amount)
+    public bool AddBoomGear(int _amount)
     {
+        if (boomGearCount + _amount < 0)
+        {
+            Debug.Log("ÊÖÀ×³ÝÂÖ²»¹»");
+            return false;
+        }
+
         boomGearCount += _amount;
+        return true;
     }
 
-    public void AddMineGear(int quantity)
+    public bool AddMineGear(int quantity)
     {
-        mineGearCount+= quantity;
+        if (mineGearCount + quantity < 0)
+        {
+            Debug.Log("µØÀ×³ÝÂÖ²»¹»");
+            return false;
+        }
+
+        mineGearCount += quantity;
+        return true;
     }
 
     public void TakeDamage(int _damage)

@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(TilemapRenderer))]
 public class HiddenPath : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
 
     private Tilemap ground;
     private TilemapRenderer groundRenderer;
@@ -24,6 +24,7 @@ public class HiddenPath : MonoBehaviour
     private void Start()
     {
         HidePath();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     private void Update()
