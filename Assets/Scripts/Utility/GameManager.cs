@@ -10,6 +10,7 @@ using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public enum SaveKey
@@ -43,11 +44,11 @@ public class GameManager : MonoBehaviour
     /// enable this to view clicked UI names (pending other functions...)
     /// </summary>
     [SerializeField] private bool debug;
-    [SerializeField] private SceneRef main;
+    [SerializeField] private SceneRef mainScene;
     private void OnValidate()
     {
 #if UNITY_EDITOR
-        if (main.scene) main.scenePath = AssetDatabase.GetAssetPath(main.scene);
+        if (mainScene.scene) mainScene.scenePath = AssetDatabase.GetAssetPath(mainScene.scene);
 #endif
     }
 
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
         EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
         EventManagerNoParam.StartListening(GameEvents.LoadNextScene, NextScene);
         EventManagerNoParam.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
-        if (SceneManager.GetActiveScene().path != main.scenePath)
+        if (SceneManager.GetActiveScene().path != mainScene.scenePath)
         {
             Debug.LogWarning("GameManger is first loaded in a scene other than the main scene, this is not allowed in build.");
         }
@@ -91,7 +92,7 @@ public class GameManager : MonoBehaviour
     private void ReloadScene()
     {
         var activeScene = SceneManager.GetActiveScene();
-        if (activeScene.name == main.scene.name)
+        if (activeScene.name == mainScene.scene.name)
         {
             Debug.LogWarning("main scene should not be reloaded");
             return;
