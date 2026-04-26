@@ -45,9 +45,8 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
         //齿轮是否可以装卸
         if (Keyboard.current.digit1Key.wasPressedThisFrame && Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
         {
-            if (!haveGear && player.stats.largeGearCount >= needLargeGearNum && !hasFallen)
+            if (!haveGear && !hasFallen && player.stats.AddLargeGear(-needLargeGearNum))
             {
-                player.stats.AddLargeGear(-needLargeGearNum);
                 haveGear = true;
                 if (useGravity)
                     rb.bodyType = RigidbodyType2D.Dynamic;
@@ -57,8 +56,6 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
                 player.stats.AddLargeGear(needLargeGearNum);
                 haveGear = false;
             }
-            else
-                Debug.Log("大齿轮不够！");
         }
 
         if (hasFallen)
