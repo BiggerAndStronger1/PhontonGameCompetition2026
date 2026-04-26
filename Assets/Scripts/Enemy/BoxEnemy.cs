@@ -43,21 +43,23 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
     private void Update()
     {
         //齿轮是否可以装卸
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)
-            if (Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
+        if (Keyboard.current.digit1Key.wasPressedThisFrame && Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
+        {
+            if (!haveGear && player.stats.largeGearCount >= needLargeGearNum && !hasFallen)
             {
-                if (!haveGear && !hasFallen && player.stats.AddLargeGear(-needLargeGearNum))
-                {
-                    haveGear = true;
-                    if (useGravity)
-                        rb.bodyType = RigidbodyType2D.Dynamic;
-                }
-                else if (haveGear)
-                {
-                    player.stats.AddLargeGear(needLargeGearNum);
-                    haveGear = false;
-                }
+                player.stats.AddLargeGear(-needLargeGearNum);
+                haveGear = true;
+                if (useGravity)
+                    rb.bodyType = RigidbodyType2D.Dynamic;
             }
+            else if (haveGear)
+            {
+                player.stats.AddLargeGear(needLargeGearNum);
+                haveGear = false;
+            }
+            else
+                Debug.Log("大齿轮不够！");
+        }
 
         if (hasFallen)
             return;

@@ -27,8 +27,8 @@ public class MineGearSkill : Skill
         base.Update();
         if (player.playerActions.Mine.WasPressedThisFrame() && player.stats.mineGearCount > 0 && TryUseSkill())
         {
-            if (player.stats.AddMineGear(-1))
-                player.stats.mineGearCount--;
+
+            player.stats.mineGearCount--;
         }
     }
 

@@ -54,9 +54,13 @@ public class BoomGearSkill : Skill
 
     public void CreateBoomGear()
     {
-        if (!player.stats.AddBoomGear(-1))
+        if (player.stats.boomGearCount == 0)
+        {
+            print("ÊÖÀ×³ÝÂÖ²»¹»£¡");
             return;
+        }
 
+        player.stats.boomGearCount--;
         GameObject newBoomGear = Instantiate(boomGearPrefab, player.transform.position, transform.rotation);
         BoomGearSkillController newBoomGearScript = newBoomGear.GetComponent<BoomGearSkillController>();
 

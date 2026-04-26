@@ -43,20 +43,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1622607367
-    locked: 0
   - name: Ground
     uniqueID: 751979429
-    locked: 0
-  - name: Enemy
-    uniqueID: 3764588059
     locked: 0
   - name: Player
     uniqueID: 2891092061
     locked: 0
-  - name: UI
-    uniqueID: 3594849285
+  - name: Background
+    uniqueID: 1622607367
     locked: 0
   m_RenderingLayers:
   - Default

@@ -22,8 +22,8 @@ public class ClockTower : MonoBehaviour
     {
         if (Keyboard.current.digit1Key.wasPressedThisFrame && currentPhase != 2 && playerInRange)
         {
-            if (player.stats.AddLargeGear(-1))
-                currentPhase++;
+            player.stats.AddLargeGear(-1);
+            currentPhase++;
 
             if (currentPhase == 1)
                 player.stats.havePocketWatch = false;
