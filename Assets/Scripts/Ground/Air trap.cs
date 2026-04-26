@@ -23,7 +23,7 @@ public class Airtrap : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.tKey.wasPressedThisFrame) Action();
+        
     }
 
     private void Action()

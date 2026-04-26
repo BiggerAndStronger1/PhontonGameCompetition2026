@@ -1093,6 +1093,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "airtrap",
+                    "type": "Button",
+                    "id": "eb01e5b6-3670-471d-9d76-b71363b06f69",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1115,6 +1124,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9c7b5bb-827d-4a5a-a6d0-6458f5b92d6b",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "airtrap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

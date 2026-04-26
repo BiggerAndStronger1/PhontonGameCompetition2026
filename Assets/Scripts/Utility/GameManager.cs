@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject quickDisable;
 
 
-    InputSystem_Actions inputActions;
-    InputSystem_Actions.DebugActions debugAction;
+    static InputSystem_Actions inputActions;
+    public static InputSystem_Actions.DebugActions debugAction;
 
     public GraphicRaycaster raycaster;
     public EventSystem eventSystem;
@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
         _raycaster ??= raycaster;
         _eventSystem ??= eventSystem;
         inputActions = new InputSystem_Actions();
-        inputActions.Debug.Enable();
         debugAction = inputActions.Debug;
         EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
            
@@ -78,9 +77,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (debug) debugAction.Enable();
+        else debugAction.Disable();
         if (debugAction.Test.WasPressedThisFrame())
         {
-            print("debug");
             if (quickDisable && quickDisable.activeSelf)
             {
                 if (TryGetComponent<Anim2D>(out var anim2D))
@@ -147,9 +147,13 @@ public class GameManager : MonoBehaviour
             currentHover = null;
         }
 
+        if (debug) DebugFunc();
 
+    }
 
-
+    private void DebugFunc()
+    {
+        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNoParam.TriggerEvent(GameEvents.TriggerAirTrap);
     }
 
     /// <summary>
@@ -242,6 +246,6 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        debugAction.Disable();
+        
     }
 }

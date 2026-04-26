@@ -1179,6 +1179,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""airtrap"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb01e5b6-3670-471d-9d76-b71363b06f69"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1201,6 +1210,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Reload Scene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9c7b5bb-827d-4a5a-a6d0-6458f5b92d6b"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""airtrap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1301,6 +1321,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Test = m_Debug.FindAction("Test", throwIfNotFound: true);
         m_Debug_ReloadScene = m_Debug.FindAction("Reload Scene", throwIfNotFound: true);
+        m_Debug_airtrap = m_Debug.FindAction("airtrap", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1808,6 +1829,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IDebugActions> m_DebugActionsCallbackInterfaces = new List<IDebugActions>();
     private readonly InputAction m_Debug_Test;
     private readonly InputAction m_Debug_ReloadScene;
+    private readonly InputAction m_Debug_airtrap;
     /// <summary>
     /// Provides access to input actions defined in input action map "Debug".
     /// </summary>
@@ -1827,6 +1849,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Debug/ReloadScene".
         /// </summary>
         public InputAction @ReloadScene => m_Wrapper.m_Debug_ReloadScene;
+        /// <summary>
+        /// Provides access to the underlying input action "Debug/airtrap".
+        /// </summary>
+        public InputAction @airtrap => m_Wrapper.m_Debug_airtrap;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1859,6 +1885,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ReloadScene.started += instance.OnReloadScene;
             @ReloadScene.performed += instance.OnReloadScene;
             @ReloadScene.canceled += instance.OnReloadScene;
+            @airtrap.started += instance.OnAirtrap;
+            @airtrap.performed += instance.OnAirtrap;
+            @airtrap.canceled += instance.OnAirtrap;
         }
 
         /// <summary>
@@ -1876,6 +1905,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ReloadScene.started -= instance.OnReloadScene;
             @ReloadScene.performed -= instance.OnReloadScene;
             @ReloadScene.canceled -= instance.OnReloadScene;
+            @airtrap.started -= instance.OnAirtrap;
+            @airtrap.performed -= instance.OnAirtrap;
+            @airtrap.canceled -= instance.OnAirtrap;
         }
 
         /// <summary>
@@ -2172,5 +2204,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnReloadScene(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "airtrap" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAirtrap(InputAction.CallbackContext context);
     }
 }
