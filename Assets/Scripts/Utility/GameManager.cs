@@ -61,13 +61,20 @@ public class GameManager : MonoBehaviour
         EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
         EventManagerNoParam.StartListening(GameEvents.LoadNextScene, NextScene);
         EventManagerNoParam.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
-        if (!dontDestroySet)
+        if (SceneManager.GetActiveScene().path != main.scenePath)
         {
-            foreach (var o in dontDestroys)
+            Debug.LogWarning("GameManger is first loaded in a scene other than the main scene, this is not allowed in build.");
+        }
+        else
+        {
+            if (!dontDestroySet)
             {
-                if (o) DontDestroyOnLoad(o);
+                foreach (var o in dontDestroys)
+                {
+                    if (o) DontDestroyOnLoad(o);
+                }
+                dontDestroySet = true;
             }
-            dontDestroySet = true;
         }
     }
 
