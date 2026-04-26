@@ -90764,18 +90764,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.43898845
-      objectReference: {fileID: 0}
-    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.44111794
-      objectReference: {fileID: 0}
-    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.86565
-      objectReference: {fileID: 0}
-    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 53.24
       objectReference: {fileID: 0}
@@ -90814,10 +90802,6 @@ PrefabInstance:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3323584311092393554, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: whatIsFragile.m_Bits
-      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Name
@@ -91425,7 +91409,6 @@ SceneRoots:
   - {fileID: 387934823}
   - {fileID: 1978723504}
   - {fileID: 1882580833}
-  - {fileID: 3056865358519885651}
   - {fileID: 435059130}
   - {fileID: 186304810}
   - {fileID: 1223753577}

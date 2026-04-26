@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 380970081910538061}
   - component: {fileID: 5287684770220616527}
   - component: {fileID: 3741345598969090712}
+  - component: {fileID: -6571524508240532809}
   m_Layer: 0
   m_Name: GhostEnemy
   m_TagString: Untagged
@@ -193,3 +194,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GhostEnemyState
   currentState: 0
+--- !u!114 &-6571524508240532809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891128751102647583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dfdb4a9e43bd3489b836d8b72edb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleportable
+  teleportCooldown: 0.2

@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 5861685350778565986}
   - component: {fileID: 5104975035637183311}
   - component: {fileID: 8373513377332737676}
+  - component: {fileID: -8387932147791968179}
   m_Layer: 8
   m_Name: Sniper
   m_TagString: Untagged
@@ -352,3 +353,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sniper
   executionTime: 3
   eyeTransform: {fileID: 0}
+--- !u!114 &-8387932147791968179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775715883351733515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dfdb4a9e43bd3489b836d8b72edb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleportable
+  teleportCooldown: 0.2

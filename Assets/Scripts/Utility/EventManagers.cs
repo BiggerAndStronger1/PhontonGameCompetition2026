@@ -18,6 +18,12 @@ public enum GameEvents
 {
     PlayerDie,
 
+        /// <summary>
+        /// an event triggered by gameobject entering teleport edge(two param event: Transform, Vector3)
+        /// listened by moveable gameobjects
+        /// </summary>
+        Teleport,
+
     /// <summary>
     /// an event triggered by player using pocketwatch or the clock tower(no param event)
     /// listened by world related mechanisms
@@ -108,7 +114,7 @@ public abstract class EventManagerSingleParam<T> : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener ¡ª Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener ï¿½ï¿½ Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -190,7 +196,7 @@ public abstract class EventManagerNoParam : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener ¡ª Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener ï¿½ï¿½ Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -274,7 +280,7 @@ public abstract class EventManagerTwoParams<T1, T2> : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener ¡ª Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener ï¿½ï¿½ Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
