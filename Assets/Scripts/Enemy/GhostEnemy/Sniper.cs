@@ -30,35 +30,45 @@ public class Sniper : MonoBehaviour, IFragile
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && execution != null)
+        if (other.CompareTag("Player"))
         {
+            StopAllCoroutines();
             
-            StopCoroutine(execution);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
+        
         if (other.CompareTag("Player"))
         {
-            if (execution != null) StopCoroutine(execution);
+            print("stay");
+            bool foundPlayer = false;
             foreach (var point in GetTargetRefV2(other))
             {
                 RaycastHit2D hit = Physics2D.Raycast(eyeTransform.position, (point - (Vector2)eyeTransform.position).normalized, int.MaxValue, ~LayerMask.GetMask("Ignore Raycast", "Enemy"));
-                Debug.DrawRay(eyeTransform.position, (hit.transform.position - eyeTransform.position), Color.red, 1);
+                Assert.IsFalse(LayerMask.GetMask("Enemy") == hit.transform.gameObject.layer);
+                Assert.IsFalse(LayerMask.GetMask("Ignore Raycast") == hit.transform.gameObject.layer);
                 if (hit.transform.CompareTag("Player"))
                 {
-                    execution = StartCoroutine(Execution(other.GetComponent<Player>()));
+                    Debug.DrawRay(eyeTransform.position, (hit.transform.position - eyeTransform.position), Color.red, 1);
+                    StartCoroutine(Execution(other.GetComponent<Player>()));
+                    foundPlayer = true;
                     break;
                 }
             }
 
+            if (!foundPlayer)
+            {
+               StopAllCoroutines();
+            }
         }
     }
 
     private IEnumerator Execution(Player player)
     {
         yield return new WaitForSeconds(executionTime);
+        StopAllCoroutines();
         player.PlayerDie();
     }
 
