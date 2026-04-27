@@ -32,7 +32,7 @@ public class CamSwitch : MonoBehaviour
         {
             cam.Priority = 1;
             cam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
-            cam.enabled = true;
+            
         }
         
 
@@ -43,8 +43,7 @@ public class CamSwitch : MonoBehaviour
         if (other.GetComponent<Player>() != null && cam)
         {
             cam.Priority = 0;
-            cam.enabled = false;
-            cam.transform.position = Vector2.zero;
+            
         }
            
     }
