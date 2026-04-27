@@ -22,6 +22,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     [SerializeField] private bool isInClockTower = false;
 
     public bool isDead = false;
+    private static Transform checkpoint;
 
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     public SkillManager skill { get; private set; }
     private InputSystem_Actions action;
     public InputSystem_Actions.PlayerActions playerActions { get; private set; }
+    [SerializeField] private Vector3 _checkpoint;
     #region Component
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     protected void Update()
     {
+        _checkpoint = checkpoint ? checkpoint.position : Vector3.zero;
         if (isDead)
         {
             SetVelocity(0, 0);
@@ -98,8 +101,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     private void PlayerReborn()
     {
-        transform.position = Vector3.zero;
-        Camera.main.transform.position = new Vector3(0, 0, -10);
+        transform.position = checkpoint != null ? checkpoint.position : Vector3.zero;
         print("New Game Begin!");
         sr.color = Color.white;
         stats.smallGearCount = 0;
@@ -167,6 +169,12 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         rb.linearVelocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("checkpoint")) checkpoint = other.transform;
+    }
+
     #endregion
 
 }

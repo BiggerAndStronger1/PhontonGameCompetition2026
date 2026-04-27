@@ -12,7 +12,7 @@ public class MineGearController : MonoBehaviour
     private Rigidbody2D rb;
 
     private int receivedExplosionForce = 1;
-    private LayerMask whatIsFragile;
+    [SerializeField]private LayerMask whatIsFragile;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,12 +29,11 @@ public class MineGearController : MonoBehaviour
         
     }
 
-    public void Detonate(int explosionRadius, int duration, int receivedExplosionForce, LayerMask whatIsFragile)
+    public void Detonate(int explosionRadius, int duration, int receivedExplosionForce)
     {
         this.explosionRadius = explosionRadius;
         this.duration = duration;
         this.receivedExplosionForce = receivedExplosionForce;
-        this.whatIsFragile = whatIsFragile;
         StartCoroutine(Explode());
     }
 
@@ -45,10 +44,10 @@ public class MineGearController : MonoBehaviour
         Collider2D[] explosionHits = Physics2D.OverlapCircleAll(rb.transform.position, explosionRadius);
         foreach (var hit in hits)
         {
-            IFragile fragileFround = hit.GetComponentInParent<IFragile>();
-            if (fragileFround != null)
+            IFragile fragile = hit.GetComponentInParent<IFragile>();
+            if (fragile != null)
             {
-                fragileFround.DestroyFragileGround();
+                fragile.DestroyFragile();
             }
         }
         EventManagerTwoParams<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded, explosionHits.Select(e => e.gameObject).ToList(), transform.position);

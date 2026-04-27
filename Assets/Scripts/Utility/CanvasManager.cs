@@ -1,12 +1,13 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Image = UnityEngine.UI.Image;
 
 public class CanvasManager : MonoBehaviour
 {
     private InputSystem_Actions actions;
     private InputSystem_Actions.UIActions actionsUI;
     [SerializeField]private GameObject settingsMenu;
+    [SerializeField] private Image fadeImage;
 
     private void Awake()
     {
@@ -26,6 +27,15 @@ public class CanvasManager : MonoBehaviour
         {
             child.ForcedStart();
         }
+
+        fadeImage.GetComponent<Anim2D>().OnFadeComplete += (() => fadeImage.gameObject.SetActive(false));
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            fadeImage.GetComponent<Anim2D>().CancelFade();
+            fadeImage.gameObject.SetActive(false);
+            fadeImage.GetComponent<Image>().color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+            fadeImage.gameObject.SetActive(true);
+        };
     }
 
     // Update is called once per frame
@@ -39,9 +49,13 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
         actionsUI.Disable();
+    }
+
+    private void OnApplicationQuit()
+    {
         foreach (var child in GetComponentsInChildren<ICanvasManager>(true))
         {
             child.ForcedOnApplicationQuit();

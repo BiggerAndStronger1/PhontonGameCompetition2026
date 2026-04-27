@@ -1,7 +1,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -25,31 +27,27 @@ public class SceneRef
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Debug section")]
-    [SerializeField] GameObject quickDisable;
-
-
-    InputSystem_Actions inputActions;
-    InputSystem_Actions.DebugActions debugAction;
-
-    public GraphicRaycaster raycaster;
-    public EventSystem eventSystem;
     private static GraphicRaycaster _raycaster;
     private static EventSystem _eventSystem;
+    public GraphicRaycaster raycaster;
+    public EventSystem eventSystem;
+    [SerializeField] private GameObject[] dontDestroys;
+    [Header("Debug section")]
+    [SerializeField] GameObject quickDisable;
+    static InputSystem_Actions inputActions;
+    public static InputSystem_Actions.DebugActions debugAction;
+
+    private static bool dontDestroySet;
     private GameObject currentHover;
     /// <summary>
     /// enable this to view clicked UI names (pending other functions...)
     /// </summary>
     [SerializeField] private bool debug;
-    [SerializeField] private SceneRef[] scenes;
+    [SerializeField] private SceneRef main;
     private void OnValidate()
     {
 #if UNITY_EDITOR
-        foreach (var s in scenes)
-        {
-            if (s.scene != null)
-                s.scenePath = AssetDatabase.GetAssetPath(s.scene);
-        }
+        if (main.scene) main.scenePath = AssetDatabase.GetAssetPath(main.scene);
 #endif
     }
 
@@ -59,15 +57,40 @@ public class GameManager : MonoBehaviour
         _raycaster ??= raycaster;
         _eventSystem ??= eventSystem;
         inputActions = new InputSystem_Actions();
-        inputActions.Debug.Enable();
         debugAction = inputActions.Debug;
         EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
-           
+        EventManagerNoParam.StartListening(GameEvents.LoadNextScene, NextScene);
+        EventManagerNoParam.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
+        if (!dontDestroySet)
+        {
+            foreach (var o in dontDestroys)
+            {
+                if (o) DontDestroyOnLoad(o);
+            }
+            dontDestroySet = true;
+        }
+    }
+
+    
+
+    private void OnDestroy()
+    {
+        debugAction.Disable();
+        EventManagerNoParam.StopListening(GameEvents.SceneReload, ReloadScene);
+        EventManagerNoParam.StopListening(GameEvents.LoadNextScene, NextScene);
+        EventManagerNoParam.StopListening(GameEvents.LoadPreviousScene, PreviousScene);
     }
 
     private void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        var activeScene = SceneManager.GetActiveScene();
+        if (activeScene.name == main.scene.name)
+        {
+            Debug.LogWarning("main scene should not be reloaded");
+            return;
+        }
+
+        SceneManager.LoadScene(activeScene.buildIndex);
     }
 
     private void Start()
@@ -78,9 +101,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (debug) debugAction.Enable();
+        else debugAction.Disable();
+
+        #region click detection
+
         if (debugAction.Test.WasPressedThisFrame())
         {
-            print("debug");
             if (quickDisable && quickDisable.activeSelf)
             {
                 if (TryGetComponent<Anim2D>(out var anim2D))
@@ -98,11 +125,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (debugAction.ReloadScene.WasPerformedThisFrame())
-        {
-            ReloadScene();
-        }
-
+        
         // call an event on the UI object that has been clicked
         GameObject ui = GetUIObjectUnderCursor();
         GameObject twoD = Get2DObjectUnderCursor(debug);
@@ -146,10 +169,43 @@ public class GameManager : MonoBehaviour
             EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
             currentHover = null;
         }
+        #endregion
 
+        if (debug) DebugFunc();
 
+    }
 
+    private void DebugFunc()
+    {
+        if (debugAction.Test.WasPressedThisFrame())
+        {
+            if (quickDisable && quickDisable.activeSelf)
+            {
+                if (TryGetComponent<Anim2D>(out var anim2D))
+                {
+                    anim2D.AnimatedDisable();
+                }
+                else
+                {
+                    quickDisable.SetActive(false);
+                }
+            }
+            else if (quickDisable && !quickDisable.activeSelf)
+            {
+                quickDisable.SetActive(true);
+            }
+        }
 
+        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNoParam.TriggerEvent(GameEvents.TriggerAirTrap);
+
+        if (debugAction.ReloadScene.WasPerformedThisFrame())
+        {
+            ReloadScene();
+        }
+
+        if (debugAction.nextScene.WasPressedThisFrame()) NextScene();
+        else if (debugAction.previousScene.WasPressedThisFrame()) PreviousScene();
+        
     }
 
     /// <summary>
@@ -234,14 +290,41 @@ public class GameManager : MonoBehaviour
         return worldPos;
     }
 
-    private void OnDestroy()
+    private void NextScene()
     {
-        debugAction.Disable();
+
+        int index = SceneManager.GetActiveScene().buildIndex;
+        index++;
+
+        if (index <= 0 || index >= SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.LogWarning("there is no next scene to load, you need to load the previous one");
+            return;
+        }
+
+        SceneManager.LoadScene(index);
+
     }
+
+    private void PreviousScene()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex;
+        index--;
+
+        if (index <= 0 || index >= SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.LogWarning("there is no previous scene to load, you need to load the previous one");
+            return;
+        }
+
+        SceneManager.LoadScene(index);
+    }
+
+    
 
 
     private void OnApplicationQuit()
     {
-        debugAction.Disable();
+        
     }
 }

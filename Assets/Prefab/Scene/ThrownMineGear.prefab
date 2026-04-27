@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 868224160025239436}
   - component: {fileID: 196532757825745546}
   - component: {fileID: 7245723857597728905}
+  - component: {fileID: 378411478848407451}
   m_Layer: 0
   m_Name: ThrownMineGear
   m_TagString: Untagged
@@ -80,9 +81,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 751979429
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.8962264, g: 0.7262525, b: 0.114142045, a: 1}
@@ -152,7 +153,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -169,3 +170,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb61ccf694d340744bd9e21075d555ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MineGearController
+  whatIsFragile:
+    serializedVersion: 2
+    m_Bits: 384
+--- !u!114 &378411478848407451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8890054453055000372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dfdb4a9e43bd3489b836d8b72edb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleportable
+  teleportCooldown: 0.2

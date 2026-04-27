@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FragileButton : Button, IFragile
 {
-    public void DestroyFragileGround()
+    public void DestroyFragile()
     {
         if (isPressed)
             return;

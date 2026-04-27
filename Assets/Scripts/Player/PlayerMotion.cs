@@ -145,8 +145,14 @@ public class PlayerMotion : MonoBehaviour
 
         player.SetVelocity(0.3f * xInput * player.moveSpeed, 3 * yInput);
 
-        if (!player.canClimbLadder || Keyboard.current.spaceKey.isPressed)
+        if (!player.canClimbLadder)
             ChangeState(PlayerMotionType.Air);
+
+        if (Keyboard.current.spaceKey.isPressed)
+        {
+            player.SetVelocity(0, player.jumpForce);
+            ChangeState(PlayerMotionType.Air);
+        }
     }
 
     private void AimEnter()

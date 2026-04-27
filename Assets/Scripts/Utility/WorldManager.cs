@@ -12,7 +12,6 @@ public class WorldManager : MonoBehaviour
 {
     public static WorldManager instance;
     public WorldType currentWorld;
-    private Player player;
 
     private void Awake()
     {
@@ -26,7 +25,6 @@ public class WorldManager : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
         currentWorld = WorldType.Peace;
         print("œ÷‘⁄ «£∫" + currentWorld);
     }

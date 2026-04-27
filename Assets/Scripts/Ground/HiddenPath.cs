@@ -1,25 +1,24 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[RequireComponent(typeof(Tilemap))]
+[RequireComponent(typeof(TilemapRenderer))]
 public class HiddenPath : MonoBehaviour
 {
     public Transform player;
 
-    public Tilemap ground;
-    private Tilemap path;
+    private Tilemap ground;
     private TilemapRenderer groundRenderer;
-    private TilemapRenderer pathRenderer;
 
-    public float detectRange = 3f;
+    public float playerDetectRadius = 3f;
     public Transform distanceCheck;
 
     private bool playerInside = false;
 
     private void Awake()
     {
-        path = GetComponent<Tilemap>();
-        groundRenderer = ground.GetComponent<TilemapRenderer>();
-        pathRenderer = path.GetComponent<TilemapRenderer>();
+        ground = GetComponent<Tilemap>();
+        groundRenderer = GetComponent<TilemapRenderer>();
     }
 
     private void Start()
@@ -31,7 +30,7 @@ public class HiddenPath : MonoBehaviour
     {
         float distance = Vector2.Distance(player.position, distanceCheck.position);
 
-        if (playerInside || distance <= detectRange)
+        if (playerInside || distance <= playerDetectRadius)
             ShowPath();
         else
             HidePath();
@@ -51,13 +50,19 @@ public class HiddenPath : MonoBehaviour
 
     private void ShowPath()
     {
-        pathRenderer.enabled = true;
+        ground.enabled = false;
         groundRenderer.enabled = false;
     }
 
     private void HidePath()
     {
-        pathRenderer.enabled = false;
+        ground.enabled = true;
         groundRenderer.enabled = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(distanceCheck.position, playerDetectRadius);
     }
 }
