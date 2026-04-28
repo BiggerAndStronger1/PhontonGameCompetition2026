@@ -733,6 +733,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""type"": ""Button"",
+                    ""id"": ""d4565e50-3fe0-41a1-8b52-60d27cb9a5d0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""right"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a7a23e6-8e9c-482b-ac56-d371c7dec16a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1175,6 +1193,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Pocket watch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c342ecfe-3cee-4046-b5af-664b8693ba9c"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd5df7b1-27df-4060-af9b-b9c1b8330be3"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1232,7 +1272,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d81b73ad-ed1d-4a4b-befd-ba35e26c449f"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -1265,7 +1305,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""394bbfea-c323-4ee4-8cfe-994ec60a2698"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<Keyboard>/pageDown"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1276,7 +1316,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""363122f2-9698-4d90-8407-6da4f62f63b7"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<Keyboard>/pageUp"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1378,6 +1418,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_Settings = m_UI.FindAction("Settings", throwIfNotFound: true);
         m_UI_Pocketwatch = m_UI.FindAction("Pocket watch", throwIfNotFound: true);
+        m_UI_left = m_UI.FindAction("left", throwIfNotFound: true);
+        m_UI_right = m_UI.FindAction("right", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Test = m_Debug.FindAction("Test", throwIfNotFound: true);
@@ -1696,6 +1738,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_Settings;
     private readonly InputAction m_UI_Pocketwatch;
+    private readonly InputAction m_UI_left;
+    private readonly InputAction m_UI_right;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -1755,6 +1799,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/Pocketwatch".
         /// </summary>
         public InputAction @Pocketwatch => m_Wrapper.m_UI_Pocketwatch;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/left".
+        /// </summary>
+        public InputAction @left => m_Wrapper.m_UI_left;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/right".
+        /// </summary>
+        public InputAction @right => m_Wrapper.m_UI_right;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1817,6 +1869,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Pocketwatch.started += instance.OnPocketwatch;
             @Pocketwatch.performed += instance.OnPocketwatch;
             @Pocketwatch.canceled += instance.OnPocketwatch;
+            @left.started += instance.OnLeft;
+            @left.performed += instance.OnLeft;
+            @left.canceled += instance.OnLeft;
+            @right.started += instance.OnRight;
+            @right.performed += instance.OnRight;
+            @right.canceled += instance.OnRight;
         }
 
         /// <summary>
@@ -1864,6 +1922,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Pocketwatch.started -= instance.OnPocketwatch;
             @Pocketwatch.performed -= instance.OnPocketwatch;
             @Pocketwatch.canceled -= instance.OnPocketwatch;
+            @left.started -= instance.OnLeft;
+            @left.performed -= instance.OnLeft;
+            @left.canceled -= instance.OnLeft;
+            @right.started -= instance.OnRight;
+            @right.performed -= instance.OnRight;
+            @right.canceled -= instance.OnRight;
         }
 
         /// <summary>
@@ -2285,6 +2349,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPocketwatch(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "left" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeft(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "right" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRight(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Debug" which allows adding and removing callbacks.

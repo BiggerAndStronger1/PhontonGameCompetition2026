@@ -75,8 +75,12 @@ public class GameManager : MonoBehaviour
     {
         _raycaster ??= raycaster;
         _eventSystem ??= eventSystem;
-        inputActions = new InputSystem_Actions();
-        debugAction = inputActions.Debug;
+        if (inputActions == null)
+        {
+            inputActions = new InputSystem_Actions();
+            debugAction = inputActions.Debug;
+        }
+        
         EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
         EventManagerNoParam.StartListening(GameEvents.LoadNextScene, NextScene);
         EventManagerNoParam.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
@@ -88,14 +92,7 @@ public class GameManager : MonoBehaviour
             }
             dontDestroySet = true;
         }
-
-
-
-
-
     }
-
-
 
     public static void CheckKeyboardConflicts(InputActionAsset inputActions)
     {

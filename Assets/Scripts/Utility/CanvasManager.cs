@@ -1,19 +1,24 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using Image = UnityEngine.UI.Image;
 
 public class CanvasManager : MonoBehaviour
 {
-    private InputSystem_Actions actions;
-    private InputSystem_Actions.UIActions actionsUI;
+    private static InputSystem_Actions actions;
+    public static InputSystem_Actions.UIActions actionsUI;
     [SerializeField]private GameObject settingsMenu;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private Image fadeImage;
 
     private void Awake()
     {
-        actions = new();
-        actionsUI = actions.UI;
+        if (actions == null)
+        {
+            actions = new();
+            actionsUI = actions.UI;
+        }
+        
         actionsUI.Enable();
         foreach (var child in GetComponentsInChildren<ICanvasManager>(true))
         {

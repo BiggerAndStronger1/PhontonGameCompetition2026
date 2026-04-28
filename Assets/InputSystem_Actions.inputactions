@@ -647,6 +647,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "left",
+                    "type": "Button",
+                    "id": "d4565e50-3fe0-41a1-8b52-60d27cb9a5d0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "right",
+                    "type": "Button",
+                    "id": "7a7a23e6-8e9c-482b-ac56-d371c7dec16a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1089,6 +1107,28 @@
                     "action": "Pocket watch",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c342ecfe-3cee-4046-b5af-664b8693ba9c",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd5df7b1-27df-4060-af9b-b9c1b8330be3",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1146,7 +1186,7 @@
                 {
                     "name": "",
                     "id": "d81b73ad-ed1d-4a4b-befd-ba35e26c449f",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1179,7 +1219,7 @@
                 {
                     "name": "",
                     "id": "394bbfea-c323-4ee4-8cfe-994ec60a2698",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/pageDown",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1190,7 +1230,7 @@
                 {
                     "name": "",
                     "id": "363122f2-9698-4d90-8407-6da4f62f63b7",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/pageUp",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
