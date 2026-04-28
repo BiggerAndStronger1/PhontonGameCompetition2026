@@ -106,9 +106,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UseGear",
+                    "name": "UseSmallGear",
                     "type": "Button",
                     "id": "fd19932f-142d-4850-9398-993438a947f8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseLargeGear",
+                    "type": "Button",
+                    "id": "25cc281c-bd6c-4034-b70c-ed575324629d",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -530,7 +539,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "UseGear",
+                    "action": "UseSmallGear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0489f918-a15a-43c4-a931-e9859bde4e66",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "UseLargeGear",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

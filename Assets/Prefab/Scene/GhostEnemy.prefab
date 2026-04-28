@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GhostEnemy
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1032
   moveSpeed: 2
   player: {fileID: 0}
   canHatrePlayer: 1

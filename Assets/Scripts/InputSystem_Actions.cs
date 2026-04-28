@@ -192,9 +192,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseGear"",
+                    ""name"": ""UseSmallGear"",
                     ""type"": ""Button"",
                     ""id"": ""fd19932f-142d-4850-9398-993438a947f8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseLargeGear"",
+                    ""type"": ""Button"",
+                    ""id"": ""25cc281c-bd6c-4034-b70c-ed575324629d"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -616,7 +625,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""UseGear"",
+                    ""action"": ""UseSmallGear"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0489f918-a15a-43c4-a931-e9859bde4e66"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""UseLargeGear"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1343,7 +1363,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Mine = m_Player.FindAction("Mine", throwIfNotFound: true);
         m_Player_SwitchWorld = m_Player.FindAction("SwitchWorld", throwIfNotFound: true);
-        m_Player_UseGear = m_Player.FindAction("UseGear", throwIfNotFound: true);
+        m_Player_UseSmallGear = m_Player.FindAction("UseSmallGear", throwIfNotFound: true);
+        m_Player_UseLargeGear = m_Player.FindAction("UseLargeGear", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1457,7 +1478,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Mine;
     private readonly InputAction m_Player_SwitchWorld;
-    private readonly InputAction m_Player_UseGear;
+    private readonly InputAction m_Player_UseSmallGear;
+    private readonly InputAction m_Player_UseLargeGear;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1514,9 +1536,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @SwitchWorld => m_Wrapper.m_Player_SwitchWorld;
         /// <summary>
-        /// Provides access to the underlying input action "Player/UseGear".
+        /// Provides access to the underlying input action "Player/UseSmallGear".
         /// </summary>
-        public InputAction @UseGear => m_Wrapper.m_Player_UseGear;
+        public InputAction @UseSmallGear => m_Wrapper.m_Player_UseSmallGear;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/UseLargeGear".
+        /// </summary>
+        public InputAction @UseLargeGear => m_Wrapper.m_Player_UseLargeGear;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1576,9 +1602,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SwitchWorld.started += instance.OnSwitchWorld;
             @SwitchWorld.performed += instance.OnSwitchWorld;
             @SwitchWorld.canceled += instance.OnSwitchWorld;
-            @UseGear.started += instance.OnUseGear;
-            @UseGear.performed += instance.OnUseGear;
-            @UseGear.canceled += instance.OnUseGear;
+            @UseSmallGear.started += instance.OnUseSmallGear;
+            @UseSmallGear.performed += instance.OnUseSmallGear;
+            @UseSmallGear.canceled += instance.OnUseSmallGear;
+            @UseLargeGear.started += instance.OnUseLargeGear;
+            @UseLargeGear.performed += instance.OnUseLargeGear;
+            @UseLargeGear.canceled += instance.OnUseLargeGear;
         }
 
         /// <summary>
@@ -1623,9 +1652,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SwitchWorld.started -= instance.OnSwitchWorld;
             @SwitchWorld.performed -= instance.OnSwitchWorld;
             @SwitchWorld.canceled -= instance.OnSwitchWorld;
-            @UseGear.started -= instance.OnUseGear;
-            @UseGear.performed -= instance.OnUseGear;
-            @UseGear.canceled -= instance.OnUseGear;
+            @UseSmallGear.started -= instance.OnUseSmallGear;
+            @UseSmallGear.performed -= instance.OnUseSmallGear;
+            @UseSmallGear.canceled -= instance.OnUseSmallGear;
+            @UseLargeGear.started -= instance.OnUseLargeGear;
+            @UseLargeGear.performed -= instance.OnUseLargeGear;
+            @UseLargeGear.canceled -= instance.OnUseLargeGear;
         }
 
         /// <summary>
@@ -2155,12 +2187,19 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSwitchWorld(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "UseGear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "UseSmallGear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnUseGear(InputAction.CallbackContext context);
+        void OnUseSmallGear(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UseLargeGear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUseLargeGear(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

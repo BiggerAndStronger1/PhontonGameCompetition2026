@@ -136,11 +136,11 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     private void OnDrawGizmos()
     {
-        Collider2D col = GetComponent<Collider2D>();
-        if (col == null) return;
+        Collider2D cd = GetComponent<Collider2D>();
+        if (cd == null) return;
 
-        Vector2 boxCenter = new(col.bounds.center.x, col.bounds.min.y - 0.05f);
-        Vector2 boxSize = new(col.bounds.size.x * 0.9f, 0.1f);
+        Vector2 boxCenter = new(cd.bounds.center.x, cd.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(cd.bounds.size.x * 0.9f, 0.1f);
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(boxCenter, boxSize);

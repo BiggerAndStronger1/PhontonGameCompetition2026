@@ -66,7 +66,7 @@ MonoBehaviour:
   spaceBetweenDots: 0.07
   dotsPrefab: {fileID: 543445698518463596, guid: 2682c186659734441994111ece06548c, type: 3}
   dotParent: {fileID: 718799144901677972}
-  explosionRadius: 3
+  explosionRadius: 1.5
 --- !u!114 &3323584311092393554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MineGearSkill
   cooldown: 0
   mineGearPrefab: {fileID: 8890054453055000372, guid: acd634de79fe9c744984a2293a83720b, type: 3}
-  explosionRadius: 2
+  explosionRadius: 11
   duration: 3
   receivedExplosionForce: 5
 --- !u!1 &8259676102185292296
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1403875235
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 2
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
@@ -282,13 +282,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
-  jumpForce: 10
+  jumpForce: 8
   canClimbLadder: 0
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1032
   isInClockTower: 0
   isDead: 0
+  _checkpoint: {x: 0, y: 0, z: 0}
 --- !u!114 &7536618188227937532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   smallGearCount: 0
-  largeGearCount: 0
+  largeGearCount: 5
   boomGearCount: 5
   mineGearCount: 5
   maxHp: 100

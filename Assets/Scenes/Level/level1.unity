@@ -3287,7 +3287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2437065310051770276, guid: d68e8643aa9a0c447a8a6f2c12f3b17b, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7282891576962734050, guid: d68e8643aa9a0c447a8a6f2c12f3b17b, type: 3}
       propertyPath: m_LocalScale.x
@@ -23095,7 +23095,7 @@ GameObject:
   - component: {fileID: 1203839694}
   - component: {fileID: 1203839693}
   - component: {fileID: 1203839692}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23255,7 +23255,7 @@ Transform:
   m_GameObject: {fileID: 1203839691}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7044108, w: 0.7097926}
-  m_LocalPosition: {x: 72.248, y: 20.752, z: 0}
+  m_LocalPosition: {x: 72.28, y: 20.74, z: 0}
   m_LocalScale: {x: 0.5005275, y: 1.4978286, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49411,26 +49411,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 144, y: 43, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 145, y: 43, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 146, y: 43, z: 0}
     second:
       serializedVersion: 2
@@ -53995,19 +53975,19 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 3014
+  - m_RefCount: 3012
     m_Data: {fileID: 11400000, guid: 9e0af21be18de544ea1ac8cf49f66f96, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 3014
+  - m_RefCount: 3012
     m_Data: {fileID: -7889216112988592123, guid: efc9ab54c9d1deb46b5e1cbdfcc5629c, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 3014
+  - m_RefCount: 3012
     m_Data:
       e00: 1
       e01: 0
@@ -54026,7 +54006,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3014
+  - m_RefCount: 3012
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -89070,6 +89050,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1442319952162667303, guid: 4050e41cb9d6c9d4ea400fa3dfcb124c, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442319952162667303, guid: 4050e41cb9d6c9d4ea400fa3dfcb124c, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1691305450133499770, guid: 4050e41cb9d6c9d4ea400fa3dfcb124c, type: 3}
       propertyPath: m_Name
       value: BoxEnemy (2)
@@ -89312,11 +89300,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.52
+      value: 67.18
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.58
+      value: 23.59
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -89349,22 +89337,6 @@ PrefabInstance:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2565679629281221882, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: jumpForce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2565679629281221882, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2974197164256504193, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: explosionRadius
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3323584311092393554, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: explosionRadius
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Name
@@ -89615,18 +89587,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DownToUpPlatform
       objectReference: {fileID: 0}
-    - target: {fileID: 2437065310051770276, guid: d68e8643aa9a0c447a8a6f2c12f3b17b, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7282891576962734050, guid: d68e8643aa9a0c447a8a6f2c12f3b17b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.507768
-      objectReference: {fileID: 0}
-    - target: {fileID: 7282891576962734050, guid: d68e8643aa9a0c447a8a6f2c12f3b17b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.24610002
-      objectReference: {fileID: 0}
     - target: {fileID: 7282891576962734050, guid: d68e8643aa9a0c447a8a6f2c12f3b17b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 48.75
@@ -89783,7 +89743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4465059149797095306}
   - component: {fileID: 5905761300146760572}
   - component: {fileID: -1292115275617250362}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: BoxEnemyBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -157,11 +157,15 @@ MonoBehaviour:
   movingSpeed: 1
   canPause: 0
   pauseDuration: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
   hasFallen: 0
+  isFalling: 0
   useGravity: 0
   needLargeGearNum: 0
-  playerDetectorRadius: 2
   haveGear: 0
+  playerDetectorRadius: 2
 --- !u!50 &-1292115275617250362
 Rigidbody2D:
   serializedVersion: 5

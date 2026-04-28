@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
 public class Spike : MonoBehaviour, IFragile
 {
     private bool isCleared = false;
@@ -26,7 +28,8 @@ public class Spike : MonoBehaviour, IFragile
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isCleared) return;
+        if (isCleared) 
+            return;
 
         IKillBySpike target = collision.transform.GetComponent<IKillBySpike>();
         if (target != null)

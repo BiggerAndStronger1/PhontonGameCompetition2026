@@ -1,6 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+enum BoxState
+{
+    Idle,
+    Moving,
+    Falling,
+    Locked
+}
+
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public class BoxEnemy : MonoBehaviour, ICanAddStress
 {
     [Header("Move Info")]
@@ -9,93 +19,168 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
     public float movingSpeed = 1f;
     [SerializeField] private bool canPause;
     [SerializeField] private float pauseDuration;
+    [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private bool hasFallen = false;
+    [SerializeField] private bool isFalling = false;
 
     [Header("Gravity Info")]
     [SerializeField] private bool useGravity = false;
 
     [Header("Gear Info")]
     [SerializeField] private int needLargeGearNum;
-    [SerializeField] private float playerDetectorRadius;
     [SerializeField] private bool haveGear = false;
+    [SerializeField] private float playerDetectorRadius;
 
     private float pauseTimer;
     private bool isPaused;
+    private BoxState state;
 
     private Player player;
     private Rigidbody2D rb;
+    private Collider2D cd;
     private Vector3 target;
+
+    private bool moveOnX;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        cd = GetComponent<Collider2D>();
     }
 
     private void Start()
     {
-        Reset();
         EventManagerNoParam.StartListening(GameEvents.PlayerDie, Reset);
-
-        rb.gravityScale = useGravity ? 1 : 0;
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        moveOnX = (pointA.position.x != pointB.position.x);
+        Reset();
     }
 
     private void Update()
     {
-        //齿轮是否可以装卸
-        if (Keyboard.current.digit1Key.wasPressedThisFrame && Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
-        {
-            if (!haveGear && !hasFallen && player.stats.AddLargeGear(-needLargeGearNum))
-            {
-                haveGear = true;
-                if (useGravity)
-                    rb.bodyType = RigidbodyType2D.Dynamic;
-            }
-            else if (haveGear)
-            {
-                player.stats.AddLargeGear(needLargeGearNum);
-                haveGear = false;
-            }
-        }
+        if (player.playerActions.UseLargeGear.WasPressedThisFrame())
+            GearCheck();
 
-        if (hasFallen)
+        switch (state)
+        {
+            case BoxState.Idle:
+                HandleIdle();
+                break;
+
+            case BoxState.Moving:
+                HandleMove();
+                break;
+
+            case BoxState.Falling:
+                HandleFall();
+                break;
+
+            case BoxState.Locked:
+                break;
+        }
+    }
+
+    private void GearCheck()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) > playerDetectorRadius)
             return;
 
-        if (Mathf.Abs(rb.linearVelocityY) > 2)
-            hasFallen = true;
-
-        if (haveGear)//有齿轮就移动
+        if (!haveGear && player.stats.AddLargeGear(-needLargeGearNum))
         {
-            if (isPaused)
+            haveGear = true;
+            state = BoxState.Moving;
+        }
+        else if (haveGear)
+        {
+            player.stats.AddLargeGear(needLargeGearNum);
+            haveGear = false;
+            state = BoxState.Idle;
+        }
+    }
+
+    private void HandleIdle()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.position = pointA.position;
+    }
+
+    private void HandleMove()
+    { 
+        if (useGravity && !IsGroundDetected())
+        {
+            StartFall();
+            return;
+        }
+
+        if (isPaused)
+        {
+            pauseTimer -= Time.deltaTime;
+            if (pauseTimer <= 0)
+                isPaused = false;
+            return;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, target, movingSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, target) < 0.05f)
+        {
+            target = (target == pointA.position) ? pointB.position : pointA.position;
+
+            if (canPause)
             {
-                pauseTimer -= Time.deltaTime;
-                if (pauseTimer <= 0)
-                    isPaused = false;
-                return;
+                isPaused = true;
+                pauseTimer = pauseDuration;
             }
+        }
+    }
 
-            transform.position = Vector3.MoveTowards(transform.position, target, movingSpeed * Time.deltaTime);
+    private void HandleFall()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.constraints = RigidbodyConstraints2D.None;
+    }
 
-            if (Vector3.Distance(transform.position, target) < 0.05f)
-            {
-                target = target == pointA.position ? pointB.position : pointA.position;
+    private void StartFall()
+    {
+        if (state == BoxState.Falling) 
+            return;
+        Debug.Log("start falling");
+        state = BoxState.Falling;
+        isFalling = true;
 
-                if (canPause)
-                {
-                    isPaused = true;
-                    pauseTimer = pauseDuration;
-                }
-            }
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.gravityScale = 1;
+        rb.constraints = RigidbodyConstraints2D.None;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (isFalling && IsGroundDetected())
+        {
+            Debug.Log("box fall on ground");
+            hasFallen = true;
+            isFalling = false;
+            state = BoxState.Locked;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 
     private void Reset()
     {
-        target = pointB.position;
+        state = BoxState.Idle;
+
         haveGear = false;
-        transform.position = pointA.position;
-        rb.bodyType = RigidbodyType2D.Kinematic;
         hasFallen = false;
+        isFalling = false;
+
+        transform.position = pointA.position;
+        target = pointB.position;
+
+        rb.bodyType = RigidbodyType2D.Kinematic;
+
+        rb.constraints = moveOnX
+            ? RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation
+            : RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void AddStress()
@@ -103,10 +188,25 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
 
     }
 
+    private bool IsGroundDetected()
+    {
+        Vector2 boxCenter = new(cd.bounds.center.x, cd.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(cd.bounds.size.x * 1.1f, 0.1f);
+
+        return Physics2D.OverlapBox(boxCenter, boxSize, 0, whatIsGround);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, playerDetectorRadius);
         Gizmos.DrawLine(pointA.position, pointB.position);
+
+        cd = GetComponent<Collider2D>();
+        Vector2 boxCenter = new(cd.bounds.center.x, cd.bounds.min.y - 0.05f);
+        Vector2 boxSize = new(cd.bounds.size.x * 1.1f, 0.1f);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(boxCenter, boxSize);
     }
 }
