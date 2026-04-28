@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class SmallGearScript : Props
 {
+    private void Awake()
+    {
+        propType = PropType.SmallGear;
+    }
+
     protected override void OnCollected(Collider2D collision)
     {
         base.OnCollected(collision);

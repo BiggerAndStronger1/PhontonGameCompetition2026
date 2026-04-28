@@ -4,6 +4,11 @@ using UnityEngine;
 public class UncollectedMineGear : Props
 {
     [SerializeField] private int quantity;
+    private void Awake()
+    {
+        propType = PropType.MineGear;
+    }
+
     protected override void OnCollected(Collider2D collision)
     {
         base.OnCollected(collision);

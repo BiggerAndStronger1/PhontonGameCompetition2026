@@ -14,7 +14,6 @@ public class PlayerStats : MonoBehaviour
     private void Awake()
     {
         currentHp = maxHp;
-        
     }
 
     public bool AddSmallGear(int _amount)

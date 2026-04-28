@@ -30,6 +30,12 @@ public enum GameEvents
     /// </summary>
     SwitchWorld,
 
+    /// <summary>
+    /// an event triggered by player collecting props(single param event: proptype)
+    /// listened by ...
+    /// </summary>
+    PlayerCollectProps,
+
     ObjectClicked,
     ObjectHoverEnter,
     ObjectHoverExit,

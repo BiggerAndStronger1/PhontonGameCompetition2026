@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.MaterialProperty;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     {
         skill = GetComponentInChildren<SkillManager>();
     }
+
 
     protected void Update()
     {

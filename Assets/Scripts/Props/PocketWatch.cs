@@ -4,6 +4,11 @@ public class PocketWatch : Props
 {
     private Player player;
 
+    private void Awake()
+    {
+        propType = PropType.PocketWatch;
+    }
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();

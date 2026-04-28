@@ -1,8 +1,18 @@
 
 using UnityEngine;
 
+public enum PropType
+{
+    PocketWatch,
+    SmallGear,
+    LargeGear,
+    BoomGear,
+    MineGear
+}
+
 public class Props : MonoBehaviour
 {
+    protected PropType propType;
     protected bool isCollected;
     protected virtual void OnEnable()
     {
@@ -30,7 +40,7 @@ public class Props : MonoBehaviour
 
     protected virtual void OnCollected(Collider2D collision)
     {
-
+        EventManagerSingleParam<PropType>.TriggerEvent(GameEvents.PlayerCollectProps, propType);
     }
 
     protected virtual void ResetItem()
