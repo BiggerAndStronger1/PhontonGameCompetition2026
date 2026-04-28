@@ -85874,6 +85874,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Air trap
       objectReference: {fileID: 0}
+    - target: {fileID: 11873236757418411, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: _active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: pushStrength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907916484821382777, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907916484821382777, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717810557508471444, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.4795234
@@ -89288,11 +89312,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.54
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.95
+      value: 17.58
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
