@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
 public class Button : MonoBehaviour
 {
     public Door targetDoor;

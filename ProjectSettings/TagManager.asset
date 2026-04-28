@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Gear
   - checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
