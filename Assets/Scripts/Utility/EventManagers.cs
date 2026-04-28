@@ -52,7 +52,11 @@ public enum GameEvents
     /// <summary>
     /// an event to activate the air trap (no param event)
     /// </summary>
-    TriggerAirTrap,
+    ActivateAirTrap,
+    /// <summary>
+    /// an event to deactivate the air trap (no param event)
+    /// </summary>
+    DeactivateAirTrap,
     /// <summary>
     /// dedicated to be triggered by looping platform to make a looping platform visible 
     /// </summary>
