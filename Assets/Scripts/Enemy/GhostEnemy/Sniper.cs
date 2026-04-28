@@ -42,7 +42,6 @@ public class Sniper : MonoBehaviour, IFragile
         
         if (other.CompareTag("Player"))
         {
-            print("stay");
             bool foundPlayer = false;
             foreach (var point in GetTargetRefV2(other))
             {
@@ -68,8 +67,8 @@ public class Sniper : MonoBehaviour, IFragile
     private IEnumerator Execution(Player player)
     {
         yield return new WaitForSeconds(executionTime);
-        StopAllCoroutines();
         player.PlayerDie();
+        StopAllCoroutines();
     }
 
     public Vector2[] GetTargetRefV2(Collider2D col)
