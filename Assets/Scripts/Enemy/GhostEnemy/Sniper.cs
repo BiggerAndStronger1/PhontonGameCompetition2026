@@ -25,41 +25,49 @@ public class Sniper : MonoBehaviour, IFragile
 
     void Update()
     {
-
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            StopAllCoroutines();
-            
+            if (execution != null) StopCoroutine(execution);
+            print("exit and reset");
+            execution = null;
         }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        
+
         if (other.CompareTag("Player"))
         {
-            bool foundPlayer = false;
+            bool playerBlocked = true;
             foreach (var point in GetTargetRefV2(other))
             {
-                RaycastHit2D hit = Physics2D.Raycast(eyeTransform.position, (point - (Vector2)eyeTransform.position).normalized, int.MaxValue, ~LayerMask.GetMask("Ignore Raycast", "Enemy"));
-                Assert.IsFalse(LayerMask.GetMask("Enemy") == hit.transform.gameObject.layer);
-                Assert.IsFalse(LayerMask.GetMask("Ignore Raycast") == hit.transform.gameObject.layer);
+                Vector2 origin = new Vector2(eyeTransform.position.x, eyeTransform.position.y);
+                RaycastHit2D hit = Physics2D.Raycast(origin, (point - origin).normalized, int.MaxValue, ~LayerMask.GetMask("Ignore Raycast", "Enemy"));
+                
+                
                 if (hit.transform.CompareTag("Player"))
                 {
-                    Debug.DrawRay(eyeTransform.position, (hit.transform.position - eyeTransform.position), Color.red, 1);
-                    StartCoroutine(Execution(other.GetComponent<Player>()));
-                    foundPlayer = true;
+                    if (execution == null)
+                    {
+                        Debug.DrawLine(origin, hit.point, Color.red, 1);
+                        execution = StartCoroutine(Execution(other.GetComponent<Player>()));
+                        print("tried to execute");
+                    }
+                    playerBlocked = false;
                     break;
                 }
             }
 
-            if (!foundPlayer)
+            if (playerBlocked)
             {
-               StopAllCoroutines();
+                print("player blocked");
+                if (execution != null) StopCoroutine(execution);
+                execution = null;
             }
         }
     }
@@ -68,7 +76,8 @@ public class Sniper : MonoBehaviour, IFragile
     {
         yield return new WaitForSeconds(executionTime);
         player.PlayerDie();
-        StopAllCoroutines();
+        if (execution != null) StopCoroutine(execution);
+        execution = null;
     }
 
     public Vector2[] GetTargetRefV2(Collider2D col)
@@ -83,7 +92,8 @@ public class Sniper : MonoBehaviour, IFragile
 
     public void DestroyFragile()
     {
-        StopAllCoroutines();
+        if (execution != null) StopCoroutine(execution);
+        execution = null;
         Destroy(gameObject);
     }
 }
