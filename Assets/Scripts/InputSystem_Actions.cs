@@ -724,6 +724,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pocket watch"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e2e8471-b690-46b9-839e-170fd9d6d206"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1155,6 +1164,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Settings"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac617ad6-f4f8-4304-b714-379cade65836"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pocket watch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1357,6 +1377,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_Settings = m_UI.FindAction("Settings", throwIfNotFound: true);
+        m_UI_Pocketwatch = m_UI.FindAction("Pocket watch", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Test = m_Debug.FindAction("Test", throwIfNotFound: true);
@@ -1674,6 +1695,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_Settings;
+    private readonly InputAction m_UI_Pocketwatch;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -1729,6 +1751,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "UI/Settings".
         /// </summary>
         public InputAction @Settings => m_Wrapper.m_UI_Settings;
+        /// <summary>
+        /// Provides access to the underlying input action "UI/Pocketwatch".
+        /// </summary>
+        public InputAction @Pocketwatch => m_Wrapper.m_UI_Pocketwatch;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1788,6 +1814,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Settings.started += instance.OnSettings;
             @Settings.performed += instance.OnSettings;
             @Settings.canceled += instance.OnSettings;
+            @Pocketwatch.started += instance.OnPocketwatch;
+            @Pocketwatch.performed += instance.OnPocketwatch;
+            @Pocketwatch.canceled += instance.OnPocketwatch;
         }
 
         /// <summary>
@@ -1832,6 +1861,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Settings.started -= instance.OnSettings;
             @Settings.performed -= instance.OnSettings;
             @Settings.canceled -= instance.OnSettings;
+            @Pocketwatch.started -= instance.OnPocketwatch;
+            @Pocketwatch.performed -= instance.OnPocketwatch;
+            @Pocketwatch.canceled -= instance.OnPocketwatch;
         }
 
         /// <summary>
@@ -2246,6 +2278,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSettings(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pocket watch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPocketwatch(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Debug" which allows adding and removing callbacks.

@@ -18,11 +18,11 @@ public enum GameEvents
 {
     PlayerDie,
 
-        /// <summary>
-        /// an event triggered by gameobject entering teleport edge(two param event: Transform, Vector3)
-        /// listened by moveable gameobjects
-        /// </summary>
-        Teleport,
+    /// <summary>
+    /// an event triggered by gameobject entering teleport edge(two param event: Transform, Vector3)
+    /// listened by moveable gameobjects
+    /// </summary>
+    Teleport,
 
     /// <summary>
     /// an event triggered by player using pocketwatch or the clock tower(no param event)
@@ -52,7 +52,11 @@ public enum GameEvents
     /// <summary>
     /// an event to activate the air trap (no param event)
     /// </summary>
-    TriggerAirTrap,
+    ActivateAirTrap,
+    /// <summary>
+    /// an event to deactivate the air trap (no param event)
+    /// </summary>
+    DeactivateAirTrap,
     /// <summary>
     /// dedicated to be triggered by looping platform to make a looping platform visible 
     /// </summary>
@@ -61,6 +65,14 @@ public enum GameEvents
     /// dedicated to be triggered by looping platform to make a looping platform invisible 
     /// </summary>
     PlatformInvisible,
+    /// <summary>
+    /// no param event
+    /// </summary>
+    MainMenuEnable,
+    /// <summary>
+    /// no param event
+    /// </summary>
+    MainMenuDisable,
 
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour

@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &126815075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2766785831491877548, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
-  m_PrefabInstance: {fileID: 908909973}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &908909973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,10 +211,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3673265056082704053, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
-      propertyPath: fadeImage
-      value: 
-      objectReference: {fileID: 126815075}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

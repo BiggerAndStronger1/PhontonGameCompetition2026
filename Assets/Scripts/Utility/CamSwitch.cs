@@ -1,6 +1,7 @@
 using System;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class CamSwitch : MonoBehaviour
 {
@@ -31,8 +32,10 @@ public class CamSwitch : MonoBehaviour
         if (other.GetComponent<Player>() != null && cam)
         {
             cam.Priority = 1;
-            cam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
-            
+            Transform transform = GameObject.FindGameObjectWithTag("Player").transform;
+            Assert.IsNotNull(transform);
+            cam.Follow = transform;
+
         }
         
 

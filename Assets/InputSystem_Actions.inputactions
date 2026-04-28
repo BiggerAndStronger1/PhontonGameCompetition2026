@@ -638,6 +638,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Pocket watch",
+                    "type": "Button",
+                    "id": "7e2e8471-b690-46b9-839e-170fd9d6d206",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1067,6 +1076,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac617ad6-f4f8-4304-b714-379cade65836",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pocket watch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

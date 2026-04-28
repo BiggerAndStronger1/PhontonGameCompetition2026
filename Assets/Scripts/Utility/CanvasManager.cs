@@ -7,6 +7,7 @@ public class CanvasManager : MonoBehaviour
     private InputSystem_Actions actions;
     private InputSystem_Actions.UIActions actionsUI;
     [SerializeField]private GameObject settingsMenu;
+    [SerializeField] private GameObject mainMenu;
     [SerializeField] private Image fadeImage;
 
     private void Awake()
@@ -18,7 +19,8 @@ public class CanvasManager : MonoBehaviour
         {
             child.ForcedAwake();
         }
-        
+        EventManagerNoParam.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
+        EventManagerNoParam.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
     }
 
     void Start()
@@ -27,7 +29,7 @@ public class CanvasManager : MonoBehaviour
         {
             child.ForcedStart();
         }
-
+        fadeImage.gameObject.SetActive(true);
         fadeImage.GetComponent<Anim2D>().OnFadeComplete += (() => fadeImage.gameObject.SetActive(false));
         SceneManager.sceneLoaded += (scene, mode) =>
         {
@@ -36,6 +38,13 @@ public class CanvasManager : MonoBehaviour
             fadeImage.GetComponent<Image>().color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
             fadeImage.gameObject.SetActive(true);
         };
+    }
+
+    private void OnDestroy()
+    {
+        actionsUI.Disable();
+        EventManagerNoParam.StopListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
+        EventManagerNoParam.StopListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
     }
 
     // Update is called once per frame
@@ -49,10 +58,7 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        actionsUI.Disable();
-    }
+    
 
     private void OnApplicationQuit()
     {

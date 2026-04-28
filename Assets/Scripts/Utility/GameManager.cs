@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
@@ -44,6 +46,23 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [SerializeField] private bool debug;
     [SerializeField] private SceneRef main;
+
+#if UNITY_EDITOR
+
+    [MenuItem("Tools/Check Keyboard Conflicts")]
+    static void Check()
+    {
+        var asset = Selection.activeObject as InputActionAsset;
+        if (asset == null)
+        {
+            Debug.LogError("Select an InputActionAsset first.");
+            return;
+        }
+
+        CheckKeyboardConflicts(asset);
+    }
+#endif
+
     private void OnValidate()
     {
 #if UNITY_EDITOR
@@ -69,9 +88,56 @@ public class GameManager : MonoBehaviour
             }
             dontDestroySet = true;
         }
+
+
+
+
+
     }
 
-    
+
+
+    public static void CheckKeyboardConflicts(InputActionAsset inputActions)
+    {
+        var seen = new Dictionary<string, (string action, string map)>(); // path → (action, map)
+
+        foreach (var action in inputActions)
+        {
+            var mapName = action.actionMap?.name ?? "<No Map>";
+
+            foreach (var binding in action.bindings)
+            {
+                // skip composites
+                if (binding.isComposite || binding.isPartOfComposite)
+                    continue;
+
+                var path = binding.effectivePath;
+
+                // only keyboard bindings
+                if (string.IsNullOrEmpty(path) || !path.StartsWith("<Keyboard>/"))
+                    continue;
+
+                if (seen.TryGetValue(path, out var other))
+                {
+                    Debug.LogWarning(
+                        $"Keyboard binding conflict:\n" +
+                        $"  {path}\n" +
+                        $"  {other.map}/{other.action}\n" +
+                        $"  {mapName}/{action.name}",
+                        inputActions
+                    );
+                }
+                else
+                {
+                    seen[path] = (action.name, mapName);
+                }
+            }
+        }
+    }
+
+
+
+
 
     private void OnDestroy()
     {
@@ -196,7 +262,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNoParam.TriggerEvent(GameEvents.TriggerAirTrap);
+        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNoParam.TriggerEvent(GameEvents.ActivateAirTrap);
 
         if (debugAction.ReloadScene.WasPerformedThisFrame())
         {
