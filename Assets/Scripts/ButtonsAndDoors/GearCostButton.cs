@@ -22,7 +22,7 @@ public class GearCostButton : Button
         if (isPressed)
             return;
 
-        if (Keyboard.current.digit1Key.wasPressedThisFrame && Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
+        if (player.playerActions.UseSmallGear.WasPressedThisFrame() && Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
         {
             if (player.stats.AddSmallGear(-needSmallGearNum))
                 PressButton();

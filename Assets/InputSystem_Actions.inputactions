@@ -122,6 +122,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AimBoomGear",
+                    "type": "Button",
+                    "id": "f35a5f0b-a228-4ad4-8ad2-a8713303f2b3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ThrowBoomGear",
+                    "type": "Button",
+                    "id": "efd23033-f65a-48c6-b4e2-c96e48d34e4e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -513,7 +531,7 @@
                 {
                     "name": "",
                     "id": "dbe16516-ea90-498b-823d-303c72b4dfdd",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -524,7 +542,7 @@
                 {
                     "name": "",
                     "id": "ddcade3b-7067-44a6-aac4-ac855278cede",
-                    "path": "<Keyboard>/tab",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -551,6 +569,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "UseLargeGear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c034c063-76e7-4be4-b400-45f014d9168d",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "AimBoomGear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec08a2b1-0406-48d7-8baf-c5b591010b03",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ThrowBoomGear",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
