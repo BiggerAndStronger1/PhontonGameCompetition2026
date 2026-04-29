@@ -48,7 +48,12 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     private void OnEnable()
     {
-        pointerAnimator.transform.rotation = Quaternion.identity;
+        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, false);
+    }
+
+    private void OnDisable()
+    {
+        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, true);
     }
 
     void Update()

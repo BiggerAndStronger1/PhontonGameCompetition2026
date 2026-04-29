@@ -2496,6 +2496,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 448824909234676922, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: activeEmptySlotSprite
+      value: 
+      objectReference: {fileID: 7078598411503876165, guid: 56099a0f83e971648a92e0148d171bde, type: 3}
+    - target: {fileID: 448824909234676922, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: deactiveEmptySlotSprite
+      value: 
+      objectReference: {fileID: -6656029123899116640, guid: 955ab9946c80b6f4eb28942d05f2c2ae, type: 3}
     - target: {fileID: 1564071228267235434, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2580,12 +2588,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2196488406395964851, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
     - target: {fileID: 1682395190878794057, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196488406395964851, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: 
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111009487749668405, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3111009487749668405, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5605279402181912767, guid: 767143b77bdcc494aa7fcdda53f64255, type: 3}
+    - target: {fileID: 8102178065708517774, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -389944193910303606, guid: b76d926d0dab1ea42824333e55cae8a1, type: 3}
+    - target: {fileID: 9102721439889945901, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: activated
+      value: 
+      objectReference: {fileID: 2237782025682860510, guid: 3dd1448ad5a5c0c419b239d14ac2247c, type: 3}
+    - target: {fileID: 9102721439889945901, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: deactivated
+      value: 
+      objectReference: {fileID: 5605279402181912767, guid: 767143b77bdcc494aa7fcdda53f64255, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -87539,11 +87569,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.9
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.37
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -87986,11 +88016,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z

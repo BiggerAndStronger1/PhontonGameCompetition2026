@@ -83,7 +83,10 @@ public enum GameEvents
     /// toggle the visibility of the UI, passing in a true will turn on (single param event: bool)
     /// </summary>
     TogglePocketWatchUI,
-
+    /// <summary>
+    /// toggle the input action for Player, passing in a true will turn on (single param event: bool)
+    /// </summary>
+    TogglePlayerInput,
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {
