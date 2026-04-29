@@ -213,6 +213,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -220,12 +233,12 @@ TextureImporter:
       name: climb_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 1404
-        width: 100
-        height: 192
+        x: 41
+        y: 1405
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,12 +255,12 @@ TextureImporter:
       name: climb_1
       rect:
         serializedVersion: 2
-        x: 220
-        y: 1404
-        width: 100
-        height: 192
+        x: 221
+        y: 1405
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -264,12 +277,12 @@ TextureImporter:
       name: climb_2
       rect:
         serializedVersion: 2
-        x: 400
-        y: 1404
-        width: 100
-        height: 192
+        x: 401
+        y: 1405
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -286,12 +299,12 @@ TextureImporter:
       name: climb_3
       rect:
         serializedVersion: 2
-        x: 580
-        y: 1404
-        width: 100
-        height: 192
+        x: 581
+        y: 1405
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -308,12 +321,12 @@ TextureImporter:
       name: climb_4
       rect:
         serializedVersion: 2
-        x: 760
-        y: 1404
-        width: 100
-        height: 192
+        x: 761
+        y: 1405
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -330,12 +343,12 @@ TextureImporter:
       name: climb_5
       rect:
         serializedVersion: 2
-        x: 39
-        y: 1204
-        width: 102
-        height: 192
+        x: 40
+        y: 1205
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -352,12 +365,12 @@ TextureImporter:
       name: climb_6
       rect:
         serializedVersion: 2
-        x: 219
-        y: 1204
-        width: 102
-        height: 192
+        x: 220
+        y: 1205
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -374,12 +387,12 @@ TextureImporter:
       name: climb_7
       rect:
         serializedVersion: 2
-        x: 399
-        y: 1204
-        width: 102
-        height: 192
+        x: 400
+        y: 1205
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -396,12 +409,12 @@ TextureImporter:
       name: climb_8
       rect:
         serializedVersion: 2
-        x: 578
-        y: 1204
-        width: 104
-        height: 192
+        x: 579
+        y: 1205
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -418,12 +431,12 @@ TextureImporter:
       name: climb_9
       rect:
         serializedVersion: 2
-        x: 758
-        y: 1204
-        width: 104
-        height: 192
+        x: 759
+        y: 1205
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -440,12 +453,12 @@ TextureImporter:
       name: climb_10
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1004
-        width: 104
-        height: 192
+        x: 39
+        y: 1005
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -462,12 +475,12 @@ TextureImporter:
       name: climb_11
       rect:
         serializedVersion: 2
-        x: 218
-        y: 1004
-        width: 104
-        height: 192
+        x: 219
+        y: 1005
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -484,12 +497,12 @@ TextureImporter:
       name: climb_12
       rect:
         serializedVersion: 2
-        x: 398
-        y: 1004
-        width: 104
-        height: 192
+        x: 399
+        y: 1005
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -506,12 +519,12 @@ TextureImporter:
       name: climb_13
       rect:
         serializedVersion: 2
-        x: 579
-        y: 1004
-        width: 102
-        height: 192
+        x: 580
+        y: 1005
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -528,12 +541,12 @@ TextureImporter:
       name: climb_14
       rect:
         serializedVersion: 2
-        x: 759
-        y: 1004
-        width: 102
-        height: 192
+        x: 760
+        y: 1005
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -550,12 +563,12 @@ TextureImporter:
       name: climb_15
       rect:
         serializedVersion: 2
-        x: 39
-        y: 804
-        width: 102
-        height: 192
+        x: 40
+        y: 805
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -572,12 +585,12 @@ TextureImporter:
       name: climb_16
       rect:
         serializedVersion: 2
-        x: 220
-        y: 804
-        width: 100
-        height: 192
+        x: 221
+        y: 805
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -594,12 +607,12 @@ TextureImporter:
       name: climb_17
       rect:
         serializedVersion: 2
-        x: 400
-        y: 804
-        width: 100
-        height: 192
+        x: 401
+        y: 805
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -616,12 +629,12 @@ TextureImporter:
       name: climb_18
       rect:
         serializedVersion: 2
-        x: 580
-        y: 804
-        width: 100
-        height: 192
+        x: 581
+        y: 805
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -638,12 +651,12 @@ TextureImporter:
       name: climb_19
       rect:
         serializedVersion: 2
-        x: 760
-        y: 804
-        width: 100
-        height: 192
+        x: 761
+        y: 805
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -660,12 +673,12 @@ TextureImporter:
       name: climb_20
       rect:
         serializedVersion: 2
-        x: 40
-        y: 604
-        width: 100
-        height: 192
+        x: 41
+        y: 605
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -682,12 +695,12 @@ TextureImporter:
       name: climb_21
       rect:
         serializedVersion: 2
-        x: 220
-        y: 604
-        width: 100
-        height: 192
+        x: 221
+        y: 605
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -704,12 +717,12 @@ TextureImporter:
       name: climb_22
       rect:
         serializedVersion: 2
-        x: 400
-        y: 604
-        width: 100
-        height: 192
+        x: 401
+        y: 605
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -726,12 +739,12 @@ TextureImporter:
       name: climb_23
       rect:
         serializedVersion: 2
-        x: 580
-        y: 604
-        width: 100
-        height: 192
+        x: 581
+        y: 605
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -748,12 +761,12 @@ TextureImporter:
       name: climb_24
       rect:
         serializedVersion: 2
-        x: 760
-        y: 604
-        width: 100
-        height: 192
+        x: 761
+        y: 605
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -770,12 +783,12 @@ TextureImporter:
       name: climb_25
       rect:
         serializedVersion: 2
-        x: 39
-        y: 404
-        width: 102
-        height: 192
+        x: 40
+        y: 405
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -792,12 +805,12 @@ TextureImporter:
       name: climb_26
       rect:
         serializedVersion: 2
-        x: 219
-        y: 404
-        width: 102
-        height: 192
+        x: 220
+        y: 405
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -814,12 +827,12 @@ TextureImporter:
       name: climb_27
       rect:
         serializedVersion: 2
-        x: 399
-        y: 404
-        width: 102
-        height: 192
+        x: 400
+        y: 405
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -836,12 +849,12 @@ TextureImporter:
       name: climb_28
       rect:
         serializedVersion: 2
-        x: 578
-        y: 404
-        width: 104
-        height: 192
+        x: 579
+        y: 405
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -858,12 +871,12 @@ TextureImporter:
       name: climb_29
       rect:
         serializedVersion: 2
-        x: 758
-        y: 404
-        width: 104
-        height: 192
+        x: 759
+        y: 405
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -880,12 +893,12 @@ TextureImporter:
       name: climb_30
       rect:
         serializedVersion: 2
-        x: 38
-        y: 204
-        width: 104
-        height: 192
+        x: 39
+        y: 205
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -902,12 +915,12 @@ TextureImporter:
       name: climb_31
       rect:
         serializedVersion: 2
-        x: 218
-        y: 204
-        width: 104
-        height: 192
+        x: 219
+        y: 205
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -924,12 +937,12 @@ TextureImporter:
       name: climb_32
       rect:
         serializedVersion: 2
-        x: 398
-        y: 204
-        width: 104
-        height: 192
+        x: 399
+        y: 205
+        width: 102
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -946,12 +959,12 @@ TextureImporter:
       name: climb_33
       rect:
         serializedVersion: 2
-        x: 579
-        y: 204
-        width: 102
-        height: 192
+        x: 580
+        y: 205
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -968,12 +981,12 @@ TextureImporter:
       name: climb_34
       rect:
         serializedVersion: 2
-        x: 759
-        y: 204
-        width: 102
-        height: 192
+        x: 760
+        y: 205
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -990,12 +1003,12 @@ TextureImporter:
       name: climb_35
       rect:
         serializedVersion: 2
-        x: 39
-        y: 4
-        width: 102
-        height: 192
+        x: 40
+        y: 5
+        width: 100
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1012,12 +1025,12 @@ TextureImporter:
       name: climb_36
       rect:
         serializedVersion: 2
-        x: 220
-        y: 4
-        width: 100
-        height: 192
+        x: 221
+        y: 5
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1034,12 +1047,12 @@ TextureImporter:
       name: climb_37
       rect:
         serializedVersion: 2
-        x: 400
-        y: 4
-        width: 100
-        height: 192
+        x: 401
+        y: 5
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1056,12 +1069,12 @@ TextureImporter:
       name: climb_38
       rect:
         serializedVersion: 2
-        x: 580
-        y: 4
-        width: 100
-        height: 192
+        x: 581
+        y: 5
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1078,12 +1091,12 @@ TextureImporter:
       name: climb_39
       rect:
         serializedVersion: 2
-        x: 760
-        y: 4
-        width: 100
-        height: 192
+        x: 761
+        y: 5
+        width: 98
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1100,7 +1113,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 953a6e5ff824cbc4a978727eba98c432
     internalID: 0
     vertices: []
     indices: 
@@ -1108,7 +1121,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       climb_0: 1684304223175151964
       climb_1: -7106077621363497131
