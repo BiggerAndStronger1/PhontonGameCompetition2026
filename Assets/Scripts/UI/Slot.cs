@@ -91,5 +91,6 @@ public class Slot : MonoBehaviour, ICanvasManager
     public void Activate()
     {
         emptySprite = activeEmptySlotSprite;
+        occupied = false;
     }
 }
