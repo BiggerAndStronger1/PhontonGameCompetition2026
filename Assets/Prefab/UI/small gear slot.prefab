@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1318632082610235005}
   - component: {fileID: 895447385465749581}
   - component: {fileID: 644733530159622555}
+  - component: {fileID: 408823920272444237}
   m_Layer: 5
   m_Name: small gear slot
   m_TagString: Untagged
@@ -88,5 +89,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67a4a672ec5204b8c0c9456b7f2781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot
-  emptySprite: {fileID: 21300000, guid: 933d6afb93ec47049b7429a2dc75f8a7, type: 3}
-  filledSprite: {fileID: -7889216112988592123, guid: efc9ab54c9d1deb46b5e1cbdfcc5629c, type: 3}
+  activeEmptySlotSprite: {fileID: -7889216112988592123, guid: efc9ab54c9d1deb46b5e1cbdfcc5629c, type: 3}
+  deactiveEmptySlotSprite: {fileID: 3514998746854928232, guid: e41236cf1a5fbac4090477223c104453, type: 3}
+  boomGearSprite: {fileID: 8431587995076812409, guid: 01c243bc90401714fa7199ea55d348d6, type: 3}
+  smallGearSprite: {fileID: 6310259935858931691, guid: 12c5337311fd95f44bd4f346da3f2a9e, type: 3}
+  mineGearSprite: {fileID: 1599650296112252125, guid: de79999cff73d184198d847d62248fc3, type: 3}
+  largeGearSprite: {fileID: 0}
+--- !u!70 &408823920272444237
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112987752786176369}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0

@@ -36,7 +36,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: rotation reverse
-  m_Speed: -1.5
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3007587422387019443}
@@ -49,7 +49,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 00285ccc6f814834bbb7ac32b962fd4e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 382b86ead109f874a8ceb8f704e1c94c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

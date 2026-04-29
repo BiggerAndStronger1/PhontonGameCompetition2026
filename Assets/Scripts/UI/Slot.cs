@@ -10,7 +10,7 @@ public class Slot : MonoBehaviour, ICanvasManager
     public bool occupied
     {
         get { return _occupied; }
-        set
+        private set
         {
             if (value) image.sprite = occupiedSprite;
             else image.sprite = emptySprite;
@@ -18,13 +18,24 @@ public class Slot : MonoBehaviour, ICanvasManager
         }
     }
 
-    [SerializeField] private Sprite emptySprite;
-    [SerializeField] private Sprite occupiedSprite;
+    [SerializeField] private Sprite activeEmptySlotSprite;
+    [SerializeField] private Sprite deactiveEmptySlotSprite;
+    [SerializeField] private Sprite boomGearSprite;
+    [SerializeField] private Sprite smallGearSprite;
+    [SerializeField] private Sprite mineGearSprite;
+    [SerializeField] private Sprite largeGearSprite;
+    private Sprite occupiedSprite;
+    private Sprite emptySprite;
+
     private Image image;
 
     public void ForcedAwake()
     {
         image = GetComponent<Image>();
+        Assert.IsNotNull(activeEmptySlotSprite);
+        Assert.IsNotNull(deactiveEmptySlotSprite);
+        emptySprite = deactiveEmptySlotSprite;
+        occupied = false;
     }
 
     public void ForcedStart()
@@ -35,5 +46,40 @@ public class Slot : MonoBehaviour, ICanvasManager
     public void ForcedOnApplicationQuit()
     {
         
+    }
+
+    public void Put(PropType propType)
+    {
+        switch (propType)
+        {
+            case PropType.SmallGear:
+                Assert.IsNotNull(smallGearSprite);
+                occupiedSprite = smallGearSprite;
+                break;
+            case PropType.BoomGear:
+                Assert.IsNotNull(boomGearSprite);
+                occupiedSprite = boomGearSprite;
+                break;
+            case PropType.MineGear:
+                Assert.IsNotNull(mineGearSprite);
+                occupiedSprite = mineGearSprite;
+                break;
+            case PropType.LargeGear:
+                Assert.IsNotNull(largeGearSprite);
+                occupiedSprite = largeGearSprite;
+                break;
+        }
+
+        occupied = true;
+    }
+
+    public void Use()
+    {
+        occupied = false;
+    }
+
+    public void Activate()
+    {
+        emptySprite = activeEmptySlotSprite;
     }
 }

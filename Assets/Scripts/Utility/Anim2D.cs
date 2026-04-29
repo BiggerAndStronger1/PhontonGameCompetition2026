@@ -183,6 +183,11 @@ public class Anim2D : MonoBehaviour
     {
     }
 
+    public bool isPlaying()
+    {
+        return LeanTween.isTweening(gameObject);
+    }
+
     public void AnimatedDisable()
     {
         disableCoroutine ??= StartCoroutine(Delay());
