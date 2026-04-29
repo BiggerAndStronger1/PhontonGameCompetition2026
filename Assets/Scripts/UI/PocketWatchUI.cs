@@ -32,7 +32,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     public void ForcedStart()
     {
-        Put(PropType.SmallGear);
+        
     }
 
     private void OnDestroy()
