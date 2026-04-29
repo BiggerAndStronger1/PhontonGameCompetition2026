@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 358e478fdd98fac46bb20174f8c8ab38
+guid: cbbd76d0ef453bc43b35d515eb18602b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4901937084242411528
-    second: BiaoBefore_3_0
+      213: -1978197250220072847
+    second: BiaoAfter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BiaoBefore_3_0
+      name: BiaoAfter_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 154
-        height: 154
+        width: 1400
+        height: 1399
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80045997ecd270440800000000000000
-      internalID: 4901937084242411528
+      spriteID: 1706af4f4180c84e0800000000000000
+      internalID: -1978197250220072847
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BiaoBefore_3_0: 4901937084242411528
+      BiaoAfter_0: -1978197250220072847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 9d7d9dc053208e1459ffba08972bde3d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3398801033423197244
+    second: jump_luodi_0
+  - first:
+      213: -5176747802630422605
+    second: jump_luodi_1
+  - first:
+      213: 3199025857617421126
+    second: jump_luodi_2
+  - first:
+      213: 2384559103988239727
+    second: jump_luodi_3
+  - first:
+      213: 7729239087634721373
+    second: jump_luodi_4
+  - first:
+      213: -2083528186023409256
+    second: jump_luodi_5
+  - first:
+      213: 6223669513581610750
+    second: jump_luodi_6
+  - first:
+      213: -6394012017215888875
+    second: jump_luodi_7
+  - first:
+      213: 5547484555391923439
+    second: jump_luodi_8
+  - first:
+      213: 851088232609002100
+    second: jump_luodi_9
+  - first:
+      213: -5062571346957302378
+    second: jump_luodi_10
+  - first:
+      213: -653692904705764855
+    second: jump_luodi_11
+  - first:
+      213: -1442678966829989768
+    second: jump_luodi_12
+  - first:
+      213: 3386778862707017610
+    second: jump_luodi_13
+  - first:
+      213: -4831265216479564483
+    second: jump_luodi_14
+  - first:
+      213: -3720615559755386932
+    second: jump_luodi_15
+  - first:
+      213: 878481456520854340
+    second: jump_luodi_16
+  - first:
+      213: -6162282646763687718
+    second: jump_luodi_17
+  - first:
+      213: 3101577547071152762
+    second: jump_luodi_18
+  - first:
+      213: 8316455071542306911
+    second: jump_luodi_19
+  - first:
+      213: -750770830584452987
+    second: jump_luodi_20
+  - first:
+      213: -7308130676444524864
+    second: jump_luodi_21
+  - first:
+      213: -6895247149367824379
+    second: jump_luodi_22
+  - first:
+      213: 2176912365474748435
+    second: jump_luodi_23
+  - first:
+      213: 1626615812425579846
+    second: jump_luodi_24
+  - first:
+      213: -3976220406939507743
+    second: jump_luodi_25
+  - first:
+      213: 2755959398268970676
+    second: jump_luodi_26
+  - first:
+      213: -7190901923186673318
+    second: jump_luodi_27
+  - first:
+      213: -4724505579469457919
+    second: jump_luodi_28
+  - first:
+      213: -6040384342908820647
+    second: jump_luodi_29
+  - first:
+      213: 1612400271717870388
+    second: jump_luodi_30
+  - first:
+      213: -5538802996291722375
+    second: jump_luodi_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jump_luodi_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2319
+        width: 204
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb649cb77805d0d0800000000000000
+      internalID: -3398801033423197244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_1
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2319
+        width: 204
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bffd641d4f7828b0800000000000000
+      internalID: -5176747802630422605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_2
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 2319
+        width: 206
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 643639e7119356c20800000000000000
+      internalID: 3199025857617421126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_3
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 2319
+        width: 208
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d84230fd7a71120800000000000000
+      internalID: 2384559103988239727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_4
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 2319
+        width: 210
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a288abff5c34b60800000000000000
+      internalID: 7729239087634721373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_5
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1934
+        width: 214
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8998f806722d513e0800000000000000
+      internalID: -2083528186023409256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_6
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 1934
+        width: 216
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6c57cb27aee5650800000000000000
+      internalID: 6223669513581610750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_7
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1934
+        width: 220
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512a44082f7e347a0800000000000000
+      internalID: -6394012017215888875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_8
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 1934
+        width: 224
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4f911bfcf9cfc40800000000000000
+      internalID: 5547484555391923439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_9
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 1934
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 472bc210d3cafcb00800000000000000
+      internalID: 851088232609002100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_10
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 1549
+        width: 230
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6950a8ebe222eb9b0800000000000000
+      internalID: -5062571346957302378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_11
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1549
+        width: 230
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902d1de34cd9de6f0800000000000000
+      internalID: -653692904705764855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_12
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1549
+        width: 230
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870cb219f139afbe0800000000000000
+      internalID: -1442678966829989768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_13
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1549
+        width: 228
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8704748e61400f20800000000000000
+      internalID: 3386778862707017610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_14
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 1549
+        width: 228
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3de80cf1e5e3fcb0800000000000000
+      internalID: -4831265216479564483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1164
+        width: 228
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf2dfe6cd7bd5cc0800000000000000
+      internalID: -3720615559755386932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_16
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1164
+        width: 228
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b71b5fa3ef03c00800000000000000
+      internalID: 878481456520854340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_17
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 1164
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0b81af49c2b7aa0800000000000000
+      internalID: -6162282646763687718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_18
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1164
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72e080a8540b0b20800000000000000
+      internalID: 3101577547071152762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_19
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 1164
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5866c933dbf96370800000000000000
+      internalID: 8316455071542306911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_20
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 779
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588e94748e9b495f0800000000000000
+      internalID: -750770830584452987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_21
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 779
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce8362bedd449a90800000000000000
+      internalID: -7308130676444524864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_22
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 779
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500f76f00492f40a0800000000000000
+      internalID: -6895247149367824379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_23
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 779
+        width: 226
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318174b3342f53e10800000000000000
+      internalID: 2176912365474748435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_24
+      rect:
+        serializedVersion: 2
+        x: 1236
+        y: 779
+        width: 228
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64df8a59676e29610800000000000000
+      internalID: 1626615812425579846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_25
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 394
+        width: 228
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e326b75b90a1d8c0800000000000000
+      internalID: -3976220406939507743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_26
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 394
+        width: 230
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6a83598722f3620800000000000000
+      internalID: 2755959398268970676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_27
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 394
+        width: 232
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59f8c5ccc8c43c90800000000000000
+      internalID: -7190901923186673318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_28
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 394
+        width: 232
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1063f5cf43f2f6eb0800000000000000
+      internalID: -4724505579469457919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_29
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 394
+        width: 232
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953a616817e3c2ca0800000000000000
+      internalID: -6040384342908820647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_30
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 9
+        width: 232
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43bac771185606610800000000000000
+      internalID: 1612400271717870388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_31
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 9
+        width: 232
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973a92d45083223b0800000000000000
+      internalID: -5538802996291722375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jump_luodi_0: -3398801033423197244
+      jump_luodi_1: -5176747802630422605
+      jump_luodi_10: -5062571346957302378
+      jump_luodi_11: -653692904705764855
+      jump_luodi_12: -1442678966829989768
+      jump_luodi_13: 3386778862707017610
+      jump_luodi_14: -4831265216479564483
+      jump_luodi_15: -3720615559755386932
+      jump_luodi_16: 878481456520854340
+      jump_luodi_17: -6162282646763687718
+      jump_luodi_18: 3101577547071152762
+      jump_luodi_19: 8316455071542306911
+      jump_luodi_2: 3199025857617421126
+      jump_luodi_20: -750770830584452987
+      jump_luodi_21: -7308130676444524864
+      jump_luodi_22: -6895247149367824379
+      jump_luodi_23: 2176912365474748435
+      jump_luodi_24: 1626615812425579846
+      jump_luodi_25: -3976220406939507743
+      jump_luodi_26: 2755959398268970676
+      jump_luodi_27: -7190901923186673318
+      jump_luodi_28: -4724505579469457919
+      jump_luodi_29: -6040384342908820647
+      jump_luodi_3: 2384559103988239727
+      jump_luodi_30: 1612400271717870388
+      jump_luodi_31: -5538802996291722375
+      jump_luodi_4: 7729239087634721373
+      jump_luodi_5: -2083528186023409256
+      jump_luodi_6: 6223669513581610750
+      jump_luodi_7: -6394012017215888875
+      jump_luodi_8: 5547484555391923439
+      jump_luodi_9: 851088232609002100
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

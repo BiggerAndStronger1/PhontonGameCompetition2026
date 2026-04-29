@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f3054b194a6a9e43a940b876857d19c
+guid: 8e421cae26c10c743919a83fee41f902
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3147197133431574464
-    second: BiaoBefore_4_0
+      213: 7403662717915251325
+    second: BigChilunAfter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BiaoBefore_4_0
+      name: BigChilunAfter_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 040fea7b1e8e254d0800000000000000
-      internalID: -3147197133431574464
+      spriteID: d72442204081fb660800000000000000
+      internalID: 7403662717915251325
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BiaoBefore_4_0: -3147197133431574464
+      BigChilunAfter_0: 7403662717915251325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b76d926d0dab1ea42824333e55cae8a1
+guid: 1c7a779845d62c849b6deeda78453e5e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -389944193910303606
-    second: BiaoAfter_4_0
+      213: -403281446801289203
+    second: SmallChilun_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BiaoAfter_4_0
+      name: SmallChilun_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 54
-        height: 349
+        width: 155
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8410c752d3a69af0800000000000000
-      internalID: -389944193910303606
+      spriteID: d0057ea29a1476af0800000000000000
+      internalID: -403281446801289203
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BiaoAfter_4_0: -389944193910303606
+      SmallChilun_2_0: -403281446801289203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

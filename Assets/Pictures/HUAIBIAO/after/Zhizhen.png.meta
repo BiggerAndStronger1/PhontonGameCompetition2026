@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 56099a0f83e971648a92e0148d171bde
+guid: 4279db4c67899e244bb3d80418c5ff6f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7078598411503876165
-    second: BiaoBefore_2_0
+      213: 1450238307593466775
+    second: Zhizhen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BiaoBefore_2_0
+      name: Zhizhen_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 155
-        height: 155
+        width: 54
+        height: 349
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 548355150cb3c3260800000000000000
-      internalID: 7078598411503876165
+      spriteID: 793b5cb9e08402410800000000000000
+      internalID: 1450238307593466775
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BiaoBefore_2_0: 7078598411503876165
+      Zhizhen_0: 1450238307593466775
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

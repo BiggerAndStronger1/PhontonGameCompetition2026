@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: ff0d4d1dac3ab8d469ee8563f9d35701
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3772828375457617615
+    second: jingzhi_0
+  - first:
+      213: 782859044625267342
+    second: jingzhi_1
+  - first:
+      213: -3356032277650109080
+    second: jingzhi_2
+  - first:
+      213: -6033393010102304448
+    second: jingzhi_3
+  - first:
+      213: -1931300262193298553
+    second: jingzhi_4
+  - first:
+      213: 5873462018749435033
+    second: jingzhi_5
+  - first:
+      213: 5820134069693422577
+    second: jingzhi_6
+  - first:
+      213: -3266866180411762144
+    second: jingzhi_7
+  - first:
+      213: -7326156204491110730
+    second: jingzhi_8
+  - first:
+      213: -6495985855378182794
+    second: jingzhi_9
+  - first:
+      213: 1424875911244641087
+    second: jingzhi_10
+  - first:
+      213: -6876206164501373178
+    second: jingzhi_11
+  - first:
+      213: -5543200152683196085
+    second: jingzhi_12
+  - first:
+      213: -2643561135152212947
+    second: jingzhi_13
+  - first:
+      213: 410173050623969599
+    second: jingzhi_14
+  - first:
+      213: -97620744897030925
+    second: jingzhi_15
+  - first:
+      213: 5893426554374874244
+    second: jingzhi_16
+  - first:
+      213: -876760231737639775
+    second: jingzhi_17
+  - first:
+      213: 4545937737963579281
+    second: jingzhi_18
+  - first:
+      213: 6412297143444408985
+    second: jingzhi_19
+  - first:
+      213: -674554656092131432
+    second: jingzhi_20
+  - first:
+      213: -7771704108979861892
+    second: jingzhi_21
+  - first:
+      213: 3257015910220434
+    second: jingzhi_22
+  - first:
+      213: -8884815577431641877
+    second: jingzhi_23
+  - first:
+      213: -6263892597649788868
+    second: jingzhi_24
+  - first:
+      213: 4718160759024974120
+    second: jingzhi_25
+  - first:
+      213: 3806504200712623707
+    second: jingzhi_26
+  - first:
+      213: -2583090583352834861
+    second: jingzhi_27
+  - first:
+      213: 8246122238918729138
+    second: jingzhi_28
+  - first:
+      213: -6256143667311341132
+    second: jingzhi_29
+  - first:
+      213: -4671062940353030272
+    second: jingzhi_30
+  - first:
+      213: -3302863630904809490
+    second: jingzhi_31
+  - first:
+      213: 233096048851667589
+    second: jingzhi_32
+  - first:
+      213: 6191900062769317447
+    second: jingzhi_33
+  - first:
+      213: -1316203721817185749
+    second: jingzhi_34
+  - first:
+      213: 7946046363931702034
+    second: jingzhi_35
+  - first:
+      213: 840183804216152181
+    second: jingzhi_36
+  - first:
+      213: 2323272253504019669
+    second: jingzhi_37
+  - first:
+      213: 8784083443627858486
+    second: jingzhi_38
+  - first:
+      213: 3507535541983038404
+    second: jingzhi_39
+  - first:
+      213: -843629518258932555
+    second: jingzhi_40
+  - first:
+      213: 3061919950633017103
+    second: jingzhi_41
+  - first:
+      213: -5054652681588552798
+    second: jingzhi_42
+  - first:
+      213: 8293342790479982085
+    second: jingzhi_43
+  - first:
+      213: 5565333470433105740
+    second: jingzhi_44
+  - first:
+      213: -1487388493167008744
+    second: jingzhi_45
+  - first:
+      213: 8239931346512158548
+    second: jingzhi_46
+  - first:
+      213: -9081395729123953230
+    second: jingzhi_47
+  - first:
+      213: 2256397321319840916
+    second: jingzhi_48
+  - first:
+      213: 8107351288549423463
+    second: jingzhi_49
+  - first:
+      213: 1236163174744151125
+    second: jingzhi_50
+  - first:
+      213: -7468651026437534896
+    second: jingzhi_51
+  - first:
+      213: -2226109103638014823
+    second: jingzhi_52
+  - first:
+      213: -5916637904139150070
+    second: jingzhi_53
+  - first:
+      213: 2046195235472541174
+    second: jingzhi_54
+  - first:
+      213: 7684915740619924669
+    second: jingzhi_55
+  - first:
+      213: -4648153753609828887
+    second: jingzhi_56
+  - first:
+      213: 4927565020943509391
+    second: jingzhi_57
+  - first:
+      213: 7608790152177219068
+    second: jingzhi_58
+  - first:
+      213: 2626939305480378297
+    second: jingzhi_59
+  - first:
+      213: 8053993516362980157
+    second: jingzhi_60
+  - first:
+      213: -7467445725401758068
+    second: jingzhi_61
+  - first:
+      213: 194862103020520165
+    second: jingzhi_62
+  - first:
+      213: 9140238417240730021
+    second: jingzhi_63
+  - first:
+      213: -4704190306122701829
+    second: jingzhi_64
+  - first:
+      213: 5311376423098859754
+    second: jingzhi_65
+  - first:
+      213: -249400241300781968
+    second: jingzhi_66
+  - first:
+      213: -7464496990062984426
+    second: jingzhi_67
+  - first:
+      213: 3652234079181490359
+    second: jingzhi_68
+  - first:
+      213: -7048297709603564626
+    second: jingzhi_69
+  - first:
+      213: 6190378593541423625
+    second: jingzhi_70
+  - first:
+      213: -8476273993778091424
+    second: jingzhi_71
+  - first:
+      213: -6627674818030373893
+    second: jingzhi_72
+  - first:
+      213: -2041857437584231990
+    second: jingzhi_73
+  - first:
+      213: 4576493129563798170
+    second: jingzhi_74
+  - first:
+      213: 2224415566133181753
+    second: jingzhi_75
+  - first:
+      213: 2292746731678528018
+    second: jingzhi_76
+  - first:
+      213: 5745756107250345722
+    second: jingzhi_77
+  - first:
+      213: -7409116781980883089
+    second: jingzhi_78
+  - first:
+      213: -2286207579517253727
+    second: jingzhi_79
+  - first:
+      213: 4771833499863994194
+    second: jingzhi_80
+  - first:
+      213: -726415926703040413
+    second: jingzhi_81
+  - first:
+      213: 6908659228511568056
+    second: jingzhi_82
+  - first:
+      213: 5539994126005844044
+    second: jingzhi_83
+  - first:
+      213: 7024221686262681287
+    second: jingzhi_84
+  - first:
+      213: 7029375387394993595
+    second: jingzhi_85
+  - first:
+      213: 82579886262200064
+    second: jingzhi_86
+  - first:
+      213: -40720429398237318
+    second: jingzhi_87
+  - first:
+      213: 5079214375249139245
+    second: jingzhi_88
+  - first:
+      213: 309395602150714293
+    second: jingzhi_89
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jingzhi_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc65aad0b67cb5430800000000000000
+      internalID: 3772828375457617615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a371047264dda00800000000000000
+      internalID: 782859044625267342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_2
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d8bebac6afc61d0800000000000000
+      internalID: -3356032277650109080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_3
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 041078a0605154ca0800000000000000
+      internalID: -6033393010102304448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_4
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783895dd4a4a235e0800000000000000
+      internalID: -1931300262193298553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_5
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c0f4d469ab28150800000000000000
+      internalID: 5873462018749435033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_6
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 2308
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb9939991545c050800000000000000
+      internalID: 5820134069693422577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_7
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 2308
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ad1db7482c9a2d0800000000000000
+      internalID: -3266866180411762144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_8
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 2308
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b688466fb3445a90800000000000000
+      internalID: -7326156204491110730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_9
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67da830284f99d5a0800000000000000
+      internalID: -6495985855378182794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_10
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f337fba871d26c310800000000000000
+      internalID: 1424875911244641087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f5b82dceec290a0800000000000000
+      internalID: -6876206164501373178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_12
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b415d6c84d89213b0800000000000000
+      internalID: -5543200152683196085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_13
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24593d572f205bd0800000000000000
+      internalID: -2643561135152212947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_14
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3941e2673a31b500800000000000000
+      internalID: 410173050623969599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_15
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f414b1237e25aef0800000000000000
+      internalID: -97620744897030925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_16
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4846e5bf938a9c150800000000000000
+      internalID: 5893426554374874244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_17
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 2052
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1acb61ae63f15d3f0800000000000000
+      internalID: -876760231737639775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_18
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197ac5a894a661f30800000000000000
+      internalID: 4545937737963579281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_19
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a8145374e0df850800000000000000
+      internalID: 6412297143444408985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_20
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89fea0e3d1083a6f0800000000000000
+      internalID: -674554656092131432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_21
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76cfc40a4c552490800000000000000
+      internalID: -7771704108979861892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_22
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2924b5c1d329b0000800000000000000
+      internalID: 3257015910220434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_23
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0745c5e4bc2b480800000000000000
+      internalID: -8884815577431641877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_24
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 1796
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30b2e5bede2219a0800000000000000
+      internalID: -6263892597649788868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_25
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1796
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829fed266364a7140800000000000000
+      internalID: 4718160759024974120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_26
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1796
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56128f176b63d430800000000000000
+      internalID: 3806504200712623707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_27
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4099cdcc4072cd0800000000000000
+      internalID: -2583090583352834861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_28
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd13398c7c107270800000000000000
+      internalID: 8246122238918729138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_29
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b119162b76bd29a0800000000000000
+      internalID: -6256143667311341132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_30
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08714cc010d0d2fb0800000000000000
+      internalID: -4671062940353030272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_31
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee7ac5ae60fd922d0800000000000000
+      internalID: -3302863630904809490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_32
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ac9561f9f1c3300800000000000000
+      internalID: 233096048851667589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_33
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746851e0d4c0ee550800000000000000
+      internalID: 6191900062769317447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_34
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b222a0540b7ebbde0800000000000000
+      internalID: -1316203721817185749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_35
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1540
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 213feea6117064e60800000000000000
+      internalID: 7946046363931702034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_36
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570175ce7bee8ab00800000000000000
+      internalID: 840183804216152181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_37
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dcd0aa2ecbed3020800000000000000
+      internalID: 2323272253504019669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_38
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a14d61a5557e970800000000000000
+      internalID: 8784083443627858486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_39
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbc4f0edf44da030800000000000000
+      internalID: 3507535541983038404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_40
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b474224c63da44f0800000000000000
+      internalID: -843629518258932555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_41
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f992ce8ff1e7a20800000000000000
+      internalID: 3061919950633017103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_42
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab40f2ba244ad9b0800000000000000
+      internalID: -5054652681588552798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_43
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e2b13f35fd71370800000000000000
+      internalID: 8293342790479982085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_44
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1284
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c47d1c11e490c3d40800000000000000
+      internalID: 5565333470433105740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_45
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814e6c5cb0cbb5be0800000000000000
+      internalID: -1487388493167008744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_46
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f967217ed1a5270800000000000000
+      internalID: 8239931346512158548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_47
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b531dc13b668f180800000000000000
+      internalID: -9081395729123953230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_48
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c7969a865505f10800000000000000
+      internalID: 2256397321319840916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_49
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7693b47da09138070800000000000000
+      internalID: 8107351288549423463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_50
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5545b03abdbb72110800000000000000
+      internalID: 1236163174744151125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_51
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b85d946750a5890800000000000000
+      internalID: -7468651026437534896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_52
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994946e80954b11e0800000000000000
+      internalID: -2226109103638014823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_53
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1028
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d9c238c21e3eda0800000000000000
+      internalID: -5916637904139150070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_54
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f50077b9bb856c10800000000000000
+      internalID: 2046195235472541174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_55
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db46570562e46aa60800000000000000
+      internalID: 7684915740619924669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_56
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e500beb9c07e7fb0800000000000000
+      internalID: -4648153753609828887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_57
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f876af8774a326440800000000000000
+      internalID: 4927565020943509391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_58
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf5730f845ad79960800000000000000
+      internalID: 7608790152177219068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_59
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b75ba55163c47420800000000000000
+      internalID: 2626939305480378297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_60
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b5d166e6885cf60800000000000000
+      internalID: 8053993516362980157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_61
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c864bed4dad4e5890800000000000000
+      internalID: -7467445725401758068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_62
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 772
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e249bedc0a44b200800000000000000
+      internalID: 194862103020520165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_63
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 516
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a92306d966a8de70800000000000000
+      internalID: 9140238417240730021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_64
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 516
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf368b727db57beb0800000000000000
+      internalID: -4704190306122701829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_65
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 516
+        width: 150
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae0413747bcc5b940800000000000000
+      internalID: 5311376423098859754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_66
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 516
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074ce5a4dc3f98cf0800000000000000
+      internalID: -249400241300781968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_67
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 516
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613c2504987c86890800000000000000
+      internalID: -7464496990062984426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_68
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 516
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8403e6b875fa230800000000000000
+      internalID: 3652234079181490359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_69
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 516
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea351eb939a6f2e90800000000000000
+      internalID: -7048297709603564626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_70
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 516
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90208356884a8e550800000000000000
+      internalID: 6190378593541423625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_71
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 516
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06aa9fd36b93e5a80800000000000000
+      internalID: -8476273993778091424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_72
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf37f703ed4c504a0800000000000000
+      internalID: -6627674818030373893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_73
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac17dce8a7dd9a3e0800000000000000
+      internalID: -2041857437584231990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_74
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a7aa80148f28f30800000000000000
+      internalID: 4576493129563798170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_75
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93db7340c26bede10800000000000000
+      internalID: 2224415566133181753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_76
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212f2a5410971df10800000000000000
+      internalID: 2292746731678528018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_77
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af620babcb60dbf40800000000000000
+      internalID: 5745756107250345722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_78
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67e4aeba878d2990800000000000000
+      internalID: -7409116781980883089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_79
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7811cb152c540e0800000000000000
+      internalID: -2286207579517253727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_80
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 260
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25fc3be2945f83240800000000000000
+      internalID: 4771833499863994194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_81
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 4
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368dda930904be5f0800000000000000
+      internalID: -726415926703040413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_82
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 4
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b008a5f6fc70ef50800000000000000
+      internalID: 6908659228511568056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_83
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 4
+        width: 152
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4834523e4302ec40800000000000000
+      internalID: 5539994126005844044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_84
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 4
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce4841686c0b7160800000000000000
+      internalID: 7024221686262681287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_85
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 4
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd6d8eebab5d8160800000000000000
+      internalID: 7029375387394993595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_86
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 4
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007204218f1652100800000000000000
+      internalID: 82579886262200064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_87
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 4
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7fdd963cf45f6ff0800000000000000
+      internalID: -40720429398237318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_88
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 4
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2658ce309efc7640800000000000000
+      internalID: 5079214375249139245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jingzhi_89
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 4
+        width: 154
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bbe24139a13b4400800000000000000
+      internalID: 309395602150714293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jingzhi_0: 3772828375457617615
+      jingzhi_1: 782859044625267342
+      jingzhi_10: 1424875911244641087
+      jingzhi_11: -6876206164501373178
+      jingzhi_12: -5543200152683196085
+      jingzhi_13: -2643561135152212947
+      jingzhi_14: 410173050623969599
+      jingzhi_15: -97620744897030925
+      jingzhi_16: 5893426554374874244
+      jingzhi_17: -876760231737639775
+      jingzhi_18: 4545937737963579281
+      jingzhi_19: 6412297143444408985
+      jingzhi_2: -3356032277650109080
+      jingzhi_20: -674554656092131432
+      jingzhi_21: -7771704108979861892
+      jingzhi_22: 3257015910220434
+      jingzhi_23: -8884815577431641877
+      jingzhi_24: -6263892597649788868
+      jingzhi_25: 4718160759024974120
+      jingzhi_26: 3806504200712623707
+      jingzhi_27: -2583090583352834861
+      jingzhi_28: 8246122238918729138
+      jingzhi_29: -6256143667311341132
+      jingzhi_3: -6033393010102304448
+      jingzhi_30: -4671062940353030272
+      jingzhi_31: -3302863630904809490
+      jingzhi_32: 233096048851667589
+      jingzhi_33: 6191900062769317447
+      jingzhi_34: -1316203721817185749
+      jingzhi_35: 7946046363931702034
+      jingzhi_36: 840183804216152181
+      jingzhi_37: 2323272253504019669
+      jingzhi_38: 8784083443627858486
+      jingzhi_39: 3507535541983038404
+      jingzhi_4: -1931300262193298553
+      jingzhi_40: -843629518258932555
+      jingzhi_41: 3061919950633017103
+      jingzhi_42: -5054652681588552798
+      jingzhi_43: 8293342790479982085
+      jingzhi_44: 5565333470433105740
+      jingzhi_45: -1487388493167008744
+      jingzhi_46: 8239931346512158548
+      jingzhi_47: -9081395729123953230
+      jingzhi_48: 2256397321319840916
+      jingzhi_49: 8107351288549423463
+      jingzhi_5: 5873462018749435033
+      jingzhi_50: 1236163174744151125
+      jingzhi_51: -7468651026437534896
+      jingzhi_52: -2226109103638014823
+      jingzhi_53: -5916637904139150070
+      jingzhi_54: 2046195235472541174
+      jingzhi_55: 7684915740619924669
+      jingzhi_56: -4648153753609828887
+      jingzhi_57: 4927565020943509391
+      jingzhi_58: 7608790152177219068
+      jingzhi_59: 2626939305480378297
+      jingzhi_6: 5820134069693422577
+      jingzhi_60: 8053993516362980157
+      jingzhi_61: -7467445725401758068
+      jingzhi_62: 194862103020520165
+      jingzhi_63: 9140238417240730021
+      jingzhi_64: -4704190306122701829
+      jingzhi_65: 5311376423098859754
+      jingzhi_66: -249400241300781968
+      jingzhi_67: -7464496990062984426
+      jingzhi_68: 3652234079181490359
+      jingzhi_69: -7048297709603564626
+      jingzhi_7: -3266866180411762144
+      jingzhi_70: 6190378593541423625
+      jingzhi_71: -8476273993778091424
+      jingzhi_72: -6627674818030373893
+      jingzhi_73: -2041857437584231990
+      jingzhi_74: 4576493129563798170
+      jingzhi_75: 2224415566133181753
+      jingzhi_76: 2292746731678528018
+      jingzhi_77: 5745756107250345722
+      jingzhi_78: -7409116781980883089
+      jingzhi_79: -2286207579517253727
+      jingzhi_8: -7326156204491110730
+      jingzhi_80: 4771833499863994194
+      jingzhi_81: -726415926703040413
+      jingzhi_82: 6908659228511568056
+      jingzhi_83: 5539994126005844044
+      jingzhi_84: 7024221686262681287
+      jingzhi_85: 7029375387394993595
+      jingzhi_86: 82579886262200064
+      jingzhi_87: -40720429398237318
+      jingzhi_88: 5079214375249139245
+      jingzhi_89: 309395602150714293
+      jingzhi_9: -6495985855378182794
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
