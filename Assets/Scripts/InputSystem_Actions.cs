@@ -208,6 +208,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimBoomGear"",
+                    ""type"": ""Button"",
+                    ""id"": ""f35a5f0b-a228-4ad4-8ad2-a8713303f2b3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ThrowBoomGear"",
+                    ""type"": ""Button"",
+                    ""id"": ""efd23033-f65a-48c6-b4e2-c96e48d34e4e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -599,7 +617,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""dbe16516-ea90-498b-823d-303c72b4dfdd"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -610,7 +628,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ddcade3b-7067-44a6-aac4-ac855278cede"",
-                    ""path"": ""<Keyboard>/tab"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -637,6 +655,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""UseLargeGear"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c034c063-76e7-4be4-b400-45f014d9168d"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""AimBoomGear"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec08a2b1-0406-48d7-8baf-c5b591010b03"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""ThrowBoomGear"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1445,6 +1485,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_SwitchWorld = m_Player.FindAction("SwitchWorld", throwIfNotFound: true);
         m_Player_UseSmallGear = m_Player.FindAction("UseSmallGear", throwIfNotFound: true);
         m_Player_UseLargeGear = m_Player.FindAction("UseLargeGear", throwIfNotFound: true);
+        m_Player_AimBoomGear = m_Player.FindAction("AimBoomGear", throwIfNotFound: true);
+        m_Player_ThrowBoomGear = m_Player.FindAction("ThrowBoomGear", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1564,6 +1606,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwitchWorld;
     private readonly InputAction m_Player_UseSmallGear;
     private readonly InputAction m_Player_UseLargeGear;
+    private readonly InputAction m_Player_AimBoomGear;
+    private readonly InputAction m_Player_ThrowBoomGear;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1627,6 +1671,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/UseLargeGear".
         /// </summary>
         public InputAction @UseLargeGear => m_Wrapper.m_Player_UseLargeGear;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/AimBoomGear".
+        /// </summary>
+        public InputAction @AimBoomGear => m_Wrapper.m_Player_AimBoomGear;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ThrowBoomGear".
+        /// </summary>
+        public InputAction @ThrowBoomGear => m_Wrapper.m_Player_ThrowBoomGear;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1692,6 +1744,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @UseLargeGear.started += instance.OnUseLargeGear;
             @UseLargeGear.performed += instance.OnUseLargeGear;
             @UseLargeGear.canceled += instance.OnUseLargeGear;
+            @AimBoomGear.started += instance.OnAimBoomGear;
+            @AimBoomGear.performed += instance.OnAimBoomGear;
+            @AimBoomGear.canceled += instance.OnAimBoomGear;
+            @ThrowBoomGear.started += instance.OnThrowBoomGear;
+            @ThrowBoomGear.performed += instance.OnThrowBoomGear;
+            @ThrowBoomGear.canceled += instance.OnThrowBoomGear;
         }
 
         /// <summary>
@@ -1742,6 +1800,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @UseLargeGear.started -= instance.OnUseLargeGear;
             @UseLargeGear.performed -= instance.OnUseLargeGear;
             @UseLargeGear.canceled -= instance.OnUseLargeGear;
+            @AimBoomGear.started -= instance.OnAimBoomGear;
+            @AimBoomGear.performed -= instance.OnAimBoomGear;
+            @AimBoomGear.canceled -= instance.OnAimBoomGear;
+            @ThrowBoomGear.started -= instance.OnThrowBoomGear;
+            @ThrowBoomGear.performed -= instance.OnThrowBoomGear;
+            @ThrowBoomGear.canceled -= instance.OnThrowBoomGear;
         }
 
         /// <summary>
@@ -2328,6 +2392,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnUseLargeGear(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "AimBoomGear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnAimBoomGear(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ThrowBoomGear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnThrowBoomGear(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

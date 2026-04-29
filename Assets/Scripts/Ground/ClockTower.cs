@@ -20,7 +20,7 @@ public class ClockTower : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.digit1Key.wasPressedThisFrame && currentPhase != 2 && playerInRange)
+        if (player.playerActions.UseLargeGear.WasPressedThisFrame() && currentPhase != 2 && playerInRange)
         {
             if (player.stats.AddLargeGear(-1))
                 currentPhase++;
@@ -47,7 +47,7 @@ public class ClockTower : MonoBehaviour
         {
             playerTimer -= Time.deltaTime;
 
-            if (Keyboard.current.tabKey.wasPressedThisFrame && playerTimer <= switchByPlayerDuration)
+            if (player.playerActions.SwitchWorld.WasPressedThisFrame() && playerTimer <= switchByPlayerDuration)
                 EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
 
             if (playerTimer <= 0)

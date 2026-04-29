@@ -35,12 +35,13 @@ public class PlayerMotion : MonoBehaviour
 
     private void Update()
     {
-        float xInput = Keyboard.current.aKey.isPressed ? -1 :
-                       Keyboard.current.dKey.isPressed ? 1 : 0;
+        Vector2 move = player.playerActions.Move.ReadValue<Vector2>();
+        float xInput = move.x != 0 ? move.x : 0;
+        float yInput = move.y != 0 ? move.y : 0;
         switch (currentState)
         {
             case PlayerMotionType.Idle:
-                IdleUpdate(xInput);
+                IdleUpdate(xInput, yInput);
                 break;
 
             case PlayerMotionType.Move:
@@ -56,7 +57,7 @@ public class PlayerMotion : MonoBehaviour
                 break;
 
             case PlayerMotionType.Climb:
-                ClimbUpdate(xInput);
+                ClimbUpdate(xInput, yInput);
                 break;
 
             case PlayerMotionType.Aim:
@@ -65,7 +66,7 @@ public class PlayerMotion : MonoBehaviour
         }
     }
 
-    private void IdleUpdate(float xInput)
+    private void IdleUpdate(float xInput, float yInput)
     {
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
@@ -75,13 +76,13 @@ public class PlayerMotion : MonoBehaviour
         if (!player.IsGroundDetected())
             ChangeState(PlayerMotionType.Air);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (player.playerActions.Jump.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Jump);
 
-        if (player.canClimbLadder && Keyboard.current.wKey.isPressed)
+        if (player.canClimbLadder && yInput != 0)
             ChangeState(PlayerMotionType.Climb);
 
-        if (Keyboard.current.digit2Key.wasPressedThisFrame)
+        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Aim);
     }
 
@@ -95,10 +96,10 @@ public class PlayerMotion : MonoBehaviour
         if (!player.IsGroundDetected())
             ChangeState(PlayerMotionType.Air);
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (player.playerActions.Jump.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Jump);
 
-        if (Keyboard.current.digit2Key.wasPressedThisFrame)
+        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Aim);
     }
 
@@ -136,19 +137,14 @@ public class PlayerMotion : MonoBehaviour
         rb.gravityScale = defaultGravity;
     }
 
-    private void ClimbUpdate(float xInput)
+    private void ClimbUpdate(float xInput, float yInput)
     {
-        float yInput = 0;
-
-        if (Keyboard.current.wKey.isPressed) yInput = 1;
-        else if (Keyboard.current.sKey.isPressed) yInput = -1;
-
         player.SetVelocity(0.3f * xInput * player.moveSpeed, 3 * yInput);
 
         if (!player.canClimbLadder)
             ChangeState(PlayerMotionType.Air);
 
-        if (Keyboard.current.spaceKey.isPressed)
+        if (player.playerActions.Jump.WasPressedThisFrame())
         {
             player.SetVelocity(0, player.jumpForce);
             ChangeState(PlayerMotionType.Air);
@@ -167,13 +163,13 @@ public class PlayerMotion : MonoBehaviour
 
     private void AimUpdate()
     {
-        if (Keyboard.current.digit2Key.wasPressedThisFrame)
+        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
         {
             ChangeState(PlayerMotionType.Idle);
             return;
         }
 
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (player.playerActions.ThrowBoomGear.WasPressedThisFrame())
         {
             player.skill.boomGear.CreateBoomGear();
             ChangeState(PlayerMotionType.Idle);
