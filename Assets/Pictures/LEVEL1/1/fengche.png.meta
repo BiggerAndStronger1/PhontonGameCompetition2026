@@ -1,26 +1,14 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 67b298c05ab9b534aa101de92d7116be
-=======
-<<<<<<<< HEAD:Assets/Pictures/LEVEL1/5/5.jpg.meta
-guid: 6aebfd1d428cded40b9239f5f1773c96
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4130640169021434097
-    second: 5_0
-========
-guid: 7336f8a3a5cf871459f3b0ff6f1ecf82
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
-TextureImporter:
+<<<<<<< HEAD
   internalIDToNameTable:
   - first:
       213: 8509486499590065436
     second: fengche_0
-<<<<<<< HEAD
 =======
->>>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646:Assets/Pictures/LEVEL1/1/fengche.png.meta
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
+  internalIDToNameTable: []
+>>>>>>> 902912b3120aaafd48c031deb66f1bfae0bb9377
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,11 +46,11 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,16 +70,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +92,20 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -114,33 +115,16 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
-<<<<<<< HEAD
       name: fengche_0
-=======
-<<<<<<<< HEAD:Assets/Pictures/LEVEL1/5/5.jpg.meta
-      name: 5_0
-========
-      name: fengche_0
->>>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646:Assets/Pictures/LEVEL1/1/fengche.png.meta
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-<<<<<<< HEAD
         width: 781
         height: 797
-=======
-<<<<<<<< HEAD:Assets/Pictures/LEVEL1/5/5.jpg.meta
-        width: 1920
-        height: 1080
-========
-        width: 781
-        height: 797
->>>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646:Assets/Pictures/LEVEL1/1/fengche.png.meta
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,27 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<< HEAD
       spriteID: c1d4c0dd2e4c71670800000000000000
       internalID: 8509486499590065436
-=======
-<<<<<<<< HEAD:Assets/Pictures/LEVEL1/5/5.jpg.meta
-      spriteID: 1f86b71495bf25930800000000000000
-      internalID: 4130640169021434097
-========
-      spriteID: c1d4c0dd2e4c71670800000000000000
-      internalID: 8509486499590065436
->>>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646:Assets/Pictures/LEVEL1/1/fengche.png.meta
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
       vertices: []
       indices: 
       edges: []
       weights: []
+=======
+    sprites: []
+>>>>>>> 902912b3120aaafd48c031deb66f1bfae0bb9377
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -178,16 +155,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
 <<<<<<< HEAD
+    nameFileIdTable:
       fengche_0: 8509486499590065436
 =======
-<<<<<<<< HEAD:Assets/Pictures/LEVEL1/5/5.jpg.meta
-      5_0: 4130640169021434097
-========
-      fengche_0: 8509486499590065436
->>>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646:Assets/Pictures/LEVEL1/1/fengche.png.meta
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
+    nameFileIdTable: {}
+>>>>>>> 902912b3120aaafd48c031deb66f1bfae0bb9377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

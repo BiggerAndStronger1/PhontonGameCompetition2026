@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: b7d124dd243c8b542b8402caa53e3be5
-=======
-guid: df87786712273444a91395d6ea75d562
->>>>>>> 2f75a9f4a484218a4c468a12caf61f1d545f2646
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 6976977023090245824
     second: PeaceFront_09_0
+  - first:
+      213: 7129125970909832432
+    second: PeaceFront_09_1
+  - first:
+      213: 3802647462670893385
+    second: PeaceFront_09_2
+  - first:
+      213: 6138267455097660676
+    second: PeaceFront_09_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,7 +114,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 5120
+        width: 697
         height: 1440
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,6 +126,72 @@ TextureImporter:
       bones: []
       spriteID: 0c04b5b03a333d060800000000000000
       internalID: 6976977023090245824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeaceFront_09_1
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 0
+        width: 1047
+        height: 402
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4a71f7c4ebfe260800000000000000
+      internalID: 7129125970909832432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeaceFront_09_2
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 0
+        width: 1279
+        height: 1440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9410a8258b7b5c430800000000000000
+      internalID: 3802647462670893385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PeaceFront_09_3
+      rect:
+        serializedVersion: 2
+        x: 4336
+        y: 0
+        width: 784
+        height: 1440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 405ef6d7ab18f2550800000000000000
+      internalID: 6138267455097660676
       vertices: []
       indices: 
       edges: []
@@ -140,6 +211,9 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       PeaceFront_09_0: 6976977023090245824
+      PeaceFront_09_1: 7129125970909832432
+      PeaceFront_09_2: 3802647462670893385
+      PeaceFront_09_3: 6138267455097660676
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

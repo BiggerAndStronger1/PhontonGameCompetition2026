@@ -89,11 +89,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a67a4a672ec5204b8c0c9456b7f2781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slot
-  activeEmptySlotSprite: {fileID: -7889216112988592123, guid: efc9ab54c9d1deb46b5e1cbdfcc5629c, type: 3}
-  deactiveEmptySlotSprite: {fileID: 3514998746854928232, guid: e41236cf1a5fbac4090477223c104453, type: 3}
-  boomGearSprite: {fileID: 8431587995076812409, guid: 01c243bc90401714fa7199ea55d348d6, type: 3}
-  smallGearSprite: {fileID: 6310259935858931691, guid: 12c5337311fd95f44bd4f346da3f2a9e, type: 3}
-  mineGearSprite: {fileID: 1599650296112252125, guid: de79999cff73d184198d847d62248fc3, type: 3}
+  activeEmptySlotSprite: {fileID: 21300000, guid: 29bb6c8482bb8be458fedad7a70d8a99, type: 3}
+  deactiveEmptySlotSprite: {fileID: 21300000, guid: c53b9a8bd6c324f4fa26946f3f679fde, type: 3}
+  boomGearSprite: {fileID: 21300000, guid: 5597ea6b0f4f3844b8606d6c9650dbad, type: 3}
+  smallGearSprite: {fileID: 21300000, guid: 1c7a779845d62c849b6deeda78453e5e, type: 3}
+  mineGearSprite: {fileID: 21300000, guid: 3e9d6e383e50f82478532a4370d4af4a, type: 3}
   largeGearSprite: {fileID: 0}
 --- !u!70 &408823920272444237
 CapsuleCollider2D:

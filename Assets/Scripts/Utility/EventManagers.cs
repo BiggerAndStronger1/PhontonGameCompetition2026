@@ -87,6 +87,14 @@ public enum GameEvents
     /// toggle the input action for Player, passing in a true will turn on (single param event: bool)
     /// </summary>
     TogglePlayerInput,
+    /// <summary>
+    /// notifies that a gear of certain quantity is used, should be listened by Player (two param event: int, Proptype)
+    /// </summary>
+    UseGear,
+    /// <summary>
+    /// notifies that a gear of certain quantity is used, should be listened by PocketWatchUI (two param event: int, Proptype)
+    /// </summary>
+    ConsumeGear,
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {

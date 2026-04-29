@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 2a01382f95f7abb43abb0b0f6e77748b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4284113804102241479
+    second: jump_qitiao_0
+  - first:
+      213: 4226043895677553186
+    second: jump_qitiao_1
+  - first:
+      213: -4062175353831211406
+    second: jump_qitiao_2
+  - first:
+      213: -7121610884983327741
+    second: jump_qitiao_3
+  - first:
+      213: -5822245209079394547
+    second: jump_qitiao_4
+  - first:
+      213: -7120488729376547780
+    second: jump_qitiao_5
+  - first:
+      213: 23792021789177245
+    second: jump_qitiao_6
+  - first:
+      213: 5154057195539274438
+    second: jump_qitiao_7
+  - first:
+      213: -3703035675774292500
+    second: jump_qitiao_8
+  - first:
+      213: -8025455716340875767
+    second: jump_qitiao_9
+  - first:
+      213: 4571290396363113644
+    second: jump_qitiao_10
+  - first:
+      213: -4839220108179558665
+    second: jump_qitiao_11
+  - first:
+      213: -4205507993430713431
+    second: jump_qitiao_12
+  - first:
+      213: 8788975359059749013
+    second: jump_qitiao_13
+  - first:
+      213: 6391855937287411126
+    second: jump_qitiao_14
+  - first:
+      213: 1469267973411972060
+    second: jump_qitiao_15
+  - first:
+      213: 3709007406588111194
+    second: jump_qitiao_16
+  - first:
+      213: 7520671243781857434
+    second: jump_qitiao_17
+  - first:
+      213: 5474343244982856772
+    second: jump_qitiao_18
+  - first:
+      213: 817338301800026012
+    second: jump_qitiao_19
+  - first:
+      213: 6020805643624557931
+    second: jump_qitiao_20
+  - first:
+      213: -9080049904074595988
+    second: jump_qitiao_21
+  - first:
+      213: -8664188506252256358
+    second: jump_qitiao_22
+  - first:
+      213: -288147817927664070
+    second: jump_qitiao_23
+  - first:
+      213: 7448438796778424912
+    second: jump_qitiao_24
+  - first:
+      213: -3367553908075911949
+    second: jump_qitiao_25
+  - first:
+      213: 1374051384676592805
+    second: jump_qitiao_26
+  - first:
+      213: 2547912722740036418
+    second: jump_qitiao_27
+  - first:
+      213: -8620497721566786085
+    second: jump_qitiao_28
+  - first:
+      213: -8846854431499956703
+    second: jump_qitiao_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jump_qitiao_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 2138
+        width: 254
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc8cde7eca347b30800000000000000
+      internalID: 4284113804102241479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_1
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 2138
+        width: 254
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a8117588ce5aa30800000000000000
+      internalID: 4226043895677553186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_2
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 2138
+        width: 254
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27e3b8bb90140a7c0800000000000000
+      internalID: -4062175353831211406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_3
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 2138
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304730cc1a4fa2d90800000000000000
+      internalID: -7121610884983327741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_4
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 2138
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f4a9574da333fa0800000000000000
+      internalID: -5822245209079394547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1712
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c96520a31fe2d90800000000000000
+      internalID: -7120488729376547780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_6
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1712
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d957b3fb7b6845000800000000000000
+      internalID: 23792021789177245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_7
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1712
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca1a2446b3e68740800000000000000
+      internalID: 5154057195539274438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1712
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cedefd22cac2c9cc0800000000000000
+      internalID: -3703035675774292500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_9
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 1712
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ebfd2fb8adf9090800000000000000
+      internalID: -8025455716340875767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_10
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1286
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4c060556c707f30800000000000000
+      internalID: 4571290396363113644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_11
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1286
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fea70e63f2a7dcb0800000000000000
+      internalID: -4839220108179558665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_12
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1286
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab1f7ff2c803a5c0800000000000000
+      internalID: -4205507993430713431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_13
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 1286
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598ea68e586b8f970800000000000000
+      internalID: 8788975359059749013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_14
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 1286
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5dc750c1f64b850800000000000000
+      internalID: 6391855937287411126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_15
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 860
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd32413ff63e36410800000000000000
+      internalID: 1469267973411972060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_16
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 860
+        width: 254
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a592afac59a097330800000000000000
+      internalID: 3709007406588111194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_17
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 860
+        width: 254
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a90ec1666aace5860800000000000000
+      internalID: 7520671243781857434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_18
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 860
+        width: 254
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c23cf4d26c8fb40800000000000000
+      internalID: 5474343244982856772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_19
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 860
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f8c14ead4c75b00800000000000000
+      internalID: 817338301800026012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_20
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 434
+        width: 250
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6da8e155d23e8350800000000000000
+      internalID: 6020805643624557931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_21
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 434
+        width: 248
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6160dc68be2df180800000000000000
+      internalID: -9080049904074595988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_22
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 434
+        width: 246
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bdfc9557e92c780800000000000000
+      internalID: -8664188506252256358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_23
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 434
+        width: 244
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e1e95161b400cf0800000000000000
+      internalID: -288147817927664070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_24
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 434
+        width: 242
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a47354f9b2e5760800000000000000
+      internalID: 7448438796778424912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_25
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 8
+        width: 240
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4282b009b0441d0800000000000000
+      internalID: -3367553908075911949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_26
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 8
+        width: 240
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac28ce447c911310800000000000000
+      internalID: 1374051384676592805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_27
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 8
+        width: 238
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2434e953f110c5320800000000000000
+      internalID: 2547912722740036418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_28
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 8
+        width: 238
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd82fedef6dd5880800000000000000
+      internalID: -8620497721566786085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_qitiao_29
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 8
+        width: 238
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ecad664c8a93580800000000000000
+      internalID: -8846854431499956703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      jump_qitiao_0: 4284113804102241479
+      jump_qitiao_1: 4226043895677553186
+      jump_qitiao_10: 4571290396363113644
+      jump_qitiao_11: -4839220108179558665
+      jump_qitiao_12: -4205507993430713431
+      jump_qitiao_13: 8788975359059749013
+      jump_qitiao_14: 6391855937287411126
+      jump_qitiao_15: 1469267973411972060
+      jump_qitiao_16: 3709007406588111194
+      jump_qitiao_17: 7520671243781857434
+      jump_qitiao_18: 5474343244982856772
+      jump_qitiao_19: 817338301800026012
+      jump_qitiao_2: -4062175353831211406
+      jump_qitiao_20: 6020805643624557931
+      jump_qitiao_21: -9080049904074595988
+      jump_qitiao_22: -8664188506252256358
+      jump_qitiao_23: -288147817927664070
+      jump_qitiao_24: 7448438796778424912
+      jump_qitiao_25: -3367553908075911949
+      jump_qitiao_26: 1374051384676592805
+      jump_qitiao_27: 2547912722740036418
+      jump_qitiao_28: -8620497721566786085
+      jump_qitiao_29: -8846854431499956703
+      jump_qitiao_3: -7121610884983327741
+      jump_qitiao_4: -5822245209079394547
+      jump_qitiao_5: -7120488729376547780
+      jump_qitiao_6: 23792021789177245
+      jump_qitiao_7: 5154057195539274438
+      jump_qitiao_8: -3703035675774292500
+      jump_qitiao_9: -8025455716340875767
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
