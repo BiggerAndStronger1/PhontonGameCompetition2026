@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -13,7 +14,11 @@ public class Slot : MonoBehaviour, ICanvasManager
         private set
         {
             if (value) image.sprite = occupiedSprite;
-            else image.sprite = emptySprite;
+            else
+            {
+                image.sprite = emptySprite;
+                type = null;
+            }
             _occupied = value;
         }
     }
@@ -26,7 +31,7 @@ public class Slot : MonoBehaviour, ICanvasManager
     [SerializeField] private Sprite largeGearSprite;
     private Sprite occupiedSprite;
     private Sprite emptySprite;
-
+    public PropType? type { get; private set; }
     private Image image;
 
     public void ForcedAwake()
@@ -46,6 +51,11 @@ public class Slot : MonoBehaviour, ICanvasManager
     public void ForcedOnApplicationQuit()
     {
         
+    }
+
+    private void Update()
+    {
+        Assert.IsFalse(occupied && type == null);
     }
 
     public void Put(PropType propType)
@@ -69,8 +79,8 @@ public class Slot : MonoBehaviour, ICanvasManager
                 occupiedSprite = largeGearSprite;
                 break;
         }
-
         occupied = true;
+        type = propType;
     }
 
     public void Use()
@@ -81,5 +91,6 @@ public class Slot : MonoBehaviour, ICanvasManager
     public void Activate()
     {
         emptySprite = activeEmptySlotSprite;
+        occupied = false;
     }
 }
