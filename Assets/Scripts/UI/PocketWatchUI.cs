@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using static UnityEditor.MaterialProperty;
 
 [RequireComponent(typeof(Anim2D))]
 public class PocketWatchUI : MonoBehaviour, ICanvasManager
@@ -27,18 +28,20 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         background.sprite = deactivated;
         EventManagerSingleParam<PropType>.StartListening(GameEvents.PlayerCollectProps, Put);
         EventManagerSingleParam<bool>.StartListening(GameEvents.TogglePocketWatchUI,  Toggle);
+        EventManagerTwoParams<int, PropType>.StartListening(GameEvents.ConsumeGear, Consume);
         anim2D = GetComponent<Anim2D>();
     }
 
     public void ForcedStart()
     {
-        
+
     }
 
     private void OnDestroy()
     {
         EventManagerSingleParam<PropType>.StopListening(GameEvents.PlayerCollectProps, Put);
         EventManagerSingleParam<bool>.StopListening(GameEvents.TogglePocketWatchUI, Toggle);
+        EventManagerTwoParams<int, PropType>.StopListening(GameEvents.ConsumeGear, Consume);
     }
 
     public void ForcedOnApplicationQuit()
@@ -72,7 +75,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
         else if (CanvasManager.actionsUI.UseSmallGear.WasPressedThisFrame() && pointerAnimator.GetCurrentAnimatorStateInfo(0).IsName("default"))
         {
-            Use(PropType.SmallGear);
+            UseSmallGear();
         }
         
 
@@ -108,22 +111,31 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         
     }
 
-    private void Use(PropType propType)
+    /// <summary>
+    /// active use of small gear
+    /// </summary>
+    private void UseSmallGear()
     {
-        if (propType == PropType.SmallGear ){
-            int index = Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60 == 6
-                ? 0
-                : Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60;
+        int index = Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60 == 6
+            ? 0
+            : Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60;
 
-            Slot slot = smallGearSlots[index];
-            print(slot.name);
-            if (slot.occupied)
-            {
-                slot.Use();
-                Toggle(false);
-            }
+        Slot slot = smallGearSlots[index];
+        if (slot.occupied)
+        {
+            slot.Use();
+            EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, slot.type.Value);
+            Toggle(false);
         }
-        else if (propType == PropType.LargeGear)
+    }
+    /// <summary>
+    /// consume gear, should only be called by player
+    /// </summary>
+    /// <param name="quantity"></param>
+    /// <param name="propType"></param>
+    private void Consume(int quantity, PropType propType)
+    {
+        if (propType == PropType.LargeGear)
         {
             if (bigGearSlot.occupied)
             {
@@ -131,7 +143,18 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
                 Toggle(false);
             }
         }
-        
+        else 
+        {
+            foreach (var smallGearSlot in smallGearSlots)
+            {
+
+                if (smallGearSlot.occupied && smallGearSlot.type.Value == propType && quantity > 0)
+                {
+                    smallGearSlot.Use();
+                    quantity--;
+                }
+            }
+        }
     }
 
     private void Toggle(bool on)
