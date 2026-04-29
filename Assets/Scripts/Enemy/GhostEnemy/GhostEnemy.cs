@@ -12,11 +12,10 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     [Header("Attack Info")]
     public Player player;
+    public WorldType effectiveWorld;
     public bool canHatrePlayer;
     public float hatredRadius;
-    public bool canKillPlayer;
 
-    [Header("Reborn Info")]
     private Vector3 originalPosition;
 
     public bool isDead = false;
@@ -41,6 +40,12 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     private void OnEnable()
     {
         EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetGhost);
+        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, OnSwitchWorld);
+    }
+
+    private void OnDisable()
+    {
+        EventManagerNoParam.StopListening(GameEvents.SwitchWorld, OnSwitchWorld);
     }
 
     private void Start()
@@ -48,12 +53,23 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
         originalPosition = transform.position;
+        ResetGhost();
     }
 
     private void Update()
     {
         if (isDead || player.isDead)
             return;
+
+        FlipController(rb.linearVelocityX);
+    }
+
+    private void OnSwitchWorld()
+    {
+        if (WorldManager.instance.currentWorld == effectiveWorld)
+            canHatrePlayer = true;
+        else
+            canHatrePlayer = false;
     }
 
     public void KillBySpike()
@@ -79,17 +95,17 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     {
         isDead = false;
 
-        rb.bodyType = RigidbodyType2D.Dynamic;
         sr.enabled = true;
         cd.enabled = true;
         rb.linearVelocity = Vector2.zero;
         transform.position = originalPosition;
+        canHatrePlayer = (WorldManager.instance.currentWorld == effectiveWorld);
     }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.GetComponent<Player>() != null)
+        if (canHatrePlayer && collision.transform.GetComponent<Player>() != null)
             player.PlayerDie();
     }
 
@@ -130,14 +146,6 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     {
         if (_x > 0 && !facingRight) Flip();
         else if (_x < 0 && facingRight) Flip();
-    }
-    #endregion
-
-    #region Velocity
-    public void SetVelocity(float _xVelocity, float _yVelocity)
-    {
-        rb.linearVelocity = new Vector2(_xVelocity, _yVelocity);
-        FlipController(_xVelocity);
     }
     #endregion
 }
