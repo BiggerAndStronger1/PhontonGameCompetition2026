@@ -24,18 +24,17 @@ public class CamSwitch : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Player>() != null && cam)
         {
-            Transform transform = GameObject.FindGameObjectWithTag("Player").transform;
-            Assert.IsNotNull(transform);
+            Transform camFollow = GameObject.FindGameObjectWithTag("Player").transform;
+            Assert.IsNotNull(camFollow);
+            cam.Follow = camFollow;
             cam.Priority = 1;
-            cam.Follow = transform;
-            cam.enabled = true;
         }
         
 
@@ -46,7 +45,7 @@ public class CamSwitch : MonoBehaviour
         if (other.GetComponent<Player>() != null && cam)
         {
             cam.Priority = 0;
-            cam.enabled = false;
+            cam.transform.position = Vector2.zero;
         }
            
     }

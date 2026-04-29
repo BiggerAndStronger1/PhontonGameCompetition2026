@@ -84,11 +84,6 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         playerActions.Disable();
     }
 
-    private void OnApplicationQuit()
-    {
-        playerActions.Disable();
-    }
-
     private void ToggleInputAction(bool on)
     {
         if (on)

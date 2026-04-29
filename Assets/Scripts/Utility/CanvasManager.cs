@@ -68,14 +68,8 @@ public class CanvasManager : MonoBehaviour
             EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
         }
 
-        foreach (var o in disablePlayerInputFor)
-        {
-            if (o.activeInHierarchy)
-            {
-                EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, false);
-            }
-        }
-        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, true);
+        bool disablePlayerInput = disablePlayerInputFor.Exists((o => o.activeInHierarchy));
+        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, !disablePlayerInput);
     }
 
     
