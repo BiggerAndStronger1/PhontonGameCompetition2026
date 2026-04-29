@@ -1,13 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
-enum BoxState
-{
-    Idle,
-    Moving,
-    Falling,
-    Locked
-}
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
@@ -50,7 +41,6 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
 
     private void Start()
     {
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, Reset);
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         moveOnX = (pointA.position.x != pointB.position.x);
         Reset();
@@ -105,7 +95,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
     }
 
     private void HandleMove()
-    { 
+    {
         if (useGravity && !IsGroundDetected())
         {
             StartFall();
@@ -142,7 +132,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
 
     private void StartFall()
     {
-        if (state == BoxState.Falling) 
+        if (state == BoxState.Falling)
             return;
         Debug.Log("start falling");
         state = BoxState.Falling;

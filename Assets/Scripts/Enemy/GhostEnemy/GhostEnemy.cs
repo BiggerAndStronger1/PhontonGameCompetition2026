@@ -39,7 +39,6 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void OnEnable()
     {
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetGhost);
         EventManagerNoParam.StartListening(GameEvents.SwitchWorld, OnSwitchWorld);
     }
 

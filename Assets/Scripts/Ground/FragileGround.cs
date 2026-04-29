@@ -15,11 +15,6 @@ public class FragileGround : MonoBehaviour, IFragile
         cd = GetComponent<Collider2D>();
     }
 
-    private void OnEnable()
-    {
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetGround);
-    }
-
     private void Start()
     {
         ResetGround();

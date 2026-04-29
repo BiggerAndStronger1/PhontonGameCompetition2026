@@ -19,8 +19,6 @@ public class Button : MonoBehaviour
     protected virtual void Start()
     {
         ResetButton();
-
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetButton);
     }
 
     protected virtual void PressButton()
