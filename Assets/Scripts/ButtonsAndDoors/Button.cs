@@ -5,7 +5,7 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public Door targetDoor;
-    public bool isPressed;//按钮是否被按下
+    protected bool isPressed;//按钮是否被按下
 
     protected SpriteRenderer sr;
     protected Collider2D cd;
