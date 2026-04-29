@@ -14,15 +14,6 @@ public class Props : MonoBehaviour
 {
     protected PropType propType;
     protected bool isCollected;
-    protected virtual void OnEnable()
-    {
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetItem);
-    }
-
-    protected virtual void OnDisable()
-    {
-        //EventManagerNoParam.StopListening(GameEvents.PlayerDie, ResetItem);
-    }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {

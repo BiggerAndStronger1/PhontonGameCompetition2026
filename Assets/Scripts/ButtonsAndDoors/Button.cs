@@ -5,7 +5,7 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public Door targetDoor;
-    public bool isPressed;//按钮是否被按下
+    protected bool isPressed;//按钮是否被按下
 
     protected SpriteRenderer sr;
     protected Collider2D cd;
@@ -19,8 +19,6 @@ public class Button : MonoBehaviour
     protected virtual void Start()
     {
         ResetButton();
-
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetButton);
     }
 
     protected virtual void PressButton()

@@ -1,5 +1,8 @@
 
 using UnityEngine;
+
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
 public class Door : MonoBehaviour
 {
     private SpriteRenderer sr;
@@ -16,8 +19,6 @@ public class Door : MonoBehaviour
     private void Start()
     {
         CloseDoor();
-
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, CloseDoor);
     }
 
     public void OpenDoor()

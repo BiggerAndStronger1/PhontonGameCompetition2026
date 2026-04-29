@@ -112,13 +112,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     private void PlayerReborn()
     {
         transform.position = checkpoint != null ? checkpoint.position : Vector3.zero;
-        print("New Game Begin!");
         sr.color = Color.white;
-        stats.smallGearCount = 0;
-        stats.largeGearCount = 0;
-        stats.boomGearCount = 0;
-        stats.mineGearCount = 0;
-        stats.havePocketWatch = false;
         isDead = false;
     }
 

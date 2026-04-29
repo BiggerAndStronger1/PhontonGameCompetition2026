@@ -7,14 +7,7 @@ public class PlayerStats : MonoBehaviour
     public int largeGearCount;
     public int boomGearCount;
     public int mineGearCount;
-    public int maxHp = 100;
-    public int currentHp;
     public bool havePocketWatch = false;
-
-    private void Awake()
-    {
-        currentHp = maxHp;
-    }
 
     public bool AddSmallGear(int _amount)
     {
@@ -62,16 +55,5 @@ public class PlayerStats : MonoBehaviour
 
         mineGearCount += quantity;
         return true;
-    }
-
-    public void TakeDamage(int _damage)
-    {
-        currentHp -= _damage;
-
-        if (currentHp <= 0)
-        {
-            currentHp = 0;
-            EventManagerNoParam.TriggerEvent(GameEvents.PlayerDie);
-        }
     }
 }

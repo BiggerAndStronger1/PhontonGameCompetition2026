@@ -34,11 +34,6 @@ public class ChaseEnemy : MonoBehaviour, IFragile
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void OnEnable()
-    {
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, ResetChase);
-    }
-
     private void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
