@@ -23,14 +23,17 @@ public class TouchTriggerButton : Button
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((collision.CompareTag("Player") || collision.CompareTag("Enemy")) && needLongPress)
+        if (needLongPress)
         {
-            if (pressNumber > 0)
-                pressNumber--;
-        }
+            if (collision.CompareTag("Player") || collision.CompareTag("Enemy"))
+            {
+                if (pressNumber > 0)
+                    pressNumber--;
+            }
 
-        if (pressNumber == 0)
-            UnpressButton();
+            if (pressNumber == 0)
+                UnpressButton();
+        }
     }
 
     protected override void ResetButton()

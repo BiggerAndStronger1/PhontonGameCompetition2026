@@ -1,5 +1,13 @@
 using UnityEngine;
 
+public enum BoxState
+{ 
+    Idle,
+    Moving,
+    Falling,
+    Locked
+}
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 public class BoxEnemy : MonoBehaviour, ICanAddStress
@@ -20,7 +28,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
     [Header("Gear Info")]
     [SerializeField] private int needLargeGearNum;
     [SerializeField] private bool haveGear = false;
-    [SerializeField] private float playerDetectorRadius;
+    [SerializeField] private float playerDetectRadius;
 
     private float pauseTimer;
     private bool isPaused;
@@ -72,7 +80,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
 
     private void GearCheck()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) > playerDetectorRadius)
+        if (Vector2.Distance(transform.position, player.transform.position) > playerDetectRadius)
             return;
 
         if (!haveGear && player.stats.AddLargeGear(-needLargeGearNum))
@@ -189,7 +197,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, playerDetectorRadius);
+        Gizmos.DrawWireSphere(transform.position, playerDetectRadius);
         Gizmos.DrawLine(pointA.position, pointB.position);
 
         cd = GetComponent<Collider2D>();
