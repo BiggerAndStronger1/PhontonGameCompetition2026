@@ -46,15 +46,6 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         
     }
 
-    private void OnEnable()
-    {
-        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, false);
-    }
-
-    private void OnDisable()
-    {
-        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, true);
-    }
 
     void Update()
     {

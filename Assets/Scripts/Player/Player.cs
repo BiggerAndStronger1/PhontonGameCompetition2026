@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.MaterialProperty;
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     [Header("Check Info")]
     [SerializeField] private LayerMask whatIsGround;
-
+    
     [SerializeField] private bool isInClockTower = false;
 
     public bool isDead = false;

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private Image fadeImage;
     [SerializeField] private GameObject pocketWatch;
+    [SerializeField] private List<GameObject> disablePlayerInputFor;
     private void Awake()
     {
         if (actions == null)
@@ -65,6 +67,15 @@ public class CanvasManager : MonoBehaviour
         {
             EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
         }
+
+        foreach (var o in disablePlayerInputFor)
+        {
+            if (o.activeInHierarchy)
+            {
+                EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, false);
+            }
+        }
+        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, true);
     }
 
     
