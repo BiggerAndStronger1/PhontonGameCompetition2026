@@ -92,13 +92,13 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
                     smallGearSlot.Put(propType);
                     return;
                 }
-
             }
             Debug.LogWarning("no more room to store small gear");
         }
         else if (propType == PropType.LargeGear)
         {
-            bigGearSlot.Put(propType);
+            if (!bigGearSlot.occupied)bigGearSlot.Put(propType);
+            else Debug.LogWarning("no more room to store big gear");
         }
         else if (propType == PropType.PocketWatch)
         {
@@ -109,6 +109,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
             }
             bigGearSlot.Activate();
         }
+        
     }
 
     private void Use(PropType propType)
