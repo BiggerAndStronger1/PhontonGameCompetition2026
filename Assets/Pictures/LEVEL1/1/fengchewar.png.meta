@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: e65d30e516c6d064988b1fd14d4e241b
 TextureImporter:
+<<<<<<< HEAD
+  internalIDToNameTable:
+  - first:
+      213: -6321399162206617436
+    second: fengchewar_0
+=======
   internalIDToNameTable: []
+>>>>>>> 902912b3120aaafd48c031deb66f1bfae0bb9377
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,7 +115,33 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
+<<<<<<< HEAD
+    sprites:
+    - serializedVersion: 2
+      name: fengchewar_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 699
+        height: 753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0093544f0e548a0800000000000000
+      internalID: -6321399162206617436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+=======
     sprites: []
+>>>>>>> 902912b3120aaafd48c031deb66f1bfae0bb9377
     outline: []
     customData: 
     physicsShape: []
@@ -122,7 +155,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< HEAD
+    nameFileIdTable:
+      fengchewar_0: -6321399162206617436
+=======
     nameFileIdTable: {}
+>>>>>>> 902912b3120aaafd48c031deb66f1bfae0bb9377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
