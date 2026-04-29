@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEditor.MaterialProperty;
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     [Header("Check Info")]
     [SerializeField] private LayerMask whatIsGround;
-
+    
     [SerializeField] private bool isInClockTower = false;
 
     public bool isDead = false;
@@ -51,6 +52,8 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         action = new InputSystem_Actions();
         playerActions = action.Player;
         playerActions.Enable();
+        EventManagerSingleParam<bool>.StartListening(GameEvents.TogglePlayerInput, ToggleInputAction);
+        
     }
 
     protected void Start()
@@ -77,12 +80,22 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     private void OnDestroy()
     {
+        EventManagerSingleParam<bool>.StopListening(GameEvents.TogglePlayerInput, ToggleInputAction);
         playerActions.Disable();
     }
 
     private void OnApplicationQuit()
     {
         playerActions.Disable();
+    }
+
+    private void ToggleInputAction(bool on)
+    {
+        if (on)
+        {
+            playerActions.Enable();
+        }
+        else playerActions.Disable();
     }
 
     public void PlayerDie()

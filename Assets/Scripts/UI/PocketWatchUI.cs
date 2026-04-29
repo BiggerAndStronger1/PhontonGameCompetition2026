@@ -46,10 +46,6 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         
     }
 
-    private void OnEnable()
-    {
-        pointerAnimator.transform.rotation = Quaternion.identity;
-    }
 
     void Update()
     {
