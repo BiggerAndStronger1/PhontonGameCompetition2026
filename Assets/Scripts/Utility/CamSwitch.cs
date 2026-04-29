@@ -35,7 +35,7 @@ public class CamSwitch : MonoBehaviour
             Assert.IsNotNull(transform);
             cam.Priority = 1;
             cam.Follow = transform;
-
+            cam.enabled = true;
         }
         
 
@@ -46,6 +46,7 @@ public class CamSwitch : MonoBehaviour
         if (other.GetComponent<Player>() != null && cam)
         {
             cam.Priority = 0;
+            cam.enabled = false;
         }
            
     }
