@@ -31,9 +31,9 @@ public class CamSwitch : MonoBehaviour
     {
         if (other.GetComponent<Player>() != null && cam)
         {
-            cam.Priority = 1;
             Transform transform = GameObject.FindGameObjectWithTag("Player").transform;
             Assert.IsNotNull(transform);
+            cam.Priority = 1;
             cam.Follow = transform;
 
         }
@@ -46,7 +46,6 @@ public class CamSwitch : MonoBehaviour
         if (other.GetComponent<Player>() != null && cam)
         {
             cam.Priority = 0;
-            
         }
            
     }
