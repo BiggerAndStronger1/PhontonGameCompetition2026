@@ -659,7 +659,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""Submit"",
                     ""type"": ""Button"",
                     ""id"": ""7607c7b6-cd76-4816-beef-bd0341cfe950"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -767,6 +767,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": ""right"",
                     ""type"": ""Button"",
                     ""id"": ""7a7a23e6-8e9c-482b-ac56-d371c7dec16a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseSmallGear"",
+                    ""type"": ""Button"",
+                    ""id"": ""55b363ff-db77-44af-9221-67131aa127e3"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1235,6 +1244,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbb8231e-5729-41c7-9bc2-943a68f06834"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSmallGear"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1441,6 +1461,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_Pocketwatch = m_UI.FindAction("Pocket watch", throwIfNotFound: true);
         m_UI_left = m_UI.FindAction("left", throwIfNotFound: true);
         m_UI_right = m_UI.FindAction("right", throwIfNotFound: true);
+        m_UI_UseSmallGear = m_UI.FindAction("UseSmallGear", throwIfNotFound: true);
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_Test = m_Debug.FindAction("Test", throwIfNotFound: true);
@@ -1772,6 +1793,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Pocketwatch;
     private readonly InputAction m_UI_left;
     private readonly InputAction m_UI_right;
+    private readonly InputAction m_UI_UseSmallGear;
     /// <summary>
     /// Provides access to input actions defined in input action map "UI".
     /// </summary>
@@ -1840,6 +1862,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @right => m_Wrapper.m_UI_right;
         /// <summary>
+        /// Provides access to the underlying input action "UI/UseSmallGear".
+        /// </summary>
+        public InputAction @UseSmallGear => m_Wrapper.m_UI_UseSmallGear;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_UI; }
@@ -1907,6 +1933,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @right.started += instance.OnRight;
             @right.performed += instance.OnRight;
             @right.canceled += instance.OnRight;
+            @UseSmallGear.started += instance.OnUseSmallGear;
+            @UseSmallGear.performed += instance.OnUseSmallGear;
+            @UseSmallGear.canceled += instance.OnUseSmallGear;
         }
 
         /// <summary>
@@ -1960,6 +1989,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @right.started -= instance.OnRight;
             @right.performed -= instance.OnRight;
             @right.canceled -= instance.OnRight;
+            @UseSmallGear.started -= instance.OnUseSmallGear;
+            @UseSmallGear.performed -= instance.OnUseSmallGear;
+            @UseSmallGear.canceled -= instance.OnUseSmallGear;
         }
 
         /// <summary>
@@ -2402,6 +2434,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnRight(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UseSmallGear" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUseSmallGear(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Debug" which allows adding and removing callbacks.

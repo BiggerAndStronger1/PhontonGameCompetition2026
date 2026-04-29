@@ -64,11 +64,11 @@ public enum GameEvents
     /// </summary>
     DeactivateAirTrap,
     /// <summary>
-    /// dedicated to be triggered by looping platform to make a looping platform visible 
+    /// dedicated to be triggered by looping platform to make a looping platform visible, not designed to be used by other classes
     /// </summary>
     PlatformVisible,
     /// <summary>
-    /// dedicated to be triggered by looping platform to make a looping platform invisible 
+    /// dedicated to be triggered by looping platform to make a looping platform invisible, not designed to be used by other classes
     /// </summary>
     PlatformInvisible,
     /// <summary>
@@ -79,6 +79,10 @@ public enum GameEvents
     /// no param event
     /// </summary>
     MainMenuDisable,
+    /// <summary>
+    /// toggle the visibility of the UI, passing in a true will turn on (single param event: bool)
+    /// </summary>
+    TogglePocketWatchUI,
 
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour

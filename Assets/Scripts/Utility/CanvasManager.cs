@@ -10,7 +10,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]private GameObject settingsMenu;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private Image fadeImage;
-
+    [SerializeField] private GameObject pocketWatch;
     private void Awake()
     {
         if (actions == null)
@@ -60,6 +60,10 @@ public class CanvasManager : MonoBehaviour
             if (settingsMenu.activeSelf) settingsMenu.GetComponent<Anim2D>().AnimatedDisable();
             else if (!settingsMenu.activeSelf) settingsMenu.SetActive(true);
             
+        }
+        else if (CanvasManager.actionsUI.Pocketwatch.WasPressedThisFrame())
+        {
+            EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
         }
     }
 

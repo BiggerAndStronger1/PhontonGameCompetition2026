@@ -573,7 +573,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -681,6 +681,15 @@
                     "name": "right",
                     "type": "Button",
                     "id": "7a7a23e6-8e9c-482b-ac56-d371c7dec16a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseSmallGear",
+                    "type": "Button",
+                    "id": "55b363ff-db77-44af-9221-67131aa127e3",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1147,6 +1156,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbb8231e-5729-41c7-9bc2-943a68f06834",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseSmallGear",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
