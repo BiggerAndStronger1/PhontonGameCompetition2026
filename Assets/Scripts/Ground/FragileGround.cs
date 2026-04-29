@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
-public class Spike : MonoBehaviour, IFragile
+public class FragileGround : MonoBehaviour, IFragile
 {
     private bool isCleared = false;
 
@@ -25,17 +25,7 @@ public class Spike : MonoBehaviour, IFragile
         ResetGround();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (isCleared)
-            return;
-
-        IKillBySpike target = collision.transform.GetComponent<IKillBySpike>();
-        if (target != null)
-            target.KillBySpike();
-    }
-
-    public void CleanSpike()
+    public void CleanFragileGround()
     {
         if (isCleared) return;
 
@@ -51,5 +41,5 @@ public class Spike : MonoBehaviour, IFragile
         cd.enabled = true;
     }
 
-    public void DestroyFragile() => CleanSpike();
+    public void DestroyFragile() => CleanFragileGround();
 }
