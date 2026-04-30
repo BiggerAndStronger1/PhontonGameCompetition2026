@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac3a4bd1c5eb254999780e5534f2019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Airtrap
-  pushStrength: 20
+  pushStrength: 15
   _active: 0
 --- !u!61 &4537884305606651971
 BoxCollider2D:
@@ -182,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 8717810557508471444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.84, y: -0.259, z: 0}
+  m_LocalPosition: {x: -2.234, y: -0.121, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -305,5 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218970a07105f6a4db90e1ebad95d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AirtrapButton
-  redEvent: 11
-  greenEvent: 12
+  redEvent: 12
+  greenEvent: 13
+  notPressedColor: {r: 1, g: 0, b: 0, a: 1}
+  pressedColor: {r: 0, g: 1, b: 0, a: 1}

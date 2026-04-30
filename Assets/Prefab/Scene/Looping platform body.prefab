@@ -438,6 +438,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4144620393261556186, guid: b3553eca158bf24428d99e44b7149112, type: 3}
+      propertyPath: redEvent
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144620393261556186, guid: b3553eca158bf24428d99e44b7149112, type: 3}
+      propertyPath: greenEvent
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 5230920096394393833, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: m_Name
       value: button (1)

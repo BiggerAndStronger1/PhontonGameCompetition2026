@@ -84393,18 +84393,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Air trap
       objectReference: {fileID: 0}
-    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: pushStrength
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907916484821382777, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.234
-      objectReference: {fileID: 0}
-    - target: {fileID: 4907916484821382777, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.121
-      objectReference: {fileID: 0}
     - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.98
