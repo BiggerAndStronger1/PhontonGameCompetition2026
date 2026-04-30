@@ -2,10 +2,18 @@ using System;
 using UnityEngine;
 using UnityEngine.Assertions;
 [RequireComponent(typeof(SpriteRenderer))]
-public class AirtrapButton : MonoBehaviour
+public class SwitchButton : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private bool pressed;
+    [Tooltip("event to trigger when the button is red")]
+    [SerializeField] private GameEvents redEvent;
+    [Tooltip("event to trigger when the button is green")]
+    [SerializeField] private GameEvents greenEvent;
+    [Tooltip("color when the button is not pressed")]
+    [SerializeField] private Color notPressedColor = Color.red;
+    [Tooltip("color when the button is pressed")]
+    [SerializeField] private Color pressedColor = Color.green;
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -25,14 +33,14 @@ public class AirtrapButton : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !pressed)
         {
-            spriteRenderer.color = Color.green;
-            EventManagerNoParam.TriggerEvent(GameEvents.ActivateAirTrap);
+            spriteRenderer.color = pressedColor;
+            EventManagerNoParam.TriggerEvent(redEvent);
             pressed = true;
         }
         else
         {
-            spriteRenderer.color = Color.red;
-            EventManagerNoParam.TriggerEvent(GameEvents.DeactivateAirTrap);
+            spriteRenderer.color = notPressedColor;
+            EventManagerNoParam.TriggerEvent(greenEvent);
             pressed = false;
         }
     }

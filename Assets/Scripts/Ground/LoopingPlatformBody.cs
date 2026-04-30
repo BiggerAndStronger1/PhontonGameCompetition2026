@@ -67,11 +67,17 @@ public class LoopingPlatformBody : MonoBehaviour
         leftMost = platforms[0];
         rightMost = platforms[^1];
         isLeftToRight = !invertDirection;
+        EventManagerNoParam.StartListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
     void Start()
     {
 
+    }
+
+    private void OnDestroy()
+    {
+        EventManagerNoParam.StopListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
     void Update()
@@ -95,8 +101,6 @@ public class LoopingPlatformBody : MonoBehaviour
             Vector3 dir = isLeftToRight ? Vector3.right : Vector3.left;
             go.transform.position += speed * Time.deltaTime * dir;
         }
-
-        if (Keyboard.current.tKey.wasPressedThisFrame) isLeftToRight = !isLeftToRight;
     }
 
     private bool Reached(Transform platform)
@@ -116,12 +120,9 @@ public class LoopingPlatformBody : MonoBehaviour
         return (t.position.x + disappearPadding) < otherPos.x;
     }
 
-    private void Action()
+    private void SwitchDirection()
     {
-        if (isLeftToRight)
-        {
-
-        }
+        isLeftToRight = !isLeftToRight;
     }
 
 

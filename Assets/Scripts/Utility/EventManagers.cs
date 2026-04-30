@@ -36,8 +36,17 @@ public enum GameEvents
     /// </summary>
     PlayerCollectProps,
 
+    /// <summary>
+    /// notifies which UI/2D object is clicked using raycast (single param event: GameObject)
+    /// </summary>
     ObjectClicked,
+    /// <summary>
+    /// notifies which UI/2D object is the cursor entered using raycast (single param event: GameObject)
+    /// </summary>
     ObjectHoverEnter,
+    /// <summary>
+    /// notifies which UI/2D object is the cursor exited using raycast (single param event: GameObject)
+    /// </summary>
     ObjectHoverExit,
     /// <summary>
     /// an event triggered by mine gear after explosion (two param event: List<GameObject>, Vector 3)
@@ -95,6 +104,10 @@ public enum GameEvents
     /// notifies that a gear of certain quantity is used, should be listened by PocketWatchUI (two param event: int, Proptype)
     /// </summary>
     ConsumeGear,
+    /// <summary>
+    /// switches the looping direction of the looping platform (no param event)
+    /// </summary>
+    SwitchLoopingPlatformDir,
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {
@@ -147,7 +160,7 @@ public abstract class EventManagerSingleParam<T> : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener �� Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -229,7 +242,7 @@ public abstract class EventManagerNoParam : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener �� Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -313,7 +326,7 @@ public abstract class EventManagerTwoParams<T1, T2> : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener �� Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
