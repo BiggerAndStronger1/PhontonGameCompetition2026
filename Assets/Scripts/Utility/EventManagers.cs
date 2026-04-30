@@ -108,6 +108,10 @@ public enum GameEvents
     /// switches the looping direction of the looping platform (no param event)
     /// </summary>
     SwitchLoopingPlatformDir,
+    /// <summary>
+    /// notifies a world change, providing the world type to the listener (single param event: WordType)
+    /// </summary>
+    WordChanged,
 }
 public abstract class EventManagerSingleParam<T> : MonoBehaviour
 {
