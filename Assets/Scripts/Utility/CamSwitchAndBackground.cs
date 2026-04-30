@@ -3,12 +3,28 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class CamSwitch : MonoBehaviour
+public class CamSwitchAndBackground : MonoBehaviour
 {
-    [SerializeField]private CinemachineCamera cam;
+    [SerializeField] private CinemachineCamera cam;
+    [SerializeField] private GameObject peaceBackground;
+    [SerializeField] private GameObject warBackground;
     private void Awake()
     {
-       
+        EventManagerSingleParam<WorldType>.StartListening(GameEvents.WordChanged, OnWordChange);
+    }
+
+    private void OnWordChange(WorldType obj)
+    {
+        if (obj == WorldType.Peace)
+        {
+            peaceBackground.SetActive(true);
+            warBackground.SetActive(false);
+        }
+        else if (obj == WorldType.War)
+        {
+            peaceBackground.SetActive(false);
+            warBackground.SetActive(true);
+        }
     }
 
     public void ForcedAwake()
@@ -24,7 +40,7 @@ public class CamSwitch : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,7 +52,7 @@ public class CamSwitch : MonoBehaviour
             cam.Follow = camFollow;
             cam.Priority = 1;
         }
-        
+
 
     }
 
@@ -47,6 +63,8 @@ public class CamSwitch : MonoBehaviour
             cam.Priority = 0;
             cam.transform.position = Vector2.zero;
         }
-           
+
     }
+
+
 }

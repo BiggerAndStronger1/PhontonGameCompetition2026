@@ -11,7 +11,17 @@ public enum WorldType
 public class WorldManager : MonoBehaviour
 {
     public static WorldManager instance;
-    public WorldType currentWorld;
+    [SerializeField] private WorldType _currentWorld;
+
+    public WorldType currentWorld
+    {
+        get { return _currentWorld;}
+        private set
+        {
+            _currentWorld = value;
+            EventManagerSingleParam<WorldType>.TriggerEvent(GameEvents.WordChanged, value);
+        }
+    }
 
     private void Awake()
     {
@@ -33,7 +43,6 @@ public class WorldManager : MonoBehaviour
     {
         if (currentWorld == WorldType.Peace) currentWorld = WorldType.War;
         else currentWorld = WorldType.Peace;
-        
         print("œ÷‘⁄ «£∫" + currentWorld);
     }
 }
