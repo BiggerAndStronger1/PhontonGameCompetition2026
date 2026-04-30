@@ -1,97 +1,103 @@
 fileFormatVersion: 2
-guid: 2a01382f95f7abb43abb0b0f6e77748b
+guid: 6d5b78ec09be58f4189577da94e2c5c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4284113804102241479
-    second: jump_qitiao_0
+      213: -3398801033423197244
+    second: jump_luodi_0
   - first:
-      213: 4226043895677553186
-    second: jump_qitiao_1
+      213: -5176747802630422605
+    second: jump_luodi_1
   - first:
-      213: -4062175353831211406
-    second: jump_qitiao_2
+      213: 3199025857617421126
+    second: jump_luodi_2
   - first:
-      213: -7121610884983327741
-    second: jump_qitiao_3
+      213: 2384559103988239727
+    second: jump_luodi_3
   - first:
-      213: -5822245209079394547
-    second: jump_qitiao_4
+      213: 7729239087634721373
+    second: jump_luodi_4
   - first:
-      213: -7120488729376547780
-    second: jump_qitiao_5
+      213: -2083528186023409256
+    second: jump_luodi_5
   - first:
-      213: 23792021789177245
-    second: jump_qitiao_6
+      213: 6223669513581610750
+    second: jump_luodi_6
   - first:
-      213: 5154057195539274438
-    second: jump_qitiao_7
+      213: -6394012017215888875
+    second: jump_luodi_7
   - first:
-      213: -3703035675774292500
-    second: jump_qitiao_8
+      213: 5547484555391923439
+    second: jump_luodi_8
   - first:
-      213: -8025455716340875767
-    second: jump_qitiao_9
+      213: 851088232609002100
+    second: jump_luodi_9
   - first:
-      213: 4571290396363113644
-    second: jump_qitiao_10
+      213: -5062571346957302378
+    second: jump_luodi_10
   - first:
-      213: -4839220108179558665
-    second: jump_qitiao_11
+      213: -653692904705764855
+    second: jump_luodi_11
   - first:
-      213: -4205507993430713431
-    second: jump_qitiao_12
+      213: -1442678966829989768
+    second: jump_luodi_12
   - first:
-      213: 8788975359059749013
-    second: jump_qitiao_13
+      213: 3386778862707017610
+    second: jump_luodi_13
   - first:
-      213: 6391855937287411126
-    second: jump_qitiao_14
+      213: -4831265216479564483
+    second: jump_luodi_14
   - first:
-      213: 1469267973411972060
-    second: jump_qitiao_15
+      213: -3720615559755386932
+    second: jump_luodi_15
   - first:
-      213: 3709007406588111194
-    second: jump_qitiao_16
+      213: 878481456520854340
+    second: jump_luodi_16
   - first:
-      213: 7520671243781857434
-    second: jump_qitiao_17
+      213: -6162282646763687718
+    second: jump_luodi_17
   - first:
-      213: 5474343244982856772
-    second: jump_qitiao_18
+      213: 3101577547071152762
+    second: jump_luodi_18
   - first:
-      213: 817338301800026012
-    second: jump_qitiao_19
+      213: 8316455071542306911
+    second: jump_luodi_19
   - first:
-      213: 6020805643624557931
-    second: jump_qitiao_20
+      213: -750770830584452987
+    second: jump_luodi_20
   - first:
-      213: -9080049904074595988
-    second: jump_qitiao_21
+      213: -7308130676444524864
+    second: jump_luodi_21
   - first:
-      213: -8664188506252256358
-    second: jump_qitiao_22
+      213: -6895247149367824379
+    second: jump_luodi_22
   - first:
-      213: -288147817927664070
-    second: jump_qitiao_23
+      213: 2176912365474748435
+    second: jump_luodi_23
   - first:
-      213: 7448438796778424912
-    second: jump_qitiao_24
+      213: 1626615812425579846
+    second: jump_luodi_24
   - first:
-      213: -3367553908075911949
-    second: jump_qitiao_25
+      213: -3976220406939507743
+    second: jump_luodi_25
   - first:
-      213: 1374051384676592805
-    second: jump_qitiao_26
+      213: 2755959398268970676
+    second: jump_luodi_26
   - first:
-      213: 2547912722740036418
-    second: jump_qitiao_27
+      213: -7190901923186673318
+    second: jump_luodi_27
   - first:
-      213: -8620497721566786085
-    second: jump_qitiao_28
+      213: -4724505579469457919
+    second: jump_luodi_28
   - first:
-      213: -8846854431499956703
-    second: jump_qitiao_29
+      213: -6040384342908820647
+    second: jump_luodi_29
+  - first:
+      213: 1612400271717870388
+    second: jump_luodi_30
+  - first:
+      213: -5538802996291722375
+    second: jump_luodi_31
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -183,30 +189,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump_qitiao_0
+      name: jump_luodi_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 2138
-        width: 254
-        height: 418
+        x: 5
+        y: 1295
+        width: 147
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cc8cde7eca347b30800000000000000
-      internalID: 4284113804102241479
+      spriteID: 4cb649cb77805d0d0800000000000000
+      internalID: -3398801033423197244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_1
+      name: jump_luodi_1
       rect:
         serializedVersion: 2
-        x: 338
-        y: 2138
-        width: 254
-        height: 418
+        x: 9
+        y: 1553
+        width: 139
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22a8117588ce5aa30800000000000000
-      internalID: 4226043895677553186
+      spriteID: 3bffd641d4f7828b0800000000000000
+      internalID: -5176747802630422605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_2
+      name: jump_luodi_2
       rect:
         serializedVersion: 2
-        x: 648
-        y: 2138
-        width: 254
-        height: 418
+        x: 161
+        y: 1295
+        width: 149
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,20 +252,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27e3b8bb90140a7c0800000000000000
-      internalID: -4062175353831211406
+      spriteID: 643639e7119356c20800000000000000
+      internalID: 3199025857617421126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_3
+      name: jump_luodi_3
       rect:
         serializedVersion: 2
-        x: 959
-        y: 2138
-        width: 252
-        height: 418
+        x: 165
+        y: 1553
+        width: 141
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 304730cc1a4fa2d90800000000000000
-      internalID: -7121610884983327741
+      spriteID: f6d84230fd7a71120800000000000000
+      internalID: 2384559103988239727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_4
+      name: jump_luodi_4
       rect:
         serializedVersion: 2
-        x: 1269
-        y: 2138
-        width: 252
-        height: 418
+        x: 317
+        y: 1295
+        width: 151
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +296,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0f4a9574da333fa0800000000000000
-      internalID: -5822245209079394547
+      spriteID: d5a288abff5c34b60800000000000000
+      internalID: 7729239087634721373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_5
+      name: jump_luodi_5
       rect:
         serializedVersion: 2
-        x: 29
-        y: 1712
-        width: 252
-        height: 418
+        x: 322
+        y: 1553
+        width: 141
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,20 +318,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3c96520a31fe2d90800000000000000
-      internalID: -7120488729376547780
+      spriteID: 8998f806722d513e0800000000000000
+      internalID: -2083528186023409256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_6
+      name: jump_luodi_6
       rect:
         serializedVersion: 2
-        x: 340
-        y: 1712
-        width: 250
-        height: 418
+        x: 473
+        y: 1295
+        width: 153
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +340,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d957b3fb7b6845000800000000000000
-      internalID: 23792021789177245
+      spriteID: ef6c57cb27aee5650800000000000000
+      internalID: 6223669513581610750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_7
+      name: jump_luodi_7
       rect:
         serializedVersion: 2
-        x: 650
-        y: 1712
-        width: 250
-        height: 418
+        x: 478
+        y: 1553
+        width: 143
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,20 +362,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ca1a2446b3e68740800000000000000
-      internalID: 5154057195539274438
+      spriteID: 512a44082f7e347a0800000000000000
+      internalID: -6394012017215888875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_8
+      name: jump_luodi_8
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1712
-        width: 250
-        height: 418
+        x: 629
+        y: 1295
+        width: 155
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,20 +384,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cedefd22cac2c9cc0800000000000000
-      internalID: -3703035675774292500
+      spriteID: fe4f911bfcf9cfc40800000000000000
+      internalID: 5547484555391923439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_9
+      name: jump_luodi_9
       rect:
         serializedVersion: 2
-        x: 1270
-        y: 1712
-        width: 250
-        height: 418
+        x: 634
+        y: 1553
+        width: 145
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,20 +406,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90ebfd2fb8adf9090800000000000000
-      internalID: -8025455716340875767
+      spriteID: 472bc210d3cafcb00800000000000000
+      internalID: 851088232609002100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_10
+      name: jump_luodi_10
       rect:
         serializedVersion: 2
-        x: 30
-        y: 1286
-        width: 250
-        height: 418
+        x: 0
+        y: 1037
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,20 +428,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca4c060556c707f30800000000000000
-      internalID: 4571290396363113644
+      spriteID: 6950a8ebe222eb9b0800000000000000
+      internalID: -5062571346957302378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_11
+      name: jump_luodi_11
       rect:
         serializedVersion: 2
-        x: 340
-        y: 1286
-        width: 250
-        height: 418
+        x: 0
+        y: 779
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,20 +450,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7fea70e63f2a7dcb0800000000000000
-      internalID: -4839220108179558665
+      spriteID: 902d1de34cd9de6f0800000000000000
+      internalID: -653692904705764855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_12
+      name: jump_luodi_12
       rect:
         serializedVersion: 2
-        x: 649
-        y: 1286
-        width: 252
-        height: 418
+        x: 157
+        y: 1038
+        width: 158
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,20 +472,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ab1f7ff2c803a5c0800000000000000
-      internalID: -4205507993430713431
+      spriteID: 870cb219f139afbe0800000000000000
+      internalID: -1442678966829989768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_13
+      name: jump_luodi_13
       rect:
         serializedVersion: 2
-        x: 959
-        y: 1286
-        width: 252
-        height: 418
+        x: 157
+        y: 779
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -501,20 +494,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 598ea68e586b8f970800000000000000
-      internalID: 8788975359059749013
+      spriteID: a8704748e61400f20800000000000000
+      internalID: 3386778862707017610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_14
+      name: jump_luodi_14
       rect:
         serializedVersion: 2
-        x: 1269
-        y: 1286
-        width: 252
-        height: 418
+        x: 314
+        y: 1038
+        width: 158
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,20 +516,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b5dc750c1f64b850800000000000000
-      internalID: 6391855937287411126
+      spriteID: d3de80cf1e5e3fcb0800000000000000
+      internalID: -4831265216479564483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_15
+      name: jump_luodi_15
       rect:
         serializedVersion: 2
-        x: 29
-        y: 860
-        width: 252
-        height: 418
+        x: 314
+        y: 779
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,20 +538,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd32413ff63e36410800000000000000
-      internalID: 1469267973411972060
+      spriteID: ccf2dfe6cd7bd5cc0800000000000000
+      internalID: -3720615559755386932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_16
+      name: jump_luodi_16
       rect:
         serializedVersion: 2
-        x: 338
-        y: 860
-        width: 254
-        height: 418
+        x: 471
+        y: 1037
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,20 +560,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a592afac59a097330800000000000000
-      internalID: 3709007406588111194
+      spriteID: 44b71b5fa3ef03c00800000000000000
+      internalID: 878481456520854340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_17
+      name: jump_luodi_17
       rect:
         serializedVersion: 2
-        x: 648
-        y: 860
-        width: 254
-        height: 418
+        x: 472
+        y: 779
+        width: 155
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -589,20 +582,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a90ec1666aace5860800000000000000
-      internalID: 7520671243781857434
+      spriteID: ad0b81af49c2b7aa0800000000000000
+      internalID: -6162282646763687718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_18
+      name: jump_luodi_18
       rect:
         serializedVersion: 2
-        x: 958
-        y: 860
-        width: 254
-        height: 418
+        x: 628
+        y: 1037
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,20 +604,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44c23cf4d26c8fb40800000000000000
-      internalID: 5474343244982856772
+      spriteID: a72e080a8540b0b20800000000000000
+      internalID: 3101577547071152762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_19
+      name: jump_luodi_19
       rect:
         serializedVersion: 2
-        x: 1269
-        y: 860
-        width: 252
-        height: 418
+        x: 629
+        y: 779
+        width: 155
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,20 +626,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c9f8c14ead4c75b00800000000000000
-      internalID: 817338301800026012
+      spriteID: f5866c933dbf96370800000000000000
+      internalID: 8316455071542306911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_20
+      name: jump_luodi_20
       rect:
         serializedVersion: 2
-        x: 30
-        y: 434
-        width: 250
-        height: 418
+        x: 0
+        y: 263
+        width: 157
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,20 +648,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6da8e155d23e8350800000000000000
-      internalID: 6020805643624557931
+      spriteID: 588e94748e9b495f0800000000000000
+      internalID: -750770830584452987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_21
+      name: jump_luodi_21
       rect:
         serializedVersion: 2
-        x: 341
-        y: 434
-        width: 248
-        height: 418
+        x: 1
+        y: 521
+        width: 156
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,20 +670,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c6160dc68be2df180800000000000000
-      internalID: -9080049904074595988
+      spriteID: 0ce8362bedd449a90800000000000000
+      internalID: -7308130676444524864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_22
+      name: jump_luodi_22
       rect:
         serializedVersion: 2
-        x: 652
-        y: 434
-        width: 246
-        height: 418
+        x: 157
+        y: 264
+        width: 158
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -699,20 +692,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9bdfc9557e92c780800000000000000
-      internalID: -8664188506252256358
+      spriteID: 500f76f00492f40a0800000000000000
+      internalID: -6895247149367824379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_23
+      name: jump_luodi_23
       rect:
         serializedVersion: 2
-        x: 963
-        y: 434
-        width: 244
-        height: 418
+        x: 158
+        y: 521
+        width: 155
+        height: 259
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,20 +714,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3e1e95161b400cf0800000000000000
-      internalID: -288147817927664070
+      spriteID: 318174b3342f53e10800000000000000
+      internalID: 2176912365474748435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_24
+      name: jump_luodi_24
       rect:
         serializedVersion: 2
-        x: 1274
-        y: 434
-        width: 242
-        height: 418
+        x: 314
+        y: 264
+        width: 158
+        height: 258
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -743,20 +736,130 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05a47354f9b2e5760800000000000000
-      internalID: 7448438796778424912
+      spriteID: 64df8a59676e29610800000000000000
+      internalID: 1626615812425579846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_25
+      name: jump_luodi_25
       rect:
         serializedVersion: 2
-        x: 35
+        x: 315
+        y: 521
+        width: 155
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e326b75b90a1d8c0800000000000000
+      internalID: -3976220406939507743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_26
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 521
+        width: 157
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6a83598722f3620800000000000000
+      internalID: 2755959398268970676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_27
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 265
+        width: 158
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59f8c5ccc8c43c90800000000000000
+      internalID: -7190901923186673318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_28
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 521
+        width: 157
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1063f5cf43f2f6eb0800000000000000
+      internalID: -4724505579469457919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_29
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 266
+        width: 158
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953a616817e3c2ca0800000000000000
+      internalID: -6040384342908820647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_luodi_30
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 8
-        width: 240
-        height: 418
+        width: 158
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -765,20 +868,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f4282b009b0441d0800000000000000
-      internalID: -3367553908075911949
+      spriteID: 43bac771185606610800000000000000
+      internalID: 1612400271717870388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_qitiao_26
+      name: jump_luodi_31
       rect:
         serializedVersion: 2
-        x: 345
+        x: 157
         y: 8
-        width: 240
-        height: 418
+        width: 158
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,74 +890,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ac28ce447c911310800000000000000
-      internalID: 1374051384676592805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_qitiao_27
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 8
-        width: 238
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2434e953f110c5320800000000000000
-      internalID: 2547912722740036418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_qitiao_28
-      rect:
-        serializedVersion: 2
-        x: 966
-        y: 8
-        width: 238
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bdd82fedef6dd5880800000000000000
-      internalID: -8620497721566786085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_qitiao_29
-      rect:
-        serializedVersion: 2
-        x: 1276
-        y: 8
-        width: 238
-        height: 418
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12ecad664c8a93580800000000000000
-      internalID: -8846854431499956703
+      spriteID: 973a92d45083223b0800000000000000
+      internalID: -5538802996291722375
       vertices: []
       indices: 
       edges: []
@@ -873,36 +910,38 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      jump_qitiao_0: 4284113804102241479
-      jump_qitiao_1: 4226043895677553186
-      jump_qitiao_10: 4571290396363113644
-      jump_qitiao_11: -4839220108179558665
-      jump_qitiao_12: -4205507993430713431
-      jump_qitiao_13: 8788975359059749013
-      jump_qitiao_14: 6391855937287411126
-      jump_qitiao_15: 1469267973411972060
-      jump_qitiao_16: 3709007406588111194
-      jump_qitiao_17: 7520671243781857434
-      jump_qitiao_18: 5474343244982856772
-      jump_qitiao_19: 817338301800026012
-      jump_qitiao_2: -4062175353831211406
-      jump_qitiao_20: 6020805643624557931
-      jump_qitiao_21: -9080049904074595988
-      jump_qitiao_22: -8664188506252256358
-      jump_qitiao_23: -288147817927664070
-      jump_qitiao_24: 7448438796778424912
-      jump_qitiao_25: -3367553908075911949
-      jump_qitiao_26: 1374051384676592805
-      jump_qitiao_27: 2547912722740036418
-      jump_qitiao_28: -8620497721566786085
-      jump_qitiao_29: -8846854431499956703
-      jump_qitiao_3: -7121610884983327741
-      jump_qitiao_4: -5822245209079394547
-      jump_qitiao_5: -7120488729376547780
-      jump_qitiao_6: 23792021789177245
-      jump_qitiao_7: 5154057195539274438
-      jump_qitiao_8: -3703035675774292500
-      jump_qitiao_9: -8025455716340875767
+      jump_luodi_0: -3398801033423197244
+      jump_luodi_1: -5176747802630422605
+      jump_luodi_10: -5062571346957302378
+      jump_luodi_11: -653692904705764855
+      jump_luodi_12: -1442678966829989768
+      jump_luodi_13: 3386778862707017610
+      jump_luodi_14: -4831265216479564483
+      jump_luodi_15: -3720615559755386932
+      jump_luodi_16: 878481456520854340
+      jump_luodi_17: -6162282646763687718
+      jump_luodi_18: 3101577547071152762
+      jump_luodi_19: 8316455071542306911
+      jump_luodi_2: 3199025857617421126
+      jump_luodi_20: -750770830584452987
+      jump_luodi_21: -7308130676444524864
+      jump_luodi_22: -6895247149367824379
+      jump_luodi_23: 2176912365474748435
+      jump_luodi_24: 1626615812425579846
+      jump_luodi_25: -3976220406939507743
+      jump_luodi_26: 2755959398268970676
+      jump_luodi_27: -7190901923186673318
+      jump_luodi_28: -4724505579469457919
+      jump_luodi_29: -6040384342908820647
+      jump_luodi_3: 2384559103988239727
+      jump_luodi_30: 1612400271717870388
+      jump_luodi_31: -5538802996291722375
+      jump_luodi_4: 7729239087634721373
+      jump_luodi_5: -2083528186023409256
+      jump_luodi_6: 6223669513581610750
+      jump_luodi_7: -6394012017215888875
+      jump_luodi_8: 5547484555391923439
+      jump_luodi_9: 851088232609002100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
