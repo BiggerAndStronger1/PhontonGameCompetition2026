@@ -47,7 +47,7 @@ public class ClockTower : MonoBehaviour
         {
             playerTimer -= Time.deltaTime;
 
-            if (player.playerActions.SwitchWorld.WasPressedThisFrame() && playerTimer <= switchByPlayerDuration)
+            if (player.playerActions.SwitchWorld.WasPressedThisFrame() && playerTimer <= switchByPlayerDuration && playerTimer > 0)
                 EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
 
             if (playerTimer <= 0)
