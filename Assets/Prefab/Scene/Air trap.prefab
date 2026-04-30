@@ -305,3 +305,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218970a07105f6a4db90e1ebad95d969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AirtrapButton
+  redEvent: 11
+  greenEvent: 12
