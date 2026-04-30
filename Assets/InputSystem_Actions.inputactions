@@ -115,15 +115,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "UseLargeGear",
-                    "type": "Button",
-                    "id": "25cc281c-bd6c-4034-b70c-ed575324629d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "AimBoomGear",
                     "type": "Button",
                     "id": "f35a5f0b-a228-4ad4-8ad2-a8713303f2b3",
@@ -136,6 +127,15 @@
                     "name": "ThrowBoomGear",
                     "type": "Button",
                     "id": "efd23033-f65a-48c6-b4e2-c96e48d34e4e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseLargeGear",
+                    "type": "Button",
+                    "id": "f70a7e11-e406-4bd1-9ded-e524157e157b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -563,17 +563,6 @@
                 },
                 {
                     "name": "",
-                    "id": "0489f918-a15a-43c4-a931-e9859bde4e66",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "UseLargeGear",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c034c063-76e7-4be4-b400-45f014d9168d",
                     "path": "<Keyboard>/2",
                     "interactions": "",
@@ -591,6 +580,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "ThrowBoomGear",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9522f37-0845-4d47-bf0e-d8a41b187d27",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseLargeGear",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

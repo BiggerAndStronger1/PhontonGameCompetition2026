@@ -221,11 +221,13 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8
-  useGravity: 1
+  useGravity: 0
   needGear: 1
+  haveGear: 0
   playerDetectRadius: 5
   limitByWorld: 1
   effectiveWorld: 0
+  canStartMoving: 0
 --- !u!1 &4029045106647177199
 GameObject:
   m_ObjectHideFlags: 0

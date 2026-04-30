@@ -18,19 +18,19 @@ public class MergerBoxEnemy : MonoBehaviour
     private bool hasFallen = false;
     private bool isFalling = false;
     private int dir;
-    private bool canStartMoving = false;
 
     [Header("Gravity Info")]
     [SerializeField] private bool useGravity = false;
 
     [Header("Gear Info")]
     [SerializeField] private bool needGear;
-    private bool haveGear = false;
+    [SerializeField] private bool haveGear = false;
     [SerializeField] private float playerDetectRadius;
 
     [Header("World Info")]
     [SerializeField] private bool limitByWorld;
     [SerializeField] private WorldType effectiveWorld;
+    [SerializeField] private bool canStartMoving = false;
 
     private float pauseTimer;
     private bool isPaused;
@@ -106,11 +106,14 @@ public class MergerBoxEnemy : MonoBehaviour
 
     private void Update()
     {
-        if (currentState == BoxState.Locked || !canStartMoving)
+        if (currentState == BoxState.Locked)
             return;
 
         if (player.playerActions.UseLargeGear.WasPressedThisFrame() && needGear)
             GearCheck();
+
+        if (!canStartMoving)
+            return;
 
         switch (currentState)
         {
