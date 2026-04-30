@@ -49,7 +49,7 @@ public class RegionController : MonoBehaviour
             timer = autoSwitchDuration;
             ParaChangeLogic(currentRegionPara + 1);
         }
-        else if (player.playerActions.SwitchWorld.WasPressedThisFrame() && timer <= switchByPlayerDuration)
+        else if (Player.playerActions.SwitchWorld.WasPressedThisFrame() && timer <= switchByPlayerDuration)
             ParaChangeLogic(currentRegionPara + 1);
     }
 
