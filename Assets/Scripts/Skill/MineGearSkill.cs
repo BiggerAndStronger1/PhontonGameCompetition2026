@@ -15,20 +15,20 @@ public class MineGearSkill : Skill
     [SerializeField]
     private int receivedExplosionForce = 1;
 
-    void Awake()
+    private void OnEnable()
     {
-
+        EventManagerTwoParams<int, PropType>.StartListening(GameEvents.UseGear, CheckMineSkill);
     }
 
-
-
-    protected override void Update()
+    private void OnDisable()
     {
-        base.Update();
-        if (Player.playerActions.Mine.WasPressedThisFrame() && player.stats.AddMineGear(-1))
-        {
+        EventManagerTwoParams<int, PropType>.StopListening(GameEvents.UseGear, CheckMineSkill);
+    }
+
+    private void CheckMineSkill(int amount, PropType propType)
+    {
+        if (propType == PropType.MineGear && player.stats.AddMineGear(-amount))
             UseSkill();
-        }
     }
 
     protected override void UseSkill()

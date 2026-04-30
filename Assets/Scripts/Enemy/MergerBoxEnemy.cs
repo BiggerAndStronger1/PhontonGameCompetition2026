@@ -244,11 +244,13 @@ public class MergerBoxEnemy : MonoBehaviour
 
         if (!haveGear && player.stats.AddLargeGear(-1))
         {
+            EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.LargeGear);
             haveGear = true;
         }
         else if (haveGear)
         {
             player.stats.AddLargeGear(1);
+            EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, -1, PropType.LargeGear);
             haveGear = false;
         }
     }
