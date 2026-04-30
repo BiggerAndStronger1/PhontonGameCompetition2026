@@ -17,7 +17,7 @@ using System;
 public enum GameEvents
 {
     PlayerDie,
-
+    PlayerRespawn,
     /// <summary>
     /// an event triggered by gameobject entering teleport edge(two param event: Transform, Vector3)
     /// listened by moveable gameobjects

@@ -189,6 +189,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -196,12 +209,12 @@ TextureImporter:
       name: jump_luodi_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 1295
-        width: 147
-        height: 259
+        x: 0
+        y: 1554
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,12 +231,12 @@ TextureImporter:
       name: jump_luodi_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1553
-        width: 139
-        height: 259
+        x: 157
+        y: 1554
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,12 +253,12 @@ TextureImporter:
       name: jump_luodi_2
       rect:
         serializedVersion: 2
-        x: 161
-        y: 1295
-        width: 149
-        height: 259
+        x: 314
+        y: 1554
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,12 +275,12 @@ TextureImporter:
       name: jump_luodi_3
       rect:
         serializedVersion: 2
-        x: 165
-        y: 1553
-        width: 141
-        height: 259
+        x: 471
+        y: 1554
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,12 +297,12 @@ TextureImporter:
       name: jump_luodi_4
       rect:
         serializedVersion: 2
-        x: 317
-        y: 1295
-        width: 151
-        height: 259
+        x: 628
+        y: 1554
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -306,12 +319,12 @@ TextureImporter:
       name: jump_luodi_5
       rect:
         serializedVersion: 2
-        x: 322
-        y: 1553
-        width: 141
-        height: 259
+        x: 0
+        y: 1296
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -328,12 +341,12 @@ TextureImporter:
       name: jump_luodi_6
       rect:
         serializedVersion: 2
-        x: 473
-        y: 1295
-        width: 153
-        height: 259
+        x: 157
+        y: 1296
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,12 +363,12 @@ TextureImporter:
       name: jump_luodi_7
       rect:
         serializedVersion: 2
-        x: 478
-        y: 1553
-        width: 143
-        height: 259
+        x: 314
+        y: 1296
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,12 +385,12 @@ TextureImporter:
       name: jump_luodi_8
       rect:
         serializedVersion: 2
-        x: 629
-        y: 1295
-        width: 155
-        height: 259
+        x: 471
+        y: 1296
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -394,12 +407,12 @@ TextureImporter:
       name: jump_luodi_9
       rect:
         serializedVersion: 2
-        x: 634
-        y: 1553
-        width: 145
-        height: 259
+        x: 628
+        y: 1296
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -417,11 +430,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1037
+        y: 1038
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,12 +451,12 @@ TextureImporter:
       name: jump_luodi_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 779
+        x: 157
+        y: 1038
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -460,12 +473,12 @@ TextureImporter:
       name: jump_luodi_12
       rect:
         serializedVersion: 2
-        x: 157
+        x: 314
         y: 1038
-        width: 158
+        width: 157
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -482,12 +495,12 @@ TextureImporter:
       name: jump_luodi_13
       rect:
         serializedVersion: 2
-        x: 157
-        y: 779
+        x: 471
+        y: 1038
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -504,12 +517,12 @@ TextureImporter:
       name: jump_luodi_14
       rect:
         serializedVersion: 2
-        x: 314
+        x: 628
         y: 1038
-        width: 158
+        width: 157
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -526,12 +539,12 @@ TextureImporter:
       name: jump_luodi_15
       rect:
         serializedVersion: 2
-        x: 314
-        y: 779
+        x: 0
+        y: 780
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -548,12 +561,12 @@ TextureImporter:
       name: jump_luodi_16
       rect:
         serializedVersion: 2
-        x: 471
-        y: 1037
+        x: 157
+        y: 780
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -570,12 +583,12 @@ TextureImporter:
       name: jump_luodi_17
       rect:
         serializedVersion: 2
-        x: 472
-        y: 779
-        width: 155
-        height: 259
+        x: 314
+        y: 780
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -592,12 +605,12 @@ TextureImporter:
       name: jump_luodi_18
       rect:
         serializedVersion: 2
-        x: 628
-        y: 1037
+        x: 471
+        y: 780
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -614,12 +627,12 @@ TextureImporter:
       name: jump_luodi_19
       rect:
         serializedVersion: 2
-        x: 629
-        y: 779
-        width: 155
-        height: 259
+        x: 628
+        y: 780
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -637,11 +650,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 263
+        y: 522
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -658,12 +671,12 @@ TextureImporter:
       name: jump_luodi_21
       rect:
         serializedVersion: 2
-        x: 1
-        y: 521
-        width: 156
-        height: 259
+        x: 157
+        y: 522
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -680,12 +693,12 @@ TextureImporter:
       name: jump_luodi_22
       rect:
         serializedVersion: 2
-        x: 157
-        y: 264
-        width: 158
+        x: 314
+        y: 522
+        width: 157
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -702,12 +715,12 @@ TextureImporter:
       name: jump_luodi_23
       rect:
         serializedVersion: 2
-        x: 158
-        y: 521
-        width: 155
-        height: 259
+        x: 471
+        y: 522
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -724,12 +737,12 @@ TextureImporter:
       name: jump_luodi_24
       rect:
         serializedVersion: 2
-        x: 314
-        y: 264
-        width: 158
+        x: 628
+        y: 522
+        width: 157
         height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -746,12 +759,12 @@ TextureImporter:
       name: jump_luodi_25
       rect:
         serializedVersion: 2
-        x: 315
-        y: 521
-        width: 155
-        height: 259
+        x: 0
+        y: 264
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -768,12 +781,12 @@ TextureImporter:
       name: jump_luodi_26
       rect:
         serializedVersion: 2
-        x: 471
-        y: 521
+        x: 157
+        y: 264
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -790,12 +803,12 @@ TextureImporter:
       name: jump_luodi_27
       rect:
         serializedVersion: 2
-        x: 471
-        y: 265
-        width: 158
-        height: 256
+        x: 314
+        y: 264
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -812,12 +825,12 @@ TextureImporter:
       name: jump_luodi_28
       rect:
         serializedVersion: 2
-        x: 628
-        y: 521
+        x: 471
+        y: 264
         width: 157
-        height: 259
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -835,11 +848,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 628
-        y: 266
-        width: 158
-        height: 254
+        y: 264
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -857,11 +870,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 158
-        height: 254
+        y: 6
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -879,11 +892,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 157
-        y: 8
-        width: 158
-        height: 254
+        y: 6
+        width: 157
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -900,7 +913,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 09ad18661cb641e4785c61c31ee3cd50
     internalID: 0
     vertices: []
     indices: 
@@ -908,7 +921,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":7.0},"gridSpriteSize":{"x":157.0,"y":258.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       jump_luodi_0: -3398801033423197244
       jump_luodi_1: -5176747802630422605

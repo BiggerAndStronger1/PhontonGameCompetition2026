@@ -87196,11 +87196,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.49
+      value: 5.91
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -87233,6 +87233,46 @@ PrefabInstance:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600959719646195651, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: landThreshold
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600959719646195651, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: maxVerticalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600959719646195651, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: maxHorizontalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600959719646195651, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: settings.verticalDamping
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600959719646195651, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: settings.horizontalDamping
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5212562709181035875, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986709608083357851, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Size.x
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986709608083357851, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5203507
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986709608083357851, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -16391838, guid: e97077701d719c043a547bddfa1450af, type: 3}
+    - target: {fileID: 6986709608083357851, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Name
@@ -87578,7 +87618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y

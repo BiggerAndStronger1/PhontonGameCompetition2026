@@ -183,6 +183,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -190,12 +203,12 @@ TextureImporter:
       name: jump_qitiao_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1285
-        width: 155
-        height: 256
+        x: 1
+        y: 1286
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +225,12 @@ TextureImporter:
       name: jump_qitiao_1
       rect:
         serializedVersion: 2
-        x: 154
-        y: 1286
-        width: 155
-        height: 254
+        x: 155
+        y: 1287
+        width: 153
+        height: 252
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +247,12 @@ TextureImporter:
       name: jump_qitiao_2
       rect:
         serializedVersion: 2
-        x: 308
-        y: 1285
-        width: 155
-        height: 256
+        x: 309
+        y: 1286
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +269,12 @@ TextureImporter:
       name: jump_qitiao_3
       rect:
         serializedVersion: 2
-        x: 462
-        y: 1285
-        width: 155
-        height: 256
+        x: 463
+        y: 1286
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,12 +291,12 @@ TextureImporter:
       name: jump_qitiao_4
       rect:
         serializedVersion: 2
-        x: 616
-        y: 1285
-        width: 155
-        height: 256
+        x: 617
+        y: 1286
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,12 +313,12 @@ TextureImporter:
       name: jump_qitiao_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1028
-        width: 154
-        height: 257
+        x: 1
+        y: 1029
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,12 +335,12 @@ TextureImporter:
       name: jump_qitiao_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 772
-        width: 154
-        height: 257
+        x: 155
+        y: 1029
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,12 +357,12 @@ TextureImporter:
       name: jump_qitiao_7
       rect:
         serializedVersion: 2
-        x: 154
-        y: 1028
-        width: 154
-        height: 257
+        x: 309
+        y: 1029
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,12 +379,12 @@ TextureImporter:
       name: jump_qitiao_8
       rect:
         serializedVersion: 2
-        x: 154
-        y: 772
-        width: 154
-        height: 257
+        x: 463
+        y: 1029
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -388,12 +401,12 @@ TextureImporter:
       name: jump_qitiao_9
       rect:
         serializedVersion: 2
-        x: 308
-        y: 1028
-        width: 154
-        height: 257
+        x: 617
+        y: 1029
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -410,12 +423,12 @@ TextureImporter:
       name: jump_qitiao_10
       rect:
         serializedVersion: 2
-        x: 308
+        x: 1
         y: 773
-        width: 155
-        height: 256
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -432,12 +445,12 @@ TextureImporter:
       name: jump_qitiao_11
       rect:
         serializedVersion: 2
-        x: 462
-        y: 1028
-        width: 154
-        height: 257
+        x: 155
+        y: 773
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,12 +467,12 @@ TextureImporter:
       name: jump_qitiao_12
       rect:
         serializedVersion: 2
-        x: 462
-        y: 772
-        width: 154
-        height: 257
+        x: 309
+        y: 774
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,12 +489,12 @@ TextureImporter:
       name: jump_qitiao_13
       rect:
         serializedVersion: 2
-        x: 616
-        y: 1028
-        width: 154
-        height: 257
+        x: 463
+        y: 773
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -498,12 +511,12 @@ TextureImporter:
       name: jump_qitiao_14
       rect:
         serializedVersion: 2
-        x: 616
-        y: 773
-        width: 155
-        height: 256
+        x: 617
+        y: 774
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -520,12 +533,12 @@ TextureImporter:
       name: jump_qitiao_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 516
-        width: 155
-        height: 257
+        x: 1
+        y: 517
+        width: 153
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -542,12 +555,12 @@ TextureImporter:
       name: jump_qitiao_16
       rect:
         serializedVersion: 2
-        x: 154
-        y: 518
-        width: 155
-        height: 254
+        x: 155
+        y: 519
+        width: 153
+        height: 252
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -564,12 +577,12 @@ TextureImporter:
       name: jump_qitiao_17
       rect:
         serializedVersion: 2
-        x: 308
-        y: 517
-        width: 155
-        height: 256
+        x: 309
+        y: 518
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -586,12 +599,12 @@ TextureImporter:
       name: jump_qitiao_18
       rect:
         serializedVersion: 2
-        x: 462
-        y: 518
-        width: 155
-        height: 254
+        x: 463
+        y: 519
+        width: 153
+        height: 252
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -608,12 +621,12 @@ TextureImporter:
       name: jump_qitiao_19
       rect:
         serializedVersion: 2
-        x: 616
-        y: 517
-        width: 155
-        height: 256
+        x: 617
+        y: 518
+        width: 153
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -630,12 +643,12 @@ TextureImporter:
       name: jump_qitiao_20
       rect:
         serializedVersion: 2
-        x: 0
-        y: 260
-        width: 154
-        height: 257
+        x: 1
+        y: 261
+        width: 152
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -652,12 +665,12 @@ TextureImporter:
       name: jump_qitiao_21
       rect:
         serializedVersion: 2
-        x: 3
-        y: 4
-        width: 148
-        height: 257
+        x: 156
+        y: 261
+        width: 150
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -674,12 +687,12 @@ TextureImporter:
       name: jump_qitiao_22
       rect:
         serializedVersion: 2
-        x: 155
-        y: 260
-        width: 152
-        height: 257
+        x: 310
+        y: 261
+        width: 150
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -696,12 +709,12 @@ TextureImporter:
       name: jump_qitiao_23
       rect:
         serializedVersion: 2
-        x: 157
-        y: 4
+        x: 465
+        y: 261
         width: 148
-        height: 257
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -718,12 +731,12 @@ TextureImporter:
       name: jump_qitiao_24
       rect:
         serializedVersion: 2
-        x: 309
-        y: 260
-        width: 152
-        height: 257
+        x: 620
+        y: 261
+        width: 147
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -740,12 +753,12 @@ TextureImporter:
       name: jump_qitiao_25
       rect:
         serializedVersion: 2
-        x: 311
-        y: 4
-        width: 148
-        height: 257
+        x: 4
+        y: 5
+        width: 146
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -762,12 +775,12 @@ TextureImporter:
       name: jump_qitiao_26
       rect:
         serializedVersion: 2
-        x: 464
-        y: 260
-        width: 150
-        height: 257
+        x: 158
+        y: 5
+        width: 146
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -784,12 +797,12 @@ TextureImporter:
       name: jump_qitiao_27
       rect:
         serializedVersion: 2
-        x: 466
-        y: 4
+        x: 312
+        y: 5
         width: 146
-        height: 257
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -806,12 +819,12 @@ TextureImporter:
       name: jump_qitiao_28
       rect:
         serializedVersion: 2
-        x: 619
-        y: 260
-        width: 149
-        height: 257
+        x: 467
+        y: 5
+        width: 144
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -828,12 +841,12 @@ TextureImporter:
       name: jump_qitiao_29
       rect:
         serializedVersion: 2
-        x: 620
-        y: 4
-        width: 146
-        height: 257
+        x: 621
+        y: 5
+        width: 144
+        height: 255
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -850,7 +863,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 745c6baa501b79b4f91d02352933f828
     internalID: 0
     vertices: []
     indices: 
@@ -858,7 +871,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":8.0},"gridSpriteSize":{"x":145.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       jump_qitiao_0: 4284113804102241479
       jump_qitiao_1: 4226043895677553186

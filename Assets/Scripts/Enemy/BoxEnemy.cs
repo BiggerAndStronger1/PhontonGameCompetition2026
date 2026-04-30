@@ -56,7 +56,7 @@ public class BoxEnemy : MonoBehaviour, ICanAddStress
 
     private void Update()
     {
-        if (player.playerActions.UseLargeGear.WasPressedThisFrame() && !hasFallen && !isFalling)
+        if (Player.playerActions.UseLargeGear.WasPressedThisFrame() && !hasFallen && !isFalling)
             GearCheck();
 
         switch (state)

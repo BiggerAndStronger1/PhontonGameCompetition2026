@@ -19,7 +19,6 @@ public class PlayerMotion : MonoBehaviour
 {
     protected Player player;
     protected Rigidbody2D rb;
-
     public PlayerMotionType currentState;
     private float defaultGravity;
     private PlayerAnim playerAnim;
@@ -37,8 +36,7 @@ public class PlayerMotion : MonoBehaviour
 
     private void Update()
     {
-        Vector2 move = player.playerActions.Move.ReadValue<Vector2>();
-        playerAnim.BlendHorizontal(Mathf.Abs(move.x));
+        Vector2 move = Player.playerActions.Move.ReadValue<Vector2>();
         float xInput = move.x;
         float yInput = move.y;
         
@@ -80,13 +78,13 @@ public class PlayerMotion : MonoBehaviour
         if (!player.IsGroundDetected())
             ChangeState(PlayerMotionType.Air);
 
-        if (player.playerActions.Jump.WasPressedThisFrame())
+        if (Player.playerActions.Jump.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Jump);
 
         if (player.canClimbLadder && yInput != 0)
             ChangeState(PlayerMotionType.Climb);
 
-        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.AimBoomGear.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Aim);
     }
 
@@ -100,10 +98,10 @@ public class PlayerMotion : MonoBehaviour
         if (!player.IsGroundDetected())
             ChangeState(PlayerMotionType.Air);
 
-        if (player.playerActions.Jump.WasPressedThisFrame())
+        if (Player.playerActions.Jump.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Jump);
 
-        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.AimBoomGear.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Aim);
     }
 
@@ -148,7 +146,7 @@ public class PlayerMotion : MonoBehaviour
         if (!player.canClimbLadder)
             ChangeState(PlayerMotionType.Air);
 
-        if (player.playerActions.Jump.WasPressedThisFrame())
+        if (Player.playerActions.Jump.WasPressedThisFrame())
         {
             player.SetVelocity(0, player.jumpForce);
             ChangeState(PlayerMotionType.Air);
@@ -167,13 +165,13 @@ public class PlayerMotion : MonoBehaviour
 
     private void AimUpdate()
     {
-        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.AimBoomGear.WasPressedThisFrame())
         {
             ChangeState(PlayerMotionType.Idle);
             return;
         }
 
-        if (player.playerActions.ThrowBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.ThrowBoomGear.WasPressedThisFrame())
         {
             player.skill.boomGear.CreateBoomGear();
             ChangeState(PlayerMotionType.Idle);

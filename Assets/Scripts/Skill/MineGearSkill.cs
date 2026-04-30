@@ -25,7 +25,7 @@ public class MineGearSkill : Skill
     protected override void Update()
     {
         base.Update();
-        if (player.playerActions.Mine.WasPressedThisFrame() && player.stats.AddMineGear(-1))
+        if (Player.playerActions.Mine.WasPressedThisFrame() && player.stats.AddMineGear(-1))
         {
             UseSkill();
         }

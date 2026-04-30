@@ -30,9 +30,11 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     protected bool facingRight = true;
 
     public SkillManager skill { get; private set; }
-    private InputSystem_Actions action;
-    public InputSystem_Actions.PlayerActions playerActions { get; private set; }
+    private static InputSystem_Actions action;
+    public static InputSystem_Actions.PlayerActions playerActions { get; private set; }
     [SerializeField] private Vector3 _checkpoint;
+    [SerializeField]private float respawnCooldown = 1;
+
     #region Component
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -49,8 +51,11 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         stats = GetComponent<PlayerStats>();
         cd = GetComponent<Collider2D>();
 
-        action = new InputSystem_Actions();
-        playerActions = action.Player;
+        if (action == null)
+        {
+            action = new InputSystem_Actions();
+            playerActions = action.Player;
+        }
         playerActions.Enable();
         EventManagerSingleParam<bool>.StartListening(GameEvents.TogglePlayerInput, ToggleInputAction);
         
@@ -99,13 +104,14 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         print("Player Die!");
         sr.color = Color.black;
         EventManagerNoParam.TriggerEvent(GameEvents.PlayerDie);
-
         StartCoroutine(RebornCooldown());
     }
 
     private IEnumerator RebornCooldown()
     {
-        yield return new WaitForSeconds(1f);
+        
+        yield return new WaitForSeconds(respawnCooldown);
+        EventManagerNoParam.TriggerEvent(GameEvents.PlayerRespawn);
         PlayerReborn();
     }
 
