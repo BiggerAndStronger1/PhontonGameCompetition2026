@@ -11,9 +11,10 @@ public enum PlayerMotionType
     Climb,
     Aim
 }
-
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(Rigidbody2D))]
+
+[RequireComponent(typeof(PlayerAnim))]
 public class PlayerMotion : MonoBehaviour
 {
     protected Player player;
@@ -21,11 +22,12 @@ public class PlayerMotion : MonoBehaviour
 
     public PlayerMotionType currentState;
     private float defaultGravity;
-
+    private PlayerAnim playerAnim;
     private void Awake()
     {
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<PlayerAnim>();
     }
 
     private void Start()
@@ -36,8 +38,10 @@ public class PlayerMotion : MonoBehaviour
     private void Update()
     {
         Vector2 move = player.playerActions.Move.ReadValue<Vector2>();
-        float xInput = move.x != 0 ? move.x : 0;
-        float yInput = move.y != 0 ? move.y : 0;
+        playerAnim.BlendHorizontal(Mathf.Abs(move.x));
+        float xInput = move.x;
+        float yInput = move.y;
+        
         switch (currentState)
         {
             case PlayerMotionType.Idle:

@@ -162,8 +162,8 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     public virtual void FlipController(float _x)
     {
-        if (_x > 0 && !facingRight) Flip();
-        else if (_x < 0 && facingRight) Flip();
+        if (_x < 0 && !facingRight) Flip();
+        else if (_x > 0 && facingRight) Flip();
     }
     #endregion
 

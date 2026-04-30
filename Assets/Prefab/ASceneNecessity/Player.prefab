@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 7536618188227937532}
   - component: {fileID: 3022865986171090042}
   - component: {fileID: 3317202352669682281}
+  - component: {fileID: 2600959719646195651}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -302,13 +303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752fbd329233dd841aa7f33e0768a1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  smallGearCount: 0
+  smallGearCount: 5
   largeGearCount: 5
   boomGearCount: 5
   mineGearCount: 5
-  maxHp: 100
-  currentHp: 0
-  havePocketWatch: 0
+  havePocketWatch: 1
 --- !u!114 &3022865986171090042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,3 +334,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleportable
   teleportCooldown: 0.2
+--- !u!114 &2600959719646195651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259676102185292296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc59526034bf0b4b965c0db56ba3de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
