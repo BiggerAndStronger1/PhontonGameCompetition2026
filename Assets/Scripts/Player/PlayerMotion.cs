@@ -132,11 +132,13 @@ public class PlayerMotion : MonoBehaviour
     {
         defaultGravity = rb.gravityScale;
         rb.gravityScale = 0;
+        playerAnim.StartClimb();
     }
 
     private void ClimbExit()
     {
         rb.gravityScale = defaultGravity;
+        playerAnim.FinishClimb();
     }
 
     private void ClimbUpdate(float xInput, float yInput)

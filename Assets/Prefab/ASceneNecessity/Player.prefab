@@ -174,15 +174,15 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 2
-  m_Sprite: {fileID: 3772828375457617615, guid: ff0d4d1dac3ab8d469ee8563f9d35701, type: 3}
+  m_Sprite: {fileID: -16391838, guid: e97077701d719c043a547bddfa1450af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.55, y: 2.5203507}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!70 &6207037135855771264
 CapsuleCollider2D:
@@ -246,7 +246,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2565679629281221882
 MonoBehaviour:
@@ -269,6 +269,7 @@ MonoBehaviour:
   isInClockTower: 0
   isDead: 0
   _checkpoint: {x: 0, y: 0, z: 0}
+  respawnCooldown: 1
 --- !u!114 &7536618188227937532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,5 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc59526034bf0b4b965c0db56ba3de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  maxVerticalSpeed: 5
+  maxHorizontalSpeed: 5
   settings:
-    horizontalDamping: 0.15
+    horizontalDamping: 0.1
+    verticalDamping: 0.1
+  landThreshold: 0.05

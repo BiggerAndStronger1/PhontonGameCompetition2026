@@ -14,6 +14,8 @@ public struct PlayerAnimSettings
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerAnim : MonoBehaviour
 {
+    private static readonly int ClimbEndHash = Animator.StringToHash("climb end");
+    private static readonly int ClimbStartHash = Animator.StringToHash("climb start");
     private static readonly int RespawnHash = Animator.StringToHash("respawn");
     private static readonly int DieHash = Animator.StringToHash("die");
     private static readonly int UpHash = Animator.StringToHash("in air");
@@ -55,6 +57,16 @@ public class PlayerAnim : MonoBehaviour
     private void Respawn()
     {
         animator.SetTrigger(RespawnHash);
+    }
+
+    public void StartClimb()
+    {
+        animator.SetTrigger(ClimbStartHash);
+    }
+
+    public void FinishClimb()
+    {
+        animator.SetTrigger(ClimbEndHash);
     }
 
     void Update()
