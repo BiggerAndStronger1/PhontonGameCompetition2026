@@ -109,7 +109,7 @@ public class MergerBoxEnemy : MonoBehaviour
         if (currentState == BoxState.Locked)
             return;
 
-        if (player.playerActions.UseLargeGear.WasPressedThisFrame() && needGear)
+        if (Player.playerActions.UseLargeGear.WasPressedThisFrame() && needGear)
             GearCheck();
 
         if (!canStartMoving)

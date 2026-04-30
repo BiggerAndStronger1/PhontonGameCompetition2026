@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 480
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,45 +103,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u74E6\u7247\u5730\u56FE-\u623F\u74E6\u5730\u7816\uFF08\u53F3\u4FA7\uFF09-\u6218\u4E89_0"
+      name: WarHouseR_0
       rect:
         serializedVersion: 2
-        x: 69
-        y: 101
-        width: 1300
-        height: 1242
+        x: 0
+        y: 960
+        width: 480
+        height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7c117d8c8c82ecfd0800000000000000
-      internalID: -2319871915221118521
+      spriteID: c7506acff11f2ca4c8ccadd19a617139
+      internalID: -1544015402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\u74E6\u7247\u5730\u56FE-\u623F\u74E6\u5730\u7816\uFF08\u53F3\u4FA7\uFF09-\u6218\u4E89_1"
+      name: WarHouseR_1
       rect:
         serializedVersion: 2
-        x: 592
-        y: 42
-        width: 6
-        height: 10
+        x: 480
+        y: 960
+        width: 480
+        height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 41b38be0c09d50170800000000000000
-      internalID: 8144154146979199764
+      spriteID: cfe8585e209671f4098c5f9d913c0001
+      internalID: 1748639671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_2
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a02558da32e2c46b26ae91edccf9d5
+      internalID: -1191838394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e686f6fdccdab4caa1e9f82515850b
+      internalID: 498729821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 480
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c25049bcb7a284a937ef0363ec7d6f
+      internalID: -1060923365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 480
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84efe63fc1a540140a68a839d15b9800
+      internalID: 956976553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967a207ccc924b04ebbb58ba597be47d
+      internalID: -1815753686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_7
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71aa97521e2c7034696435a69e540ef1
+      internalID: -1677273939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WarHouseR_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58caaa467dae59944a46a280667c9cc2
+      internalID: 602919572
       vertices: []
       indices: 
       edges: []
@@ -150,7 +304,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 34e76a460516f424193ad47be26e16d1
     internalID: 0
     vertices: []
     indices: 
@@ -158,10 +312,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":480.0,"y":480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "\u74E6\u7247\u5730\u56FE-\u623F\u74E6\u5730\u7816\uFF08\u53F3\u4FA7\uFF09-\u6218\u4E89_0": -2319871915221118521
-      "\u74E6\u7247\u5730\u56FE-\u623F\u74E6\u5730\u7816\uFF08\u53F3\u4FA7\uFF09-\u6218\u4E89_1": 8144154146979199764
+      WarHouseR_0: -1544015402
+      WarHouseR_1: 1748639671
+      WarHouseR_2: -1191838394
+      WarHouseR_3: 498729821
+      WarHouseR_4: -1060923365
+      WarHouseR_5: 956976553
+      WarHouseR_6: -1815753686
+      WarHouseR_7: -1677273939
+      WarHouseR_8: 602919572
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -220,10 +220,10 @@ TextureImporter:
       name: jump_down_0
       rect:
         serializedVersion: 2
-        x: 61
-        y: 2367
-        width: 178
-        height: 329
+        x: 0
+        y: 1799
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,10 +242,10 @@ TextureImporter:
       name: jump_down_1
       rect:
         serializedVersion: 2
-        x: 361
-        y: 2367
-        width: 178
-        height: 329
+        x: 145
+        y: 1799
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,10 +264,10 @@ TextureImporter:
       name: jump_down_2
       rect:
         serializedVersion: 2
-        x: 661
-        y: 2367
-        width: 178
-        height: 329
+        x: 290
+        y: 1799
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: jump_down_3
       rect:
         serializedVersion: 2
-        x: 961
-        y: 2367
-        width: 178
-        height: 329
+        x: 435
+        y: 1799
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,10 +308,10 @@ TextureImporter:
       name: jump_down_4
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 2367
-        width: 178
-        height: 329
+        x: 580
+        y: 1800
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: jump_down_5
       rect:
         serializedVersion: 2
-        x: 61
-        y: 2030
-        width: 178
-        height: 329
+        x: 0
+        y: 1544
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,10 +352,10 @@ TextureImporter:
       name: jump_down_6
       rect:
         serializedVersion: 2
-        x: 361
-        y: 2030
-        width: 178
-        height: 329
+        x: 145
+        y: 1544
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,10 +374,10 @@ TextureImporter:
       name: jump_down_7
       rect:
         serializedVersion: 2
-        x: 661
-        y: 2030
-        width: 178
-        height: 329
+        x: 290
+        y: 1544
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,10 +396,10 @@ TextureImporter:
       name: jump_down_8
       rect:
         serializedVersion: 2
-        x: 961
-        y: 2030
-        width: 178
-        height: 329
+        x: 435
+        y: 1544
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,10 +418,10 @@ TextureImporter:
       name: jump_down_9
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 2030
-        width: 178
-        height: 329
+        x: 580
+        y: 1544
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +440,10 @@ TextureImporter:
       name: jump_down_10
       rect:
         serializedVersion: 2
-        x: 61
-        y: 1693
-        width: 178
-        height: 329
+        x: 0
+        y: 1287
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: jump_down_11
       rect:
         serializedVersion: 2
-        x: 361
-        y: 1693
-        width: 178
-        height: 329
+        x: 145
+        y: 1288
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,10 +484,10 @@ TextureImporter:
       name: jump_down_12
       rect:
         serializedVersion: 2
-        x: 661
-        y: 1693
-        width: 178
-        height: 329
+        x: 290
+        y: 1288
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,10 +506,10 @@ TextureImporter:
       name: jump_down_13
       rect:
         serializedVersion: 2
-        x: 961
-        y: 1693
-        width: 178
-        height: 329
+        x: 435
+        y: 1288
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,10 +528,10 @@ TextureImporter:
       name: jump_down_14
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 1693
-        width: 178
-        height: 329
+        x: 580
+        y: 1288
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -550,10 +550,10 @@ TextureImporter:
       name: jump_down_15
       rect:
         serializedVersion: 2
-        x: 61
-        y: 1356
-        width: 178
-        height: 329
+        x: 0
+        y: 1032
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -572,10 +572,10 @@ TextureImporter:
       name: jump_down_16
       rect:
         serializedVersion: 2
-        x: 361
-        y: 1356
-        width: 178
-        height: 329
+        x: 145
+        y: 1032
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -594,10 +594,10 @@ TextureImporter:
       name: jump_down_17
       rect:
         serializedVersion: 2
-        x: 661
-        y: 1356
-        width: 178
-        height: 329
+        x: 290
+        y: 1032
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -616,10 +616,10 @@ TextureImporter:
       name: jump_down_18
       rect:
         serializedVersion: 2
-        x: 961
-        y: 1356
-        width: 178
-        height: 329
+        x: 435
+        y: 1032
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -638,10 +638,10 @@ TextureImporter:
       name: jump_down_19
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 1356
-        width: 178
-        height: 329
+        x: 580
+        y: 1033
+        width: 146
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -660,10 +660,10 @@ TextureImporter:
       name: jump_down_20
       rect:
         serializedVersion: 2
-        x: 61
-        y: 1019
-        width: 178
-        height: 329
+        x: 0
+        y: 777
+        width: 146
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -682,10 +682,10 @@ TextureImporter:
       name: jump_down_21
       rect:
         serializedVersion: 2
-        x: 361
-        y: 1019
-        width: 178
-        height: 329
+        x: 145
+        y: 777
+        width: 146
+        height: 252
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -704,10 +704,10 @@ TextureImporter:
       name: jump_down_22
       rect:
         serializedVersion: 2
-        x: 661
-        y: 1019
-        width: 178
-        height: 329
+        x: 290
+        y: 776
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -726,10 +726,10 @@ TextureImporter:
       name: jump_down_23
       rect:
         serializedVersion: 2
-        x: 961
-        y: 1019
-        width: 178
-        height: 329
+        x: 435
+        y: 776
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,10 +748,10 @@ TextureImporter:
       name: jump_down_24
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 1019
-        width: 178
-        height: 329
+        x: 580
+        y: 776
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -770,10 +770,10 @@ TextureImporter:
       name: jump_down_25
       rect:
         serializedVersion: 2
-        x: 61
-        y: 682
-        width: 178
-        height: 329
+        x: 0
+        y: 520
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -792,10 +792,10 @@ TextureImporter:
       name: jump_down_26
       rect:
         serializedVersion: 2
-        x: 361
-        y: 682
-        width: 178
-        height: 329
+        x: 145
+        y: 520
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -814,10 +814,10 @@ TextureImporter:
       name: jump_down_27
       rect:
         serializedVersion: 2
-        x: 661
-        y: 682
-        width: 178
-        height: 329
+        x: 290
+        y: 520
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -836,10 +836,10 @@ TextureImporter:
       name: jump_down_28
       rect:
         serializedVersion: 2
-        x: 961
-        y: 682
-        width: 178
-        height: 329
+        x: 435
+        y: 520
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -858,10 +858,10 @@ TextureImporter:
       name: jump_down_29
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 682
-        width: 178
-        height: 329
+        x: 580
+        y: 520
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -880,10 +880,10 @@ TextureImporter:
       name: jump_down_30
       rect:
         serializedVersion: 2
-        x: 61
-        y: 345
-        width: 178
-        height: 329
+        x: 0
+        y: 263
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -902,10 +902,10 @@ TextureImporter:
       name: jump_down_31
       rect:
         serializedVersion: 2
-        x: 361
-        y: 345
-        width: 178
-        height: 329
+        x: 145
+        y: 264
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -924,10 +924,10 @@ TextureImporter:
       name: jump_down_32
       rect:
         serializedVersion: 2
-        x: 661
-        y: 345
-        width: 178
-        height: 329
+        x: 290
+        y: 264
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -946,10 +946,10 @@ TextureImporter:
       name: jump_down_33
       rect:
         serializedVersion: 2
-        x: 961
-        y: 345
-        width: 178
-        height: 329
+        x: 435
+        y: 264
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -968,10 +968,10 @@ TextureImporter:
       name: jump_down_34
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 345
-        width: 178
-        height: 329
+        x: 580
+        y: 264
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -990,10 +990,10 @@ TextureImporter:
       name: jump_down_35
       rect:
         serializedVersion: 2
-        x: 61
+        x: 0
         y: 8
-        width: 178
-        height: 329
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1012,10 +1012,10 @@ TextureImporter:
       name: jump_down_36
       rect:
         serializedVersion: 2
-        x: 361
+        x: 145
         y: 8
-        width: 178
-        height: 329
+        width: 146
+        height: 254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,10 +1034,10 @@ TextureImporter:
       name: jump_down_37
       rect:
         serializedVersion: 2
-        x: 661
-        y: 8
-        width: 178
-        height: 329
+        x: 290
+        y: 7
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1056,10 +1056,10 @@ TextureImporter:
       name: jump_down_38
       rect:
         serializedVersion: 2
-        x: 961
-        y: 8
-        width: 178
-        height: 329
+        x: 435
+        y: 7
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1078,10 +1078,10 @@ TextureImporter:
       name: jump_down_39
       rect:
         serializedVersion: 2
-        x: 1261
-        y: 8
-        width: 178
-        height: 329
+        x: 580
+        y: 7
+        width: 146
+        height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

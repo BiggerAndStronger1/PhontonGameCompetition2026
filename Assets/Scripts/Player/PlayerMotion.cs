@@ -11,21 +11,22 @@ public enum PlayerMotionType
     Climb,
     Aim
 }
-
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(Rigidbody2D))]
+
+[RequireComponent(typeof(PlayerAnim))]
 public class PlayerMotion : MonoBehaviour
 {
     protected Player player;
     protected Rigidbody2D rb;
-
     public PlayerMotionType currentState;
     private float defaultGravity;
-
+    private PlayerAnim playerAnim;
     private void Awake()
     {
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<PlayerAnim>();
     }
 
     private void Start()
@@ -35,9 +36,10 @@ public class PlayerMotion : MonoBehaviour
 
     private void Update()
     {
-        Vector2 move = player.playerActions.Move.ReadValue<Vector2>();
-        float xInput = move.x != 0 ? move.x : 0;
-        float yInput = move.y != 0 ? move.y : 0;
+        Vector2 move = Player.playerActions.Move.ReadValue<Vector2>();
+        float xInput = move.x;
+        float yInput = move.y;
+        
         switch (currentState)
         {
             case PlayerMotionType.Idle:
@@ -76,13 +78,13 @@ public class PlayerMotion : MonoBehaviour
         if (!player.IsGroundDetected())
             ChangeState(PlayerMotionType.Air);
 
-        if (player.playerActions.Jump.WasPressedThisFrame())
+        if (Player.playerActions.Jump.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Jump);
 
         if (player.canClimbLadder && yInput != 0)
             ChangeState(PlayerMotionType.Climb);
 
-        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.AimBoomGear.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Aim);
     }
 
@@ -96,10 +98,10 @@ public class PlayerMotion : MonoBehaviour
         if (!player.IsGroundDetected())
             ChangeState(PlayerMotionType.Air);
 
-        if (player.playerActions.Jump.WasPressedThisFrame())
+        if (Player.playerActions.Jump.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Jump);
 
-        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.AimBoomGear.WasPressedThisFrame())
             ChangeState(PlayerMotionType.Aim);
     }
 
@@ -130,11 +132,13 @@ public class PlayerMotion : MonoBehaviour
     {
         defaultGravity = rb.gravityScale;
         rb.gravityScale = 0;
+        playerAnim.StartClimb();
     }
 
     private void ClimbExit()
     {
         rb.gravityScale = defaultGravity;
+        playerAnim.FinishClimb();
     }
 
     private void ClimbUpdate(float xInput, float yInput)
@@ -144,7 +148,7 @@ public class PlayerMotion : MonoBehaviour
         if (!player.canClimbLadder)
             ChangeState(PlayerMotionType.Air);
 
-        if (player.playerActions.Jump.WasPressedThisFrame())
+        if (Player.playerActions.Jump.WasPressedThisFrame())
         {
             player.SetVelocity(0, player.jumpForce);
             ChangeState(PlayerMotionType.Air);
@@ -163,13 +167,13 @@ public class PlayerMotion : MonoBehaviour
 
     private void AimUpdate()
     {
-        if (player.playerActions.AimBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.AimBoomGear.WasPressedThisFrame())
         {
             ChangeState(PlayerMotionType.Idle);
             return;
         }
 
-        if (player.playerActions.ThrowBoomGear.WasPressedThisFrame())
+        if (Player.playerActions.ThrowBoomGear.WasPressedThisFrame())
         {
             player.skill.boomGear.CreateBoomGear();
             ChangeState(PlayerMotionType.Idle);
