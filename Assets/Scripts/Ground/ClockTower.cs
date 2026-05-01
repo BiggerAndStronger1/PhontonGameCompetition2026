@@ -15,6 +15,8 @@ public class ClockTower : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+
         currentPhase = 0;
     }
 
@@ -23,7 +25,10 @@ public class ClockTower : MonoBehaviour
         if (Player.playerActions.UseLargeGear.WasPressedThisFrame() && currentPhase != 2 && playerInRange)
         {
             if (player.stats.AddLargeGear(-1))
+            {
                 currentPhase++;
+                EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.LargeGear);
+            }
 
             if (currentPhase == 1)
                 player.stats.havePocketWatch = false;
@@ -63,7 +68,8 @@ public class ClockTower : MonoBehaviour
         if (currentPhase == 2)
             return;
 
-        playerInRange = true;
+        if (collision.GetComponent<Player>() != null)
+            playerInRange = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -71,6 +77,7 @@ public class ClockTower : MonoBehaviour
         if (currentPhase == 2)
             return;
 
-        playerInRange = false;
+        if (collision.GetComponent<Player>() != null)
+            playerInRange = false;
     }
 }

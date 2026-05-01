@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -12,6 +14,8 @@ public class HiddenPath : MonoBehaviour
 
     public float playerDetectRadius = 3f;
     public Transform distanceCheck;
+
+    public List<Props> propsInside;
 
     private bool playerInside = false;
 
@@ -52,12 +56,18 @@ public class HiddenPath : MonoBehaviour
     {
         ground.enabled = false;
         groundRenderer.enabled = false;
+
+        for (int i = 0; i < propsInside.Count; i++)
+            propsInside[i].GetComponent<SpriteRenderer>().enabled = true;
     }
 
     private void HidePath()
     {
         ground.enabled = true;
         groundRenderer.enabled = true;
+
+        for (int i = 0; i < propsInside.Count; i++)
+            propsInside[i].GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void OnDrawGizmos()

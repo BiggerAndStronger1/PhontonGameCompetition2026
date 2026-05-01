@@ -4330,6 +4330,8 @@ MonoBehaviour:
   player: {fileID: 679478130}
   playerDetectRadius: 3
   distanceCheck: {fileID: 1336116696}
+  propsInside:
+  - {fileID: 863276004}
 --- !u!19719996 &534878562
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4775,6 +4777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldManager
   _currentWorld: 0
+  worldObjs: []
 --- !u!4 &583022694
 Transform:
   m_ObjectHideFlags: 0
@@ -5542,7 +5545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6361519911082745705, guid: 0135ccbf84b7f6e48b2dd1fa780976fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.004
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6361519911082745705, guid: 0135ccbf84b7f6e48b2dd1fa780976fd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5908,6 +5911,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5392492334231869407, guid: cc365b48c0b21344ba928af3f6fd6e92, type: 3}
   m_PrefabInstance: {fileID: 863276002}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &863276004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6893930562748309903, guid: cc365b48c0b21344ba928af3f6fd6e92, type: 3}
+  m_PrefabInstance: {fileID: 863276002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcafbd315418a9f45810d777b946d0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UncollectedMineGear
 --- !u!1 &892013487
 GameObject:
   m_ObjectHideFlags: 0
@@ -54585,11 +54599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.7
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.5
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54979,7 +54993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
