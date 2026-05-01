@@ -110,7 +110,6 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
         Spike spike = collision.transform.GetComponent<Spike>();
         if (spike != null)
             spike.CleanSpike();
-
     }
 
 

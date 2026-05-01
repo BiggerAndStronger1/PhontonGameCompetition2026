@@ -15,7 +15,7 @@ public class GhostEnemyState : MonoBehaviour
     private GhostEnemy ghost;
     private Rigidbody2D rb;
     private Player player;
-    private bool canHatrePlayer;
+    [SerializeField] private bool canHatrePlayer;
 
     public GhostStateType currentState;
 
@@ -95,9 +95,10 @@ public class GhostEnemyState : MonoBehaviour
 
     private void HatredUpdate()
     {
-        int playerDir = ghost.transform.position.x < ghost.player.transform.position.x ? 1 : -1;
-
+        int playerDir = transform.position.x < ghost.player.transform.position.x + 0.1f ? 1 : -1;
+        //Debug.Log(playerDir);
         rb.linearVelocity = new Vector2(playerDir * ghost.moveSpeed, rb.linearVelocity.y);
+        //Debug.Log(rb.linearVelocity);
 
         if (Vector2.Distance(ghost.transform.position, ghost.player.transform.position) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);
@@ -118,11 +119,23 @@ public class GhostEnemyState : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
+    private void LockedExit()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
     private void ChangeState(GhostStateType newState)
     {
+        switch (currentState)
+        {
+            case GhostStateType.Locked:
+                LockedExit();
+                break;
+        }
+
         currentState = newState;
 
-        switch (newState)
+        switch (currentState)
         {
             case GhostStateType.Idle:
                 IdleEnter();
