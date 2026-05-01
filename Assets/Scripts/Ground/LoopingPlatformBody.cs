@@ -39,7 +39,7 @@ public class LoopingPlatformBody : MonoBehaviour
     private List<GameObject> platforms = new List<GameObject>();
     private GameObject leftMost;
     private GameObject rightMost;
-    
+    private bool active;
 
     /// <summary>
     /// whether the platforms are moving from start to right
@@ -128,6 +128,11 @@ public class LoopingPlatformBody : MonoBehaviour
         if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, requiredGearType) == requiredGearQuantity)
         {
             isLeftToRight = !isLeftToRight;
+            if (!active)
+            {
+                active = true;
+                EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, requiredGearQuantity, requiredGearType);
+            }
         }
     }
 
