@@ -40,6 +40,9 @@ public class LoopingPlatformBody : MonoBehaviour
     private GameObject leftMost;
     private GameObject rightMost;
     private bool active;
+    private Vector3 moveDir;      // normalized left → right
+    private float totalDistance; // distance between left and right
+
 
     /// <summary>
     /// whether the platforms are moving from start to right
@@ -57,19 +60,27 @@ public class LoopingPlatformBody : MonoBehaviour
 
     void Awake()
     {
-        Vector2 pos = right.position;
+        moveDir = (right.position - left.position).normalized;
+        totalDistance = Vector3.Distance(left.position, right.position);
+
+        Vector3 pos = right.position;
+
         for (int i = 0; i < platformCount; i++)
         {
             GameObject go = Instantiate(platformPrefab, transform);
+
+            
+            go.transform.rotation = transform.rotation;
+
             go.transform.position = pos;
             platforms.Add(go);
-            pos = new Vector2(pos.x - platformInterval, pos.y);
+
+            pos -= moveDir * platformInterval;
         }
-        platforms.Sort((a, b) =>
-            a.transform.position.x.CompareTo(b.transform.position.x));
-        leftMost = platforms[0];
-        rightMost = platforms[^1];
+
+        SortPlatforms();
         isLeftToRight = !invertDirection;
+
         EventManagerNP.StartListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
@@ -85,32 +96,51 @@ public class LoopingPlatformBody : MonoBehaviour
 
     void Update()
     {
+        Vector3 dir = isLeftToRight ? moveDir : -moveDir;
+
         for (int i = platforms.Count - 1; i >= 0; i--)
         {
-            GameObject go = platforms[i];
+            var go = platforms[i];
+
 
             if (Reached(go.transform))
             {
-                go.transform.position =
-                    new Vector3(isLeftToRight ? leftMost.transform.position.x - platformInterval : rightMost.transform.position.x + platformInterval,
-                        go.transform.position.y, go.transform.position.z);
-                if (isLeftToRight) leftMost = go;
-                else rightMost = go;
-                
+                if (isLeftToRight)
+                {
+                    // wrap from right end → before leftmost
+                    go.transform.position =
+                        leftMost.transform.position - moveDir * platformInterval;
+
+                    leftMost = go;
+                }
+                else
+                {
+                    // wrap from left end → after rightmost
+                    go.transform.position =
+                        rightMost.transform.position + moveDir * platformInterval;
+
+                    rightMost = go;
+                }
             }
 
-            go.GetComponent<Collider2D>().enabled = viewPort.bounds.Contains(go.transform.position);
 
-            Vector3 dir = isLeftToRight ? Vector3.right : Vector3.left;
-            go.transform.position += speed * Time.deltaTime * dir;
+            go.transform.position += dir * speed * Time.deltaTime;
+
+            go.GetComponent<Collider2D>().enabled =
+                viewPort.bounds.Contains(go.transform.position);
         }
+        
     }
 
     private bool Reached(Transform platform)
     {
-        if (SamePivot(checkpoint, left.position) && IsOnLeft(platform, checkpoint)) return true;
-        else if (SamePivot(checkpoint, right.position) && IsOnRight(platform, checkpoint)) return true;
-        else return false;
+        float platPos = GetAxisPosition(platform);
+        float checkpointPos = GetAxisPosition(isLeftToRight ? right : left);
+
+        if (isLeftToRight)
+            return platPos > checkpointPos + disappearPadding;
+        else
+            return platPos < checkpointPos - disappearPadding;
     }
 
     bool IsOnRight(Transform t, Vector2 otherPos)
@@ -121,6 +151,20 @@ public class LoopingPlatformBody : MonoBehaviour
     bool IsOnLeft(Transform t, Vector2 otherPos)
     {
         return (t.position.x + disappearPadding) < otherPos.x;
+    }
+
+    void SortPlatforms()
+    {
+        platforms.Sort((a, b) =>
+            GetAxisPosition(a.transform).CompareTo(GetAxisPosition(b.transform)));
+
+        leftMost = platforms[0];
+        rightMost = platforms[^1];
+    }
+
+    private float GetAxisPosition(Transform t)
+    {
+        return Vector3.Dot(t.position - left.position, moveDir);
     }
 
     private void SwitchDirection()

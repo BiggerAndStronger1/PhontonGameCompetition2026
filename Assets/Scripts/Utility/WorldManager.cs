@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -5,13 +7,22 @@ using UnityEngine.InputSystem;
 public enum WorldType
 {
     Peace,
-    War
+    War,
+}
+
+[Serializable]
+public struct WorldObj
+{
+    public WorldType type;
+    public GameObject go;
 }
 
 public class WorldManager : MonoBehaviour
 {
     public static WorldManager instance;
     [SerializeField] private WorldType _currentWorld;
+    [Tooltip("objects that are enabled/disabled based on WordType")]
+    [SerializeField] private List<WorldObj> worldObjs = new List<WorldObj>();
 
     public WorldType currentWorld
     {
@@ -19,7 +30,19 @@ public class WorldManager : MonoBehaviour
         private set
         {
             _currentWorld = value;
+            foreach (var obj in worldObjs)
+            {
+                if (obj.type == value && obj.go != null)
+                {
+                    obj.go.SetActive(true);
+                }
+                else if (obj.type != value && obj.go != null)
+                {
+                    obj.go.SetActive(false);
+                }
+            }
             EventManager1P<WorldType>.TriggerEvent(GameEvents.WordChanged, value);
+            
         }
     }
 
