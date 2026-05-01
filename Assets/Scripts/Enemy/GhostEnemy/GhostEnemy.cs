@@ -106,6 +106,11 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     {
         if (canHatrePlayer && collision.transform.GetComponent<Player>() != null)
             player.PlayerDie();
+
+        Spike spike = collision.transform.GetComponent<Spike>();
+        if (spike != null)
+            spike.CleanSpike();
+
     }
 
 
