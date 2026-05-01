@@ -112,8 +112,13 @@ public enum GameEvents
     /// notifies a world change, providing the world type to the listener (single param event: WordType)
     /// </summary>
     WordChanged,
+    /// <summary>
+    /// query the inventory (pocket watch UI) for the quantity of a Proptype item (single param event: Proptype, return: int)
+    /// </summary>
+    InventoryQuery,
+    
 }
-public abstract class EventManagerSingleParam<T> : MonoBehaviour
+public abstract class EventManager1P<T> : MonoBehaviour
 {
     private static readonly Dictionary<GameEvents, Action<T>> EventDictionary = new Dictionary<GameEvents, Action<T>>();
     public static void StartListening(GameEvents gameEventName, Action<T> listener)
@@ -195,7 +200,7 @@ public abstract class EventManagerSingleParam<T> : MonoBehaviour
     }
 }
 
-public abstract class EventManagerNoParam : MonoBehaviour
+public abstract class EventManagerNP : MonoBehaviour
 {
     private static readonly Dictionary<GameEvents, Action> EventDictionary = new Dictionary<GameEvents, Action>();
     public static void StartListening(GameEvents gameEventName, Action listener)
@@ -277,7 +282,7 @@ public abstract class EventManagerNoParam : MonoBehaviour
     }
 }
 
-public abstract class EventManagerTwoParams<T1, T2> : MonoBehaviour
+public abstract class EventManager2P<T1, T2> : MonoBehaviour
 {
     private static readonly Dictionary<GameEvents, Action<T1, T2>> EventDictionary =
         new Dictionary<GameEvents, Action<T1, T2>>();
@@ -358,6 +363,267 @@ public abstract class EventManagerTwoParams<T1, T2> : MonoBehaviour
         {
             print("event doesn't exist");
         }
+    }
+}
+
+/// <summary>
+/// event manager with a custom returned value
+/// </summary>
+/// <typeparam name="T1">param 1</typeparam>
+/// <typeparam name="T2">param 2</typeparam>
+/// <typeparam name="TResult">returned value</typeparam>
+public abstract class EventManagerReturn2P<T1, T2, TResult> : MonoBehaviour
+{
+    private static readonly Dictionary<GameEvents, Func<T1, T2, TResult>> EventDictionary =
+        new Dictionary<GameEvents, Func<T1, T2, TResult>>();
+
+    public static void StartListening(GameEvents gameEventName, Func<T1, T2, TResult> listener)
+    {
+        if (EventDictionary.ContainsKey(gameEventName))
+            EventDictionary[gameEventName] += listener;
+        else
+            EventDictionary[gameEventName] = listener;
+    }
+
+    public static void StopListening(GameEvents gameEventName, Func<T1, T2, TResult> listener)
+    {
+        if (!EventDictionary.ContainsKey(gameEventName))
+            return;
+
+        EventDictionary[gameEventName] -= listener;
+
+        if (EventDictionary[gameEventName] == null)
+            EventDictionary.Remove(gameEventName);
+    }
+
+    public static TResult TriggerEvent(GameEvents gameEventName, T1 param1, T2 param2)
+    {
+        if (!EventDictionary.TryGetValue(gameEventName, out var func) || func == null)
+            return default;
+
+        TResult result = default;
+
+        foreach (var handler in func.GetInvocationList())
+        {
+            var method = handler as Func<T1, T2, TResult>;
+            var target = method?.Target;
+
+            if (target is UnityEngine.Object unityObj && unityObj == null)
+            {
+                EventDictionary[gameEventName] -= method;
+
+                string senderName = "UnknownSender";
+                try
+                {
+                    var frame = new System.Diagnostics.StackTrace().GetFrame(1);
+                    var methodInfo = frame.GetMethod();
+                    senderName = $"{methodInfo.DeclaringType?.Name}.{methodInfo.Name}";
+                }
+                catch { }
+
+                string listenerMethod = method?.Method.Name ?? "UnknownMethod";
+
+                Debug.LogWarning(
+                    $"[Event: {gameEventName}] Removed destroyed listener, " +
+                    $"Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}"
+                );
+            }
+            else
+            {
+                try
+                {
+                    result = method.Invoke(param1, param2);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError(
+                        $"[Event: {gameEventName}] Exception while invoking listener: {e.Message}"
+                    );
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static void CheckEvent(GameEvents gameEventName)
+    {
+        Debug.Log(EventDictionary.ContainsKey(gameEventName)
+            ? "event exists"
+            : "event doesn't exist");
+    }
+}
+
+/// <summary>
+/// event manager with a custom returned value
+/// </summary>
+/// <typeparam name="T1">param 1</typeparam>
+/// <typeparam name="TResult">returned value</typeparam>
+public abstract class EventManagerReturn1P<T1, TResult> : MonoBehaviour
+{
+    private static readonly Dictionary<GameEvents, Func<T1, TResult>> EventDictionary =
+        new Dictionary<GameEvents, Func<T1, TResult>>();
+
+    public static void StartListening(GameEvents gameEventName, Func<T1, TResult> listener)
+    {
+        if (EventDictionary.ContainsKey(gameEventName))
+            EventDictionary[gameEventName] += listener;
+        else
+            EventDictionary[gameEventName] = listener;
+    }
+
+    public static void StopListening(GameEvents gameEventName, Func<T1, TResult> listener)
+    {
+        if (!EventDictionary.ContainsKey(gameEventName))
+            return;
+
+        EventDictionary[gameEventName] -= listener;
+
+        if (EventDictionary[gameEventName] == null)
+            EventDictionary.Remove(gameEventName);
+    }
+
+    public static TResult TriggerEvent(GameEvents gameEventName, T1 param1)
+    {
+        if (!EventDictionary.TryGetValue(gameEventName, out var func) || func == null)
+            return default;
+
+        TResult result = default;
+
+        foreach (var handler in func.GetInvocationList())
+        {
+            var method = handler as Func<T1, TResult>;
+            var target = method?.Target;
+
+            if (target is UnityEngine.Object unityObj && unityObj == null)
+            {
+                EventDictionary[gameEventName] -= method;
+
+                string senderName = "UnknownSender";
+                try
+                {
+                    var frame = new System.Diagnostics.StackTrace().GetFrame(1);
+                    var methodInfo = frame.GetMethod();
+                    senderName = $"{methodInfo.DeclaringType?.Name}.{methodInfo.Name}";
+                }
+                catch { }
+
+                string listenerMethod = method?.Method.Name ?? "UnknownMethod";
+
+                Debug.LogWarning(
+                    $"[Event: {gameEventName}] Removed destroyed listener, " +
+                    $"Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}"
+                );
+            }
+            else
+            {
+                try
+                {
+                    result = method.Invoke(param1);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError(
+                        $"[Event: {gameEventName}] Exception while invoking listener: {e.Message}"
+                    );
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static void CheckEvent(GameEvents gameEventName)
+    {
+        Debug.Log(EventDictionary.ContainsKey(gameEventName)
+            ? "event exists"
+            : "event doesn't exist");
+    }
+}
+
+/// <summary>
+/// event manager with a custom returned value
+/// </summary>
+/// <typeparam name="TResult">returned value</typeparam>
+public abstract class EventManagerReturnNP<TResult> : MonoBehaviour
+{
+    private static readonly Dictionary<GameEvents, Func<TResult>> EventDictionary =
+        new Dictionary<GameEvents, Func<TResult>>();
+
+    public static void StartListening(GameEvents gameEventName, Func<TResult> listener)
+    {
+        if (EventDictionary.ContainsKey(gameEventName))
+            EventDictionary[gameEventName] += listener;
+        else
+            EventDictionary[gameEventName] = listener;
+    }
+
+    public static void StopListening(GameEvents gameEventName, Func<TResult> listener)
+    {
+        if (!EventDictionary.ContainsKey(gameEventName))
+            return;
+
+        EventDictionary[gameEventName] -= listener;
+
+        if (EventDictionary[gameEventName] == null)
+            EventDictionary.Remove(gameEventName);
+    }
+
+    public static TResult TriggerEvent(GameEvents gameEventName)
+    {
+        if (!EventDictionary.TryGetValue(gameEventName, out var func) || func == null)
+            return default;
+
+        TResult result = default;
+
+        foreach (var handler in func.GetInvocationList())
+        {
+            var method = handler as Func<TResult>;
+            var target = method?.Target;
+
+            if (target is UnityEngine.Object unityObj && unityObj == null)
+            {
+                EventDictionary[gameEventName] -= method;
+
+                string senderName = "UnknownSender";
+                try
+                {
+                    var frame = new System.Diagnostics.StackTrace().GetFrame(1);
+                    var methodInfo = frame.GetMethod();
+                    senderName = $"{methodInfo.DeclaringType?.Name}.{methodInfo.Name}";
+                }
+                catch { }
+
+                string listenerMethod = method?.Method.Name ?? "UnknownMethod";
+
+                Debug.LogWarning(
+                    $"[Event: {gameEventName}] Removed destroyed listener, " +
+                    $"Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}"
+                );
+            }
+            else
+            {
+                try
+                {
+                    result = method.Invoke();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError(
+                        $"[Event: {gameEventName}] Exception while invoking listener: {e.Message}"
+                    );
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static void CheckEvent(GameEvents gameEventName)
+    {
+        Debug.Log(EventDictionary.ContainsKey(gameEventName)
+            ? "event exists"
+            : "event doesn't exist");
     }
 }
 

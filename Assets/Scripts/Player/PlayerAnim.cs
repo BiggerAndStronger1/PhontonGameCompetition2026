@@ -34,8 +34,8 @@ public class PlayerAnim : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        EventManagerNoParam.StartListening(GameEvents.PlayerDie, Die);
-        EventManagerNoParam.StartListening(GameEvents.PlayerRespawn, Respawn);
+        EventManagerNP.StartListening(GameEvents.PlayerDie, Die);
+        EventManagerNP.StartListening(GameEvents.PlayerRespawn, Respawn);
     }
 
     void Start()
@@ -45,8 +45,8 @@ public class PlayerAnim : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManagerNoParam.StopListening(GameEvents.PlayerDie, Die);
-        EventManagerNoParam.StopListening(GameEvents.PlayerRespawn, Respawn);
+        EventManagerNP.StopListening(GameEvents.PlayerDie, Die);
+        EventManagerNP.StopListening(GameEvents.PlayerRespawn, Respawn);
     }
 
     private void Die()

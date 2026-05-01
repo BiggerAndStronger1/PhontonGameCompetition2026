@@ -23,7 +23,7 @@ public class Ladder : MonoBehaviour
         if (belongToSpecificWorld)
         {
             WorldCheck();
-            EventManagerNoParam.StartListening(GameEvents.SwitchWorld, WorldCheck);
+            EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldCheck);
         }
     }
 

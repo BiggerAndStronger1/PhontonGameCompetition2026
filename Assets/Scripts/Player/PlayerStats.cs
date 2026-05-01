@@ -45,15 +45,13 @@ public class PlayerStats : MonoBehaviour
         return true;
     }
 
-    public bool AddMineGear(int quantity)
+    public void AddMineGear(int quantity)
     {
-        if (mineGearCount + quantity < 0)
-        {
-            Debug.Log("µØÀ×³ÝÂÖ²»¹»");
-            return false;
-        }
-
         mineGearCount += quantity;
-        return true;
+    }
+
+    public bool CheckMineGear(int quantity)
+    {
+        return mineGearCount > 0;
     }
 }

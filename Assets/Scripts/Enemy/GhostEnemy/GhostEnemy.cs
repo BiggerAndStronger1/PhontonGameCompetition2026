@@ -39,12 +39,12 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void OnEnable()
     {
-        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, OnSwitchWorld);
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, OnSwitchWorld);
     }
 
     private void OnDisable()
     {
-        EventManagerNoParam.StopListening(GameEvents.SwitchWorld, OnSwitchWorld);
+        EventManagerNP.StopListening(GameEvents.SwitchWorld, OnSwitchWorld);
     }
 
     private void Start()

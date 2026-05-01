@@ -15,12 +15,12 @@ public class PeaceGround : MonoBehaviour
     private void Start()
     {
         UpdateState();
-        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, UpdateState);
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, UpdateState);
     }
 
     private void OnDestroy()
     {
-        EventManagerNoParam.StopListening(GameEvents.SwitchWorld, UpdateState);
+        EventManagerNP.StopListening(GameEvents.SwitchWorld, UpdateState);
     }
 
     private void UpdateState()

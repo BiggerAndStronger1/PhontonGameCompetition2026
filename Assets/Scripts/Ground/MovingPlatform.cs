@@ -33,7 +33,7 @@ public class MovingPlatform : MonoBehaviour
         if (belongToSpecificWorld)
         {
             WorldCheck();
-            EventManagerNoParam.StartListening(GameEvents.SwitchWorld, WorldCheck);
+            EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldCheck);
         }
     }
 

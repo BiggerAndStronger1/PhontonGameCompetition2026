@@ -9,7 +9,7 @@ public class Teleportable : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManagerTwoParams<Transform, Vector3>.StartListening(
+        EventManager2P<Transform, Vector3>.StartListening(
             GameEvents.Teleport,
             OnTeleport
         );
@@ -17,7 +17,7 @@ public class Teleportable : MonoBehaviour
 
     private void OnDisable()
     {
-        EventManagerTwoParams<Transform, Vector3>.StopListening(
+        EventManager2P<Transform, Vector3>.StopListening(
             GameEvents.Teleport,
             OnTeleport
         );

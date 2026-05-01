@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -26,9 +24,10 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     {
         smallGearSlots = smallSlotsParent.GetComponentsInChildren<Slot>().ToList();
         background.sprite = deactivated;
-        EventManagerSingleParam<PropType>.StartListening(GameEvents.PlayerCollectProps, Put);
-        EventManagerSingleParam<bool>.StartListening(GameEvents.TogglePocketWatchUI,  Toggle);
-        EventManagerTwoParams<int, PropType>.StartListening(GameEvents.ConsumeGear, Consume);
+        EventManager1P<PropType>.StartListening(GameEvents.PlayerCollectProps, Put);
+        EventManager1P<bool>.StartListening(GameEvents.TogglePocketWatchUI,  Toggle);
+        EventManager2P<int, PropType>.StartListening(GameEvents.ConsumeGear, Consume);
+        EventManagerReturn1P<PropType, int>.StartListening(GameEvents.InventoryQuery, Check);
         anim2D = GetComponent<Anim2D>();
     }
 
@@ -39,9 +38,10 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     private void OnDestroy()
     {
-        EventManagerSingleParam<PropType>.StopListening(GameEvents.PlayerCollectProps, Put);
-        EventManagerSingleParam<bool>.StopListening(GameEvents.TogglePocketWatchUI, Toggle);
-        EventManagerTwoParams<int, PropType>.StopListening(GameEvents.ConsumeGear, Consume);
+        EventManager1P<PropType>.StopListening(GameEvents.PlayerCollectProps, Put);
+        EventManager1P<bool>.StopListening(GameEvents.TogglePocketWatchUI, Toggle);
+        EventManager2P<int, PropType>.StopListening(GameEvents.ConsumeGear, Consume);
+        EventManagerReturn1P<PropType, int>.StopListening(GameEvents.InventoryQuery, Check);
     }
 
     public void ForcedOnApplicationQuit()
@@ -81,6 +81,29 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     }
 
+    private int Check(PropType propType)
+    {
+        if (new List<PropType>() { PropType.SmallGear, PropType.BoomGear, PropType.MineGear }.Contains(propType))
+        {
+            return smallGearSlots.FindAll((slot => slot.type == propType && slot.occupied)).Count;
+        }
+        else if (propType == PropType.LargeGear)
+        {
+            return bigGearSlot.occupied ? 1 : 0;
+        }
+        else 
+        {
+            return PocketWatchActive() ? 1 : 0;
+            
+        }
+        
+    }
+
+    private bool PocketWatchActive()
+    {
+        return background.sprite == activated;
+    }
+
     private void Put(PropType propType)
     {
         if (new List<PropType>() { PropType.SmallGear , PropType.BoomGear, PropType.MineGear}.Contains(propType)){
@@ -98,6 +121,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         {
             if (!bigGearSlot.occupied)bigGearSlot.Put(propType);
             else Debug.LogWarning("no more room to store big gear");
+            return;
         }
         else if (propType == PropType.PocketWatch)
         {
@@ -107,6 +131,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
                 smallGearSlot.Activate();
             }
             bigGearSlot.Activate();
+            return;
         }
         
     }
@@ -116,6 +141,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     /// </summary>
     private void UseSmallGear()
     {
+        if (!PocketWatchActive()) return;
         int index = Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60 == 6
             ? 0
             : Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60;
@@ -124,7 +150,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         if (slot.occupied)
         {
             slot.Use();
-            EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, slot.type.Value);
+            EventManager2P<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, slot.type.Value);
             Toggle(false);
         }
     }
@@ -135,6 +161,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     /// <param name="propType"></param>
     private void Consume(int quantity, PropType propType)
     {
+        Assert.IsTrue(PocketWatchActive(), "you are trying to consume gears before the pocket watch is collected");
         if (propType == PropType.LargeGear)
         {
             if (bigGearSlot.occupied)

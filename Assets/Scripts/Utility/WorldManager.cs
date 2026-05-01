@@ -19,7 +19,7 @@ public class WorldManager : MonoBehaviour
         private set
         {
             _currentWorld = value;
-            EventManagerSingleParam<WorldType>.TriggerEvent(GameEvents.WordChanged, value);
+            EventManager1P<WorldType>.TriggerEvent(GameEvents.WordChanged, value);
         }
     }
 
@@ -30,7 +30,7 @@ public class WorldManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, SwitchWorld);
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, SwitchWorld);
     }
 
     private void Start()

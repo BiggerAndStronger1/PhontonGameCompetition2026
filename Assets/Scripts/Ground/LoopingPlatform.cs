@@ -9,8 +9,8 @@ public class LoopingPlatform : MonoBehaviour
     private void Awake()
     {
         col = GetComponent<Collider2D>();
-        EventManagerSingleParam<GameObject>.StartListening(GameEvents.PlatformVisible, turnOn);
-        EventManagerSingleParam<GameObject>.StartListening(GameEvents.PlatformInvisible, turnOff);
+        EventManager1P<GameObject>.StartListening(GameEvents.PlatformVisible, turnOn);
+        EventManager1P<GameObject>.StartListening(GameEvents.PlatformInvisible, turnOff);
     }
 
     private void turnOn(GameObject go)
@@ -27,7 +27,7 @@ public class LoopingPlatform : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManagerSingleParam<GameObject>.StopListening(GameEvents.PlatformVisible, turnOn);
-        EventManagerSingleParam<GameObject>.StopListening(GameEvents.PlatformInvisible, turnOff);
+        EventManager1P<GameObject>.StopListening(GameEvents.PlatformVisible, turnOn);
+        EventManager1P<GameObject>.StopListening(GameEvents.PlatformInvisible, turnOff);
     }
 }

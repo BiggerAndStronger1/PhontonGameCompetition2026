@@ -20,8 +20,8 @@ public class Airtrap : MonoBehaviour
         col = GetComponent<Collider2D>();
         col.isTrigger = true;
         active = _active;
-        EventManagerNoParam.StartListening(GameEvents.ActivateAirTrap, (() => active = true));
-        EventManagerNoParam.StartListening(GameEvents.DeactivateAirTrap, () => active = false);
+        EventManagerNP.StartListening(GameEvents.ActivateAirTrap, (() => active = true));
+        EventManagerNP.StartListening(GameEvents.DeactivateAirTrap, () => active = false);
     }
 
     void Start()
@@ -36,8 +36,8 @@ public class Airtrap : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManagerNoParam.StopListening(GameEvents.ActivateAirTrap, (() => active = true));
-        EventManagerNoParam.StopListening(GameEvents.DeactivateAirTrap, () => active = false);
+        EventManagerNP.StopListening(GameEvents.ActivateAirTrap, (() => active = true));
+        EventManagerNP.StopListening(GameEvents.DeactivateAirTrap, () => active = false);
     }
 
 

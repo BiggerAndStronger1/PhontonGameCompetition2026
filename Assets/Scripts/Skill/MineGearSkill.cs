@@ -17,18 +17,18 @@ public class MineGearSkill : Skill
 
     private void OnEnable()
     {
-        EventManagerTwoParams<int, PropType>.StartListening(GameEvents.UseGear, CheckMineSkill);
+        EventManager2P<int, PropType>.StartListening(GameEvents.UseGear, CheckAndUseMine);
     }
 
     private void OnDisable()
     {
-        EventManagerTwoParams<int, PropType>.StopListening(GameEvents.UseGear, CheckMineSkill);
+        EventManager2P<int, PropType>.StopListening(GameEvents.UseGear, CheckAndUseMine);
     }
 
-    private void CheckMineSkill(int amount, PropType propType)
+    private void CheckAndUseMine(int amount, PropType propType)
     {
-        if (propType == PropType.MineGear && player.stats.AddMineGear(-amount))
-            UseSkill();
+        if (propType == PropType.MineGear && player.stats.CheckMineGear(1))
+            if (TryUseSkill()) player.stats.AddMineGear(-1);
     }
 
     protected override void UseSkill()
@@ -47,10 +47,6 @@ public class MineGearSkill : Skill
             MineGearController go = Instantiate(mineGearPrefab, GetPlayerBottom(), transform.rotation).GetComponent<MineGearController>();
             go.Detonate(explosionRadius, duration, receivedExplosionForce);
         }
-
-
-
-
     }
 
 

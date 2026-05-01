@@ -81,9 +81,9 @@ public class GameManager : MonoBehaviour
             debugAction = inputActions.Debug;
         }
         
-        EventManagerNoParam.StartListening(GameEvents.SceneReload,ReloadScene);
-        EventManagerNoParam.StartListening(GameEvents.LoadNextScene, NextScene);
-        EventManagerNoParam.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
+        EventManagerNP.StartListening(GameEvents.SceneReload,ReloadScene);
+        EventManagerNP.StartListening(GameEvents.LoadNextScene, NextScene);
+        EventManagerNP.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
         if (!dontDestroySet)
         {
             foreach (var o in dontDestroys)
@@ -139,9 +139,9 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         debugAction.Disable();
-        EventManagerNoParam.StopListening(GameEvents.SceneReload, ReloadScene);
-        EventManagerNoParam.StopListening(GameEvents.LoadNextScene, NextScene);
-        EventManagerNoParam.StopListening(GameEvents.LoadPreviousScene, PreviousScene);
+        EventManagerNP.StopListening(GameEvents.SceneReload, ReloadScene);
+        EventManagerNP.StopListening(GameEvents.LoadNextScene, NextScene);
+        EventManagerNP.StopListening(GameEvents.LoadPreviousScene, PreviousScene);
     }
 
     private void ReloadScene()
@@ -198,13 +198,13 @@ public class GameManager : MonoBehaviour
             if (ui)
             {
                 if (debug) print(string.Format("Clicked: {0}", ui.name));
-                EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectClicked, ui);
+                EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectClicked, ui);
 
             }
             else if (twoD)
             {
                 if (debug) print(string.Format("Clicked: {0}", twoD.name));
-                EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectClicked, twoD);
+                EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectClicked, twoD);
 
             }
         }
@@ -212,24 +212,24 @@ public class GameManager : MonoBehaviour
         if (currentHover != ui && ui)
         {
 
-            EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectHoverEnter, ui);
+            EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectHoverEnter, ui);
             Assert.IsNotNull(ui);
-            if (currentHover) EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
+            if (currentHover) EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
             currentHover = ui;
         }
 
         else if (currentHover != twoD && twoD)
         {
 
-            EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectHoverEnter, twoD);
+            EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectHoverEnter, twoD);
             Assert.IsNotNull(twoD);
-            if (currentHover) EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
+            if (currentHover) EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
             currentHover = twoD;
         }
 
         else if (currentHover && !twoD && !ui)
         {
-            EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
+            EventManager1P<GameObject>.TriggerEvent(GameEvents.ObjectHoverExit, currentHover);
             currentHover = null;
         }
         #endregion
@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNoParam.TriggerEvent(GameEvents.ActivateAirTrap);
+        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNP.TriggerEvent(GameEvents.ActivateAirTrap);
 
         if (debugAction.ReloadScene.WasPerformedThisFrame())
         {

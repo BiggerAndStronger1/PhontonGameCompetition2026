@@ -1,15 +1,19 @@
 using System;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
+
 [RequireComponent(typeof(SpriteRenderer))]
 public class SwitchButton : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private bool pressed;
-    [Tooltip("event to trigger when the button is red")]
-    [SerializeField] private GameEvents redEvent;
-    [Tooltip("event to trigger when the button is green")]
-    [SerializeField] private GameEvents greenEvent;
+    [FormerlySerializedAs("redEvent")]
+    [Tooltip("event to trigger when the button is not pressed")]
+    [SerializeField] private GameEvents notPressesEvent;
+    [FormerlySerializedAs("greenEvent")]
+    [Tooltip("event to trigger when the button is pressed")]
+    [SerializeField] private GameEvents pressedEvent;
     [Tooltip("color when the button is not pressed")]
     [SerializeField] private Color notPressedColor = Color.red;
     [Tooltip("color when the button is pressed")]
@@ -33,14 +37,14 @@ public class SwitchButton : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !pressed)
         {
+            EventManagerNP.TriggerEvent(notPressesEvent);
             spriteRenderer.color = pressedColor;
-            EventManagerNoParam.TriggerEvent(redEvent);
             pressed = true;
         }
         else
         {
+            EventManagerNP.TriggerEvent(pressedEvent);
             spriteRenderer.color = notPressedColor;
-            EventManagerNoParam.TriggerEvent(greenEvent);
             pressed = false;
         }
     }

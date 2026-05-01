@@ -38,7 +38,7 @@ public class ClockTower : MonoBehaviour
 
             if (autoTimer <= 0)
             {
-                EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
+                EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
                 autoTimer = autoSwitchDuration;
             }
         }
@@ -49,7 +49,7 @@ public class ClockTower : MonoBehaviour
 
 
             if (Player.playerActions.SwitchWorld.WasPressedThisFrame() && playerTimer <= switchByPlayerDuration && playerTimer > 0)
-                EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
+                EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
 
             if (playerTimer <= 0)
             {

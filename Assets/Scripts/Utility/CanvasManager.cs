@@ -26,8 +26,8 @@ public class CanvasManager : MonoBehaviour
         {
             child.ForcedAwake();
         }
-        EventManagerNoParam.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
-        EventManagerNoParam.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
+        EventManagerNP.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
+        EventManagerNP.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
     }
 
     void Start()
@@ -50,8 +50,8 @@ public class CanvasManager : MonoBehaviour
     private void OnDestroy()
     {
         actionsUI.Disable();
-        EventManagerNoParam.StopListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
-        EventManagerNoParam.StopListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
+        EventManagerNP.StopListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
+        EventManagerNP.StopListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
     }
 
     // Update is called once per frame
@@ -65,11 +65,11 @@ public class CanvasManager : MonoBehaviour
         }
         else if (CanvasManager.actionsUI.Pocketwatch.WasPressedThisFrame())
         {
-            EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
+            EventManager1P<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
         }
 
         bool disablePlayerInput = disablePlayerInputFor.Exists((o => o.activeInHierarchy));
-        EventManagerSingleParam<bool>.TriggerEvent(GameEvents.TogglePlayerInput, !disablePlayerInput);
+        EventManager1P<bool>.TriggerEvent(GameEvents.TogglePlayerInput, !disablePlayerInput);
     }
 
     

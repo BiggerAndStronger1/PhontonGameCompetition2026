@@ -21,11 +21,11 @@ public class LoopPlatformViewPort : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.PlatformVisible, other.gameObject);
+        EventManager1P<GameObject>.TriggerEvent(GameEvents.PlatformVisible, other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        EventManagerSingleParam<GameObject>.TriggerEvent(GameEvents.PlatformInvisible, other.gameObject);
+        EventManager1P<GameObject>.TriggerEvent(GameEvents.PlatformInvisible, other.gameObject);
     }
 }

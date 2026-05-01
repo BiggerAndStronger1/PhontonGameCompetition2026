@@ -16,7 +16,7 @@ public class MineGearController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        EventManagerTwoParams<List<GameObject>, Vector3>.StartListening(GameEvents.MineGearExploded, ExplosionRepulse);
+        EventManager2P<List<GameObject>, Vector3>.StartListening(GameEvents.MineGearExploded, ExplosionRepulse);
     }
 
     void Start()
@@ -50,7 +50,7 @@ public class MineGearController : MonoBehaviour
                 fragile.DestroyFragile();
             }
         }
-        EventManagerTwoParams<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded, explosionHits.Select(e => e.gameObject).ToList(), transform.position);
+        EventManager2P<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded, explosionHits.Select(e => e.gameObject).ToList(), transform.position);
         Destroy(gameObject);
     }
 
@@ -65,7 +65,7 @@ public class MineGearController : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManagerTwoParams<List<GameObject>, Vector3>.StopListening(GameEvents.MineGearExploded, ExplosionRepulse);
+        EventManager2P<List<GameObject>, Vector3>.StopListening(GameEvents.MineGearExploded, ExplosionRepulse);
     }
 
     private void OnDrawGizmosSelected()

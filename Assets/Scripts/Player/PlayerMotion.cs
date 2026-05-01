@@ -66,6 +66,11 @@ public class PlayerMotion : MonoBehaviour
                 AimUpdate();
                 break;
         }
+        
+        if (Player.playerActions.Mine.WasPressedThisFrame())
+        {
+            EventManager2P<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, PropType.MineGear);
+        }
     }
 
     private void IdleUpdate(float xInput, float yInput)
@@ -173,7 +178,7 @@ public class PlayerMotion : MonoBehaviour
             return;
         }
 
-        if (Player.playerActions.ThrowBoomGear.WasPressedThisFrame())
+        else if (Player.playerActions.ThrowBoomGear.WasPressedThisFrame())
         {
             player.skill.boomGear.CreateBoomGear();
             ChangeState(PlayerMotionType.Idle);

@@ -26,7 +26,7 @@ public class GearCostButton : Button
         {
             if (player.stats.AddSmallGear(-needSmallGearNum))
             {
-                EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, needSmallGearNum, PropType.SmallGear);
+                EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, needSmallGearNum, PropType.SmallGear);
                 PressButton();
             }
         }

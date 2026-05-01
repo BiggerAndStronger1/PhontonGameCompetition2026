@@ -10,7 +10,7 @@ public class CamSwitchAndBackground : MonoBehaviour
     [SerializeField] private GameObject warBackground;
     private void Awake()
     {
-        EventManagerSingleParam<WorldType>.StartListening(GameEvents.WordChanged, OnWordChange);
+        EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, OnWordChange);
     }
 
     private void OnWordChange(WorldType obj)

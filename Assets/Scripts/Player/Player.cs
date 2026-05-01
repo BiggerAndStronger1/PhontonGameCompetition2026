@@ -57,7 +57,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
             playerActions = action.Player;
         }
         playerActions.Enable();
-        EventManagerSingleParam<bool>.StartListening(GameEvents.TogglePlayerInput, ToggleInputAction);
+        EventManager1P<bool>.StartListening(GameEvents.TogglePlayerInput, ToggleInputAction);
         
     }
 
@@ -78,14 +78,14 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
         if (playerActions.SwitchWorld.triggered && stats.havePocketWatch)
         {
-            EventManagerNoParam.TriggerEvent(GameEvents.SwitchWorld);
+            EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
             return;
         }
     }
 
     private void OnDestroy()
     {
-        EventManagerSingleParam<bool>.StopListening(GameEvents.TogglePlayerInput, ToggleInputAction);
+        EventManager1P<bool>.StopListening(GameEvents.TogglePlayerInput, ToggleInputAction);
         playerActions.Disable();
     }
 
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         isDead = true;
         print("Player Die!");
         sr.color = Color.black;
-        EventManagerNoParam.TriggerEvent(GameEvents.PlayerDie);
+        EventManagerNP.TriggerEvent(GameEvents.PlayerDie);
         StartCoroutine(RebornCooldown());
     }
 
@@ -111,7 +111,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     {
         
         yield return new WaitForSeconds(respawnCooldown);
-        EventManagerNoParam.TriggerEvent(GameEvents.PlayerRespawn);
+        EventManagerNP.TriggerEvent(GameEvents.PlayerRespawn);
         PlayerReborn();
     }
 

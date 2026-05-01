@@ -8,7 +8,7 @@ public class TeleportEdge : MonoBehaviour
     {
         Vector3 deltaPosition = targetTeleportEdge.transform.position - transform.position;
 
-        EventManagerTwoParams<Transform, Vector3>.TriggerEvent(
+        EventManager2P<Transform, Vector3>.TriggerEvent(
             GameEvents.Teleport,
             collision.transform,
             deltaPosition

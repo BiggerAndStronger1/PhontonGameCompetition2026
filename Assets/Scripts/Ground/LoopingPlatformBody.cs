@@ -26,6 +26,9 @@ public class LoopingPlatformBody : MonoBehaviour
     [Tooltip("how many platforms should be spawned, optimally this number should be higher enough to fill the viewport")]
     [SerializeField] private int platformCount;
 
+    [SerializeField] private PropType requiredGearType = PropType.SmallGear;
+    [SerializeField] private int requiredGearQuantity = 2;
+
     [SerializeField] private SpriteRenderer viewPort;
     /// <summary>
     /// the checkpoint in which the relocation of the platforms happen
@@ -67,17 +70,17 @@ public class LoopingPlatformBody : MonoBehaviour
         leftMost = platforms[0];
         rightMost = platforms[^1];
         isLeftToRight = !invertDirection;
-        EventManagerNoParam.StartListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
+        EventManagerNP.StartListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
     void Start()
     {
-
+        
     }
 
     private void OnDestroy()
     {
-        EventManagerNoParam.StopListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
+        EventManagerNP.StopListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
     void Update()
@@ -122,7 +125,10 @@ public class LoopingPlatformBody : MonoBehaviour
 
     private void SwitchDirection()
     {
-        isLeftToRight = !isLeftToRight;
+        if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, requiredGearType) == requiredGearQuantity)
+        {
+            isLeftToRight = !isLeftToRight;
+        }
     }
 
 

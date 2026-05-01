@@ -58,13 +58,13 @@ public class MergerBoxEnemy : MonoBehaviour
     private void OnEnable()
     {
         if (limitByWorld)
-            EventManagerNoParam.StartListening(GameEvents.SwitchWorld, OnWorldChanged);
+            EventManagerNP.StartListening(GameEvents.SwitchWorld, OnWorldChanged);
     }
 
     private void OnDisable()
     {
         if (limitByWorld)
-            EventManagerNoParam.StopListening(GameEvents.SwitchWorld, OnWorldChanged);
+            EventManagerNP.StopListening(GameEvents.SwitchWorld, OnWorldChanged);
     }
 
     void OnWorldChanged()
@@ -244,13 +244,13 @@ public class MergerBoxEnemy : MonoBehaviour
 
         if (!haveGear && player.stats.AddLargeGear(-1))
         {
-            EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.LargeGear);
+            EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.LargeGear);
             haveGear = true;
         }
         else if (haveGear)
         {
             player.stats.AddLargeGear(1);
-            EventManagerTwoParams<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, -1, PropType.LargeGear);
+            EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, -1, PropType.LargeGear);
             haveGear = false;
         }
     }

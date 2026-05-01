@@ -55,12 +55,12 @@ public class RegionController : MonoBehaviour
 
     private void OnEnable()
     {
-        EventManagerSingleParam<PropType>.StartListening(GameEvents.PlayerCollectProps, CollectLargeGearCheck);
+        EventManager1P<PropType>.StartListening(GameEvents.PlayerCollectProps, CollectLargeGearCheck);
     }
 
     private void OnDisable()
     {
-        EventManagerSingleParam<PropType>.StopListening(GameEvents.PlayerCollectProps, CollectLargeGearCheck);
+        EventManager1P<PropType>.StopListening(GameEvents.PlayerCollectProps, CollectLargeGearCheck);
     }
 
     private void CollectLargeGearCheck(PropType propType)

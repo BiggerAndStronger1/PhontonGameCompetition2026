@@ -31,7 +31,7 @@ public class Props : MonoBehaviour
 
     protected virtual void OnCollected(Collider2D collision)
     {
-        EventManagerSingleParam<PropType>.TriggerEvent(GameEvents.PlayerCollectProps, propType);
+        EventManager1P<PropType>.TriggerEvent(GameEvents.PlayerCollectProps, propType);
     }
 
     protected virtual void ResetItem()

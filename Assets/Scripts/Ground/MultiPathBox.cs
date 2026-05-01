@@ -20,12 +20,12 @@ public class MultiPathBox : MonoBehaviour
 
     void OnEnable()
     {
-        EventManagerNoParam.StartListening(GameEvents.SwitchWorld, OnWorldChanged);
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, OnWorldChanged);
     }
 
     void OnDisable()
     {
-        EventManagerNoParam.StopListening(GameEvents.SwitchWorld, OnWorldChanged);
+        EventManagerNP.StopListening(GameEvents.SwitchWorld, OnWorldChanged);
     }
 
     void OnWorldChanged()
