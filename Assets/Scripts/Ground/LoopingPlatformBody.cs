@@ -181,7 +181,7 @@ public class LoopingPlatformBody : MonoBehaviour
     private void SwitchDirection(GameObject go)
     {
         if (go != gameObject) return;
-        if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, requiredGearType) == requiredGearQuantity)
+        if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, requiredGearType) >= requiredGearQuantity)
         {
             
             if (!active)

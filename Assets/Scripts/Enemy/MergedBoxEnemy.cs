@@ -2,10 +2,19 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEditor.MaterialProperty;
+
+public enum BoxState
+{
+    Idle,
+    Moving,
+    Falling,
+    Locked
+}
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class MergerBoxEnemy : MonoBehaviour
+public class MergedBoxEnemy : MonoBehaviour
 {
     [Header("Move Info")]
     public List<Transform> wayPoints;
@@ -242,15 +251,16 @@ public class MergerBoxEnemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.transform.position) > playerDetectRadius)
             return;
 
-        if (!haveGear && player.stats.AddLargeGear(-1))
+        int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.LargeGear);
+
+        if (!haveGear && count >= 1)
         {
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.LargeGear);
             haveGear = true;
         }
         else if (haveGear)
         {
-            player.stats.AddLargeGear(1);
-            EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, -1, PropType.LargeGear);
+            EventManager1P<PropType>.TriggerEvent(GameEvents.PlayerCollectProps, PropType.LargeGear);
             haveGear = false;
         }
     }

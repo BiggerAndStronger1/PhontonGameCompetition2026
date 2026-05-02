@@ -54,9 +54,12 @@ public class BoomGearSkill : Skill
 
     public void CreateBoomGear()
     {
-        if (!player.stats.AddBoomGear(-1))
+        int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.BoomGear);
+
+        if (count < 0)
             return;
 
+        EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.BoomGear);
         GameObject newBoomGear = Instantiate(boomGearPrefab, player.transform.position, transform.rotation);
         BoomGearSkillController newBoomGearScript = newBoomGear.GetComponent<BoomGearSkillController>();
 
