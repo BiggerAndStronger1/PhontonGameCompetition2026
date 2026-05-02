@@ -19,12 +19,6 @@ public class ArrowScript : MonoBehaviour
         transform.up = v.normalized;
     }
 
-    private void Start()
-    {
-        Destroy(gameObject, lifeTime); // ∑¿÷πŒﬁœﬁ¥Ê‘⁄
-    }
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -37,5 +31,7 @@ public class ArrowScript : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        Destroy(gameObject, lifeTime);
     }
 }

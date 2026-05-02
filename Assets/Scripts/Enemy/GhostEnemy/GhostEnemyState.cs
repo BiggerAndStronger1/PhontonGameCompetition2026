@@ -57,8 +57,13 @@ public class GhostEnemyState : MonoBehaviour
 
     private void Update()
     {
-        if (ghost.isDead || player.isDead)
+        if (ghost.isDead)
             return;
+
+        if (player.isDead)
+        {
+            currentState = GhostStateType.Locked;
+        }
 
         switch (currentState)
         {
@@ -119,7 +124,7 @@ public class GhostEnemyState : MonoBehaviour
 
     private void LockedUpdate()
     {
-        rb.linearVelocityX = 0;
+        rb.linearVelocity = Vector2.zero;
 
         if (canHatrePlayer)
             ChangeState(GhostStateType.Idle);
@@ -157,5 +162,11 @@ public class GhostEnemyState : MonoBehaviour
                 HatredEnter();
                 break;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (canHatrePlayer && collision.transform.GetComponent<Player>() != null)
+            player.PlayerDie();
     }
 }
