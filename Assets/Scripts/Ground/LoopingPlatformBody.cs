@@ -21,7 +21,7 @@ public class LoopingPlatformBody : MonoBehaviour
     [Tooltip("whether the initial direction is inverted, if set to true the platform goes from left to right, otherwise it's inverted")]
     [SerializeField] private bool invertDirection;
     [Tooltip("the delay in which the disappearance happen after they pass the check point, higher values means larger delay")]
-    [SerializeField] private int disappearPadding = 1;
+    [SerializeField] private float disappearPadding = 1;
     [SerializeField] private float speed = 0.1f;
     [Tooltip("how many platforms should be spawned, optimally this number should be higher enough to fill the viewport")]
     [SerializeField] private int platformCount;
