@@ -12,7 +12,6 @@ public class MineGearController : MonoBehaviour
     private Rigidbody2D rb;
 
     private int receivedExplosionForce = 1;
-    [SerializeField]private LayerMask whatIsFragile;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,8 +39,7 @@ public class MineGearController : MonoBehaviour
     private IEnumerator Explode()
     {
         yield return new WaitForSeconds(duration);
-        Collider2D[] hits = Physics2D.OverlapCircleAll(rb.transform.position, explosionRadius, whatIsFragile);
-        Collider2D[] explosionHits = Physics2D.OverlapCircleAll(rb.transform.position, explosionRadius);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(rb.transform.position, explosionRadius);
         foreach (var hit in hits)
         {
             IFragile fragile = hit.GetComponentInParent<IFragile>();
@@ -50,7 +48,7 @@ public class MineGearController : MonoBehaviour
                 fragile.DestroyFragile();
             }
         }
-        EventManager2P<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded, explosionHits.Select(e => e.gameObject).ToList(), transform.position);
+        EventManager2P<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded, hits.Select(e => e.gameObject).ToList(), transform.position);
         Destroy(gameObject);
     }
 
