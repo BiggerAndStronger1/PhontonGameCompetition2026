@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8375427511434488854}
   - component: {fileID: 5619235707788971946}
   - component: {fileID: 725783050434839829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MergedPathBoxBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
