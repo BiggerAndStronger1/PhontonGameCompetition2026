@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MineGearSkill
   cooldown: 0
   mineGearPrefab: {fileID: 8890054453055000372, guid: acd634de79fe9c744984a2293a83720b, type: 3}
-  explosionRadius: 11
+  explosionRadius: 2
   duration: 3
   receivedExplosionForce: 5
 --- !u!1 &8259676102185292296
@@ -119,7 +119,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.43898845, y: 0.44111794, z: 0.86565}
+  m_LocalScale: {x: 0.32723954, y: 0.32882696, z: 0.64529014}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 492589565980232674}

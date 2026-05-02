@@ -41,10 +41,12 @@ public class GameManager : MonoBehaviour
 
     private static bool dontDestroySet;
     private GameObject currentHover;
+    public static bool debug;
     /// <summary>
-    /// enable this to view clicked UI names (pending other functions...)
+    /// whether the debug mode of the GameManager is active, enable this to view clicked UI names
+    /// and some other scripts may use this value to enable some debug actions
     /// </summary>
-    [SerializeField] private bool debug;
+    [SerializeField] private bool debugMode;
     [SerializeField] private SceneRef main;
 
 #if UNITY_EDITOR
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Assert.IsTrue(GameObject.FindGameObjectsWithTag("GameManager").Length == 1, "there should be one and only one game manager in the hierarchy");
         _raycaster ??= raycaster;
         _eventSystem ??= eventSystem;
         if (inputActions == null)
@@ -164,6 +167,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        debug = debugMode;
         if (debug) debugAction.Enable();
         else debugAction.Disable();
 

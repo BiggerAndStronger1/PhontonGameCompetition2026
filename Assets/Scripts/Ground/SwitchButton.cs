@@ -37,13 +37,13 @@ public class SwitchButton : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !pressed)
         {
-            EventManagerNP.TriggerEvent(notPressesEvent);
+            EventManager1P<GameObject>.TriggerEvent(notPressesEvent, transform.parent.gameObject);
             spriteRenderer.color = pressedColor;
             pressed = true;
         }
         else
         {
-            EventManagerNP.TriggerEvent(pressedEvent);
+            EventManager1P<GameObject>.TriggerEvent(pressedEvent, transform.parent.gameObject);
             spriteRenderer.color = notPressedColor;
             pressed = false;
         }

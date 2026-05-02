@@ -116,6 +116,14 @@ public enum GameEvents
     /// query the inventory (pocket watch UI) for the quantity of a Proptype item (single param event: Proptype, return: int)
     /// </summary>
     InventoryQuery,
+    /// <summary>
+    /// given a transform of follow source, asks a GamObject ot follow that transform (two param event: Transform, GameObject)
+    /// </summary>
+    AskToFollow,
+    /// <summary>
+    /// asks a GamObject to stop follow its current transform (single param event: GameObject)
+    /// </summary>
+    AskToStopFollow,
     
 }
 public abstract class EventManager1P<T> : MonoBehaviour
