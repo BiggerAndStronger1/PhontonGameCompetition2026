@@ -1,31 +1,73 @@
-using System;
+﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-[Serializable]
-public class Sniper : MonoBehaviour, IFragile
+public enum SniperState
 {
-    [Tooltip("time required for player to be executed")]
-    [SerializeField] private float executionTime = 3;
+    Idle, 
+    Aiming,   
+    Cooldown  
+}
 
-    [SerializeField]
-    private Transform eyeTransform;
+[Serializable]
+public class Sniper : MonoBehaviour, IFragile, IKillBySpike
+{
+    [Tooltip("time required for sniper to attack player")]
+    [SerializeField] private float executionTime = 2;
+    [Tooltip("position to create arrow")]
+    [SerializeField] private Transform eyeTransform;
+    [Tooltip("time of ending attack")]
+    [SerializeField] private float endCooldownDuration;
+    [Tooltip("arrow prefab")]
+    [SerializeField] private GameObject arrowPrefab;
+    [Tooltip("arrow shoot velocity")]
+    [SerializeField] private float arrowVelocity;
+    [Tooltip("arrow destroy after this time")]
+    [SerializeField] private float arrowLife;
+
+    [SerializeField] private SniperState currentState;
+    private float cooldownTimer;
 
     private Coroutine execution;
-    void Awake()
+    private void Awake()
     {
         if (eyeTransform == null) eyeTransform = transform;
     }
 
-    void Start()
+    private void OnEnable()
     {
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldCheck);
+    }
 
+    private void OnDisable()
+    {
+        EventManagerNP.StopListening(GameEvents.SwitchWorld, WorldCheck);
+    }
+
+    private void Start()
+    {
+        WorldCheck();
     }
 
     void Update()
     {
-        
+        cooldownTimer -= Time.deltaTime;
+
+        if (currentState == SniperState.Cooldown && cooldownTimer < 0)
+            WorldCheck();
+    }
+
+    private void WorldCheck()
+    {
+        if (WorldManager.instance.currentWorld == WorldType.War)
+            currentState = SniperState.Aiming;
+        else currentState = SniperState.Idle;
+
+        if (execution != null)
+            StopCoroutine(execution);
+
+        execution = null;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -41,7 +83,7 @@ public class Sniper : MonoBehaviour, IFragile
     private void OnTriggerStay2D(Collider2D other)
     {
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && currentState == SniperState.Aiming)
         {
             bool playerBlocked = true;
             foreach (var point in GetTargetRefV2(other))
@@ -54,7 +96,7 @@ public class Sniper : MonoBehaviour, IFragile
                 {
                     if (execution == null)
                     {
-                        Debug.DrawLine(origin, hit.point, Color.red, 1);
+                        //Debug.DrawLine(origin, hit.point, Color.red, 1);
                         execution = StartCoroutine(Execution(other.GetComponent<Player>()));
                         print("tried to execute");
                     }
@@ -75,7 +117,16 @@ public class Sniper : MonoBehaviour, IFragile
     private IEnumerator Execution(Player player)
     {
         yield return new WaitForSeconds(executionTime);
-        player.PlayerDie();
+
+        GameObject newArrow = Instantiate(arrowPrefab, eyeTransform.position, transform.rotation);
+        ArrowScript newArrowScript = newArrow.GetComponent<ArrowScript>();
+
+        Vector2 shootDir = (player.transform.position - eyeTransform.position).normalized;
+        newArrowScript.SetUpArrow(arrowLife, new Vector2 (shootDir.x * arrowVelocity, shootDir.y * arrowVelocity));
+
+        currentState = SniperState.Cooldown;
+        cooldownTimer = endCooldownDuration;
+
         if (execution != null) StopCoroutine(execution);
         execution = null;
     }
@@ -95,5 +146,17 @@ public class Sniper : MonoBehaviour, IFragile
         if (execution != null) StopCoroutine(execution);
         execution = null;
         Destroy(gameObject);
+    }
+
+    public void KillBySpike()
+    {
+        DestroyFragile();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Spike spike = collision.transform.GetComponent<Spike>();
+        if (spike != null)
+            spike.CleanSpike();
     }
 }
