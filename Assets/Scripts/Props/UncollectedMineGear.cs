@@ -9,10 +9,10 @@ public class UncollectedMineGear : Props
         propType = PropType.MineGear;
     }
 
-    protected override void OnCollected(Collider2D collision)
+    protected override void OnCollected(Collision2D collision)
     {
         base.OnCollected(collision);
-        if (collision.TryGetComponent<PlayerStats>(out var stats))
+        if (collision.gameObject.TryGetComponent<PlayerStats>(out var stats))
         {
             stats.AddMineGear(quantity);
         }

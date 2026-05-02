@@ -5,7 +5,7 @@ public enum GhostStateType
 {
     Idle,
     Hatred,
-    Locked
+    Locked,
 }
 
 [RequireComponent(typeof(GhostEnemy))]
@@ -73,17 +73,17 @@ public class GhostEnemyState : MonoBehaviour
             case GhostStateType.Locked:
                 LockedUpdate();
                 break;
-
         }
     }
     private void IdleEnter()
     {
         rb.linearVelocity = Vector2.zero;
-        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     private void IdleUpdate()
     {
+        rb.linearVelocityX = 0;
+
         if (canHatrePlayer &&
             Vector2.Distance(ghost.transform.position, ghost.player.transform.position) < ghost.hatredRadius)
         {
@@ -96,9 +96,9 @@ public class GhostEnemyState : MonoBehaviour
     private void HatredUpdate()
     {
         int playerDir = transform.position.x < ghost.player.transform.position.x + 0.1f ? 1 : -1;
-        //Debug.Log(playerDir);
-        rb.linearVelocity = new Vector2(playerDir * ghost.moveSpeed, rb.linearVelocity.y);
-        //Debug.Log(rb.linearVelocity);
+        rb.linearVelocity = new Vector2(playerDir * ghost.moveSpeed, rb.linearVelocityY);
+
+        rb.gravityScale = ghost.IsGroundDetected() ? 0 : 2;
 
         if (Vector2.Distance(ghost.transform.position, ghost.player.transform.position) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);
@@ -107,8 +107,20 @@ public class GhostEnemyState : MonoBehaviour
             ChangeState(GhostStateType.Locked);
     }
 
+    private void HatredEnter()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    private void HatredExit()
+    {
+        rb.bodyType = RigidbodyType2D.Kinematic;
+    }
+
     private void LockedUpdate()
     {
+        rb.linearVelocityX = 0;
+
         if (canHatrePlayer)
             ChangeState(GhostStateType.Idle);
     }
@@ -119,17 +131,13 @@ public class GhostEnemyState : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
-    private void LockedExit()
-    {
-        rb.bodyType = RigidbodyType2D.Dynamic;
-    }
 
     private void ChangeState(GhostStateType newState)
     {
         switch (currentState)
         {
-            case GhostStateType.Locked:
-                LockedExit();
+            case GhostStateType.Hatred:
+                HatredExit();
                 break;
         }
 
@@ -143,6 +151,10 @@ public class GhostEnemyState : MonoBehaviour
 
             case GhostStateType.Locked:
                 LockedEnter();
+                break;
+
+            case GhostStateType.Hatred:
+                HatredEnter();
                 break;
         }
     }

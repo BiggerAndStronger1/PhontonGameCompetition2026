@@ -15,11 +15,11 @@ public class Props : MonoBehaviour
     protected PropType propType;
     protected bool isCollected;
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isCollected) return;
 
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isCollected = true;
 
@@ -29,7 +29,7 @@ public class Props : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollected(Collider2D collision)
+    protected virtual void OnCollected(Collision2D collision)
     {
         EventManager1P<PropType>.TriggerEvent(GameEvents.PlayerCollectProps, propType);
     }
