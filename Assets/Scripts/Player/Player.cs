@@ -1,9 +1,7 @@
-using System;
+
 using System.Collections;
-using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using static UnityEditor.MaterialProperty;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]

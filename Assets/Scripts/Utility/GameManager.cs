@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
-using Unity.VisualScripting;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -22,7 +22,9 @@ public enum SaveKey
 [Serializable]
 public class SceneRef
 {
+#if UNITY_EDITOR
     public SceneAsset scene;
+#endif
     [ReadOnly]
     public string scenePath;
 }
@@ -48,7 +50,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [SerializeField] private bool debugMode;
     [SerializeField] private SceneRef main;
-
+    [SerializeField] private AudioMixer _audioMixer;
+    public static AudioMixer audioMixer;
+    
 #if UNITY_EDITOR
 
     [MenuItem("Tools/Check Keyboard Conflicts")]
@@ -76,8 +80,9 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Assert.IsTrue(GameObject.FindGameObjectsWithTag("GameManager").Length == 1, "there should be one and only one game manager in the hierarchy");
-        _raycaster ??= raycaster;
-        _eventSystem ??= eventSystem;
+        audioMixer = audioMixer != null ? audioMixer : _audioMixer;
+        _raycaster = _raycaster != null ? _raycaster : raycaster;
+        _eventSystem = _eventSystem != null ? _eventSystem : eventSystem;
         if (inputActions == null)
         {
             inputActions = new InputSystem_Actions();
@@ -95,6 +100,13 @@ public class GameManager : MonoBehaviour
             }
             dontDestroySet = true;
         }
+
+        
+    }
+
+    private void Start()
+    {
+        
     }
 
     public static void CheckKeyboardConflicts(InputActionAsset inputActions)
@@ -150,7 +162,7 @@ public class GameManager : MonoBehaviour
     private void ReloadScene()
     {
         var activeScene = SceneManager.GetActiveScene();
-        if (activeScene.name == main.scene.name)
+        if (activeScene.name == main.scenePath)
         {
             Debug.LogWarning("main scene should not be reloaded");
             return;
@@ -159,10 +171,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(activeScene.buildIndex);
     }
 
-    private void Start()
-    {
-
-    }
+    
 
 
     private void Update()
