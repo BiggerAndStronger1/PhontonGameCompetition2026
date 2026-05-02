@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6583202028376620052}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,10 +52,10 @@ MonoBehaviour:
   - {fileID: 1682395190878794057, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
   - {fileID: 489696782049143010}
   quickDisable: {fileID: 0}
-  debug: 1
+  debugMode: 1
   main:
     scene: {fileID: 102900000, guid: da1061530790b664298626a3734c08c3, type: 3}
-    scenePath: Assets/Scenes/Level/main.unity
+    scenePath: Assets/Scenes/main.unity
 --- !u!114 &6583202028376620052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60b7cc966aadb1458922208c18661c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldManager
-  currentWorld: 0
+  _currentWorld: 0
+  worldObjs: []
 --- !u!1 &2633935417958304902
 GameObject:
   m_ObjectHideFlags: 0

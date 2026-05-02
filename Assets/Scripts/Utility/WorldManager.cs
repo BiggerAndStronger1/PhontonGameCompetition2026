@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
 
 public enum WorldType
@@ -49,6 +50,7 @@ public class WorldManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Assert.IsNotNull(gameObject.GetComponent<GameManager>(), "you are using a standalone WorldManager, this is not allowed");
     }
 
     private void OnEnable()

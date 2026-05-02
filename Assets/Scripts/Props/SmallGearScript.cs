@@ -13,5 +13,6 @@ public class SmallGearScript : Props
         Player player = collision.GetComponent<Player>();
         if (player != null)
             player.stats.AddSmallGear(1);
+
     }
 }

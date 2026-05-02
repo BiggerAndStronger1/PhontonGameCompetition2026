@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 
 public enum PlayerMotionType
@@ -13,7 +15,6 @@ public enum PlayerMotionType
 }
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(Rigidbody2D))]
-
 [RequireComponent(typeof(PlayerAnim))]
 public class PlayerMotion : MonoBehaviour
 {
@@ -22,11 +23,15 @@ public class PlayerMotion : MonoBehaviour
     public PlayerMotionType currentState;
     private float defaultGravity;
     private PlayerAnim playerAnim;
+    private Transform followTransform;
+    
+
     private void Awake()
     {
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnim>();
+        
     }
 
     private void Start()
@@ -39,7 +44,7 @@ public class PlayerMotion : MonoBehaviour
         Vector2 move = Player.playerActions.Move.ReadValue<Vector2>();
         float xInput = move.x;
         float yInput = move.y;
-        
+
         switch (currentState)
         {
             case PlayerMotionType.Idle:
@@ -71,6 +76,7 @@ public class PlayerMotion : MonoBehaviour
         {
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, PropType.MineGear);
         }
+
     }
 
     private void IdleUpdate(float xInput, float yInput)
@@ -187,6 +193,7 @@ public class PlayerMotion : MonoBehaviour
 
     private void ChangeState(PlayerMotionType newState)
     {
+        
         // Exit
         switch (currentState)
         {
@@ -203,5 +210,7 @@ public class PlayerMotion : MonoBehaviour
             case PlayerMotionType.Climb: ClimbEnter(); break;
             case PlayerMotionType.Aim: AimEnter(); break;
         }
+
+        
     }
 }

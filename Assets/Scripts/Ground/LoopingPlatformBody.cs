@@ -81,7 +81,7 @@ public class LoopingPlatformBody : MonoBehaviour
         SortPlatforms();
         isLeftToRight = !invertDirection;
 
-        EventManagerNP.StartListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
+        EventManager1P<GameObject>.StartListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
     void Start()
@@ -91,23 +91,24 @@ public class LoopingPlatformBody : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManagerNP.StopListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
+        EventManager1P<GameObject>.StopListening(GameEvents.SwitchLoopingPlatformDir, SwitchDirection);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 dir = isLeftToRight ? moveDir : -moveDir;
 
         for (int i = platforms.Count - 1; i >= 0; i--)
         {
-            var go = platforms[i];
+            var p = platforms[i];
+            var go = p;
+            var rb = p.GetComponent<Rigidbody2D>();
 
-
+            // Wrapping logic stays the same, but uses transform.position
             if (Reached(go.transform))
             {
                 if (isLeftToRight)
                 {
-                    // wrap from right end → before leftmost
                     go.transform.position =
                         leftMost.transform.position - moveDir * platformInterval;
 
@@ -115,7 +116,6 @@ public class LoopingPlatformBody : MonoBehaviour
                 }
                 else
                 {
-                    // wrap from left end → after rightmost
                     go.transform.position =
                         rightMost.transform.position + moveDir * platformInterval;
 
@@ -123,14 +123,25 @@ public class LoopingPlatformBody : MonoBehaviour
                 }
             }
 
+            // NEW: Move using physics
+            Vector2 nextPos = rb.position + (Vector2)(dir * speed * Time.fixedDeltaTime);
+            rb.MovePosition(nextPos);
 
-            go.transform.position += dir * speed * Time.deltaTime;
-
-            go.GetComponent<Collider2D>().enabled =
-                viewPort.bounds.Contains(go.transform.position);
+            // Enable/disable visibility
+            bool inside = viewPort.bounds.Contains(go.transform.position);
+            go.GetComponent<Collider2D>().enabled = inside;
+            go.GetComponent<SpriteRenderer>().enabled = inside;
+            if (inside)
+            {
+                go.layer = LayerMask.NameToLayer("Default");
+            }
+            else
+            {
+                LayerMask.NameToLayer("Ignore Raycast");
+            }
         }
-        
     }
+
 
     private bool Reached(Transform platform)
     {
@@ -167,17 +178,19 @@ public class LoopingPlatformBody : MonoBehaviour
         return Vector3.Dot(t.position - left.position, moveDir);
     }
 
-    private void SwitchDirection()
+    private void SwitchDirection(GameObject go)
     {
+        if (go != gameObject) return;
         if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, requiredGearType) == requiredGearQuantity)
         {
-            isLeftToRight = !isLeftToRight;
+            
             if (!active)
             {
                 active = true;
                 EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, requiredGearQuantity, requiredGearType);
             }
         }
+        if (active) isLeftToRight = !isLeftToRight;
     }
 
 

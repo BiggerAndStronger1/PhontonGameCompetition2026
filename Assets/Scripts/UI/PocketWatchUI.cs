@@ -24,7 +24,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     {
         smallGearSlots = smallSlotsParent.GetComponentsInChildren<Slot>().ToList();
         background.sprite = deactivated;
-        EventManager1P<PropType>.StartListening(GameEvents.PlayerCollectProps, Put);
+        EventManager1P<PropType>.StartListening(GameEvents.PlayerCollectProps, Collect);
         EventManager1P<bool>.StartListening(GameEvents.TogglePocketWatchUI,  Toggle);
         EventManager2P<int, PropType>.StartListening(GameEvents.ConsumeGear, Consume);
         EventManagerReturn1P<PropType, int>.StartListening(GameEvents.InventoryQuery, Check);
@@ -38,7 +38,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     private void OnDestroy()
     {
-        EventManager1P<PropType>.StopListening(GameEvents.PlayerCollectProps, Put);
+        EventManager1P<PropType>.StopListening(GameEvents.PlayerCollectProps, Collect);
         EventManager1P<bool>.StopListening(GameEvents.TogglePocketWatchUI, Toggle);
         EventManager2P<int, PropType>.StopListening(GameEvents.ConsumeGear, Consume);
         EventManagerReturn1P<PropType, int>.StopListening(GameEvents.InventoryQuery, Check);
@@ -104,7 +104,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         return background.sprite == activated;
     }
 
-    private void Put(PropType propType)
+    private void Collect(PropType propType)
     {
         if (new List<PropType>() { PropType.SmallGear , PropType.BoomGear, PropType.MineGear}.Contains(propType)){
             foreach (var smallGearSlot in smallGearSlots)
@@ -141,6 +141,15 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     /// </summary>
     private void UseSmallGear()
     {
+#if UNITY_EDITOR
+        if (!PocketWatchActive() && GameManager.debug)
+        {
+            Debug.LogError("you are attempting to use Gears when the pocket watch is not colleted," +
+                             "this is not allowed. For debugging purposes a pocket watch is auto collected but this might break things");
+            Collect(PropType.PocketWatch);
+
+        }
+#endif
         if (!PocketWatchActive()) return;
         int index = Mathf.CeilToInt(pointerAnimator.transform.localRotation.eulerAngles.z) / 60 == 6
             ? 0
@@ -161,7 +170,16 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     /// <param name="propType"></param>
     private void Consume(int quantity, PropType propType)
     {
-        Assert.IsTrue(PocketWatchActive(), "you are trying to consume gears before the pocket watch is collected");
+#if UNITY_EDITOR
+        if (!PocketWatchActive() && GameManager.debug)
+        {
+            Debug.LogError("you are attempting to use Gears when the pocket watch is not colleted," +
+                           "this is not allowed. For debugging purposes a pocket watch is auto collected but this might break things");
+            Collect(PropType.PocketWatch);
+
+        }
+#endif
+        if (!PocketWatchActive()) return;
         if (propType == PropType.LargeGear)
         {
             if (bigGearSlot.occupied)

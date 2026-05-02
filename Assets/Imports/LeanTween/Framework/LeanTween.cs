@@ -2484,7 +2484,7 @@ public class LeanTween : MonoBehaviour {
     // Mark: LeanTween Following
 
     /**
-    * <summary>Follow another transforms position/scale/color with a damp transition (eases in and out to destination with no overshoot)</summary>
+    * <summary>AskToFollow another transforms position/scale/color with a damp transition (eases in and out to destination with no overshoot)</summary>
     * 
     * @method LeanTween.followDamp
     * @param {Transform} transform:Transform the transform you wish to be the follower
@@ -2551,7 +2551,7 @@ public class LeanTween : MonoBehaviour {
     }
 
     /**
-    * <summary>Follow another transforms position/scale/color with a springy transition (eases in and out to destination with possible overshoot bounciness)</summary>
+    * <summary>AskToFollow another transforms position/scale/color with a springy transition (eases in and out to destination with possible overshoot bounciness)</summary>
     * 
     * @method LeanTween.followSpring
     * @param {Transform} transform:Transform the transform you wish to be the follower
@@ -2620,7 +2620,7 @@ public class LeanTween : MonoBehaviour {
     }
 
     /**
-    * <summary>Follow another transforms position/scale/color (with an ease that bounces back some when it reaches it's destination)</summary>
+    * <summary>AskToFollow another transforms position/scale/color (with an ease that bounces back some when it reaches it's destination)</summary>
     * 
     * @method LeanTween.followBounceOut
     * @param {Transform} transform:Transform the transform you wish to be the follower
@@ -2689,7 +2689,7 @@ public class LeanTween : MonoBehaviour {
     }
 
     /**
-    * <summary>Follow another transforms position/scale/color with a constant speed</summary>
+    * <summary>AskToFollow another transforms position/scale/color with a constant speed</summary>
     * 
     * @method LeanTween.followLinear
     * @param {Transform} transform:Transform the transform you wish to be the follower
