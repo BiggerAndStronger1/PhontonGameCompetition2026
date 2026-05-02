@@ -65,13 +65,9 @@ public enum GameEvents
     /// </summary>
     LoadPreviousScene,
     /// <summary>
-    /// an event to activate the air trap (no param event)
+    /// an event to toggle the air trap (single param event: GameObject)
     /// </summary>
-    ActivateAirTrap,
-    /// <summary>
-    /// an event to deactivate the air trap (no param event)
-    /// </summary>
-    DeactivateAirTrap,
+    ToggleAirTrap,
     /// <summary>
     /// dedicated to be triggered by looping platform to make a looping platform visible, not designed to be used by other classes
     /// </summary>

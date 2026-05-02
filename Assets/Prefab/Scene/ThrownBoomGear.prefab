@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   whatIsFragile:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 256
 --- !u!114 &-2854822222112600826
 MonoBehaviour:
   m_ObjectHideFlags: 0
