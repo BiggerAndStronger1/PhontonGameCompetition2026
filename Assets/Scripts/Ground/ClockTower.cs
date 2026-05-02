@@ -11,6 +11,8 @@ public class ClockTower : MonoBehaviour
     [SerializeField]  private float playerTimer;
     private float autoTimer;
     [SerializeField] private bool playerInRange = false;
+    [SerializeField] private bool canStopByPlayer = true;
+    [SerializeField] private bool playerTryStop = false;
 
 
     private void Start()
@@ -54,11 +56,20 @@ public class ClockTower : MonoBehaviour
 
 
             if (Player.playerActions.SwitchWorld.WasPressedThisFrame() && playerTimer <= switchByPlayerDuration && playerTimer > 0)
-                EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
+                playerTryStop = true;
 
             if (playerTimer <= 0)
             {
+                if (playerTryStop && canStopByPlayer)// 如果想阻止并且可以阻止，就阻止并且下次不能阻止
+                    canStopByPlayer = false;
+                else
+                {
+                    EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);// 成功切换世界那么下一次就可以阻止
+                    canStopByPlayer = true;
+                }
+
                 playerTimer = autoSwitchDuration;
+                playerTryStop = false;
             }
         }
     }

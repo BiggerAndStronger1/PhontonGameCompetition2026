@@ -27,7 +27,7 @@ public class Teleportable : MonoBehaviour
     {
         teleportTimer -= Time.deltaTime;
 
-        if (teleportTimer < 0)
+        if (!canTeleport && teleportTimer < 0)
             canTeleport = true;
     }
 
