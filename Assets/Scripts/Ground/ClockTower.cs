@@ -26,7 +26,9 @@ public class ClockTower : MonoBehaviour
     {
         if (Player.playerActions.UseLargeGear.WasPressedThisFrame() && currentPhase != 2 && playerInRange)
         {
-            if (player.stats.AddLargeGear(-1))
+            int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.LargeGear);
+
+            if (count >= 1)
             {
                 currentPhase++;
                 EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.LargeGear);

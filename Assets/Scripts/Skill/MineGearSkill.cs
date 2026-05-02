@@ -27,8 +27,11 @@ public class MineGearSkill : Skill
 
     private void CheckAndUseMine(int amount, PropType propType)
     {
-        if (propType == PropType.MineGear && player.stats.CheckMineGear(1))
-            if (TryUseSkill()) player.stats.AddMineGear(-1);
+        int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.MineGear);
+
+        if (propType == PropType.MineGear && count > 0)
+        if (TryUseSkill())
+            EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.MineGear);
     }
 
     protected override void UseSkill()

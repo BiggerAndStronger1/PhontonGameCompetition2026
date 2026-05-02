@@ -24,7 +24,9 @@ public class GearCostButton : Button
 
         if (Player.playerActions.UseSmallGear.WasPressedThisFrame() && Vector2.Distance(transform.position, player.transform.position) < playerDetectorRadius)
         {
-            if (player.stats.AddSmallGear(-needSmallGearNum))
+            int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.SmallGear);
+
+            if (count >= needSmallGearNum)
             {
                 EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, needSmallGearNum, PropType.SmallGear);
                 PressButton();
