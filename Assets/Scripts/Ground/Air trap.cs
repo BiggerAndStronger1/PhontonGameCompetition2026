@@ -15,13 +15,22 @@ public class Airtrap : MonoBehaviour
     private bool active;
     [SerializeField] private bool _active;
     private bool triggered;
+    private bool push;
     void Awake()
     {
         col = GetComponent<Collider2D>();
         col.isTrigger = true;
         active = _active;
-        EventManagerNP.StartListening(GameEvents.ActivateAirTrap, (() => active = true));
-        EventManagerNP.StartListening(GameEvents.DeactivateAirTrap, () => active = false);
+        EventManager1P<GameObject>.StartListening(GameEvents.ToggleAirTrap, Toggle);
+        
+    }
+
+    private void Toggle(GameObject obj)
+    {
+        if (obj == gameObject)
+        {
+            active = !active;
+        }
     }
 
     void Start()
@@ -36,39 +45,48 @@ public class Airtrap : MonoBehaviour
 
     private void OnDestroy()
     {
-        EventManagerNP.StopListening(GameEvents.ActivateAirTrap, (() => active = true));
-        EventManagerNP.StopListening(GameEvents.DeactivateAirTrap, () => active = false);
+        EventManager1P<GameObject>.StopListening(GameEvents.ToggleAirTrap, Toggle);
+
+    }
+
+    private void FixedUpdate()
+    {
+        if (push)Push();
+    }
+
+    private void Push()
+    {
+        var hits = Physics2D.OverlapBoxAll(
+            col.bounds.center,
+            col.bounds.size,
+            col.transform.eulerAngles.z
+        );
+        foreach (var c in hits)
+        {
+            
+            if (c.attachedRigidbody != null)
+            {
+                c.attachedRigidbody.AddForce(
+                    (Vector2)transform.up * pushStrength,
+                    ForceMode2D.Force);
+
+                pushed.Add(c.gameObject);
+            }
+        }
     }
 
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (!active || triggered) return;
-        var hits = Physics2D.OverlapBoxAll(
-            col.bounds.center,
-            col.bounds.size,
-            col.transform.eulerAngles.z
-        );
-
-        foreach (var c in hits)
-        {
-            if (c.attachedRigidbody != null)
-            {
-                c.attachedRigidbody.AddForce(
-                    (Vector2)transform.up * pushStrength,
-                    ForceMode2D.Impulse
-                );
-                
-                pushed.Add(c.gameObject);
-            }
-        }
-
+        push = true;
         triggered = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         triggered = false;
+        push = false;
     }
 
     

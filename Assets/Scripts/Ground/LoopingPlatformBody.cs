@@ -70,7 +70,7 @@ public class LoopingPlatformBody : MonoBehaviour
             GameObject go = Instantiate(platformPrefab, transform);
 
             
-            go.transform.rotation = transform.rotation;
+            
 
             go.transform.position = pos;
             platforms.Add(go);

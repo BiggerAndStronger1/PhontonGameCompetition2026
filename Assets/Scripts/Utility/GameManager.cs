@@ -263,7 +263,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNP.TriggerEvent(GameEvents.ActivateAirTrap);
+        if (debugAction.airtrap.WasPressedThisFrame()) EventManagerNP.TriggerEvent(GameEvents.ToggleAirTrap);
 
         if (debugAction.ReloadScene.WasPerformedThisFrame())
         {

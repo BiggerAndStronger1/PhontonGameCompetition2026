@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac3a4bd1c5eb254999780e5534f2019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Airtrap
-  pushStrength: 15
-  _active: 0
+  pushStrength: 80
+  _active: 1
 --- !u!61 &4537884305606651971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -213,6 +213,14 @@ PrefabInstance:
     - target: {fileID: 4144620393261556186, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: greenEvent
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144620393261556186, guid: b3553eca158bf24428d99e44b7149112, type: 3}
+      propertyPath: pressedEvent
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144620393261556186, guid: b3553eca158bf24428d99e44b7149112, type: 3}
+      propertyPath: notPressesEvent
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5230920096394393833, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: m_Name

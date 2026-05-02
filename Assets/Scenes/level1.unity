@@ -2761,6 +2761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChaseEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8101355642120941800, guid: 97f946753f2f19c4fb3b4a0f859e45f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6870,52 +6874,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 234218875943540166, guid: a2c9edb078fc23a41a8555fa1aec0dcc, type: 3}
   m_PrefabInstance: {fileID: 578114217}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &583022692
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 583022694}
-  - component: {fileID: 583022693}
-  m_Layer: 0
-  m_Name: WorldManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &583022693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583022692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a60b7cc966aadb1458922208c18661c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorldManager
-  _currentWorld: 0
-  worldObjs: []
---- !u!4 &583022694
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583022692}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.36478, y: 8.50536, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &591772756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79773,6 +79731,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Air trap
       objectReference: {fileID: 0}
+    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: _active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: pushStrength
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.98
@@ -82768,11 +82734,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.32
+      value: -3.84
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.98
+      value: 22.53
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -83277,7 +83243,6 @@ SceneRoots:
   - {fileID: 53477439}
   - {fileID: 1019671380}
   - {fileID: 2473218060539849426}
-  - {fileID: 583022694}
   - {fileID: 844813838}
   - {fileID: 281053515}
   - {fileID: 348951382}
