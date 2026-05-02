@@ -112,6 +112,11 @@ public enum GameEvents
     /// query the inventory (pocket watch UI) for the quantity of a Proptype item (single param event: Proptype, return: int)
     /// </summary>
     InventoryQuery,
+    /// <summary>
+    /// given an index in the clipList in AudioPlayer script, play the corresponding clip on that GameObject
+    /// the GameObject passed in should be the same GameObject that the AudioPlayer script is attached on (two param event: int GameObject)
+    /// </summary>
+    PlayAudio,
     
 }
 public abstract class EventManager1P<T> : MonoBehaviour
