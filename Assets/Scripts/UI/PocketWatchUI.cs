@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
-using static UnityEditor.MaterialProperty;
+
 
 [RequireComponent(typeof(Anim2D))]
 public class PocketWatchUI : MonoBehaviour, ICanvasManager

@@ -1,9 +1,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Unity.Collections;
-using Unity.VisualScripting;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -22,7 +20,9 @@ public enum SaveKey
 [Serializable]
 public class SceneRef
 {
+#if UNITY_EDITOR
     public SceneAsset scene;
+#endif
     [ReadOnly]
     public string scenePath;
 }
@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
     private void ReloadScene()
     {
         var activeScene = SceneManager.GetActiveScene();
-        if (activeScene.name == main.scene.name)
+        if (activeScene.name == main.scenePath)
         {
             Debug.LogWarning("main scene should not be reloaded");
             return;

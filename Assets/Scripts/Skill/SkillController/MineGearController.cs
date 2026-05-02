@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class MineGearController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MineGearController : MonoBehaviour
     private Rigidbody2D rb;
 
     private int receivedExplosionForce = 1;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,12 +22,12 @@ public class MineGearController : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
 
     public void Detonate(int explosionRadius, int duration, int receivedExplosionForce)
@@ -48,16 +50,19 @@ public class MineGearController : MonoBehaviour
                 fragile.DestroyFragile();
             }
         }
-        EventManager2P<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded, hits.Select(e => e.gameObject).ToList(), transform.position);
+
+        EventManager2P<List<GameObject>, Vector3>.TriggerEvent(GameEvents.MineGearExploded,
+            hits.Select(e => e.gameObject).ToList(), transform.position);
         Destroy(gameObject);
     }
 
     private void ExplosionRepulse(List<GameObject> gos, Vector3 explosionCentre)
     {
-        if(gos.Count == 0) return;
+        if (gos.Count == 0) return;
         if (gos.Contains(gameObject))
         {
-            rb.AddForce((transform.position - explosionCentre).normalized * receivedExplosionForce, ForceMode2D.Impulse);
+            rb.AddForce((transform.position - explosionCentre).normalized * receivedExplosionForce,
+                ForceMode2D.Impulse);
         }
     }
 
@@ -66,6 +71,7 @@ public class MineGearController : MonoBehaviour
         EventManager2P<List<GameObject>, Vector3>.StopListening(GameEvents.MineGearExploded, ExplosionRepulse);
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.yellow;
@@ -84,6 +90,6 @@ public class MineGearController : MonoBehaviour
             prev = next;
         }
     }
+#endif
 }
 
-    
