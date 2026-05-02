@@ -20,8 +20,6 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     [Header("Check Info")]
     [SerializeField] private LayerMask whatIsGround;
-    
-    [SerializeField] private bool isInClockTower = false;
 
     public bool isDead = false;
     private static Transform checkpoint;
