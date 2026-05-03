@@ -44,7 +44,7 @@ public class AudioPlayer : MonoBehaviour
 
     private void Switch(WorldType type)
     {
-        if (!autoSwitch) return;
+        if (!autoSwitch || !ValidIndex(autoSwitchIndexPeace) || !ValidIndex(autoSwitchIndexWar)) return;
         if (type == WorldType.Peace)
         {
             Play(autoSwitchIndexPeace, gameObject);
@@ -55,29 +55,20 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
+    private bool ValidIndex(int index)
+    {
+        return 0 <= index && index < clipList.Count;
+    }
+
     private void Play(int index, GameObject go)
     {
         if (go != gameObject) return;
         audioSource.Stop();
         var clipInfo = clipList[index];
         audioSource.clip = clipInfo.clip;
-        if (clipInfo.type == AudioType.Music) audioSource.outputAudioMixerGroup = GetGroup("Music");
-        else if (clipInfo.type == AudioType.SoundEffect) audioSource.outputAudioMixerGroup = GetGroup("SoundEffect");
+        if (clipInfo.type == AudioType.Music) audioSource.outputAudioMixerGroup = GameManager.GetAudioMixerGroup(AudioType.Music);
+        else if (clipInfo.type == AudioType.SoundEffect) audioSource.outputAudioMixerGroup = GameManager.GetAudioMixerGroup(AudioType.SoundEffect);
         audioSource.Play();
     }
 
-    private static AudioMixerGroup GetGroup(string subPath)
-    {
-        return GameManager.audioMixer.FindMatchingGroups(subPath)[0];
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

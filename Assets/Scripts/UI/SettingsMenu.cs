@@ -1,15 +1,27 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsMenu : MonoBehaviour, ICanvasManager
 {
-    private InputSystem_Actions inputSystem;
-    private InputSystem_Actions.UIActions uiActions;
-    void Start()
+    [SerializeField]private Slider musicSlider;
+    [SerializeField] private Slider soundEffectSlider;
+
+    public void ForcedAwake()
     {
-        inputSystem = new InputSystem_Actions();
-        uiActions = inputSystem.UI;
-        uiActions.Enable();
+        
+    }
+
+    public void ForcedStart()
+    {
+        MusicVolumeChange(musicSlider.value);
+        SoundEffectVolumeChange(soundEffectSlider.value);
+    }
+
+    public void ForcedOnApplicationQuit()
+    {
+       
     }
 
     // Update is called once per frame
@@ -22,4 +34,25 @@ public class SettingsMenu : MonoBehaviour
     {
         
     }
+
+    public void MusicVolumeChange(float value)
+    {
+
+        float db = Mathf.Lerp(-80f, 20f, value);
+
+
+        GameManager
+            .GetAudioMixerGroup(AudioType.Music)
+            .audioMixer
+            .SetFloat("MusicVolume", db);
+
+    }
+
+    public void SoundEffectVolumeChange(float value)
+    {
+        float db = Mathf.Lerp(-80f, 20f, value);
+        GameManager.GetAudioMixerGroup(AudioType.SoundEffect).audioMixer.SetFloat("SoundEffectVolume", db);
+    }
+
+    
 }

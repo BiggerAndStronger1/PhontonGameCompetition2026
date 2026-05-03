@@ -1135,6 +1135,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: soud effect slider
       objectReference: {fileID: 0}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3230882911786072143}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SoundEffectVolumeChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2890312242974875605, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1150,6 +1178,34 @@ PrefabInstance:
     - target: {fileID: 2890312242974875605, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -17.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3230882911786072143}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MusicVolumeChange
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2938733712332907449, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
       propertyPath: m_Name
@@ -1243,6 +1299,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 52696970117548962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3230882911786072143}
     - targetCorrespondingSourceObject: {fileID: 6489642460734123823, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1175736853307722454}
@@ -1283,11 +1342,47 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 52696970117548962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
   m_PrefabInstance: {fileID: 4967809956490868795}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3230882911786072143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4920749153863201689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0759f62cc358e334b8b0ba0335bf36b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingsMenu
+  musicSlider: {fileID: 7808359340936274171}
+  soundEffectSlider: {fileID: 7007302864862844273}
 --- !u!224 &5251416288533726742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 869744068182785581, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
   m_PrefabInstance: {fileID: 4967809956490868795}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7007302864862844273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2724611812282821962, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+  m_PrefabInstance: {fileID: 4967809956490868795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &7808359340936274171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2931255833865312448, guid: c95c893f853e7d6439862c4445169c2a, type: 3}
+  m_PrefabInstance: {fileID: 4967809956490868795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &5118064813616037163
 PrefabInstance:
   m_ObjectHideFlags: 0

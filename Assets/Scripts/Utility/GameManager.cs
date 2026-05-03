@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool debugMode;
     [SerializeField] private SceneRef main;
     [SerializeField] private AudioMixer _audioMixer;
-    public static AudioMixer audioMixer;
+    private static AudioMixer audioMixer;
     
 #if UNITY_EDITOR
 
@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
     public static void CheckKeyboardConflicts(InputActionAsset inputActions)
     {
         var seen = new Dictionary<string, (string action, string map)>(); // path → (action, map)
-
+        bool warned = false;
         foreach (var action in inputActions)
         {
             var mapName = action.actionMap?.name ?? "<No Map>";
@@ -138,6 +138,7 @@ public class GameManager : MonoBehaviour
                         $"  {mapName}/{action.name}",
                         inputActions
                     );
+                    warned = true;
                 }
                 else
                 {
@@ -145,12 +146,13 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        if (!warned) Debug.Log("no binding conflict found");
     }
-
-
-
-
-
+    public static AudioMixerGroup GetAudioMixerGroup(AudioType type)
+    {
+        if (type == AudioType.Music) return audioMixer.FindMatchingGroups("Music")[0];
+        else return audioMixer.FindMatchingGroups("SoundEffect")[0];
+    }
     private void OnDestroy()
     {
         debugAction.Disable();
