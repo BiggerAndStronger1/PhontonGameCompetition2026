@@ -35,7 +35,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     public void ForcedStart()
     {
-       
+       Collect(PropType.MineGear);
     }
 
     private void OnDestroy()
@@ -160,8 +160,8 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         Slot slot = smallGearSlots[index];
         if (slot.occupied)
         {
-            slot.Use();
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, slot.type.Value);
+            slot.Use();
             Toggle(false);
         }
     }
