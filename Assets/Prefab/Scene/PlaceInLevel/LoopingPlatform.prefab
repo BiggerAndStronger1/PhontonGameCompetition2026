@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1687842642295972017}
   - component: {fileID: -6807532941482254981}
   - component: {fileID: 879731438803762799}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LoopingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

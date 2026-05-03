@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3741345598969090712}
   - component: {fileID: -6571524508240532809}
   - component: {fileID: 3320726910256597288}
+  - component: {fileID: -6585367185694240133}
   m_Layer: 8
   m_Name: GhostEnemy
   m_TagString: Enemy
@@ -217,3 +218,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &-6585367185694240133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891128751102647583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a726e2540d66654fa19467967044889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformFollower

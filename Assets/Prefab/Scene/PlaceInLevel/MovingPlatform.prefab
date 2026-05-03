@@ -108,7 +108,8 @@ GameObject:
   - component: {fileID: 9030755678290322309}
   - component: {fileID: 6432424268636109910}
   - component: {fileID: 6189627686274868720}
-  m_Layer: 3
+  - component: {fileID: 5959924255274276065}
+  m_Layer: 10
   m_Name: MovingPlatformBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,3 +255,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5959924255274276065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527825377749564795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84f6cfc1a3c603e45af0abf7e514ffef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Conveyable

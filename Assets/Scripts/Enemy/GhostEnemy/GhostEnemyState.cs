@@ -103,7 +103,7 @@ public class GhostEnemyState : MonoBehaviour
         int playerDir = transform.position.x < ghost.player.transform.position.x + 0.1f ? 1 : -1;
         rb.linearVelocity = new Vector2(playerDir * ghost.moveSpeed, rb.linearVelocityY);
 
-        rb.gravityScale = ghost.IsGroundDetected() ? 0 : 2;
+        rb.gravityScale = ghost.IsGroundDetected() ? 0 : 5;
 
         if (Vector2.Distance(ghost.transform.position, ghost.player.transform.position) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);
