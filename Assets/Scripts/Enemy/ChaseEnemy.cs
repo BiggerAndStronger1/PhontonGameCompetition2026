@@ -42,7 +42,7 @@ public class ChaseEnemy : MonoBehaviour, IFragile
         ResetChase();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isDead || player.isDead)
             return;

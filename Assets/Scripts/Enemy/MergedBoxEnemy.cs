@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-
 using UnityEngine;
-
 
 public enum BoxState
 {
@@ -13,6 +11,7 @@ public enum BoxState
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(TwoWorldExist))]
 public class MergedBoxEnemy : MonoBehaviour
 {
     [Header("Move Info")]
@@ -40,13 +39,15 @@ public class MergedBoxEnemy : MonoBehaviour
     [SerializeField] private WorldType effectiveWorld;
     [SerializeField] private bool canStartMoving = false;
 
+
     private float pauseTimer;
     private bool isPaused;
-    private BoxState currentState;
+    [SerializeField] private BoxState currentState;
 
     private Player player;
     private Rigidbody2D rb;
     private Collider2D cd;
+    private TwoWorldExist twe;
     private int currentIndex;
     private int nextIndex;
 
@@ -54,6 +55,7 @@ public class MergedBoxEnemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
+        twe = GetComponent<TwoWorldExist>();
     }
 
     private void Start()
@@ -65,14 +67,24 @@ public class MergedBoxEnemy : MonoBehaviour
 
     private void OnEnable()
     {
-        if (limitByWorld)
+        if (!limitByWorld)
+            return;
+
+        if (!twe.isInLastLevel)
             EventManagerNP.StartListening(GameEvents.SwitchWorld, OnWorldChanged);
+        else
+            EventManager1P<GameObject>.StartListening(GameEvents.WorldSwitchInLastLevel, PosWorldChanged);
     }
 
     private void OnDisable()
     {
-        if (limitByWorld)
+        if (!limitByWorld)
+            return;
+
+        if (!twe.isInLastLevel)
             EventManagerNP.StopListening(GameEvents.SwitchWorld, OnWorldChanged);
+        else
+            EventManager1P<GameObject>.StopListening(GameEvents.WorldSwitchInLastLevel, PosWorldChanged);
     }
 
     void OnWorldChanged()
@@ -83,40 +95,93 @@ public class MergedBoxEnemy : MonoBehaviour
         canStartMoving = true;
 
         bool isEffective = WorldManager.instance.currentWorld != effectiveWorld;
-        
+
         if (!canTraceBack)
         {
             if (!isEffective)
             {
-                currentIndex = nextIndex = 0;
-                transform.position = wayPoints[0].position;
+                currentIndex = 0;
+                nextIndex = 0;
+                rb.position = wayPoints[0].position;
                 dir = -1;
             }
             else
             {
                 currentIndex = 0;
                 nextIndex = 1;
-                reachedFinalPoint = false;
                 dir = 1;
             }
+
+            reachedFinalPoint = false;
             return;
         }
 
-        nextIndex = currentIndex;
-        currentIndex = nextIndex - dir;
-        if (isEffective)
-            dir = 1;
-        else
-            dir = -1;
+        dir = isEffective ? 1 : -1;
+        currentIndex = Mathf.Clamp(currentIndex, 0, wayPoints.Count - 1);
+        nextIndex = currentIndex + dir;
+        if (nextIndex >= wayPoints.Count || nextIndex < 0)
+        {
+            dir *= -1;
+            nextIndex = currentIndex + dir;
+        }
 
         reachedFinalPoint = false;
     }
 
-    private void Update()
+    private void PosWorldChanged(GameObject go)
+    {
+        if (go != gameObject)
+            return;
+        Debug.Log("poswc");
+        if (isFalling || hasFallen)
+            return;
+
+        if (wayPoints == null || wayPoints.Count < 2)
+        {
+            Debug.LogError("wayPoints 不合法");
+            return;
+        }
+
+        bool isEffective = twe.currentWorld == effectiveWorld;
+
+        if (!canTraceBack)
+        {
+            if (!isEffective)
+            {
+                currentIndex = 0;
+                nextIndex = 0;
+                rb.position = wayPoints[0].position;
+                dir = -1;
+            }
+            else
+            {
+                currentIndex = 0;
+                nextIndex = 1;
+                dir = 1;
+            }
+
+            reachedFinalPoint = false;
+            return;
+        }
+
+        dir = isEffective ? 1 : -1;
+        currentIndex = Mathf.Clamp(currentIndex, 0, wayPoints.Count - 1);
+        nextIndex = currentIndex + dir;
+        if (nextIndex >= wayPoints.Count || nextIndex < 0)
+        {
+            dir *= -1;
+            nextIndex = currentIndex + dir;
+        }
+
+        reachedFinalPoint = false;
+
+    }
+
+    private void FixedUpdate()
     {
         if (currentState == BoxState.Locked)
             return;
-
+        
         if (Player.playerActions.UseLargeGear.WasPressedThisFrame() && needGear)
             GearCheck();
 
@@ -144,7 +209,11 @@ public class MergedBoxEnemy : MonoBehaviour
         if (needGear && !haveGear)
             return false;
 
-        bool isEffWorld = WorldManager.instance.currentWorld == effectiveWorld;
+        bool isEffWorld;
+        if (twe.isInLastLevel)
+            isEffWorld = twe.currentWorld == effectiveWorld;
+        else
+            isEffWorld = WorldManager.instance.currentWorld == effectiveWorld;
 
         if (limitByWorld)
         {
@@ -156,12 +225,12 @@ public class MergedBoxEnemy : MonoBehaviour
 
         return true;
     }
-
+     
     private void MoveUpdate()
     {
         PauseLogic();
-        transform.position = Vector3.MoveTowards(transform.position, wayPoints[nextIndex].position, movingSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, wayPoints[nextIndex].position) < 0.05f)
+        rb.MovePosition(Vector2.MoveTowards(rb.position, wayPoints[nextIndex].position, movingSpeed * Time.fixedDeltaTime));
+        if (Vector3.Distance(rb.position, wayPoints[nextIndex].position) < 0.05f)
         {
             currentIndex = nextIndex;
             nextIndex += dir;
@@ -247,7 +316,7 @@ public class MergedBoxEnemy : MonoBehaviour
 
     private void GearCheck()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) > playerDetectRadius)
+        if (Vector2.Distance(rb.position, player.transform.position) > playerDetectRadius)
             return;
 
         int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.LargeGear);
@@ -290,6 +359,9 @@ public class MergedBoxEnemy : MonoBehaviour
             dir = 1;
             canStartMoving = true;
         }
+
+        if (twe.isInLastLevel)
+            canStartMoving = true;
     }
 
     private bool IsGroundDetected()
@@ -304,7 +376,7 @@ public class MergedBoxEnemy : MonoBehaviour
     {
         Gizmos.color = Color.green;
         if (needGear)
-            Gizmos.DrawWireSphere(transform.position, playerDetectRadius);
+            Gizmos.DrawWireSphere(rb.position, playerDetectRadius);
 
         Gizmos.color = Color.red;
         for (int i = 0; i < wayPoints.Count - 1; i++)

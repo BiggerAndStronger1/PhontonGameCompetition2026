@@ -11,8 +11,12 @@ public class RegionController : MonoBehaviour
     [SerializeField] private int currentRegionPara;// 记录所在小关卡当前的区域状态参数，这个决定展示region几
 
     [Header("General Info")]
-    public List<GameObject> warRegions;
-    public List<GameObject> peaceRegions;
+    public List<GameObject> warBackgrounds;
+    public List<GameObject> peaceBackgrounds;
+    public List<GameObject> warGrounds;
+    public List<GameObject> peaceGrounds;
+    public List<GameObject> warOneWayGrounds;
+    public List<GameObject> peaceOneWayGrounds;
     public List<Transform> bornPlaces;
 
     [Header("WorldChange Info")]
@@ -26,10 +30,14 @@ public class RegionController : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
-        for (int i = 0; i <  warRegions.Count; i++)
+        for (int i = 0; i <  warBackgrounds.Count; i++)
         {
-            warRegions[i].SetActive(false);
-            peaceRegions[i].SetActive(false);
+            warBackgrounds[i].SetActive(false);
+            peaceBackgrounds[i].SetActive(false);
+            warGrounds[i].SetActive(false);
+            peaceGrounds[i].SetActive(false);
+            warOneWayGrounds[i].SetActive(false);
+            peaceOneWayGrounds[i].SetActive(false);
         }
 
         roomIndex = 0;
@@ -39,9 +47,6 @@ public class RegionController : MonoBehaviour
 
     private void Update()
     {
-        if (currentRegionPara > currentRoomRegionState)
-            return;
-
         timer -= Time.deltaTime;
 
         if (timer <= 0)
@@ -81,16 +86,23 @@ public class RegionController : MonoBehaviour
 
     private void ParaChangeLogic(int currentPara)
     {
-        if (currentPara >= currentRoomRegionState)
-            return;
+        currentPara %= currentRoomRegionState;
 
         // 参数变了要先关之前的再开现在的
-        warRegions[currentRegionPara].SetActive(false);
-        peaceRegions[currentRegionPara].SetActive(false);
+        warBackgrounds[currentRegionPara].SetActive(false);
+        peaceBackgrounds[currentRegionPara].SetActive(false);
+        warGrounds[currentRegionPara].SetActive(false);
+        peaceGrounds[currentRegionPara].SetActive(false);
+        warOneWayGrounds[currentRegionPara].SetActive(false);
+        peaceOneWayGrounds[currentRegionPara].SetActive(false);
 
         currentRegionPara = currentPara;
 
-        warRegions[currentRegionPara].SetActive(true);
-        peaceRegions[currentRegionPara].SetActive(true);
+        warBackgrounds[currentPara].SetActive(true);
+        peaceBackgrounds[currentPara].SetActive(true);
+        warGrounds[currentPara].SetActive(true);
+        peaceGrounds[currentPara].SetActive(true);
+        warOneWayGrounds[currentPara].SetActive(true);
+        peaceOneWayGrounds[currentPara].SetActive(true);
     }
 }

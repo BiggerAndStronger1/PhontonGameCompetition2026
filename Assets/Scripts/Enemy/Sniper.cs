@@ -11,6 +11,7 @@ public enum SniperState
 }
 
 [Serializable]
+[RequireComponent(typeof(TwoWorldExist))]
 public class Sniper : MonoBehaviour, IFragile, IKillBySpike
 {
     [Tooltip("time required for sniper to attack player")]
@@ -28,21 +29,30 @@ public class Sniper : MonoBehaviour, IFragile, IKillBySpike
 
     [SerializeField] private SniperState currentState;
     private float cooldownTimer;
+    private TwoWorldExist twe;
 
     private Coroutine execution;
     private void Awake()
     {
         if (eyeTransform == null) eyeTransform = transform;
+
+        twe = GetComponent<TwoWorldExist>();
     }
 
     private void OnEnable()
     {
-        EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldCheck);
+        if (!twe.isInLastLevel)
+            EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldCheck);
+        else
+            EventManager1P<GameObject>.StartListening(GameEvents.WorldSwitchInLastLevel, PosWorldChanged);
     }
 
     private void OnDisable()
     {
-        EventManagerNP.StopListening(GameEvents.SwitchWorld, WorldCheck);
+        if (!twe.isInLastLevel)
+            EventManagerNP.StopListening(GameEvents.SwitchWorld, WorldCheck);
+        else
+            EventManager1P<GameObject>.StopListening(GameEvents.WorldSwitchInLastLevel, PosWorldChanged);
     }
 
     private void Start()
@@ -61,6 +71,21 @@ public class Sniper : MonoBehaviour, IFragile, IKillBySpike
     private void WorldCheck()
     {
         if (WorldManager.instance.currentWorld == WorldType.War)
+            currentState = SniperState.Aiming;
+        else currentState = SniperState.Idle;
+
+        if (execution != null)
+            StopCoroutine(execution);
+
+        execution = null;
+    }
+
+    private void PosWorldChanged(GameObject go)
+    {
+        if (go != gameObject)
+            return;
+
+        if (twe.currentWorld == WorldType.War)
             currentState = SniperState.Aiming;
         else currentState = SniperState.Idle;
 

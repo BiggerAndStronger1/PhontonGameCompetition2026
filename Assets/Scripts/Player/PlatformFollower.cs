@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlatformFollower : MonoBehaviour
 {
     private Conveyable currentPlatform;
-
     private Rigidbody2D rb;
 
     private void Awake()
@@ -16,6 +15,7 @@ public class PlatformFollower : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Conveyable platform))
         {
+            Debug.Log(platform);
             foreach (var contact in collision.contacts)
             {
                 if (contact.normal.y > 0.5f)
@@ -35,11 +35,11 @@ public class PlatformFollower : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (currentPlatform == null)
             return;
 
-        transform.position += currentPlatform.Delta;
+        rb.MovePosition(rb.position + currentPlatform.Delta);
     }
 }

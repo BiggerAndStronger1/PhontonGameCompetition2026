@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 629104452340521200}
   - component: {fileID: 7671581066242448880}
   - component: {fileID: 4767900288654852141}
+  - component: {fileID: 8630299730043694986}
   m_Layer: 8
   m_Name: Sniper
   m_TagString: Enemy
@@ -363,28 +364,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 7398924192385840902}
     m_ColliderPaths:
-    - - X: -8178854
+    - - X: -8178844
         Y: 713737
-      - X: -56499624
+      - X: -56499616
         Y: 11416394
-      - X: -56106240
+      - X: -56106228
         Y: -6235119
   - m_Collider: {fileID: 587815720222333576}
     m_ColliderPaths:
-    - - X: 48804192
+    - - X: 48804204
         Y: 7162791
-      - X: 8568535
+      - X: 8568544
         Y: -362880
-      - X: 48769676
+      - X: 48769684
         Y: -9517840
   m_CompositePaths:
     m_Paths:
-    - - {x: -5.610625, y: -0.62347794}
-      - {x: -0.81811154, y: 0.0714238}
-      - {x: -5.6499615, y: 1.1416001}
-    - - {x: 4.87693, y: -0.9517755}
-      - {x: 4.880383, y: 0.7162724}
-      - {x: 0.8570489, y: -0.0363325}
+    - - {x: -5.610624, y: -0.62347794}
+      - {x: -0.8181105, y: 0.0714238}
+      - {x: -5.649961, y: 1.1416001}
+    - - {x: 4.8769307, y: -0.9517755}
+      - {x: 4.880384, y: 0.7162724}
+      - {x: 0.8570498, y: -0.0363325}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -447,3 +448,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a726e2540d66654fa19467967044889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlatformFollower
+--- !u!114 &8630299730043694986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775715883351733515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72577ed959883014eaf1e93939d10a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TwoWorldExist
+  isInLastLevel: 0
+  currentWorld: 0

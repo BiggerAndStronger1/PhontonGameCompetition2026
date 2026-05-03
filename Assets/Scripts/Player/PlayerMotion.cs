@@ -168,6 +168,7 @@ public class PlayerMotion : MonoBehaviour
 
     private void AimEnter()
     {
+        player.SetVelocity(0, 0);
         player.skill.boomGear.StartAiming();
     }
 

@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5619235707788971946}
   - component: {fileID: 725783050434839829}
   - component: {fileID: 1194566456246476025}
+  - component: {fileID: 1336519977977803123}
   m_Layer: 10
   m_Name: MergedPathBoxBase
   m_TagString: Enemy
@@ -241,6 +242,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f6cfc1a3c603e45af0abf7e514ffef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Conveyable
+--- !u!114 &1336519977977803123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061680280062066207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72577ed959883014eaf1e93939d10a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TwoWorldExist
+  isInLastLevel: 0
+  currentWorld: 0
 --- !u!1 &4029045106647177199
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,18 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Teleportable : MonoBehaviour
 {
     [SerializeField] private float teleportCooldown = 0.2f;
 
     private float teleportTimer;
     private bool canTeleport = true;
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void OnEnable()
     {
@@ -36,7 +43,7 @@ public class Teleportable : MonoBehaviour
         if (target != transform || !canTeleport)
             return;
 
-        transform.position += deltaPosition;
+        rb.MovePosition(rb.position + (Vector2)deltaPosition);
         teleportTimer = teleportCooldown;
         canTeleport = false;
     }

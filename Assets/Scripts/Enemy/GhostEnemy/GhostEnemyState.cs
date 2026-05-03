@@ -10,11 +10,13 @@ public enum GhostStateType
 
 [RequireComponent(typeof(GhostEnemy))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(TwoWorldExist))]
 public class GhostEnemyState : MonoBehaviour
 {
     private GhostEnemy ghost;
     private Rigidbody2D rb;
     private Player player;
+    private TwoWorldExist twe;
     [SerializeField] private bool canHatrePlayer;
 
     public GhostStateType currentState;
@@ -23,6 +25,7 @@ public class GhostEnemyState : MonoBehaviour
     {
         ghost = GetComponent<GhostEnemy>();
         rb = GetComponent<Rigidbody2D>();
+        twe = GetComponent<TwoWorldExist>();
     }
 
     private void Start()
@@ -49,13 +52,16 @@ public class GhostEnemyState : MonoBehaviour
 
     private void OnSwitchWorld()
     {
+        if (twe.isInLastLevel)
+            return;
+
         if (WorldManager.instance.currentWorld == ghost.effectiveWorld)
             canHatrePlayer = true;
         else
             canHatrePlayer = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (ghost.isDead)
             return;
@@ -63,6 +69,11 @@ public class GhostEnemyState : MonoBehaviour
         if (player.isDead)
         {
             currentState = GhostStateType.Locked;
+        }
+
+        if (twe.isInLastLevel)
+        {
+            canHatrePlayer = twe.currentWorld == ghost.effectiveWorld;
         }
 
         switch (currentState)
@@ -100,12 +111,18 @@ public class GhostEnemyState : MonoBehaviour
 
     private void HatredUpdate()
     {
-        int playerDir = transform.position.x < ghost.player.transform.position.x + 0.1f ? 1 : -1;
-        rb.linearVelocity = new Vector2(playerDir * ghost.moveSpeed, rb.linearVelocityY);
+        Vector2 pos = rb.position;
+        Vector2 target = ghost.player.transform.position;
 
-        rb.gravityScale = ghost.IsGroundDetected() ? 0 : 5;
+        float dir = (target.x > pos.x) ? 1f : -1f;
 
-        if (Vector2.Distance(ghost.transform.position, ghost.player.transform.position) >= ghost.hatredRadius)
+        Vector2 move = new Vector2(dir * ghost.moveSpeed, 0f);
+
+        rb.MovePosition(pos + move * Time.fixedDeltaTime);
+
+        rb.gravityScale = ghost.IsGroundDetected() ? 0f : 5f;
+
+        if (Vector2.Distance(pos, target) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);
 
         if (!canHatrePlayer)

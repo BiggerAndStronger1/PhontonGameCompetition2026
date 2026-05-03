@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
-
+[RequireComponent(typeof(TwoWorldExist))]
 public class GhostEnemy : MonoBehaviour, IKillBySpike
 {
     [Header("Move Info")]
@@ -28,6 +28,7 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     //public EntityFX fx { get; private set; }
     public SpriteRenderer sr { get; private set; }
     public Collider2D cd { get; private set; }
+    private TwoWorldExist twe;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         cd = GetComponent<Collider2D>();
+        twe = GetComponent<TwoWorldExist>();
     }
 
     private void OnEnable()
@@ -65,6 +67,9 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void OnSwitchWorld()
     {
+        if (twe.isInLastLevel)
+            return;
+
         if (WorldManager.instance.currentWorld == effectiveWorld)
             canHatrePlayer = true;
         else

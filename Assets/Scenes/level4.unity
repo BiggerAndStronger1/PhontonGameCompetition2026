@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 19090753}
   - component: {fileID: 19090755}
   - component: {fileID: 19090754}
+  - component: {fileID: 19090757}
+  - component: {fileID: 19090756}
   m_Layer: 0
   m_Name: RegionPeace2
   m_TagString: Untagged
@@ -11084,6 +11086,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &19090756
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19090752}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &19090757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19090752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22842251d5b9c6943aedbdd799a777b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PeaceRegion
 --- !u!1 &26091643
 GameObject:
   m_ObjectHideFlags: 0
@@ -11129,7 +11181,6 @@ GameObject:
   - component: {fileID: 54088870}
   - component: {fileID: 54088869}
   - component: {fileID: 54088868}
-  - component: {fileID: 54088867}
   m_Layer: 3
   m_Name: peace
   m_TagString: Untagged
@@ -11152,18 +11203,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1450762315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &54088867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54088864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45a910b357308c4b817c2b8c00d2cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PeaceGround
 --- !u!19719996 &54088868
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -11338,7 +11377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.8181106
+      value: -0.8181108
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[2].x
@@ -11350,15 +11389,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.data[1].x
-      value: 4.880384
+      value: 4.8803835
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.data[2].x
-      value: 0.8570497
+      value: 0.8570496
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[0].X
-      value: -8178845
+      value: -8178847
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[1].X
@@ -11366,15 +11405,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.data[2].X
-      value: -56106228
+      value: -56106232
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[0].X
-      value: 48804204
+      value: 48804196
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[1].X
-      value: 8568543
+      value: 8568542
       objectReference: {fileID: 0}
     - target: {fileID: 629104452340521200, guid: 67f99ec9cb2974a49890cbdea5f22f3a, type: 3}
       propertyPath: m_ColliderPaths.Array.data[1].m_ColliderPaths.Array.data[0].Array.data[2].X
@@ -11515,6 +11554,8 @@ GameObject:
   - component: {fileID: 113158741}
   - component: {fileID: 113158743}
   - component: {fileID: 113158742}
+  - component: {fileID: 113158745}
+  - component: {fileID: 113158744}
   m_Layer: 0
   m_Name: RegionWar4
   m_TagString: Untagged
@@ -11659,6 +11700,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &113158744
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113158740}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &113158745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113158740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914bf3c4af65e8c4893f1bb0bf1fd1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WarRegion
 --- !u!1 &123990636
 GameObject:
   m_ObjectHideFlags: 0
@@ -15692,6 +15783,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &221345055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 489696782049143010, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.54177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 41.9201
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083329177596451227, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77ba3efc342d78241b33e1a29418e33a, type: 3}
 --- !u!1001 &227312323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15700,6 +15848,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1131412265}
     m_Modifications:
+    - target: {fileID: 5287684770220616527, guid: 08b387d1614e27442b70d2b5d6df5d0a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 879094689}
     - target: {fileID: 6891128751102647583, guid: 08b387d1614e27442b70d2b5d6df5d0a, type: 3}
       propertyPath: m_Name
       value: GhostEnemy (1)
@@ -16028,6 +16180,8 @@ GameObject:
   - component: {fileID: 295631815}
   - component: {fileID: 295631817}
   - component: {fileID: 295631816}
+  - component: {fileID: 295631819}
+  - component: {fileID: 295631818}
   m_Layer: 0
   m_Name: RegionPeace1
   m_TagString: Untagged
@@ -38406,6 +38560,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &295631818
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295631814}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &295631819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295631814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22842251d5b9c6943aedbdd799a777b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &298934310
 GameObject:
   m_ObjectHideFlags: 0
@@ -42758,7 +42962,6 @@ GameObject:
   - component: {fileID: 314514399}
   - component: {fileID: 314514398}
   - component: {fileID: 314514397}
-  - component: {fileID: 314514396}
   m_Layer: 3
   m_Name: war
   m_TagString: Untagged
@@ -42781,18 +42984,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 153172272}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &314514396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314514392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966505482c6cf9d41bae22e6bdd9fffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WarGround
 --- !u!19719996 &314514397
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -43394,6 +43585,8 @@ GameObject:
   - component: {fileID: 372298682}
   - component: {fileID: 372298684}
   - component: {fileID: 372298683}
+  - component: {fileID: 372298686}
+  - component: {fileID: 372298685}
   m_Layer: 0
   m_Name: RegionPeace5
   m_TagString: Untagged
@@ -43538,6 +43731,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &372298685
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372298681}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &372298686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372298681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22842251d5b9c6943aedbdd799a777b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PeaceRegion
 --- !u!1 &378965645
 GameObject:
   m_ObjectHideFlags: 0
@@ -47407,6 +47650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448446012}
   - component: {fileID: 448446011}
+  - component: {fileID: 448446013}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -47455,6 +47699,64 @@ Transform:
   - {fileID: 1399393670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448446013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448446010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29ec4069bce59e44ba9cd8245433b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RegionController
+  roomRegionStates: 020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000
+  roomIndex: 0
+  currentRoomRegionState: 0
+  currentRegionPara: 0
+  warBackgrounds:
+  - {fileID: 2064092532}
+  - {fileID: 1654159736}
+  - {fileID: 1349411912}
+  - {fileID: 113158740}
+  - {fileID: 1391798455}
+  peaceBackgrounds:
+  - {fileID: 295631814}
+  - {fileID: 19090752}
+  - {fileID: 539170124}
+  - {fileID: 1312911986}
+  - {fileID: 372298681}
+  warGrounds:
+  - {fileID: 1685107644}
+  - {fileID: 2087172960}
+  - {fileID: 1877294557}
+  - {fileID: 314514392}
+  - {fileID: 1657729256}
+  peaceGrounds:
+  - {fileID: 2016616228}
+  - {fileID: 1113291252}
+  - {fileID: 54088864}
+  - {fileID: 1746379195}
+  - {fileID: 979957645}
+  warOneWayGrounds:
+  - {fileID: 630042838}
+  - {fileID: 984248893}
+  - {fileID: 2101286390}
+  - {fileID: 123990636}
+  - {fileID: 148908641}
+  peaceOneWayGrounds:
+  - {fileID: 1631477294}
+  - {fileID: 193900657}
+  - {fileID: 1712844412}
+  - {fileID: 364832798}
+  - {fileID: 465465329}
+  bornPlaces:
+  - {fileID: 648175928}
+  - {fileID: 1699146454}
+  autoSwitchDuration: 2
+  switchByPlayerDuration: 0.4
+  timer: 0
 --- !u!1 &465465329
 GameObject:
   m_ObjectHideFlags: 0
@@ -48119,6 +48421,8 @@ GameObject:
   - component: {fileID: 539170125}
   - component: {fileID: 539170127}
   - component: {fileID: 539170126}
+  - component: {fileID: 539170129}
+  - component: {fileID: 539170128}
   m_Layer: 0
   m_Name: RegionPeace3
   m_TagString: Untagged
@@ -48263,6 +48567,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &539170128
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539170124}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &539170129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539170124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22842251d5b9c6943aedbdd799a777b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PeaceRegion
 --- !u!1 &570278986
 GameObject:
   m_ObjectHideFlags: 0
@@ -63109,24 +63463,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.87
+      value: -7.69
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63159,10 +63501,6 @@ PrefabInstance:
     - target: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2565679629281221882, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
-      propertyPath: jumpForce
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Name
@@ -63235,6 +63573,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6346113764993401879, guid: dec1d814f3794e944bd14bb799a04d56, type: 3}
   m_PrefabInstance: {fileID: 846012141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &879094689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2565679629281221882, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+  m_PrefabInstance: {fileID: 835672962}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7cfaba7b20e12347a40a2a6d6b15aa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &917783352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63445,7 +63794,6 @@ GameObject:
   - component: {fileID: 979957651}
   - component: {fileID: 979957650}
   - component: {fileID: 979957649}
-  - component: {fileID: 979957648}
   m_Layer: 3
   m_Name: peace
   m_TagString: Untagged
@@ -63468,18 +63816,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1665549169}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &979957648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979957645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45a910b357308c4b817c2b8c00d2cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PeaceGround
 --- !u!19719996 &979957649
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -65764,7 +66100,6 @@ GameObject:
   - component: {fileID: 1113291258}
   - component: {fileID: 1113291257}
   - component: {fileID: 1113291256}
-  - component: {fileID: 1113291255}
   m_Layer: 3
   m_Name: peace
   m_TagString: Untagged
@@ -65787,18 +66122,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1395702598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1113291255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113291252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45a910b357308c4b817c2b8c00d2cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PeaceGround
 --- !u!19719996 &1113291256
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -68290,7 +68613,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1168189048}
-  - component: {fileID: 1168189049}
   m_Layer: 0
   m_Name: Region
   m_TagString: Untagged
@@ -68324,40 +68646,6 @@ Transform:
   - {fileID: 919751535}
   m_Father: {fileID: 448446012}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1168189049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168189047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e29ec4069bce59e44ba9cd8245433b9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  roomRegionStates: 0200000002000000
-  roomIndex: 0
-  currentRoomRegionState: 0
-  currentRegionPara: 0
-  warRegions:
-  - {fileID: 2064092532}
-  - {fileID: 1654159736}
-  - {fileID: 1349411912}
-  - {fileID: 113158740}
-  - {fileID: 1391798455}
-  peaceRegions:
-  - {fileID: 295631814}
-  - {fileID: 19090752}
-  - {fileID: 539170124}
-  - {fileID: 1312911986}
-  - {fileID: 372298681}
-  bornPlaces:
-  - {fileID: 648175928}
-  - {fileID: 1699146454}
-  autoSwitchDuration: 2
-  switchByPlayerDuration: 0.4
-  timer: 0
 --- !u!1 &1172342536
 GameObject:
   m_ObjectHideFlags: 0
@@ -69019,6 +69307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1063430247}
     m_Modifications:
+    - target: {fileID: 5287684770220616527, guid: 08b387d1614e27442b70d2b5d6df5d0a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 879094689}
     - target: {fileID: 6891128751102647583, guid: 08b387d1614e27442b70d2b5d6df5d0a, type: 3}
       propertyPath: m_Name
       value: GhostEnemy
@@ -69174,6 +69466,8 @@ GameObject:
   - component: {fileID: 1312911987}
   - component: {fileID: 1312911989}
   - component: {fileID: 1312911988}
+  - component: {fileID: 1312911991}
+  - component: {fileID: 1312911990}
   m_Layer: 0
   m_Name: RegionPeace4
   m_TagString: Untagged
@@ -69318,6 +69612,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1312911990
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312911986}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &1312911991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312911986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22842251d5b9c6943aedbdd799a777b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PeaceRegion
 --- !u!1001 &1318974404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69525,6 +69869,8 @@ GameObject:
   - component: {fileID: 1349411913}
   - component: {fileID: 1349411915}
   - component: {fileID: 1349411914}
+  - component: {fileID: 1349411917}
+  - component: {fileID: 1349411916}
   m_Layer: 0
   m_Name: RegionWar3
   m_TagString: Untagged
@@ -69669,6 +70015,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1349411916
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349411912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &1349411917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349411912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914bf3c4af65e8c4893f1bb0bf1fd1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WarRegion
 --- !u!1 &1379123269
 GameObject:
   m_ObjectHideFlags: 0
@@ -69929,6 +70325,8 @@ GameObject:
   - component: {fileID: 1391798456}
   - component: {fileID: 1391798458}
   - component: {fileID: 1391798457}
+  - component: {fileID: 1391798460}
+  - component: {fileID: 1391798459}
   m_Layer: 0
   m_Name: RegionWar5
   m_TagString: Untagged
@@ -70073,6 +70471,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1391798459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391798455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914bf3c4af65e8c4893f1bb0bf1fd1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WarRegion
+--- !u!19719996 &1391798460
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391798455}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1395702597
 GameObject:
   m_ObjectHideFlags: 0
@@ -73045,6 +73493,8 @@ GameObject:
   - component: {fileID: 1654159737}
   - component: {fileID: 1654159739}
   - component: {fileID: 1654159738}
+  - component: {fileID: 1654159741}
+  - component: {fileID: 1654159740}
   m_Layer: 0
   m_Name: RegionWar2
   m_TagString: Untagged
@@ -83989,6 +84439,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1654159740
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654159736}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &1654159741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654159736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914bf3c4af65e8c4893f1bb0bf1fd1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WarRegion
 --- !u!1 &1657729256
 GameObject:
   m_ObjectHideFlags: 0
@@ -84001,7 +84501,6 @@ GameObject:
   - component: {fileID: 1657729263}
   - component: {fileID: 1657729262}
   - component: {fileID: 1657729261}
-  - component: {fileID: 1657729260}
   m_Layer: 3
   m_Name: war
   m_TagString: Untagged
@@ -84024,18 +84523,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1399393670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1657729260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657729256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966505482c6cf9d41bae22e6bdd9fffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WarGround
 --- !u!19719996 &1657729261
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -84316,7 +84803,6 @@ GameObject:
   - component: {fileID: 1685107651}
   - component: {fileID: 1685107650}
   - component: {fileID: 1685107649}
-  - component: {fileID: 1685107648}
   m_Layer: 3
   m_Name: war
   m_TagString: Untagged
@@ -84339,18 +84825,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1619496496}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1685107648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685107644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966505482c6cf9d41bae22e6bdd9fffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WarGround
 --- !u!19719996 &1685107649
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -86991,7 +87465,6 @@ GameObject:
   - component: {fileID: 1746379201}
   - component: {fileID: 1746379200}
   - component: {fileID: 1746379199}
-  - component: {fileID: 1746379198}
   m_Layer: 3
   m_Name: peace
   m_TagString: Untagged
@@ -87014,18 +87487,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 958083595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1746379198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746379195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45a910b357308c4b817c2b8c00d2cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PeaceGround
 --- !u!19719996 &1746379199
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -87330,7 +87791,6 @@ GameObject:
   - component: {fileID: 1877294564}
   - component: {fileID: 1877294563}
   - component: {fileID: 1877294562}
-  - component: {fileID: 1877294561}
   m_Layer: 3
   m_Name: war
   m_TagString: Untagged
@@ -87353,18 +87813,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 257904015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1877294561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877294557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966505482c6cf9d41bae22e6bdd9fffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WarGround
 --- !u!19719996 &1877294562
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -90835,7 +91283,6 @@ GameObject:
   - component: {fileID: 2016616234}
   - component: {fileID: 2016616233}
   - component: {fileID: 2016616232}
-  - component: {fileID: 2016616231}
   m_Layer: 3
   m_Name: peace
   m_TagString: Untagged
@@ -90858,18 +91305,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 772766197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2016616231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016616228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45a910b357308c4b817c2b8c00d2cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PeaceGround
 --- !u!19719996 &2016616232
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -93498,6 +93933,8 @@ GameObject:
   - component: {fileID: 2064092533}
   - component: {fileID: 2064092535}
   - component: {fileID: 2064092534}
+  - component: {fileID: 2064092537}
+  - component: {fileID: 2064092536}
   m_Layer: 0
   m_Name: RegionWar1
   m_TagString: Untagged
@@ -114652,6 +115089,56 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &2064092536
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064092532}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
+--- !u!114 &2064092537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064092532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914bf3c4af65e8c4893f1bb0bf1fd1aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &2087172960
 GameObject:
   m_ObjectHideFlags: 0
@@ -114664,7 +115151,6 @@ GameObject:
   - component: {fileID: 2087172967}
   - component: {fileID: 2087172966}
   - component: {fileID: 2087172965}
-  - component: {fileID: 2087172964}
   m_Layer: 3
   m_Name: war
   m_TagString: Untagged
@@ -114687,18 +115173,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 161593952}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2087172964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087172960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 966505482c6cf9d41bae22e6bdd9fffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WarGround
 --- !u!19719996 &2087172965
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -116965,6 +117439,7 @@ SceneRoots:
   - {fileID: 1953576063}
   - {fileID: 448446012}
   - {fileID: 835672962}
+  - {fileID: 221345055}
   - {fileID: 2033016361}
   - {fileID: 536879388}
   - {fileID: 220083046}

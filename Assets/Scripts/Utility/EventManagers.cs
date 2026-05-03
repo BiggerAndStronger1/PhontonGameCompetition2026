@@ -36,6 +36,8 @@ public enum GameEvents
     /// </summary>
     PlayerCollectProps,
 
+    WorldSwitchInLastLevel,
+
     /// <summary>
     /// notifies which UI/2D object is clicked using raycast (single param event: GameObject)
     /// </summary>

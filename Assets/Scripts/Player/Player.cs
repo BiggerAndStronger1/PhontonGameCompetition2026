@@ -19,6 +19,9 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     [Header("Check Info")]
     [SerializeField] private LayerMask whatIsGround;
 
+    [Header("Level Info")]
+    [SerializeField] private bool isInLastLevel;
+
     public bool isDead = false;
     private static Transform checkpoint;
 
@@ -72,7 +75,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
             return;
         }
 
-        if (playerActions.SwitchWorld.triggered && stats.havePocketWatch)
+        if (playerActions.SwitchWorld.triggered && stats.havePocketWatch && !isInLastLevel)
         {
             EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
             return;
@@ -172,7 +175,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     #region Velocity
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
-        rb.linearVelocity = new Vector2(_xVelocity, _yVelocity);
+        rb.linearVelocity = new Vector2(_xVelocity, _yVelocity); 
         FlipController(_xVelocity);
     }
 
