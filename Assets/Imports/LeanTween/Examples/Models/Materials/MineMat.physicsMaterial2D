@@ -8,7 +8,7 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: MineMat
   serializedVersion: 2
-  friction: 200
+  friction: 2000
   bounciness: 0
   m_FrictionCombine: 4
-  m_BounceCombine: 4
+  m_BounceCombine: 3
