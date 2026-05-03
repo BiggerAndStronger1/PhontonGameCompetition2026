@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
@@ -12,7 +14,6 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     [SerializeField] private GameObject smallSlotsParent;
     [SerializeField] private Image background;
     [SerializeField] private Slot bigGearSlot;
-
     [SerializeField] private Sprite activated;
     [SerializeField] private Sprite deactivated;
     
@@ -29,11 +30,12 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         EventManager2P<int, PropType>.StartListening(GameEvents.ConsumeGear, Consume);
         EventManagerReturn1P<PropType, int>.StartListening(GameEvents.InventoryQuery, Check);
         anim2D = GetComponent<Anim2D>();
+        
     }
 
     public void ForcedStart()
     {
-
+       
     }
 
     private void OnDestroy()
@@ -75,7 +77,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
         else if (CanvasManager.actionsUI.UseSmallGear.WasPressedThisFrame() && pointerAnimator.GetCurrentAnimatorStateInfo(0).IsName("default"))
         {
-            UseSmallGear();
+            UseUIGear();
         }
         
 
@@ -85,7 +87,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     {
         if (new List<PropType>() { PropType.SmallGear, PropType.BoomGear, PropType.MineGear }.Contains(propType))
         {
-            return smallGearSlots.FindAll((slot => slot.type == propType && slot.occupied)).Count;
+            return smallGearSlots.FindAll((slot => slot.type != null && slot.type.Value == propType && slot.occupied)).Count;
         }
         else if (propType == PropType.LargeGear)
         {
@@ -139,7 +141,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     /// <summary>
     /// active use of small gear
     /// </summary>
-    private void UseSmallGear()
+    private void UseUIGear()
     {
 #if UNITY_EDITOR
         if (!PocketWatchActive() && GameManager.debug)
@@ -180,20 +182,21 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         }
 #endif
         if (!PocketWatchActive()) return;
+        Assert.IsFalse(Check(propType) < quantity, "there is not enough gears to consume");
+        
         if (propType == PropType.LargeGear)
         {
             if (bigGearSlot.occupied)
             {
                 bigGearSlot.Use();
-                Toggle(false);
             }
         }
         else 
         {
             foreach (var smallGearSlot in smallGearSlots)
             {
-
-                if (smallGearSlot.occupied && smallGearSlot.type.Value == propType && quantity > 0)
+                if (quantity == 0) break;
+                if (smallGearSlot.occupied && smallGearSlot.type.Value == propType)
                 {
                     smallGearSlot.Use();
                     quantity--;

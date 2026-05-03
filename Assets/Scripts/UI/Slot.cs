@@ -31,7 +31,7 @@ public class Slot : MonoBehaviour, ICanvasManager
     [SerializeField] private Sprite largeGearSprite;
     private Sprite occupiedSprite;
     private Sprite emptySprite;
-    public PropType? type { get; private set; }
+    public PropType? type { get; set; }
     private Image image;
 
     public void ForcedAwake()
@@ -91,6 +91,6 @@ public class Slot : MonoBehaviour, ICanvasManager
     public void Activate()
     {
         emptySprite = activeEmptySlotSprite;
-        occupied = false;
+        occupied = occupied;
     }
 }

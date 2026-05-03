@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
             inputActions = new InputSystem_Actions();
             debugAction = inputActions.Debug;
         }
-        
+        debug = debugMode;
         EventManagerNP.StartListening(GameEvents.SceneReload,ReloadScene);
         EventManagerNP.StartListening(GameEvents.LoadNextScene, NextScene);
         EventManagerNP.StartListening(GameEvents.LoadPreviousScene, PreviousScene);
@@ -176,7 +176,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        debug = debugMode;
         if (debug) debugAction.Enable();
         else debugAction.Disable();
 

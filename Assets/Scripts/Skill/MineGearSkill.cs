@@ -17,21 +17,35 @@ public class MineGearSkill : Skill
 
     private void OnEnable()
     {
-        EventManager2P<int, PropType>.StartListening(GameEvents.UseGear, CheckAndUseMine);
+        EventManager2P<int, PropType>.StartListening(GameEvents.UseGear, UseMine);
+        EventManagerNP.StartListening(GameEvents.UseMineSkill, UseSkillStandalone);
     }
 
     private void OnDisable()
     {
-        EventManager2P<int, PropType>.StopListening(GameEvents.UseGear, CheckAndUseMine);
+        EventManager2P<int, PropType>.StopListening(GameEvents.UseGear, UseMine);
+        EventManagerNP.StopListening(GameEvents.UseMineSkill, UseSkillStandalone);
     }
 
-    private void CheckAndUseMine(int amount, PropType propType)
+    private void UseMine(int amount, PropType propType)
     {
-        int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.MineGear);
+        
+        if (propType == PropType.MineGear)
+        {
+           UseSkill();
+        }
+    }
 
-        if (propType == PropType.MineGear && count > 0)
-        if (TryUseSkill())
+    /// <summary>
+    /// Use the mine skill not from UI
+    /// </summary>
+    private void UseSkillStandalone()
+    {
+        if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.MineGear) > 0)
+        {
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.MineGear);
+            UseSkill();
+        }
     }
 
     protected override void UseSkill()

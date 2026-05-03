@@ -69,14 +69,6 @@ public enum GameEvents
     /// </summary>
     ToggleAirTrap,
     /// <summary>
-    /// dedicated to be triggered by looping platform to make a looping platform visible, not designed to be used by other classes
-    /// </summary>
-    PlatformVisible,
-    /// <summary>
-    /// dedicated to be triggered by looping platform to make a looping platform invisible, not designed to be used by other classes
-    /// </summary>
-    PlatformInvisible,
-    /// <summary>
     /// no param event
     /// </summary>
     MainMenuEnable,
@@ -93,11 +85,11 @@ public enum GameEvents
     /// </summary>
     TogglePlayerInput,
     /// <summary>
-    /// notifies that a gear of certain quantity is used, should be listened by Player (two param event: int, Proptype)
+    /// notifies that a gear of certain quantity is used, should only be listened (two param event: int, Proptype)
     /// </summary>
     UseGear,
     /// <summary>
-    /// notifies that a gear of certain quantity is used, should be listened by PocketWatchUI (two param event: int, Proptype)
+    /// notifies that a gear of certain quantity is used, should be only be triggered (two param event: int, Proptype)
     /// </summary>
     ConsumeGear,
     /// <summary>
@@ -117,6 +109,10 @@ public enum GameEvents
     /// the GameObject passed in should be the same GameObject that the AudioPlayer script is attached on (two param event: int GameObject)
     /// </summary>
     PlayAudio,
+    /// <summary>
+    /// triggered to use the mine skill (no param event)
+    /// </summary>
+    UseMineSkill,
     
 }
 public abstract class EventManager1P<T> : MonoBehaviour

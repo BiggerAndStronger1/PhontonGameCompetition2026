@@ -10,8 +10,6 @@ public class Airtrap : MonoBehaviour
     private Collider2D col;
     [Tooltip("how hard this trap pushes from it local up direction")]
     [SerializeField] private int pushStrength = 1;
-
-    private List<GameObject> pushed = new List<GameObject>();
     private bool active;
     [SerializeField] private bool _active;
     private bool triggered;
@@ -69,8 +67,6 @@ public class Airtrap : MonoBehaviour
                 c.attachedRigidbody.AddForce(
                     (Vector2)transform.up * pushStrength,
                     ForceMode2D.Force);
-
-                pushed.Add(c.gameObject);
             }
         }
     }

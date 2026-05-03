@@ -74,7 +74,7 @@ public class PlayerMotion : MonoBehaviour
         
         if (Player.playerActions.Mine.WasPressedThisFrame())
         {
-            EventManager2P<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, PropType.MineGear);
+            EventManagerNP.TriggerEvent(GameEvents.UseMineSkill);
         }
 
     }

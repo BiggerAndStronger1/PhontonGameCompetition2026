@@ -22,20 +22,16 @@ public class CanvasManager : MonoBehaviour
         }
         
         actionsUI.Enable();
+        EventManagerNP.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
+        EventManagerNP.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
         foreach (var child in GetComponentsInChildren<ICanvasManager>(true))
         {
             child.ForcedAwake();
         }
-        EventManagerNP.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
-        EventManagerNP.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
     }
 
     void Start()
     {
-        foreach (var child in GetComponentsInChildren<ICanvasManager>(true))
-        {
-            child.ForcedStart();
-        }
         fadeImage.gameObject.SetActive(true);
         fadeImage.GetComponent<Anim2D>().OnFadeComplete += (() => fadeImage.gameObject.SetActive(false));
         SceneManager.sceneLoaded += (scene, mode) =>
@@ -45,6 +41,10 @@ public class CanvasManager : MonoBehaviour
             fadeImage.GetComponent<Image>().color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
             fadeImage.gameObject.SetActive(true);
         };
+        foreach (var child in GetComponentsInChildren<ICanvasManager>(true))
+        {
+            child.ForcedStart();
+        }
     }
 
     private void OnDestroy()
