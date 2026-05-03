@@ -35,7 +35,15 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     public void ForcedStart()
     {
-       Collect(PropType.MineGear);
+#if UNITY_EDITOR
+        Collect(PropType.MineGear);
+        Collect(PropType.MineGear);
+        Collect(PropType.MineGear);
+        Collect(PropType.MineGear); 
+        Collect(PropType.MineGear);
+        Collect(PropType.MineGear);
+        
+#endif
     }
 
     private void OnDestroy()
