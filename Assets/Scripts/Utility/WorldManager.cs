@@ -22,7 +22,7 @@ public class WorldManager : MonoBehaviour
 {
     public static WorldManager instance;
     [SerializeField] private WorldType _currentWorld;
-    [Tooltip("objects that are enabled/disabled based on WordType")]
+    [Tooltip("assign a type to an object so the object is only enabled when the current world type matches that type you defined for that object in this list")]
     [SerializeField] private List<WorldObj> worldObjs = new List<WorldObj>();
 
     public WorldType currentWorld
