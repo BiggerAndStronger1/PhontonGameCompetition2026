@@ -50,12 +50,16 @@ public class WorldManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Assert.IsNotNull(gameObject.GetComponent<GameManager>(), "you are using a standalone WorldManager, this is not allowed");
     }
 
     private void OnEnable()
     {
         EventManagerNP.StartListening(GameEvents.SwitchWorld, SwitchWorld);
+    }
+
+    private void OnDestroy()
+    {
+        EventManagerNP.StopListening(GameEvents.SwitchWorld, SwitchWorld);
     }
 
     private void Start()

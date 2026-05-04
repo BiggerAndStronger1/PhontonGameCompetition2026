@@ -100,8 +100,6 @@ public class GameManager : MonoBehaviour
             }
             dontDestroySet = true;
         }
-
-        
     }
 
     private void Start()

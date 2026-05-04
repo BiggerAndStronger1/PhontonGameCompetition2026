@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7083329177596451227}
   - component: {fileID: 8745361291760686067}
-  - component: {fileID: 6583202028376620052}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -57,20 +56,6 @@ MonoBehaviour:
     scene: {fileID: 102900000, guid: da1061530790b664298626a3734c08c3, type: 3}
     scenePath: Assets/Scenes/main.unity
   _audioMixer: {fileID: 24100000, guid: 692c9ce621c0f4f4690cc529a983810a, type: 2}
---- !u!114 &6583202028376620052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489696782049143010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a60b7cc966aadb1458922208c18661c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorldManager
-  _currentWorld: 0
-  worldObjs: []
 --- !u!1 &2633935417958304902
 GameObject:
   m_ObjectHideFlags: 0
