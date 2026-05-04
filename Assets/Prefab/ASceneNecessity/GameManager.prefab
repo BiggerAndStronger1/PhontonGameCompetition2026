@@ -48,7 +48,7 @@ MonoBehaviour:
   raycaster: {fileID: 4129615702929522449, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
   eventSystem: {fileID: 9164551499937380823}
   dontDestroys:
-  - {fileID: 1682395190878794057, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+  - {fileID: 0}
   - {fileID: 489696782049143010}
   quickDisable: {fileID: 0}
   debugMode: 1
