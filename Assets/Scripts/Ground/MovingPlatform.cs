@@ -2,6 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovingPlatform : MonoBehaviour
 {
     public Transform pointA;
@@ -16,19 +17,23 @@ public class MovingPlatform : MonoBehaviour
     private float pauseTimer;
     private bool isEffective = true;
     private Vector3 target;
+    private Vector2 dir;
 
     private SpriteRenderer sr;
     private Collider2D cd;
+    private Rigidbody2D rb;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         cd = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Start()
     {
         target = pointB.position;
+        dir = (pointB.position - pointA.position).normalized;
 
         if (belongToSpecificWorld)
         {
@@ -37,7 +42,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!isEffective)
             return;
@@ -50,11 +55,13 @@ public class MovingPlatform : MonoBehaviour
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, target, movingSpeed * Time.deltaTime);
+        Vector2 nextPos = rb.position + dir * movingSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(nextPos);
 
         if (Vector3.Distance(transform.position, target) < 0.05f)
         {
             target = target == pointA.position ? pointB.position : pointA.position;
+            dir = -dir;
 
             if (canPause)
             {

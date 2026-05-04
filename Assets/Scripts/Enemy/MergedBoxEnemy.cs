@@ -229,7 +229,10 @@ public class MergedBoxEnemy : MonoBehaviour
     private void MoveUpdate()
     {
         PauseLogic();
-        rb.MovePosition(Vector2.MoveTowards(rb.position, wayPoints[nextIndex].position, movingSpeed * Time.fixedDeltaTime));
+
+        Vector2 nextPos = Vector2.MoveTowards(rb.position, wayPoints[nextIndex].position, movingSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(nextPos);
+
         if (Vector3.Distance(rb.position, wayPoints[nextIndex].position) < 0.05f)
         {
             currentIndex = nextIndex;

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2165431188485761894}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0, z: 0}
+  m_LocalPosition: {x: -0.53, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 9030755678290322309}
   - component: {fileID: 6432424268636109910}
   - component: {fileID: 6189627686274868720}
-  - component: {fileID: 5959924255274276065}
   - component: {fileID: 2059997969326009020}
   m_Layer: 10
   m_Name: MovingPlatformBase
@@ -209,7 +208,7 @@ MonoBehaviour:
   canPause: 0
   pauseDuration: 0
   belongToSpecificWorld: 1
-  effectiveWorld: 1
+  effectiveWorld: 0
 --- !u!61 &6189627686274868720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -220,7 +219,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: bae1ced1b0bd68f439bdd94513c3cc15, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -256,18 +255,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5959924255274276065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8527825377749564795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f6cfc1a3c603e45af0abf7e514ffef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Conveyable
 --- !u!50 &2059997969326009020
 Rigidbody2D:
   serializedVersion: 5

@@ -76,6 +76,14 @@ public class GhostEnemyState : MonoBehaviour
             canHatrePlayer = twe.currentWorld == ghost.effectiveWorld;
         }
 
+        if (!ghost.IsGroundDetected())
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.gravityScale = 5f;
+        }
+        else
+            rb.bodyType = RigidbodyType2D.Kinematic;
+
         switch (currentState)
         {
             case GhostStateType.Idle:
@@ -119,8 +127,6 @@ public class GhostEnemyState : MonoBehaviour
         Vector2 move = new Vector2(dir * ghost.moveSpeed, 0f);
 
         rb.MovePosition(pos + move * Time.fixedDeltaTime);
-
-        rb.gravityScale = ghost.IsGroundDetected() ? 0f : 5f;
 
         if (Vector2.Distance(pos, target) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);

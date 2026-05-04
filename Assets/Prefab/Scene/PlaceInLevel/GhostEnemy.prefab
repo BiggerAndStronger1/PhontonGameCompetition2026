@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3741345598969090712}
   - component: {fileID: -6571524508240532809}
   - component: {fileID: 3320726910256597288}
-  - component: {fileID: -6585367185694240133}
   - component: {fileID: 5070065103171517653}
   m_Layer: 8
   m_Name: GhostEnemy
@@ -34,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.76, y: -1.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.50099885, y: 0.50099885, z: 0.50099885}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -140,11 +139,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1032
-  moveSpeed: 2
+  moveSpeed: 3
   player: {fileID: 0}
-  effectiveWorld: 0
+  effectiveWorld: 1
   canHatrePlayer: 1
-  hatredRadius: 4.22
+  hatredRadius: 3.62
   isDead: 0
 --- !u!114 &3741345598969090712
 MonoBehaviour:
@@ -219,18 +218,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &-6585367185694240133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891128751102647583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a726e2540d66654fa19467967044889, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlatformFollower
 --- !u!114 &5070065103171517653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,5 +230,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72577ed959883014eaf1e93939d10a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  twoWorldExist: 0
+  isInLastLevel: 0
   currentWorld: 0
