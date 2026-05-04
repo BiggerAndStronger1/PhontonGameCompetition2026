@@ -2708,6 +2708,10 @@ PrefabInstance:
       value: WorldManager
       objectReference: {fileID: 0}
     - target: {fileID: 8220674150774606697, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: _currentWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220674150774606697, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
       propertyPath: worldObjs.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -82083,11 +82087,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
