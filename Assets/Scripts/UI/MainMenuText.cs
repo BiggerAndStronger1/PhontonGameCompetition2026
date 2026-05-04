@@ -11,6 +11,7 @@ public class MainMenuText : MonoBehaviour
 {
     private float initialRotationZ;
     [SerializeField] private MainMenuOptions mainMenuOptions;
+    [SerializeField] private Anim2D mainMenu;
     void Start()
     {
         
@@ -26,8 +27,14 @@ public class MainMenuText : MonoBehaviour
     {
 
        if((transform.rotation.eulerAngles.magnitude - 0) > 0.1f) return;
-       switch (mainMenuOptions)
-       {
+       mainMenu.OnFadeComplete = OnFadeComplete;
+       mainMenu.AnimatedDisable();
+    }
+
+    private void OnFadeComplete()
+    {
+        switch (mainMenuOptions)
+        {
             case MainMenuOptions.NewGame:
                 EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
                 break;
@@ -37,7 +44,7 @@ public class MainMenuText : MonoBehaviour
             case MainMenuOptions.Exit:
                 Application.Quit(0);
                 break;
-                
-       }
+
+        }
     }
 }

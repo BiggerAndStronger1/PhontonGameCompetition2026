@@ -207,3 +207,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54fa375d00d56e4faf09aa37439beae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuText
+  mainMenuOptions: 0
