@@ -1,5 +1,8 @@
 
+using BayatGames.SaveGameFree;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum MainMenuOptions
 {
@@ -23,6 +26,11 @@ public class MainMenuText : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        
+    }
+
     public void OnClicked()
     {
 
@@ -39,12 +47,29 @@ public class MainMenuText : MonoBehaviour
                 EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
                 break;
             case MainMenuOptions.Continue:
-                GameManager.ContinueGame();
+                ContinueGame();
                 break;
             case MainMenuOptions.Exit:
                 Application.Quit(0);
                 break;
 
         }
+    }
+
+    private void ContinueGame()
+    {
+        if (!ProfileExist())
+        {
+            Debug.LogWarning("no profile exists but you are trying to load one, a new profile has been added");
+            EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
+            return;
+        }
+        var index = SaveGame.Load<int>(GameManager.KLastSceneIndex);
+        if (index > 0) SceneManager.LoadScene(index);
+    }
+
+    private bool ProfileExist()
+    {
+        return SaveGame.Exists(GameManager.KLastSceneIndex) && SaveGame.Load<int>(GameManager.KLastSceneIndex) > 0;
     }
 }

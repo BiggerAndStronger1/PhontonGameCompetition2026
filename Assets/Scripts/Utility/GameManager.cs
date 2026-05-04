@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 {
     private static GraphicRaycaster _raycaster;
     private static EventSystem _eventSystem;
-    private static readonly string KLastSceneIndex = "KLastSceneIndex";
+    public static readonly string KLastSceneIndex = "KLastSceneIndex";
     public GraphicRaycaster raycaster;
     public EventSystem eventSystem;
     [SerializeField] private GameObject[] dontDestroys;
@@ -103,12 +103,15 @@ public class GameManager : MonoBehaviour
             }
             dontDestroySet = true;
         }
-
+#if UNITY_EDITOR
+        SaveGame.Delete(KLastSceneIndex);
+#endif
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0) return;
         SaveGame.Save(KLastSceneIndex, SceneManager.GetActiveScene().buildIndex);
         print(SceneManager.GetActiveScene().buildIndex);
     }
@@ -406,11 +409,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    public static void ContinueGame()
-    {
-        var index = SaveGame.Load<int>(KLastSceneIndex);
-        SceneManager.LoadScene(index); 
-    }
+    
 
     private void OnApplicationQuit()
     {
