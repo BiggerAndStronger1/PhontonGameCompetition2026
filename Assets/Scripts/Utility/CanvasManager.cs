@@ -4,6 +4,7 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using Image = UnityEngine.UI.Image;
 
+[RequireComponent(typeof(Canvas))]
 public class CanvasManager : MonoBehaviour
 {
     private static InputSystem_Actions actions;
@@ -13,6 +14,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Image fadeImage;
     [SerializeField] private GameObject pocketWatch;
     [SerializeField] private List<GameObject> disablePlayerInputFor;
+    [SerializeField] private Canvas canvas;
     private void Awake()
     {
         if (actions == null)
@@ -20,7 +22,7 @@ public class CanvasManager : MonoBehaviour
             actions = new();
             actionsUI = actions.UI;
         }
-        
+        canvas = GetComponent<Canvas>();
         actionsUI.Enable();
         EventManagerNP.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
         EventManagerNP.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
@@ -28,6 +30,12 @@ public class CanvasManager : MonoBehaviour
         {
             child.ForcedAwake();
         }
+        SceneManager.sceneLoaded += SceneManagerOnsceneLoaded;
+    }
+
+    private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
+    { 
+        canvas.worldCamera = Camera.main;
     }
 
     void Start()

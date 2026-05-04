@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 196532757825745546}
   - component: {fileID: 7245723857597728905}
   - component: {fileID: 378411478848407451}
-  - component: {fileID: -4148099514029836226}
+  - component: {fileID: -2027284793334196565}
   m_Layer: 12
   m_Name: ThrownMineGear
   m_TagString: Untagged
@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Teleportable
   teleportCooldown: 0.2
---- !u!61 &-4148099514029836226
-BoxCollider2D:
+--- !u!58 &-2027284793334196565
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,14 +182,4 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
