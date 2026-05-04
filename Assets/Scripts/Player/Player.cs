@@ -5,7 +5,6 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(PlayerStats))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerMotion))]
@@ -21,6 +20,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
 
     [Header("Level Info")]
     [SerializeField] private bool isInLastLevel;
+    public bool isInClockTower;
 
     public bool isDead = false;
     private static Transform checkpoint;
@@ -38,7 +38,6 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public SpriteRenderer sr { get; private set; }
-    public PlayerStats stats { get; private set; }
     public Collider2D cd { get; private set; }
     #endregion
 
@@ -47,7 +46,6 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        stats = GetComponent<PlayerStats>();
         cd = GetComponent<Collider2D>();
 
         if (action == null)
@@ -75,9 +73,10 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
             return;
         }
 
-        if (playerActions.SwitchWorld.triggered && stats.havePocketWatch && !isInLastLevel)
+        if (playerActions.SwitchWorld.triggered && !isInLastLevel && !isInClockTower)
         {
-            EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
+            if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.PocketWatch) > 0)
+                EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
             return;
         }
     }

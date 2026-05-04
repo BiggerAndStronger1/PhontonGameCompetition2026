@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 6207037135855771264}
   - component: {fileID: 5212562709181035875}
   - component: {fileID: 2565679629281221882}
-  - component: {fileID: 7536618188227937532}
   - component: {fileID: 3022865986171090042}
   - component: {fileID: 3317202352669682281}
   - component: {fileID: 7088265103212110363}
@@ -267,22 +266,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1032
   isInLastLevel: 0
+  isInClockTower: 0
   isDead: 0
   _checkpoint: {x: 0, y: 0, z: 0}
   respawnCooldown: 1
---- !u!114 &7536618188227937532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8259676102185292296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752fbd329233dd841aa7f33e0768a1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  havePocketWatch: 1
 --- !u!114 &3022865986171090042
 MonoBehaviour:
   m_ObjectHideFlags: 0

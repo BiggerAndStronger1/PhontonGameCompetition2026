@@ -35,7 +35,7 @@ public class ClockTower : MonoBehaviour
             }
 
             if (currentPhase == 1)
-                player.stats.havePocketWatch = false;
+                player.isInClockTower = true;
         }
 
         if (currentPhase == 0)
