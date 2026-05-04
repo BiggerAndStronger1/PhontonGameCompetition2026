@@ -175,8 +175,6 @@ public class Anim2D : MonoBehaviour
     private void OnEnable()
     {
         PlayAnimations(onEnableAnimations, animateOnEnable, false);
-
-
     }
 
     private void OnDisable()
@@ -426,7 +424,7 @@ public class Anim2D : MonoBehaviour
         // keep single initialAlpha for legacy CancelFade behavior when only one component present
         float initGroupAlpha = 0;
         if (initialImageAlphas.Length > 0)
-            { 
+        { 
             if (TryGetComponent<CanvasGroup>(out CanvasGroup group)) initGroupAlpha = group.alpha;
             initialAlpha = initialImageAlphas[0]; 
         }
