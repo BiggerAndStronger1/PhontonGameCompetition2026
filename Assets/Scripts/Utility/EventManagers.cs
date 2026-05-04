@@ -112,6 +112,10 @@ public enum GameEvents
     /// </summary>
     PlayAudio,
     /// <summary>
+    /// stops the audio played on a gameobject (single param event: GameObject)
+    /// </summary>
+    StopAudio,
+    /// <summary>
     /// triggered to use the mine skill (no param event)
     /// </summary>
     UseMineSkill,

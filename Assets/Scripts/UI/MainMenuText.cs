@@ -1,10 +1,16 @@
 
 using UnityEngine;
 
+public enum MainMenuOptions
+{
+    NewGame,
+    Continue,
+    Exit
+}
 public class MainMenuText : MonoBehaviour
 {
     private float initialRotationZ;
-
+    [SerializeField] private MainMenuOptions mainMenuOptions;
     void Start()
     {
         
@@ -20,6 +26,18 @@ public class MainMenuText : MonoBehaviour
     {
 
        if((transform.rotation.eulerAngles.magnitude - 0) > 0.1f) return;
-       print("main menu current button clicked");
+       switch (mainMenuOptions)
+       {
+            case MainMenuOptions.NewGame:
+                EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
+                break;
+            case MainMenuOptions.Continue:
+                GameManager.ContinueGame();
+                break;
+            case MainMenuOptions.Exit:
+                Application.Quit(0);
+                break;
+                
+       }
     }
 }

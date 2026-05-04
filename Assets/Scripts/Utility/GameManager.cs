@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BayatGames.SaveGameFree;
 using Unity.Collections;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -9,6 +10,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Audio;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -33,6 +35,7 @@ public class GameManager : MonoBehaviour
 {
     private static GraphicRaycaster _raycaster;
     private static EventSystem _eventSystem;
+    private static readonly string KLastSceneIndex = "KLastSceneIndex";
     public GraphicRaycaster raycaster;
     public EventSystem eventSystem;
     [SerializeField] private GameObject[] dontDestroys;
@@ -100,6 +103,14 @@ public class GameManager : MonoBehaviour
             }
             dontDestroySet = true;
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        SaveGame.Save(KLastSceneIndex, SceneManager.GetActiveScene().buildIndex);
+        print(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Start()
@@ -395,8 +406,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    
-
+    public static void ContinueGame()
+    {
+        var index = SaveGame.Load<int>(KLastSceneIndex);
+        SceneManager.LoadScene(index); 
+    }
 
     private void OnApplicationQuit()
     {

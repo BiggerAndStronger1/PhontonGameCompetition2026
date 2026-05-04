@@ -935,6 +935,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1564071228267235434}
     m_Modifications:
+    - target: {fileID: 74933012473914320, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
+      propertyPath: mainMenuOptions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1999473189229772583, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1015,6 +1019,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2180418958526699703, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
+      propertyPath: mainMenuOptions
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2629473877127786869, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1037,7 +1045,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4494984745514878482, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7352091718117050268, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
+      propertyPath: mainMenuOptions
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8582682126246554058, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
+      propertyPath: mainMenuOptions
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
