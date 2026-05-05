@@ -277,6 +277,7 @@ MonoBehaviour:
   cam: {fileID: 2320673171424921136}
   peaceBackground: {fileID: 995307224347000677}
   warBackground: {fileID: 6238531838071804958}
+  floorType: 2
 --- !u!1 &6238531838071804958
 GameObject:
   m_ObjectHideFlags: 0
