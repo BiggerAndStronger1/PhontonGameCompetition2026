@@ -34,14 +34,12 @@ public class AudioPlayer : MonoBehaviour
         clipList.RemoveAll((info => info.clip == null));
         EventManager2P<int, GameObject>.StartListening(GameEvents.PlayAudio, Play);
         EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, Switch);
-        EventManager1P<GameObject>.StartListening(GameEvents.StopAudio, Stop);
     }
 
     private void OnDestroy()
     {
         EventManager2P<int, GameObject>.StopListening(GameEvents.PlayAudio, Play);
         EventManager1P<WorldType>.StopListening(GameEvents.WordChanged, Switch);
-        EventManager1P<GameObject>.StopListening(GameEvents.StopAudio, Stop);
     }
 
     private void Switch(WorldType type)
@@ -71,12 +69,6 @@ public class AudioPlayer : MonoBehaviour
         if (clipInfo.type == AudioType.Music) audioSource.outputAudioMixerGroup = GameManager.GetAudioMixerGroup(AudioType.Music);
         else if (clipInfo.type == AudioType.SoundEffect) audioSource.outputAudioMixerGroup = GameManager.GetAudioMixerGroup(AudioType.SoundEffect);
         audioSource.Play();
-    }
-
-    private void Stop(GameObject go)
-    {
-        
-        if (go == gameObject) audioSource.Stop();
     }
 
 }
