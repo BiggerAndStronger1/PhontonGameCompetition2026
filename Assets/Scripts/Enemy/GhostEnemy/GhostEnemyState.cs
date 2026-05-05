@@ -30,14 +30,14 @@ public class GhostEnemyState : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+
         canHatrePlayer = WorldManager.instance.currentWorld == ghost.effectiveWorld;
 
         if (canHatrePlayer)
             currentState = GhostStateType.Idle;
         else
-            currentState = GhostStateType.Locked;
-           
-        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+            currentState = GhostStateType.Locked;     
     }
 
     private void OnEnable()
