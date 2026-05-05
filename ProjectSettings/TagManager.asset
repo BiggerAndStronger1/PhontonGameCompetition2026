@@ -8,6 +8,7 @@ TagManager:
   - checkpoint
   - Enemy
   - GameManager
+  - CamCollider
   layers:
   - Default
   - TransparentFX
