@@ -32,13 +32,12 @@ public class AudioPlayer : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         clipList.RemoveAll((info => info.clip == null));
-        EventManager2P<int, GameObject>.StartListening(GameEvents.PlayAudio, Play);
+
         EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, Switch);
     }
 
     private void OnDestroy()
     {
-        EventManager2P<int, GameObject>.StopListening(GameEvents.PlayAudio, Play);
         EventManager1P<WorldType>.StopListening(GameEvents.WordChanged, Switch);
     }
 
@@ -47,11 +46,11 @@ public class AudioPlayer : MonoBehaviour
         if (!autoSwitch || !ValidIndex(autoSwitchIndexPeace) || !ValidIndex(autoSwitchIndexWar)) return;
         if (type == WorldType.Peace)
         {
-            Play(autoSwitchIndexPeace, gameObject);
+            Play(autoSwitchIndexPeace);
         }
         else
         {
-            Play(autoSwitchIndexWar, gameObject);
+            Play(autoSwitchIndexWar);
         }
     }
 
@@ -60,9 +59,9 @@ public class AudioPlayer : MonoBehaviour
         return 0 <= index && index < clipList.Count;
     }
 
-    private void Play(int index, GameObject go)
+    public void Play(int index)
     {
-        if (go != gameObject) return;
+        print("play");
         audioSource.Stop();
         var clipInfo = clipList[index];
         audioSource.clip = clipInfo.clip;
@@ -71,4 +70,9 @@ public class AudioPlayer : MonoBehaviour
         audioSource.Play();
     }
 
+    public void Stop()
+    {
+        audioSource.Stop();
+        print("stop");
+    }
 }

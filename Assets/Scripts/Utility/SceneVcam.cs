@@ -3,11 +3,18 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class CamSwitchAndBackground : MonoBehaviour
+public enum FloorType
+{
+    Stone,
+    Grass,
+    Wood
+}
+public class SceneVcam : MonoBehaviour
 {
     [SerializeField] private CinemachineCamera cam;
     [SerializeField] private GameObject peaceBackground;
     [SerializeField] private GameObject warBackground;
+    public FloorType floorType;
     private void Awake()
     {
         EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, OnWordChange);
