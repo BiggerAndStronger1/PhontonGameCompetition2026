@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 public enum PropType
@@ -15,23 +16,24 @@ public class Props : MonoBehaviour
     protected PropType propType;
     protected bool isCollected;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (isCollected) return;
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             isCollected = true;
 
-            OnCollected(collision);
+            OnCollected(other);
 
             gameObject.SetActive(false);
         }
     }
 
-    protected virtual void OnCollected(Collision2D collision)
+    protected virtual void OnCollected(Collider2D other)
     {
-        Player player = collision.gameObject.GetComponent<Player>();
+        Player player = other.gameObject.GetComponent<Player>();
         if (player != null)
             EventManager1P<PropType>.TriggerEvent(GameEvents.PlayerCollectProps, propType);
     }
