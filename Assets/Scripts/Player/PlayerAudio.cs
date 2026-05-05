@@ -10,7 +10,13 @@ public class PlayerAudio : MonoBehaviour
     private Coroutine stopCoroutine;
     void Awake()
     {
-        
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldChangeAudio);
+    }
+
+    private void WorldChangeAudio()
+    {
+        motionAudioPlayer.audioSource.loop = false;
+        motionAudioPlayer.Play(11);
     }
 
     void Start()

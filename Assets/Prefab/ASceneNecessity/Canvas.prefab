@@ -300,7 +300,7 @@ MonoBehaviour:
   pocketWatch: {fileID: 2196488406395964851}
   disablePlayerInputFor:
   - {fileID: 2196488406395964851}
-  - {fileID: 0}
+  - {fileID: 5658331443027312528}
   - {fileID: 4920749153863201689}
   canvas: {fileID: 0}
 --- !u!1 &2196488406395964851
@@ -2183,6 +2183,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
+--- !u!1 &5658331443027312528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4494984745514878482, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
+  m_PrefabInstance: {fileID: 8135483038871468418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7735078586428884645 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1999473189229772583, guid: f32d3c3e87ae5cd49837d2163ded356f, type: 3}
