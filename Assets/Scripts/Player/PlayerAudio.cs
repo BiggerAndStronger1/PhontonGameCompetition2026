@@ -1,10 +1,13 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 public class PlayerAudio : MonoBehaviour
 {
     [SerializeField] private AudioPlayer motionAudioPlayer;
     private FloorType curFloorType;
+    private Coroutine stopCoroutine;
     void Awake()
     {
         
@@ -20,12 +23,34 @@ public class PlayerAudio : MonoBehaviour
         
     }
 
+    public void OnStateChange(PlayerMotionType type)
+    {
+        switch (type)
+        {
+            case PlayerMotionType.Idle:
+                motionAudioPlayer.audioSource.Stop();
+                break;
+            case PlayerMotionType.Move:
+                Walk();
+                break;
+            case PlayerMotionType.Climb:
+                motionAudioPlayer.audioSource.loop = true;
+                motionAudioPlayer.Play(0);
+                break;
+            case PlayerMotionType.Jump:
+                motionAudioPlayer.audioSource.loop = false;
+                motionAudioPlayer.Play(10);
+                break;
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("CamCollider")) curFloorType = other.GetComponent<SceneVcam>().floorType;
     }
 
-    private void Walk()
+    public void Walk()
     {
         motionAudioPlayer.audioSource.loop = true;
         switch (curFloorType)
@@ -42,7 +67,9 @@ public class PlayerAudio : MonoBehaviour
         }
     }
 
-    private void FallDown()
+    
+
+    public void FallDown()
     {
         motionAudioPlayer.audioSource.loop = false;
         switch (curFloorType)
