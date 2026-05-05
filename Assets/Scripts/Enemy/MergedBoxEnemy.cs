@@ -375,6 +375,7 @@ public class MergedBoxEnemy : MonoBehaviour
         return Physics2D.OverlapBox(boxCenter, boxSize, 0, whatIsGround);
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -390,4 +391,5 @@ public class MergedBoxEnemy : MonoBehaviour
             Gizmos.DrawLine(wayPoints[i].position, wayPoints[i + 1].position);
         }
     }
+#endif
 }

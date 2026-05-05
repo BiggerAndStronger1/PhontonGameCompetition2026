@@ -5952,6 +5952,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 718799144901677972, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
   m_PrefabInstance: {fileID: 2473218060539849426}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &679478131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4948439454681853443, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+  m_PrefabInstance: {fileID: 2473218060539849426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46194d2eacae5442a92714580d7576f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
 --- !u!1001 &702936426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82661,10 +82672,18 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5212562709181035875, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8259676102185292296, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9202287014319667978, guid: 8c10486e032e5f0458f4ff53970981dd, type: 3}
+      propertyPath: motionAudioPlayer
+      value: 
+      objectReference: {fileID: 679478131}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82993,11 +83012,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
