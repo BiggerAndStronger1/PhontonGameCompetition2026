@@ -20322,6 +20322,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2585412910848495674, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: floorType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4386728174079115686, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -49902,6 +49906,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_SpriteTileMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585412910848495674, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: floorType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2828207252847712499, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
@@ -80376,6 +80384,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585412910848495674, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: floorType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2828207252847712499, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
