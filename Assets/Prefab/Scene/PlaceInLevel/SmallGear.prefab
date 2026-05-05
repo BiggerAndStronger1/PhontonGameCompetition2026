@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4621161701906133566}
   - component: {fileID: 1056545085177457180}
   - component: {fileID: 3144906042657653337}
-  - component: {fileID: 6377749876433225205}
   m_Layer: 0
   m_Name: SmallGear
   m_TagString: Gear
@@ -124,7 +123,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -142,30 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c5471453252ad4f852d873c8da2419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmallGearScript
---- !u!50 &6377749876433225205
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3533830621728107364}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
