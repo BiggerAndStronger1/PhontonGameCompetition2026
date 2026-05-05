@@ -61,7 +61,6 @@ public class AudioPlayer : MonoBehaviour
 
     public void Play(int index)
     {
-        print("play");
         audioSource.Stop();
         var clipInfo = clipList[index];
         audioSource.clip = clipInfo.clip;
@@ -73,6 +72,5 @@ public class AudioPlayer : MonoBehaviour
     public void Stop()
     {
         audioSource.Stop();
-        print("stop");
     }
 }
