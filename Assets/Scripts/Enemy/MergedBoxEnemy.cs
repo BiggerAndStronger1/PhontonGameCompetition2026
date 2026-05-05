@@ -380,7 +380,7 @@ public class MergedBoxEnemy : MonoBehaviour
     {
         Gizmos.color = Color.green;
         if (needGear)
-            Gizmos.DrawWireSphere(rb.position, playerDetectRadius);
+            Gizmos.DrawWireSphere(transform.position, playerDetectRadius);
 
         Gizmos.color = Color.red;
         for (int i = 0; i < wayPoints.Count - 1; i++)
