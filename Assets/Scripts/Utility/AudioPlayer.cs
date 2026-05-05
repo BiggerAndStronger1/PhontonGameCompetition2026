@@ -14,7 +14,7 @@ public enum AudioType
 public class ClipInfo
 {
     public AudioClip clip;
-    public AudioType type;
+    public AudioType type = AudioType.SoundEffect;
 }
 [RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : MonoBehaviour
@@ -32,16 +32,13 @@ public class AudioPlayer : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         clipList.RemoveAll((info => info.clip == null));
-        EventManager2P<int, GameObject>.StartListening(GameEvents.PlayAudio, Play);
+
         EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, Switch);
-        EventManager1P<GameObject>.StartListening(GameEvents.StopAudio, Stop);
     }
 
     private void OnDestroy()
     {
-        EventManager2P<int, GameObject>.StopListening(GameEvents.PlayAudio, Play);
         EventManager1P<WorldType>.StopListening(GameEvents.WordChanged, Switch);
-        EventManager1P<GameObject>.StopListening(GameEvents.StopAudio, Stop);
     }
 
     private void Switch(WorldType type)
@@ -49,11 +46,11 @@ public class AudioPlayer : MonoBehaviour
         if (!autoSwitch || !ValidIndex(autoSwitchIndexPeace) || !ValidIndex(autoSwitchIndexWar)) return;
         if (type == WorldType.Peace)
         {
-            Play(autoSwitchIndexPeace, gameObject);
+            Play(autoSwitchIndexPeace);
         }
         else
         {
-            Play(autoSwitchIndexWar, gameObject);
+            Play(autoSwitchIndexWar);
         }
     }
 
@@ -62,9 +59,8 @@ public class AudioPlayer : MonoBehaviour
         return 0 <= index && index < clipList.Count;
     }
 
-    private void Play(int index, GameObject go)
+    public void Play(int index)
     {
-        if (go != gameObject) return;
         audioSource.Stop();
         var clipInfo = clipList[index];
         audioSource.clip = clipInfo.clip;
@@ -73,10 +69,8 @@ public class AudioPlayer : MonoBehaviour
         audioSource.Play();
     }
 
-    private void Stop(GameObject go)
+    public void Stop()
     {
-        
-        if (go == gameObject) audioSource.Stop();
+        audioSource.Stop();
     }
-
 }

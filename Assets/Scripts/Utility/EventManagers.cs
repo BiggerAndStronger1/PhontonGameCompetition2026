@@ -107,15 +107,6 @@ public enum GameEvents
     /// </summary>
     InventoryQuery,
     /// <summary>
-    /// given an index in the clipList in AudioPlayer script, play the corresponding clip on that GameObject
-    /// the GameObject passed in should be the same GameObject that the AudioPlayer script is attached on (two param event: int GameObject)
-    /// </summary>
-    PlayAudio,
-    /// <summary>
-    /// stops the audio played on a gameobject (single param event: GameObject)
-    /// </summary>
-    StopAudio,
-    /// <summary>
     /// triggered to use the mine skill (no param event)
     /// </summary>
     UseMineSkill,
