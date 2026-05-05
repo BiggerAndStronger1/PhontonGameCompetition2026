@@ -14,7 +14,7 @@ public enum AudioType
 public class ClipInfo
 {
     public AudioClip clip;
-    public AudioType type;
+    public AudioType type = AudioType.SoundEffect;
 }
 [RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : MonoBehaviour
