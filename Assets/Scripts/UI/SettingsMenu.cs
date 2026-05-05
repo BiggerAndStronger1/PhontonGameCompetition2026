@@ -3,12 +3,11 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Anim2D))]
 public class SettingsMenu : MonoBehaviour, ICanvasManager
 {
     [SerializeField]private Slider musicSlider;
     [SerializeField] private Slider soundEffectSlider;
-    [SerializeField] private GameObject mainMenu;
+
     public void ForcedAwake()
     {
         
@@ -55,14 +54,5 @@ public class SettingsMenu : MonoBehaviour, ICanvasManager
         GameManager.GetAudioMixerGroup(AudioType.SoundEffect).audioMixer.SetFloat("SoundEffectVolume", db);
     }
 
-    public void Resume()
-    {
-        GetComponent<Anim2D>().AnimatedDisable();
-    }
-
-    public void MainMenu()
-    {
-        GetComponent<Anim2D>().AnimatedDisable();
-        mainMenu.SetActive(true);
-    }
+    
 }

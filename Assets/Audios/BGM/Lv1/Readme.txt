@@ -1,2 +1,0 @@
-大佬，level1的背景音乐用intro+loop的形式
-直接一个event连接
