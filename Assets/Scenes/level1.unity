@@ -3379,6 +3379,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485664638}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+=======
+--- !u!1 &488392130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8915580507803008889, guid: 6a38ad3d714324c45a7f8e4529109186, type: 3}
+  m_PrefabInstance: {fileID: 7799992594395019931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &488392133
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488392130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4449fe3ac3cf1474893f95c72b3ba919, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+>>>>>>> 88155bc1c18496d2125e010d6639378183b1de13
 --- !u!1 &491261653
 GameObject:
   m_ObjectHideFlags: 0
@@ -81579,11 +81609,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1682395190878794057, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9193675876231689022, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+=======
+    - target: {fileID: 5658331443027312528, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600171812385142314, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+>>>>>>> 88155bc1c18496d2125e010d6639378183b1de13
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
