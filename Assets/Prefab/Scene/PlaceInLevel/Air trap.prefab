@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.97, y: -2.37, z: 0}
-  m_LocalScale: {x: 1, y: 0.4875, z: 1}
+  m_LocalScale: {x: 0.09602367, y: 0.105366096, z: 0.35525247}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5033629273481907551}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38d9cdfa5c26a3a449860d1dbbd8a774, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac3a4bd1c5eb254999780e5534f2019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Airtrap
-  pushStrength: 5000
+  pushStrength: 500
   _active: 0
 --- !u!61 &4537884305606651971
 BoxCollider2D:
@@ -142,17 +142,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 5.125623}
+  m_Offset: {x: -2.5766594, y: 7.7247896}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 14.4, y: 14.4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 10.82858}
+  m_Size: {x: 6.153319, y: 16.02691}
   m_EdgeRadius: 0
 --- !u!1001 &7770623740068249795
 PrefabInstance:
@@ -163,16 +163,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 8741901259214297800}
     m_Modifications:
     - target: {fileID: 3318526449985113500, guid: b3553eca158bf24428d99e44b7149112, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3318526449985113500, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.71
+      value: -22.23
       objectReference: {fileID: 0}
     - target: {fileID: 3318526449985113500, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.02
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 3318526449985113500, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: m_LocalPosition.z
