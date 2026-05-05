@@ -73,7 +73,7 @@ public class Player : MonoBehaviour, IKillBySpike, ICanAddStress
             return;
         }
 
-        if (playerActions.SwitchWorld.triggered && !isInLastLevel && !isInClockTower)
+        if (playerActions.SwitchWorld.WasPressedThisFrame() && !isInLastLevel && !isInClockTower)
         {
             if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.PocketWatch) > 0)
                 EventManagerNP.TriggerEvent(GameEvents.SwitchWorld);
