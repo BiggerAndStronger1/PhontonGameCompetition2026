@@ -16,11 +16,26 @@ public enum PlayerMotionType
 [RequireComponent(typeof(Player))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnim))]
+[RequireComponent(typeof(PlayerAudio))]
 public class PlayerMotion : MonoBehaviour
 {
     protected Player player;
     protected Rigidbody2D rb;
-    public PlayerMotionType currentState;
+    private PlayerMotionType _currentState;
+    private PlayerAudio playerAudio;
+    
+    public PlayerMotionType currentState
+    {
+        get
+        {
+            return _currentState;
+        }
+        set
+        {
+            _currentState = value;
+            playerAudio.OnStateChange(value);
+        }
+    }
     private float defaultGravity;
     private PlayerAnim playerAnim;
     private Transform followTransform;
@@ -31,7 +46,7 @@ public class PlayerMotion : MonoBehaviour
         player = GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnim>();
-        
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     private void Start()

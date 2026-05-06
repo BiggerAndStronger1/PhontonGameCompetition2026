@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Image = UnityEngine.UI.Image;
-
 [RequireComponent(typeof(Canvas))]
+
+[RequireComponent(typeof(AudioPlayer))]
 public class CanvasManager : MonoBehaviour
 {
     private static InputSystem_Actions actions;
@@ -15,6 +17,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject pocketWatch;
     [SerializeField] private List<GameObject> disablePlayerInputFor;
     [SerializeField] private Canvas canvas;
+    private AudioPlayer audioPlayer;
     private void Awake()
     {
         if (actions == null)
@@ -23,6 +26,7 @@ public class CanvasManager : MonoBehaviour
             actionsUI = actions.UI;
         }
         canvas = GetComponent<Canvas>();
+        audioPlayer = GetComponent<AudioPlayer>();
         actionsUI.Enable();
         EventManagerNP.StartListening(GameEvents.MainMenuEnable, (() => mainMenu.SetActive(true)));
         EventManagerNP.StartListening(GameEvents.MainMenuDisable, () => mainMenu.SetActive(false));
@@ -67,13 +71,27 @@ public class CanvasManager : MonoBehaviour
     {
         if (actionsUI.Settings.WasPressedThisFrame())
         {
-            if (settingsMenu.activeSelf) settingsMenu.GetComponent<Anim2D>().AnimatedDisable();
-            else if (!settingsMenu.activeSelf) settingsMenu.SetActive(true);
+            if (settingsMenu.activeSelf)
+            {
+                audioPlayer.Play(1);
+                settingsMenu.GetComponent<Anim2D>().AnimatedDisable();
+            }
+            else if (!settingsMenu.activeSelf)
+            {
+                settingsMenu.SetActive(true);
+                audioPlayer.Play(0);
+            }
             
         }
         else if (CanvasManager.actionsUI.Pocketwatch.WasPressedThisFrame())
         {
             EventManager1P<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
+        }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame &&
+            (mainMenu.activeInHierarchy || settingsMenu.activeInHierarchy))
+        {
+            audioPlayer.Play(2);
         }
 
         bool disablePlayerInput = disablePlayerInputFor.Exists((o => o.activeInHierarchy));

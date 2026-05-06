@@ -1,13 +1,22 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 public class PlayerAudio : MonoBehaviour
 {
-    [SerializeField] private AudioPlayer motionAudioPlayer;
+    [SerializeField] private AudioPlayer audioPlayer;
     private FloorType curFloorType;
+    private Coroutine stopCoroutine;
     void Awake()
     {
-        
+        EventManagerNP.StartListening(GameEvents.SwitchWorld, WorldChangeAudio);
+    }
+
+    private void WorldChangeAudio()
+    {
+        audioPlayer.audioSource.loop = false;
+        audioPlayer.Play(11);
     }
 
     void Start()
@@ -20,41 +29,65 @@ public class PlayerAudio : MonoBehaviour
         
     }
 
+    public void OnStateChange(PlayerMotionType type)
+    {
+        switch (type)
+        {
+            case PlayerMotionType.Idle:
+                audioPlayer.audioSource.Stop();
+                break;
+            case PlayerMotionType.Move:
+                Walk();
+                break;
+            case PlayerMotionType.Climb:
+                audioPlayer.audioSource.loop = true;
+                audioPlayer.Play(0);
+                break;
+            case PlayerMotionType.Jump:
+                audioPlayer.audioSource.loop = false;
+                audioPlayer.Play(10);
+                break;
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("CamCollider")) curFloorType = other.GetComponent<SceneVcam>().floorType;
     }
 
-    private void Walk()
+    public void Walk()
     {
-        motionAudioPlayer.audioSource.loop = true;
+        audioPlayer.audioSource.loop = true;
         switch (curFloorType)
         {
             case FloorType.Grass:
-                motionAudioPlayer.Play(1);
+                audioPlayer.Play(1);
                 break;
             case FloorType.Stone:
-                motionAudioPlayer.Play(2);
+                audioPlayer.Play(2);
                 break;
             case FloorType.Wood:
-                motionAudioPlayer.Play(3);
+                audioPlayer.Play(3);
                 break;
         }
     }
 
-    private void FallDown()
+    
+
+    public void FallDown()
     {
-        motionAudioPlayer.audioSource.loop = false;
+        audioPlayer.audioSource.loop = false;
         switch (curFloorType)
         {
             case FloorType.Grass:
-                motionAudioPlayer.Play(4);
+                audioPlayer.Play(4);
                 break;
             case FloorType.Stone:
-                motionAudioPlayer.Play(5);
+                audioPlayer.Play(5);
                 break;
             case FloorType.Wood:
-                motionAudioPlayer.Play(6);
+                audioPlayer.Play(6);
                 break;
         }
     }

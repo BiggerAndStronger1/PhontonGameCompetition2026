@@ -11,7 +11,6 @@ public class AnimatedText : MonoBehaviour, ICanvasManager
     private Anim2D anim2D;
     public void ForcedAwake()
     {
-        GetComponent<CanvasGroup>().alpha = 0f;
         blocking.GetComponent<CanvasGroup>().alpha = 1f;
         anim2D = GetComponent<Anim2D>();
         anim2D.OnFadeComplete = Play;
@@ -19,10 +18,7 @@ public class AnimatedText : MonoBehaviour, ICanvasManager
 
     public void ForcedStart()
     {
-
-    }
-    private void OnEnable()
-    {
+        
     }
 
     private void Update()

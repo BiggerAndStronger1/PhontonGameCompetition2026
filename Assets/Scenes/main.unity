@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: onDisableAnimations.Array.data[0].animationType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5658331443027312528, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6569259463136092260, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
       propertyPath: m_Name
       value: name list
@@ -694,6 +698,10 @@ PrefabInstance:
     - target: {fileID: 6569259463136092260, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193675876231689022, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

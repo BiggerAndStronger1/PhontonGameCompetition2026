@@ -1,16 +1,20 @@
 using System;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+
+[RequireComponent(typeof(Anim2D))]
 public class SettingsMenu : MonoBehaviour, ICanvasManager
 {
     [SerializeField]private Slider musicSlider;
     [SerializeField] private Slider soundEffectSlider;
-
+    [SerializeField] private GameObject mainMenu;
+    private AudioPlayer audioPlayer;
     public void ForcedAwake()
     {
-        
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     public void ForcedStart()
@@ -54,5 +58,15 @@ public class SettingsMenu : MonoBehaviour, ICanvasManager
         GameManager.GetAudioMixerGroup(AudioType.SoundEffect).audioMixer.SetFloat("SoundEffectVolume", db);
     }
 
-    
+    public void Continue()
+    {
+        audioPlayer.Play(0);
+        GetComponent<Anim2D>().AnimatedDisable();
+    }
+
+    public void MainMenu()
+    {
+        GetComponent<Anim2D>().AnimatedDisable();
+        mainMenu.SetActive(true);
+    }
 }
