@@ -593,7 +593,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &96042758
 AudioSource:
   m_ObjectHideFlags: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &125819506
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19927,7 +19927,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &215360797
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27621,7 +27621,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &352958530
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28046,7 +28046,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &381381310
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29539,7 +29539,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &496307079
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29768,7 +29768,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &499594159
 AudioSource:
   m_ObjectHideFlags: 0
@@ -42707,7 +42707,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &715842326
 AudioSource:
   m_ObjectHideFlags: 0
@@ -43006,7 +43006,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &760326659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48686,11 +48686,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52491,7 +52491,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &1738812841
 AudioSource:
   m_ObjectHideFlags: 0
@@ -52724,7 +52724,7 @@ MonoBehaviour:
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0
 --- !u!82 &1752059474
 AudioSource:
   m_ObjectHideFlags: 0

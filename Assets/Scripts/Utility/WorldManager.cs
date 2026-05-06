@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum WorldType
 {
@@ -64,7 +65,10 @@ public class WorldManager : MonoBehaviour
 
     private void Start()
     {
-        currentWorld = WorldType.Peace;
+        if (SceneManager.GetActiveScene().name == "level3")
+            currentWorld = WorldType.War;
+        else
+            currentWorld = WorldType.Peace;
         print("œ÷‘⁄ «£∫" + currentWorld);
     }
 

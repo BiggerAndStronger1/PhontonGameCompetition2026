@@ -43,7 +43,9 @@ public class Teleportable : MonoBehaviour
         if (target != transform || !canTeleport)
             return;
 
-        rb.MovePosition(rb.position + (Vector2)deltaPosition);
+        Vector2 pos = rb.position + (Vector2)deltaPosition;
+        rb.position = pos;
+
         teleportTimer = teleportCooldown;
         canTeleport = false;
     }
