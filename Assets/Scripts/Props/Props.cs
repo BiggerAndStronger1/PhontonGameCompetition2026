@@ -16,10 +16,10 @@ public class Props : MonoBehaviour
     protected PropType propType;
     protected bool isCollected;
 
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (isCollected) return;
+        if (isCollected)
+            return;
 
         if (other.gameObject.CompareTag("Player"))
         {
@@ -31,7 +31,8 @@ public class Props : MonoBehaviour
         }
     }
 
-    protected virtual void OnCollected(Collider2D other)
+
+    protected virtual void OnCollected(Collision2D other)
     {
         Player player = other.gameObject.GetComponent<Player>();
         if (player != null)
