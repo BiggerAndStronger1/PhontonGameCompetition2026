@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 1624572479601344291}
   - component: {fileID: 4595624798748128678}
   - component: {fileID: 7752891508415022167}
-  - component: {fileID: 653284379045033438}
+  - component: {fileID: 7169823499508435272}
   m_Layer: 5
   m_Name: animated text
   m_TagString: Untagged
@@ -120,7 +120,7 @@ RectTransform:
   m_GameObject: {fileID: 4187912078782650589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4684999, y: 1.4684999, z: 1.4684999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2569629292751106315}
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dd
+  m_text: "\u7A0B\u5E8F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aee1a9b7d0c6b1e47ad34091f073b828, type: 2}
   m_sharedMaterial: {fileID: 4121512253260316584, guid: aee1a9b7d0c6b1e47ad34091f073b828, type: 2}
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Anim2D
   disableTarget: {fileID: 0}
   animateOnEnable: 1
-  animateOnDisable: 1
+  animateOnDisable: 0
   onEnableAnimations:
   - animationType: 3
     duration: 2
@@ -283,7 +283,7 @@ MonoBehaviour:
     targetV3: {x: 0, y: 0, z: 0}
   onDisableAnimations: []
   fadeAll: 1
---- !u!225 &653284379045033438
+--- !u!225 &7169823499508435272
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -291,10 +291,10 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4187912078782650589}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
 --- !u!1001 &210561899526149552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -353,6 +353,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1052417047284636539, guid: 1f6741836b1ccda48b60496a8ca81d75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077558259183900297, guid: 1f6741836b1ccda48b60496a8ca81d75, type: 3}
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2077558259183900297, guid: 1f6741836b1ccda48b60496a8ca81d75, type: 3}
