@@ -103,12 +103,12 @@ TextureImporter:
       name: TopPeaceWar_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 0
-        width: 1422
-        height: 1429
+        x: 0
+        y: 930
+        width: 480
+        height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,11 +121,121 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TopPeaceWar_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 930
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e3090e9fb860349806f4c52335a449
+      internalID: -1082905452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopPeaceWar_2
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 930
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba0910671912ea49a5a4d9c44db77f7
+      internalID: 240203234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopPeaceWar_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96036042be16a7849935212e30e0ebea
+      internalID: -1355828688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopPeaceWar_4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 450
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40deabb0a73dcdd4082bc842ae2a4046
+      internalID: 255456788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopPeaceWar_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 450
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dec69e9eb638a48aafc7215300a9fa
+      internalID: 981171524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aac0ad55f8d83c043934e23d41c9b04c
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +243,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":480.0,"y":480.0},"gridSpriteOffset":{"x":0.0,"y":30.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       TopPeaceWar_0: 6570148841119600641
+      TopPeaceWar_1: -1082905452
+      TopPeaceWar_2: 240203234
+      TopPeaceWar_3: -1355828688
+      TopPeaceWar_4: 255456788
+      TopPeaceWar_5: 981171524
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
