@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7330186157371317813}
   - component: {fileID: 2974197164256504193}
   - component: {fileID: 3323584311092393554}
+  - component: {fileID: 4668754569902153576}
+  - component: {fileID: 8220608350965589609}
   m_Layer: 0
   m_Name: PlayerSkillManager
   m_TagString: Untagged
@@ -84,6 +86,122 @@ MonoBehaviour:
   explosionRadius: 2
   duration: 3
   receivedExplosionForce: 5
+--- !u!82 &4668754569902153576
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134692775455487486}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8220608350965589609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134692775455487486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46194d2eacae5442a92714580d7576f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
+  clipList:
+  - clip: {fileID: 8300000, guid: 3ea814a14291b99449d27eaf362a0727, type: 3}
+    type: 0
+  autoSwitch: 0
+  autoSwitchIndexWar: 0
+  autoSwitchIndexPeace: 0
+  OnCanvas: 0
 --- !u!1 &8259676102185292296
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,30 +580,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioPlayer
   clipList:
   - clip: {fileID: 8300000, guid: 86817e8fc024bb54080c70f148a0e8e5, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 4a67343b88ece304ab557cede39260b8, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 39e6d8b96e14aca4fa97cf2b3d7abf48, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 1a7d2f0b44fff874585d1973a913e3ba, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: fd0bc6579a7f46344a9c27c2e750d6e5, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 444dae6c5cf2c234f8f8d876c8f9d1e7, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 2aeeb2473938b6345a90e4effd25fcbb, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 4a67343b88ece304ab557cede39260b8, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 39e6d8b96e14aca4fa97cf2b3d7abf48, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 1a7d2f0b44fff874585d1973a913e3ba, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: a30516f2938df8b4fa78304e6d16d7ab, type: 3}
-    type: 1
+    type: 0
   - clip: {fileID: 8300000, guid: 0a4793ab04c23724fbc34c072f7b1258, type: 3}
-    type: 1
+    type: 0
   autoSwitch: 0
   autoSwitchIndexWar: 0
   autoSwitchIndexPeace: 0
-  audioSource: {fileID: 0}
+  OnCanvas: 0

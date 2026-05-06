@@ -7,8 +7,8 @@ using UnityEngine.Rendering.UI;
 
 public enum AudioType
 {
-    Music,
     SoundEffect,
+    Music,
 }
 [Serializable]
 public class ClipInfo

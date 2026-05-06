@@ -16,11 +16,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public enum SaveKey
-{
-    
-}
-
 [Serializable]
 public class SceneRef
 {

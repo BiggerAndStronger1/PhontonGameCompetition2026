@@ -5,9 +5,8 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
-
-
 [RequireComponent(typeof(Anim2D))]
+[RequireComponent(typeof(AudioPlayer))]
 public class PocketWatchUI : MonoBehaviour, ICanvasManager
 {
     [SerializeField] private Animator pointerAnimator;
@@ -21,6 +20,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     private bool triggered;
     private Coroutine rotationCoroutine;
     private Anim2D anim2D;
+    private AudioPlayer audioPlayer;
     public void ForcedAwake()
     {
         smallGearSlots = smallSlotsParent.GetComponentsInChildren<Slot>().ToList();
@@ -30,7 +30,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         EventManager2P<int, PropType>.StartListening(GameEvents.ConsumeGear, Consume);
         EventManagerReturn1P<PropType, int>.StartListening(GameEvents.InventoryQuery, Check);
         anim2D = GetComponent<Anim2D>();
-        
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     public void ForcedStart()
@@ -170,6 +170,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
         {
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.UseGear, 1, slot.type.Value);
             slot.Use();
+            audioPlayer.Play(0);
             Toggle(false);
         }
     }

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -14,6 +15,13 @@ public class MineGearSkill : Skill
     [Tooltip("the strength of the explosion received")]
     [SerializeField]
     private int receivedExplosionForce = 1;
+
+    private AudioPlayer audioPlayer;
+
+    private void Awake()
+    {
+        audioPlayer = GetComponent<AudioPlayer>();
+    }
 
     private void OnEnable()
     {
@@ -51,6 +59,7 @@ public class MineGearSkill : Skill
     protected override void UseSkill()
     {
         base.UseSkill();
+        audioPlayer.Play(0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, Mathf.Infinity, ~LayerMask.GetMask("Player", "Ignore Raycast"));
         if (hit.transform.TryGetComponent<BoxCollider2D>(out var component))
         {
@@ -61,20 +70,9 @@ public class MineGearSkill : Skill
         }
         else
         {
-            MineGearController go = Instantiate(mineGearPrefab, GetPlayerBottom(), transform.rotation).GetComponent<MineGearController>();
+            MineGearController go = Instantiate(mineGearPrefab, transform.position, transform.rotation).GetComponent<MineGearController>();
             go.Detonate(explosionRadius, duration, receivedExplosionForce);
         }
-    }
-
-
-
-    Vector3 GetPlayerBottom()
-    {
-        CapsuleCollider2D col = player.GetComponent<CapsuleCollider2D>();
-
-        return (Vector2)player.transform.position
-                         + col.offset
-                         - Vector2.up * (col.size.y / 2f - col.size.x / 2f);
     }
 
     private Vector2 GetSpawnPointUnderBox(BoxCollider2D box, CircleCollider2D circle)
