@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
-
+[RequireComponent(typeof(AudioPlayer))]
 public class ChaseEnemy : MonoBehaviour, IFragile
 {
     [Header("Move Info")]
@@ -12,6 +12,7 @@ public class ChaseEnemy : MonoBehaviour, IFragile
     [Header("Attack Info")]
     private Player player;
     public float hatredRadius;
+    private bool stepInRange = false;
 
     private Vector3 originalPosition;
 
@@ -25,6 +26,7 @@ public class ChaseEnemy : MonoBehaviour, IFragile
     public SpriteRenderer sr { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public Collider2D cd { get; private set; }
+    private AudioPlayer audioPlayer;
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class ChaseEnemy : MonoBehaviour, IFragile
         sr = GetComponent<SpriteRenderer>();
         cd = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Start()
@@ -49,18 +52,31 @@ public class ChaseEnemy : MonoBehaviour, IFragile
 
         if (Vector2.Distance(transform.position, player.transform.position) < hatredRadius)
         {
+            if (!stepInRange)
+            {
+                stepInRange = true;
+                audioPlayer.audioSource.loop = false;
+                audioPlayer.Play(1);
+            }
             Vector2 delta = (player.transform.position - transform.position).normalized;
             rb.linearVelocity = new Vector2(delta.x * moveSpeed.x, delta.y * moveSpeed.y);
             FlipController(rb.linearVelocityX);
         }
         else
+        {
+            stepInRange = false;
+            audioPlayer.Stop();
             rb.linearVelocity = Vector2.zero;
+        }
     }
 
     private void ChaseEnemyDie()
     {
         isDead = true;
         print("chase enemy Die!");
+        audioPlayer.Stop();
+        audioPlayer.audioSource.loop = false;
+        audioPlayer.Play(0);
 
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;

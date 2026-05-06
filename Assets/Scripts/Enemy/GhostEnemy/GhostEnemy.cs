@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(TwoWorldExist))]
+[RequireComponent(typeof(AudioPlayer))]
 public class GhostEnemy : MonoBehaviour, IKillBySpike
 {
     [Header("Move Info")]
@@ -29,6 +30,7 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     public SpriteRenderer sr { get; private set; }
     public Collider2D cd { get; private set; }
     private TwoWorldExist twe;
+    private AudioPlayer audioPlayer;
 
     private void Awake()
     {
@@ -37,6 +39,7 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
         sr = GetComponent<SpriteRenderer>();
         cd = GetComponent<Collider2D>();
         twe = GetComponent<TwoWorldExist>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void OnEnable()
@@ -88,6 +91,9 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
     {
         isDead = true;
         print("ghost enemy Die!");
+        audioPlayer.Stop();
+        audioPlayer.audioSource.loop = false;
+        audioPlayer.Play(0);
 
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;

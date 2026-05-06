@@ -12,6 +12,7 @@ public enum SniperState
 
 [Serializable]
 [RequireComponent(typeof(TwoWorldExist))]
+[RequireComponent(typeof(AudioPlayer))]
 public class Sniper : MonoBehaviour, IFragile, IKillBySpike
 {
     [Tooltip("time required for sniper to attack player")]
@@ -30,6 +31,7 @@ public class Sniper : MonoBehaviour, IFragile, IKillBySpike
     [SerializeField] private SniperState currentState;
     private float cooldownTimer;
     private TwoWorldExist twe;
+    private AudioPlayer audioPlayer;
 
     private Coroutine execution;
     private void Awake()
@@ -37,6 +39,7 @@ public class Sniper : MonoBehaviour, IFragile, IKillBySpike
         if (eyeTransform == null) eyeTransform = transform;
 
         twe = GetComponent<TwoWorldExist>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void OnEnable()
@@ -148,6 +151,8 @@ public class Sniper : MonoBehaviour, IFragile, IKillBySpike
 
         Vector2 shootDir = (player.transform.position - eyeTransform.position).normalized;
         newArrowScript.SetUpArrow(arrowLife, new Vector2 (shootDir.x * arrowVelocity, shootDir.y * arrowVelocity));
+        audioPlayer.audioSource.loop = false;
+        audioPlayer.Play(0);
 
         currentState = SniperState.Cooldown;
         cooldownTimer = endCooldownDuration;

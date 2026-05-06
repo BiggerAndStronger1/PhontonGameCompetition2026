@@ -11,12 +11,14 @@ public enum GhostStateType
 [RequireComponent(typeof(GhostEnemy))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(TwoWorldExist))]
+[RequireComponent(typeof(AudioPlayer))]
 public class GhostEnemyState : MonoBehaviour
 {
     private GhostEnemy ghost;
     private Rigidbody2D rb;
     private Player player;
     private TwoWorldExist twe;
+    private AudioPlayer audioPlayer;
     [SerializeField] private bool canHatrePlayer;
 
     public GhostStateType currentState;
@@ -26,6 +28,7 @@ public class GhostEnemyState : MonoBehaviour
         ghost = GetComponent<GhostEnemy>();
         rb = GetComponent<Rigidbody2D>();
         twe = GetComponent<TwoWorldExist>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Start()
@@ -138,6 +141,8 @@ public class GhostEnemyState : MonoBehaviour
     private void HatredEnter()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
+        audioPlayer.audioSource.loop = false;
+        audioPlayer.Play(1);
     }
 
     private void HatredExit()

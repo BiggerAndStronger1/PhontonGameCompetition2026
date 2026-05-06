@@ -12,6 +12,7 @@ public enum BoxState
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(TwoWorldExist))]
+[RequireComponent(typeof(AudioPlayer))]
 public class MergedBoxEnemy : MonoBehaviour
 {
     [Header("Move Info")]
@@ -22,6 +23,7 @@ public class MergedBoxEnemy : MonoBehaviour
     [SerializeField] private bool canPause;
     [SerializeField] private float pauseDuration;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private BoxState currentState;
     private bool hasFallen = false;
     private bool isFalling = false;
     private int dir;
@@ -39,10 +41,11 @@ public class MergedBoxEnemy : MonoBehaviour
     [SerializeField] private WorldType effectiveWorld;
     [SerializeField] private bool canStartMoving = false;
 
-
+    [Header("Audio Info")]
+    [SerializeField] private float audioPlayRadius;
+    private AudioPlayer audioPlayer;
     private float pauseTimer;
     private bool isPaused;
-    [SerializeField] private BoxState currentState;
 
     private Player player;
     private Rigidbody2D rb;
@@ -50,12 +53,14 @@ public class MergedBoxEnemy : MonoBehaviour
     private TwoWorldExist twe;
     private int currentIndex;
     private int nextIndex;
+    private int audioIndex;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         cd = GetComponent<Collider2D>();
         twe = GetComponent<TwoWorldExist>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     private void Start()
@@ -255,6 +260,14 @@ public class MergedBoxEnemy : MonoBehaviour
             nextIndex = currentIndex + dir;
         }
 
+        if (!audioPlayer.audioSource.isPlaying && Vector2.Distance(transform.position, player.transform.position) < audioPlayRadius)
+        {
+            audioPlayer.Play(audioIndex);
+
+            audioIndex++;
+            audioIndex %= audioPlayer.clipList.Count;
+        }
+
         if (!CanMove())
             ChangeState(BoxState.Idle);
         if (useGravity && !IsGroundDetected())
@@ -390,6 +403,9 @@ public class MergedBoxEnemy : MonoBehaviour
 
             Gizmos.DrawLine(wayPoints[i].position, wayPoints[i + 1].position);
         }
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, audioPlayRadius);
     }
 #endif
 }
