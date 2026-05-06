@@ -20787,11 +20787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Size.x
-      value: 18
+      value: 25.6
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Size.y
-      value: 10
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Sprite
@@ -20864,6 +20864,14 @@ PrefabInstance:
     - target: {fileID: 7842041422370981350, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Name
       value: CinemachineCamera (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371632800776090714, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: m_Size.x
+      value: 25.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371632800776090714, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: m_Size.y
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 8371632800776090714, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Sprite
@@ -79723,11 +79731,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Size.x
-      value: 18
+      value: 25.6
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Size.y
-      value: 10
+      value: 14.4
       objectReference: {fileID: 0}
     - target: {fileID: 2492414488343128429, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Sprite
@@ -79816,6 +79824,14 @@ PrefabInstance:
     - target: {fileID: 8060997462303461957, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371632800776090714, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: m_Size.x
+      value: 25.999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 8371632800776090714, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      propertyPath: m_Size.y
+      value: 14.624999
       objectReference: {fileID: 0}
     - target: {fileID: 8371632800776090714, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       propertyPath: m_Sprite
@@ -82458,7 +82474,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y

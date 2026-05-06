@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9210f52bcf79e524998e01f35ba56156
+guid: 75f569f26c39bb740a0bca2988fe5e0e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2640146358160310383
-    second: War_03_0
+      213: 5577598778231146297
+    second: War_13_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: War_03_0
+      name: War_13_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2560
-        height: 1440
+        width: 5120
+        height: 1278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f60cf29ef1fa3a420800000000000000
-      internalID: 2640146358160310383
+      spriteID: 937ce14998c976d40800000000000000
+      internalID: 5577598778231146297
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      War_03_0: 2640146358160310383
+      War_13_0: 5577598778231146297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
