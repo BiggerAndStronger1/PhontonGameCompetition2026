@@ -17,7 +17,7 @@ public class ClipInfo
     public AudioType type = AudioType.SoundEffect;
 }
 [RequireComponent(typeof(AudioSource))]
-public class AudioPlayer : MonoBehaviour
+public class AudioPlayer : MonoBehaviour,ICanvasManager
 {
     public List<ClipInfo> clipList;
     [Tooltip("auto switches the war and peace audio based on the current world type")]
@@ -26,14 +26,39 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField]private int autoSwitchIndexWar;
     [Tooltip("the index of the clip in clipList to play at world state peace")]
     [SerializeField]private int autoSwitchIndexPeace;
+    [NonSerialized]
     public AudioSource audioSource;
-    
-    void Awake()
+    [SerializeField] private bool OnCanvas;
+
+
+    private void Awake()
+    {
+        if (!OnCanvas){
+            audioSource = GetComponent<AudioSource>();
+            Assert.IsNotNull(audioSource);
+            clipList.RemoveAll((info => info.clip == null));
+
+            EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, Switch);
+        }
+    }
+
+    public void ForcedAwake()
     {
         audioSource = GetComponent<AudioSource>();
+        Assert.IsNotNull(audioSource);
         clipList.RemoveAll((info => info.clip == null));
 
         EventManager1P<WorldType>.StartListening(GameEvents.WordChanged, Switch);
+    }
+
+    public void ForcedStart()
+    {
+
+    }
+
+    public void ForcedOnApplicationQuit()
+    {
+
     }
 
     private void OnDestroy()
@@ -73,4 +98,6 @@ public class AudioPlayer : MonoBehaviour
     {
         audioSource.Stop();
     }
+
+    
 }

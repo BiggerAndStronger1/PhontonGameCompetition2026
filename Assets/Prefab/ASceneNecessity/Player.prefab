@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
-  jumpForce: 5
+  jumpForce: 8
   canClimbLadder: 0
   whatIsGround:
     serializedVersion: 2
@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66ed8a556e8bdc41ae1ee2a15d0c0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  motionAudioPlayer: {fileID: 4948439454681853443}
+  audioPlayer: {fileID: 4948439454681853443}
 --- !u!82 &288124153355319574
 AudioSource:
   m_ObjectHideFlags: 0
