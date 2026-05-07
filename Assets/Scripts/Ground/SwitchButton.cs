@@ -54,7 +54,12 @@ public class SwitchButton : MonoBehaviour
 
     private bool Condition()
     {
-        if (!unlocked) unlocked = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, propType) >= quantity;
+        if (!unlocked)
+        {
+            unlocked = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, propType) >=
+                       quantity;
+            if (unlocked) EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, quantity, propType);
+        }
         return unlocked;
     }
 }
