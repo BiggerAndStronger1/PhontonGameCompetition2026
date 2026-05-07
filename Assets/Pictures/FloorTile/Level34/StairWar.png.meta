@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,10 +106,10 @@ TextureImporter:
       name: StairWar_0
       rect:
         serializedVersion: 2
-        x: 560
-        y: 880
-        width: 400
-        height: 400
+        x: 490
+        y: 950
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: StairWar_1
       rect:
         serializedVersion: 2
-        x: 960
-        y: 880
-        width: 400
-        height: 400
+        x: 790
+        y: 950
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: StairWar_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 480
-        width: 400
-        height: 400
+        x: 1090
+        y: 950
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: StairWar_3
       rect:
         serializedVersion: 2
-        x: 560
-        y: 480
-        width: 400
-        height: 400
+        x: 190
+        y: 650
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: StairWar_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 80
-        width: 400
-        height: 400
+        x: 490
+        y: 650
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,6 +208,72 @@ TextureImporter:
       bones: []
       spriteID: 24ab676b187f32f4394c4c426aec25f0
       internalID: -140471750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairWar_5
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 650
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995c58721f6d51b42b840e2e44a01141
+      internalID: -1796707878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairWar_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 350
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f1c5be09823d746bab76264130c4d7
+      internalID: 1191267051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairWar_7
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 50
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376aaa066d0c5b64da13e8f74c1e6fd4
+      internalID: -964403996
       vertices: []
       indices: 
       edges: []
@@ -226,13 +292,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":160.0,"y":160.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":300.0,"y":300.0},"gridSpriteOffset":{"x":190.0,"y":190.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       StairWar_0: -2809346321877004020
       StairWar_1: 956803119586686467
       StairWar_2: 1231504315
       StairWar_3: 2113588994
       StairWar_4: -140471750
+      StairWar_5: -1796707878
+      StairWar_6: 1191267051
+      StairWar_7: -964403996
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

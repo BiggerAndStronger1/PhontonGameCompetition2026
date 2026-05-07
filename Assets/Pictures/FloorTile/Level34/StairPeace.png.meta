@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,10 +106,10 @@ TextureImporter:
       name: StairPeace_0
       rect:
         serializedVersion: 2
-        x: 560
-        y: 880
-        width: 400
-        height: 400
+        x: 490
+        y: 950
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: StairPeace_1
       rect:
         serializedVersion: 2
-        x: 960
-        y: 880
-        width: 400
-        height: 400
+        x: 790
+        y: 950
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: StairPeace_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 480
-        width: 400
-        height: 400
+        x: 1090
+        y: 950
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: StairPeace_3
       rect:
         serializedVersion: 2
-        x: 560
-        y: 480
-        width: 400
-        height: 400
+        x: 190
+        y: 650
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: StairPeace_4
       rect:
         serializedVersion: 2
-        x: 160
-        y: 80
-        width: 400
-        height: 400
+        x: 490
+        y: 650
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,6 +208,116 @@ TextureImporter:
       bones: []
       spriteID: f364f37ab63fa5c4486b4e248b10e5dc
       internalID: -191472140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairPeace_5
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 650
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042f208fdc4af35428a2ccccb63dedbf
+      internalID: -21647164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairPeace_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 350
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f097a398d71b44f9b017ed6cdf68e3
+      internalID: 1334341991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairPeace_7
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 350
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c425192e09711543a43e66848d06164
+      internalID: 585271930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairPeace_8
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 350
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4776cb60303028f4191eee309b23255f
+      internalID: 169938715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StairPeace_9
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 50
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a909e841079ad584199fed60ca4a34a0
+      internalID: 1957525635
       vertices: []
       indices: 
       edges: []
@@ -226,13 +336,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":160.0,"y":160.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":300.0,"y":300.0},"gridSpriteOffset":{"x":190.0,"y":190.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       StairPeace_0: -4026897829268013121
       StairPeace_1: 3493872059667129862
       StairPeace_2: 1191747911
       StairPeace_3: 1408212682
       StairPeace_4: -191472140
+      StairPeace_5: -21647164
+      StairPeace_6: 1334341991
+      StairPeace_7: 585271930
+      StairPeace_8: 169938715
+      StairPeace_9: 1957525635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
