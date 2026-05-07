@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 53033838675bbb141bf902980f997d78
+guid: 38a85b257c15a2346a9b60bac50baff5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7000615569733450542
-    second: Peace-5_0
+      213: -6839809052870608489
+    second: "\u5DE6\u53F3\u6218\u4E89\u5E73\u53F05-1_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Peace-5_0
+      name: "\u5DE6\u53F3\u6218\u4E89\u5E73\u53F05-1_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 772
-        height: 157
+        x: 305
+        y: 461
+        width: 810
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d408fcea31d8de90800000000000000
-      internalID: -7000615569733450542
+      spriteID: 7997520c7ed1411a0800000000000000
+      internalID: -6839809052870608489
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Peace-5_0: -7000615569733450542
+      "\u5DE6\u53F3\u6218\u4E89\u5E73\u53F05-1_0": -6839809052870608489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
