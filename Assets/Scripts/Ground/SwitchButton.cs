@@ -38,13 +38,13 @@ public class SwitchButton : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player") && !pressed && Condition())
+        if (other.gameObject.CompareTag("Player") && !pressed && (quantity == 0 || Condition()))
         {
             EventManager1P<GameObject>.TriggerEvent(notPressesEvent, transform.parent.gameObject);
             spriteRenderer.color = pressedColor;
             pressed = true;
         }
-        else if (other.gameObject.CompareTag("Player") && pressed && Condition())
+        else if (other.gameObject.CompareTag("Player") && pressed && (quantity == 0 || Condition()))
         {
             EventManager1P<GameObject>.TriggerEvent(pressedEvent, transform.parent.gameObject);
             spriteRenderer.color = notPressedColor;
