@@ -115,6 +115,12 @@ public enum GameEvents
     /// </summary>
     ShowLetter,
 }
+
+public class ErrorSuppress
+{
+    public static readonly bool suppress = false;
+}
+
 public abstract class EventManager1P<T> : MonoBehaviour
 {
     private static readonly Dictionary<GameEvents, Action<T>> EventDictionary = new Dictionary<GameEvents, Action<T>>();
@@ -166,7 +172,7 @@ public abstract class EventManager1P<T> : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                if (!ErrorSuppress.suppress) Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -248,7 +254,7 @@ public abstract class EventManagerNP : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                if (!ErrorSuppress.suppress) Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -332,7 +338,7 @@ public abstract class EventManager2P<T1, T2> : MonoBehaviour
                 catch { }
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
-                Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
+                if (!ErrorSuppress.suppress) Debug.LogWarning($"[Event: {gameEventName}] Removed destroyed listener, Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}");
             }
             else
             {
@@ -420,7 +426,7 @@ public abstract class EventManagerReturn2P<T1, T2, TResult> : MonoBehaviour
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
 
-                Debug.LogWarning(
+                if (!ErrorSuppress.suppress) Debug.LogWarning(
                     $"[Event: {gameEventName}] Removed destroyed listener, " +
                     $"Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}"
                 );
@@ -507,7 +513,7 @@ public abstract class EventManagerReturn1P<T1, TResult> : MonoBehaviour
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
 
-                Debug.LogWarning(
+                if (!ErrorSuppress.suppress) Debug.LogWarning(
                     $"[Event: {gameEventName}] Removed destroyed listener, " +
                     $"Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}"
                 );
@@ -593,7 +599,7 @@ public abstract class EventManagerReturnNP<TResult> : MonoBehaviour
 
                 string listenerMethod = method?.Method.Name ?? "UnknownMethod";
 
-                Debug.LogWarning(
+                if (!ErrorSuppress.suppress) Debug.LogWarning(
                     $"[Event: {gameEventName}] Removed destroyed listener, " +
                     $"Sender: {senderName}, Listener Owner: <destroyed>, Method: {listenerMethod}"
                 );
