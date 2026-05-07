@@ -2644,6 +2644,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bce6f2eeee524f40b3051e57a6ab21e, type: 3}
+--- !u!1 &345388728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4386728174079115686, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+  m_PrefabInstance: {fileID: 1373454449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &345388731
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345388728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a61e2f2869124047b082b2dc11f73b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &348951381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,7 +3071,7 @@ PrefabInstance:
     - target: {fileID: 8220674150774606697, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
       propertyPath: worldObjs.Array.data[0].go
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1265917308}
     - target: {fileID: 8220674150774606697, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
       propertyPath: worldObjs.Array.data[0].type
       value: 0
@@ -22446,6 +22473,11 @@ PrefabInstance:
       addedObject: {fileID: 1357292187}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+--- !u!1 &1265917308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 11873236757418411, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+  m_PrefabInstance: {fileID: 1963299026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1271854537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50131,7 +50163,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6640687105052162830, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1555997476}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4386728174079115686, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345388731}
   m_SourcePrefab: {fileID: 100100000, guid: 964b66ec36a5f6f43af83ddc2a56b6c3, type: 3}
 --- !u!4 &1373454450 stripped
 Transform:
@@ -78293,6 +78328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1555997476}
   - component: {fileID: 1555997477}
+  - component: {fileID: 1555997478}
   m_Layer: 0
   m_Name: frontground (2)
   m_TagString: Untagged
@@ -78374,6 +78410,28 @@ SpriteRenderer:
   m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &1555997478
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555997475}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4449fe3ac3cf1474893f95c72b3ba919, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1587005365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78912,79 +78970,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1719458333011105738, guid: 4c04b0fbcbd5df742b89de3693d22430, type: 3}
   m_PrefabInstance: {fileID: 1657726087}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1698741653
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11873236757418411, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_Name
-      value: Air trap
-      objectReference: {fileID: 0}
-    - target: {fileID: 11873236757418411, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: _active
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2155179413298033006, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: pushStrength
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983246859106348463, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.8646
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 17.173
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
 --- !u!1 &1701837886
 GameObject:
   m_ObjectHideFlags: 0
@@ -81077,6 +81062,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Air trap (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5931921681157038361, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: propType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931921681157038361, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
+      propertyPath: quantity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8741901259214297800, guid: dee3beefedd232a46bbb65557caa1eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.05
@@ -82745,7 +82738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
@@ -82924,7 +82917,6 @@ SceneRoots:
   - {fileID: 1496885782}
   - {fileID: 558789946}
   - {fileID: 1350156894}
-  - {fileID: 1698741653}
   - {fileID: 386345382}
   - {fileID: 138791597}
   - {fileID: 1069192538}
