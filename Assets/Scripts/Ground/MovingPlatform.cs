@@ -32,6 +32,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void Start()
     {
+        transform.position = pointA.position;
         target = pointB.position;
         dir = (pointB.position - pointA.position).normalized;
 
@@ -76,5 +77,6 @@ public class MovingPlatform : MonoBehaviour
         isEffective = effectiveWorld == WorldManager.instance.currentWorld;
         sr.enabled = isEffective;
         cd.enabled = isEffective;
+        rb.simulated = isEffective;
     }
 }
