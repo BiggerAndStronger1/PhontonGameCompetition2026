@@ -39,7 +39,7 @@ public class CanvasManager : MonoBehaviour
 
     private void SceneManagerOnsceneLoaded(Scene arg0, LoadSceneMode arg1)
     { 
-        canvas.worldCamera = Camera.main;
+        canvas.worldCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
     }
 
     void Start()

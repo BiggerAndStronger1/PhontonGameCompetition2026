@@ -4,7 +4,6 @@ using UnityEngine.Assertions;
 [RequireComponent(typeof(Collider2D))]
 public class Destination : MonoBehaviour
 {
-    
     void Awake()
     {
         
@@ -23,7 +22,7 @@ public class Destination : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")){
-            EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
+            EventManagerNP.TriggerEvent(GameEvents.ShowLetter);
         }
     }
 }

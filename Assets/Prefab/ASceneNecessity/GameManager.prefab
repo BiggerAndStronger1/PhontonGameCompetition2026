@@ -45,10 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521677c7ef1c2b7458dbe84de4bbdfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  raycaster: {fileID: 4129615702929522449, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
   eventSystem: {fileID: 9164551499937380823}
   dontDestroys:
-  - {fileID: 0}
+  - {fileID: 1682395190878794057, guid: 5dd32603cd884204b81b0a9e21994563, type: 3}
   - {fileID: 489696782049143010}
   quickDisable: {fileID: 0}
   debugMode: 1

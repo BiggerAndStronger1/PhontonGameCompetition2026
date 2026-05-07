@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - GameManager
   - CamCollider
+  - letter
+  - EventSystem
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -378,7 +378,7 @@ public class Anim2D : MonoBehaviour
     /// <summary>
     /// Fades the GameObject's alpha to the target value over the given duration using the specified speed mode.
     /// Uses Image components for UI and SpriteRenderer for sprites.
-    /// Sepports Decelerate, Accelerate and Constant speed modes.
+    /// Supports Decelerate, Accelerate and Constant speed modes.
     /// </summary>
     /// <param name="targetAlpha">Target alpha value.</param>
     /// <param name="duration">Duration of the fade.</param>
@@ -388,87 +388,122 @@ public class Anim2D : MonoBehaviour
         CancelFade();
         OnFadeStart?.Invoke();
 
-        Image[] images;
-        SpriteRenderer[] spriteRenderers;
+        // ✅ detect canvas group FIRST (and cache result)
+        CanvasGroup group = GetComponent<CanvasGroup>();
+        bool useGroup = group != null;
 
-        if (fadeAll)
+        Image[] images = null;
+        SpriteRenderer[] spriteRenderers = null;
+        TMPro.TextMeshProUGUI[] tmpUIs = null;
+        TMPro.TextMeshPro[] tmps = null;
+
+        float initGroupAlpha = 0;
+
+        if (useGroup)
         {
-            images = GetComponentsInChildren<Image>(includeInactive: true);
-            spriteRenderers = GetComponentsInChildren<SpriteRenderer>(includeInactive: true);
-
+            initGroupAlpha = group.alpha;
+            initialAlpha = initGroupAlpha;
         }
         else
         {
-            images = new Image[] { GetComponent<Image>() };
-            spriteRenderers = new SpriteRenderer[] { GetComponent<SpriteRenderer>() };
-        }
-
-        // Filter out nulls (in case component is missing)
-        images = System.Array.FindAll(images, img => img != null);
-        spriteRenderers = System.Array.FindAll(spriteRenderers, sr => sr != null);
-
-        if (images.Length == 0 && spriteRenderers.Length == 0)
-        {
-            Debug.LogWarning("No active Image or SpriteRenderer found for fading.");
-            return;
-        }
-
-        initialImageAlphas = new float[images.Length];
-        for (int i = 0; i < images.Length; i++)
-            initialImageAlphas[i] = images[i].color.a;
-
-        initialSpriteAlphas = new float[spriteRenderers.Length];
-        for (int i = 0; i < spriteRenderers.Length; i++)
-            initialSpriteAlphas[i] = spriteRenderers[i].color.a;
-
-        // keep single initialAlpha for legacy CancelFade behavior when only one component present
-        float initGroupAlpha = 0;
-        if (initialImageAlphas.Length > 0)
-        { 
-            if (TryGetComponent<CanvasGroup>(out CanvasGroup group)) initGroupAlpha = group.alpha;
-            initialAlpha = initialImageAlphas[0]; 
-        }
-
-        else if (initialSpriteAlphas.Length > 0)
-            initialAlpha = initialSpriteAlphas[0];
-
-        fadeTweenId = LeanTween.value(gameObject, 0, 1, duration)
-            .setOnUpdate((float t) =>
+            if (fadeAll)
             {
-                float adjustedT = ApplySpeedMode(t, speedMode);
+                images = GetComponentsInChildren<Image>(true);
+                spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
+                tmpUIs = GetComponentsInChildren<TMPro.TextMeshProUGUI>(true);
+                tmps = GetComponentsInChildren<TMPro.TextMeshPro>(true);
+            }
+            else
+            {
+                images = new Image[] { GetComponent<Image>() };
+                spriteRenderers = new SpriteRenderer[] { GetComponent<SpriteRenderer>() };
+                tmpUIs = new TMPro.TextMeshProUGUI[] { GetComponent<TMPro.TextMeshProUGUI>() };
+                tmps = new TMPro.TextMeshPro[] { GetComponent<TMPro.TextMeshPro>() };
+            }
 
-                if (TryGetComponent<CanvasGroup>(out CanvasGroup group))
+            images = System.Array.FindAll(images, x => x != null);
+            spriteRenderers = System.Array.FindAll(spriteRenderers, x => x != null);
+            tmpUIs = System.Array.FindAll(tmpUIs, x => x != null);
+            tmps = System.Array.FindAll(tmps, x => x != null);
+
+            if (images.Length == 0 && spriteRenderers.Length == 0 && tmpUIs.Length == 0 && tmps.Length == 0)
+            {
+                Debug.LogWarning("No renderers found for fading.");
+                return;
+            }
+
+            initialImageAlphas = new float[images.Length];
+            for (int i = 0; i < images.Length; i++)
+                initialImageAlphas[i] = images[i].color.a;
+
+            initialSpriteAlphas = new float[spriteRenderers.Length];
+            for (int i = 0; i < spriteRenderers.Length; i++)
+                initialSpriteAlphas[i] = spriteRenderers[i].color.a;
+
+            float[] initialTmpUIAlphas = new float[tmpUIs.Length];
+            for (int i = 0; i < tmpUIs.Length; i++)
+                initialTmpUIAlphas[i] = tmpUIs[i].color.a;
+
+            float[] initialTmpAlphas = new float[tmps.Length];
+            for (int i = 0; i < tmps.Length; i++)
+                initialTmpAlphas[i] = tmps[i].color.a;
+
+            if (initialImageAlphas.Length > 0)
+                initialAlpha = initialImageAlphas[0];
+            else if (initialSpriteAlphas.Length > 0)
+                initialAlpha = initialSpriteAlphas[0];
+
+            fadeTweenId = LeanTween.value(gameObject, 0, 1, duration)
+                .setOnUpdate((float t) =>
                 {
-                    float a = Mathf.Lerp(initGroupAlpha, targetAlpha, adjustedT);
-                    group.alpha = a;
-                }
-                else
-                {
+                    float adjustedT = ApplySpeedMode(t, speedMode);
+
                     for (int i = 0; i < images.Length; i++)
                     {
                         Color c = images[i].color;
                         float a = Mathf.Lerp(initialImageAlphas[i], targetAlpha, adjustedT);
                         images[i].color = new Color(c.r, c.g, c.b, a);
                     }
-                }
-                
 
-                for (int i = 0; i < spriteRenderers.Length; i++)
-                {
-                    Color c = spriteRenderers[i].color;
-                    float a = Mathf.Lerp(initialSpriteAlphas[i], targetAlpha, adjustedT);
-                    spriteRenderers[i].color = new Color(c.r, c.g, c.b, a);
-                }
+                    for (int i = 0; i < spriteRenderers.Length; i++)
+                    {
+                        Color c = spriteRenderers[i].color;
+                        float a = Mathf.Lerp(initialSpriteAlphas[i], targetAlpha, adjustedT);
+                        spriteRenderers[i].color = new Color(c.r, c.g, c.b, a);
+                    }
 
+                    for (int i = 0; i < tmpUIs.Length; i++)
+                    {
+                        Color c = tmpUIs[i].color;
+                        float a = Mathf.Lerp(initialTmpUIAlphas[i], targetAlpha, adjustedT);
+                        tmpUIs[i].color = new Color(c.r, c.g, c.b, a);
+                    }
+
+                    for (int i = 0; i < tmps.Length; i++)
+                    {
+                        Color c = tmps[i].color;
+                        float a = Mathf.Lerp(initialTmpAlphas[i], targetAlpha, adjustedT);
+                        tmps[i].color = new Color(c.r, c.g, c.b, a);
+                    }
+
+                    OnFadeUpdate?.Invoke(adjustedT);
+                })
+                .setOnComplete(() => OnFadeComplete?.Invoke())
+                .uniqueId;
+
+            return; // ✅ IMPORTANT: stop here if NOT using group
+        }
+
+        // ✅ group-only fade path (clean, no other systems touched)
+        fadeTweenId = LeanTween.value(gameObject, 0, 1, duration)
+            .setOnUpdate((float t) =>
+            {
+                float adjustedT = ApplySpeedMode(t, speedMode);
+                group.alpha = Mathf.Lerp(initGroupAlpha, targetAlpha, adjustedT);
                 OnFadeUpdate?.Invoke(adjustedT);
             })
-            .setOnComplete(() =>
-            {
-                OnFadeComplete?.Invoke();
-            })
+            .setOnComplete(() => OnFadeComplete?.Invoke())
             .uniqueId;
-
-
     }
 
 

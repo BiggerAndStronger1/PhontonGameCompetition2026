@@ -1,11 +1,16 @@
 using System;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
+
 public class textFade : MonoBehaviour
 {
-    [SerializeField] private GameObject destroyGameObject;
-    private void OnDestroy()
+    [FormerlySerializedAs("destroyGameObject")] [SerializeField] private GameObject disableGameObject;
+    
+
+    private void OnParticleSystemStopped()
     {
-        Destroy(destroyGameObject);
+        if (disableGameObject && disableGameObject.activeInHierarchy)disableGameObject.SetActive(false);
     }
 }
+

@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     private static GraphicRaycaster _raycaster;
     private static EventSystem _eventSystem;
     public static readonly string KLastSceneIndex = "KLastSceneIndex";
-    public GraphicRaycaster raycaster;
     public EventSystem eventSystem;
     [SerializeField] private GameObject[] dontDestroys;
     [Header("Debug section")]
@@ -79,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         Assert.IsTrue(GameObject.FindGameObjectsWithTag("GameManager").Length == 1, "there should be one and only one game manager in the hierarchy");
         audioMixer = audioMixer != null ? audioMixer : _audioMixer;
-        _raycaster = _raycaster != null ? _raycaster : raycaster;
+        _raycaster = _raycaster != null ? _raycaster : GameObject.FindWithTag("Canvas").GetComponent<GraphicRaycaster>();
         _eventSystem = _eventSystem != null ? _eventSystem : eventSystem;
         if (inputActions == null)
         {

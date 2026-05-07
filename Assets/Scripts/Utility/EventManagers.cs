@@ -110,7 +110,10 @@ public enum GameEvents
     /// triggered to use the mine skill (no param event)
     /// </summary>
     UseMineSkill,
-    
+    /// <summary>
+    /// show the letter before the scene load after the player reached destination (no param event)
+    /// </summary>
+    ShowLetter,
 }
 public abstract class EventManager1P<T> : MonoBehaviour
 {
