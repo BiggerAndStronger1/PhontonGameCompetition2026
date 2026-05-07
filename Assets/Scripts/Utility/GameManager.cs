@@ -108,7 +108,6 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0) return;
         SaveGame.Save(KLastSceneIndex, SceneManager.GetActiveScene().buildIndex);
-        print(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Start()
