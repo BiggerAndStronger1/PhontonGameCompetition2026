@@ -205,7 +205,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 4
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -260,7 +260,6 @@ MonoBehaviour:
   blocking: {fileID: 2569629292751106315}
   particle: {fileID: 2177746417847173945}
   playTime: 2
-  rectTransform: {fileID: 4584787462873574796}
 --- !u!114 &5536642511833216861
 MonoBehaviour:
   m_ObjectHideFlags: 0
