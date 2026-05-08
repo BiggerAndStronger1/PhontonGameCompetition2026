@@ -88,7 +88,7 @@ public class CanvasManager : MonoBehaviour
             EventManager1P<bool>.TriggerEvent(GameEvents.TogglePocketWatchUI, !pocketWatch.activeSelf);
         }
 
-        if (Mouse.current.leftButton.wasPressedThisFrame &&
+        if (actionsUI.Click.WasPressedThisFrame() &&
             (mainMenu.activeInHierarchy || settingsMenu.activeInHierarchy))
         {
             audioPlayer.Play(2);

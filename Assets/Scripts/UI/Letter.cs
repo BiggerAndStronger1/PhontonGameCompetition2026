@@ -33,12 +33,15 @@ public class Letter : MonoBehaviour, ICanvasManager
     private void OnLetterShown()
     {
         var buildIndex = SceneManager.GetActiveScene().buildIndex;
-        EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
-        print("dd");
         if (ValidBuildIndex(buildIndex))
         {
-            animatedText.SetText(letters.strings[buildIndex-1]);
+            animatedText.SetText(letters.strings[buildIndex - 1]);
         }
+        if (buildIndex != SceneManager.sceneCountInBuildSettings - 1)
+        {
+            EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
+        }
+        
         gameObject.SetActive(true);
     }
 
@@ -54,10 +57,15 @@ public class Letter : MonoBehaviour, ICanvasManager
 
     public void OnClicked()
     {
-        if (canTurnOff)
+        var buildIndex = SceneManager.GetActiveScene().buildIndex;
+        if (canTurnOff && buildIndex != SceneManager.sceneCountInBuildSettings - 1)
         {
             animatedText.Play();
             canTurnOff = false;
+        }
+        else if (buildIndex == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            Application.Quit(0);
         }
     }
 }
