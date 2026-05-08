@@ -82,7 +82,7 @@ public class GhostEnemyState : MonoBehaviour
         if (!ghost.IsGroundDetected())
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
-            rb.gravityScale = 5f;
+            rb.gravityScale = 3f;
         }
         else
             rb.bodyType = RigidbodyType2D.Kinematic;
@@ -122,14 +122,20 @@ public class GhostEnemyState : MonoBehaviour
 
     private void HatredUpdate()
     {
-        Vector2 pos = rb.position;
+        Vector2 pos = transform.position;
         Vector2 target = ghost.player.transform.position;
 
-        float dir = (target.x > pos.x) ? 1f : -1f;
+        float dir = (target.x > pos.x + 0.1f) ? 1f : -1f;
 
         Vector2 move = new Vector2(dir * ghost.moveSpeed, 0f);
+        float deltaX = Mathf.Abs(target.x - pos.x);
+        if (deltaX > 0.5f)
+        {
+            ghost.FlipController(dir);
 
-        rb.MovePosition(pos + move * Time.fixedDeltaTime);
+            if (!ghost.IsWallDetected())
+                rb.MovePosition(pos + move * Time.fixedDeltaTime);
+        }
 
         if (Vector2.Distance(pos, target) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);

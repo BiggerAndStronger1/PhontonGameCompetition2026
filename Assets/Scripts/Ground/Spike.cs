@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Spike : MonoBehaviour, IFragile
 {
-    private bool isCleared = false;
+    [SerializeField] private bool isCleared = false;
 
     private SpriteRenderer sr;
     private Collider2D cd;
@@ -22,10 +22,12 @@ public class Spike : MonoBehaviour, IFragile
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isCleared)
-            return;
+        Debug.Log(collision);
+        //if (isCleared)
+            //return;
 
         IKillBySpike target = collision.transform.GetComponent<IKillBySpike>();
+        Debug.Log(target);
         if (target != null)
             target.KillBySpike();
     }
