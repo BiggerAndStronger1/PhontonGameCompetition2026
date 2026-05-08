@@ -129,7 +129,7 @@ public class LoopingPlatformBody : MonoBehaviour
             go.GetComponent<SpriteRenderer>().enabled = inside;
             if (inside)
             {
-                go.layer = LayerMask.NameToLayer("Default");
+                go.layer = LayerMask.NameToLayer("Ground");
             }
             else
             {
