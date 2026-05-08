@@ -25,10 +25,6 @@ public class LoopingPlatformBody : MonoBehaviour
     [SerializeField] private float speed = 0.1f;
     [Tooltip("how many platforms should be spawned, optimally this number should be higher enough to fill the viewport")]
     [SerializeField] private int platformCount;
-
-    [SerializeField] private PropType requiredGearType = PropType.SmallGear;
-    [SerializeField] private int requiredGearQuantity = 2;
-
     [SerializeField] private SpriteRenderer viewPort;
     /// <summary>
     /// the checkpoint in which the relocation of the platforms happen
@@ -181,16 +177,7 @@ public class LoopingPlatformBody : MonoBehaviour
     private void SwitchDirection(GameObject go)
     {
         if (go != gameObject) return;
-        if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, requiredGearType) >= requiredGearQuantity)
-        {
-            
-            if (!active)
-            {
-                active = true;
-                EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, requiredGearQuantity, requiredGearType);
-            }
-        }
-        if (active) isLeftToRight = !isLeftToRight;
+        isLeftToRight = !isLeftToRight;
     }
 
 

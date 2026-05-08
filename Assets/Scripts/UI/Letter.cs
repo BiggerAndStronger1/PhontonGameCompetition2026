@@ -34,6 +34,7 @@ public class Letter : MonoBehaviour, ICanvasManager
     {
         var buildIndex = SceneManager.GetActiveScene().buildIndex;
         EventManagerNP.TriggerEvent(GameEvents.LoadNextScene);
+        print("dd");
         if (ValidBuildIndex(buildIndex))
         {
             animatedText.SetText(letters.strings[buildIndex-1]);

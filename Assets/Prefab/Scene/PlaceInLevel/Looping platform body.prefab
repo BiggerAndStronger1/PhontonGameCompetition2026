@@ -147,8 +147,6 @@ MonoBehaviour:
   disappearPadding: 1
   speed: 1.5
   platformCount: 20
-  requiredGearType: 1
-  requiredGearQuantity: 2
   viewPort: {fileID: 7857061183064757196}
 --- !u!1 &8439015540343756622
 GameObject:
@@ -400,6 +398,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7396893275957397492}
     m_Modifications:
+    - target: {fileID: 368448160465759596, guid: b3553eca158bf24428d99e44b7149112, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3318526449985113500, guid: b3553eca158bf24428d99e44b7149112, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.51
