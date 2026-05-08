@@ -36,12 +36,12 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
     public void ForcedStart()
     {
 #if UNITY_EDITOR
-        Collect(PropType.MineGear);
-        Collect(PropType.MineGear);
-        Collect(PropType.MineGear);
-        Collect(PropType.MineGear); 
-        Collect(PropType.MineGear);
-        Collect(PropType.MineGear);
+        // Collect(PropType.MineGear);
+        // Collect(PropType.MineGear);
+        // Collect(PropType.MineGear);
+        // Collect(PropType.MineGear); 
+        // Collect(PropType.MineGear);
+        // Collect(PropType.MineGear);
         
 #endif
     }
