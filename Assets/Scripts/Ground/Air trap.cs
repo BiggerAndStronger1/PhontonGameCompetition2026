@@ -58,11 +58,11 @@ public class Airtrap : MonoBehaviour
             col.bounds.center,
             col.bounds.size,
             col.transform.eulerAngles.z
-        );
+        , ~LayerMask.GetMask("Ignore Raycast"));
         foreach (var c in hits)
         {
             
-            if (c.attachedRigidbody != null)
+            if (c.gameObject.GetComponent<Rigidbody2D>() != null)
             {
                 c.attachedRigidbody.AddForce(
                     (Vector2)transform.up * pushStrength,
