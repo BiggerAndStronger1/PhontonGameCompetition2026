@@ -1,87 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5327779050563600362
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 673101836152451891}
-  - component: {fileID: 587815720222333576}
-  m_Layer: 0
-  m_Name: view (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &673101836152451891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327779050563600362}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8007173245649143763}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &587815720222333576
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327779050563600362}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 1
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.5568542, y: -0.036288016}
-      - {x: 5.576968, y: -0.951784}
-      - {x: 5.58042, y: 0.71627915}
-  m_UseDelaunayMesh: 1
 --- !u!1 &5413750562436693268
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6478783002783735095}
   - component: {fileID: 7398924192385840902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: view
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,8 +79,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.117884636, y: 0.07137379}
-      - {x: -4.9499617, y: 1.1416394}
-      - {x: -4.910623, y: -0.6235119}
+      - {x: -12.276605, y: 1.7928972}
+      - {x: -12.260523, y: -2.2283957}
   m_UseDelaunayMesh: 1
 --- !u!1 &8775715883351733515
 GameObject:
@@ -182,7 +100,7 @@ GameObject:
   - component: {fileID: 8630299730043694986}
   - component: {fileID: 4682709201749508925}
   - component: {fileID: -8206342614670912278}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Sniper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -198,12 +116,11 @@ Transform:
   m_GameObject: {fileID: 8775715883351733515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.33, y: 0.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.4884, y: 0.33, z: 0}
+  m_LocalScale: {x: 0.9283, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6478783002783735095}
-  - {fileID: 673101836152451891}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1497888485835303067
@@ -304,11 +221,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e8a71b0d9ef454f9530b27d17bfe71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sniper
-  executionTime: 3
-  eyeTransform: {fileID: 0}
+  executionTime: 0.5
+  eyeTransform: {fileID: 8007173245649143763}
   endCooldownDuration: 0.2
   arrowPrefab: {fileID: 4423940008857101986, guid: 18aff09c2fd5db7448290757ab68a847, type: 3}
-  arrowVelocity: 15
+  arrowVelocity: 10
   arrowLife: 5
   currentState: 0
 --- !u!114 &-8387932147791968179
@@ -365,28 +282,17 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 7398924192385840902}
     m_ColliderPaths:
-    - - X: -8178844
+    - - X: -7592422
         Y: 713737
-      - X: -56499616
-        Y: 11416394
-      - X: -56106228
-        Y: -6235119
-  - m_Collider: {fileID: 587815720222333576}
-    m_ColliderPaths:
-    - - X: 48804204
-        Y: 7162791
-      - X: 8568544
-        Y: -362880
-      - X: 48769684
-        Y: -9517840
+      - X: -120461824
+        Y: 17928972
+      - X: -120312536
+        Y: -22283958
   m_CompositePaths:
     m_Paths:
-    - - {x: -5.610624, y: -0.62347794}
-      - {x: -0.8181105, y: 0.0714238}
-      - {x: -5.649961, y: 1.1416001}
-    - - {x: 4.8769307, y: -0.9517755}
-      - {x: 4.880384, y: 0.7162724}
-      - {x: 0.8570498, y: -0.0363325}
+    - - {x: -12.031254, y: -2.2283585}
+      - {x: -0.7594786, y: 0.0714097}
+      - {x: -12.046183, y: 1.7928616}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -425,7 +331,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.12792325, y: -0.23757243}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -435,7 +341,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.2772813, y: 2.9614944}
   m_EdgeRadius: 0
 --- !u!114 &8630299730043694986
 MonoBehaviour:
