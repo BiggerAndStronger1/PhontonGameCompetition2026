@@ -56659,6 +56659,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: clipList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: clipList.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ab66be7898457fb4f833090d36a025ff, type: 3}
+    - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: clipList.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2808316b66e197c4fa12eeb80f49dec4, type: 3}
+    - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: clipList.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: def59c551825e2647a06a183683e4b04, type: 3}
+    - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: clipList.Array.data[4].type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5900981370168295964, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
       propertyPath: m_Name
       value: WorldManager
@@ -56864,7 +56884,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y

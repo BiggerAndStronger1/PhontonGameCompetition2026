@@ -3207,28 +3207,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
-      propertyPath: clipList.Array.size
-      value: 4
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
-      propertyPath: clipList.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: be9be7258004d9f459e1537b7766845f, type: 3}
+      propertyPath: autoSwitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
-      propertyPath: clipList.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 239d88ef37d064c4ba83924ade6dcebf, type: 3}
+      propertyPath: clipList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
       propertyPath: clipList.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2808316b66e197c4fa12eeb80f49dec4, type: 3}
-    - target: {fileID: 5159472807304828928, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
-      propertyPath: clipList.Array.data[3].clip
       value: 
       objectReference: {fileID: 8300000, guid: ab66be7898457fb4f833090d36a025ff, type: 3}
     - target: {fileID: 5900981370168295964, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
       propertyPath: m_Name
       value: WorldManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7867910852240365621, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983413835506385483, guid: 4e9cc09d0558f114d9c01fc53bec4663, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83638,11 +83642,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3540707116483858252, guid: f8251ddcd86ec334ebc2ad3d81ad0887, type: 3}
       propertyPath: m_LocalPosition.z
