@@ -161,8 +161,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u7A0B\u5E8F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: aee1a9b7d0c6b1e47ad34091f073b828, type: 2}
-  m_sharedMaterial: {fileID: 4121512253260316584, guid: aee1a9b7d0c6b1e47ad34091f073b828, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7da6fee3daf22a847a9d54fb5e3d547d, type: 2}
+  m_sharedMaterial: {fileID: -7166251492371691244, guid: 7da6fee3daf22a847a9d54fb5e3d547d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
