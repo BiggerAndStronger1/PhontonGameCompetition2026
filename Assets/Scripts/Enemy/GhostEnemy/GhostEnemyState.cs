@@ -197,10 +197,4 @@ public class GhostEnemyState : MonoBehaviour
                 break;
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (canHatrePlayer && collision.transform.GetComponent<Player>() != null)
-            player.PlayerDie();
-    }
 }

@@ -114,18 +114,19 @@ public class GhostEnemy : MonoBehaviour, IKillBySpike
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canHatrePlayer && collision.transform.GetComponent<Player>() != null)
-            player.PlayerDie();
-
         Spike spike = collision.transform.GetComponent<Spike>();
         if (spike != null)
-            StartCoroutine(WaitAndKillSpike(spike));
+            StartCoroutine(WaitAndKillSpikeAndSelf(spike));
+
+        if (canHatrePlayer && collision.transform.GetComponent<Player>() != null)
+            player.PlayerDie();
     }
 
-    IEnumerator WaitAndKillSpike(Spike spike)
+    IEnumerator WaitAndKillSpikeAndSelf(Spike spike)
     {
         yield return new WaitForSeconds(0.1f);
         spike.CleanSpike();
+        GhostEnemyDie();
     }
 
     #region Collision
