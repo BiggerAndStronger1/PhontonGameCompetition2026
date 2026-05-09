@@ -81,11 +81,11 @@ public class GhostEnemyState : MonoBehaviour
 
         if (!ghost.IsGroundDetected())
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
+            
             rb.gravityScale = 3f;
         }
         else
-            rb.bodyType = RigidbodyType2D.Kinematic;
+
 
         switch (currentState)
         {
@@ -122,38 +122,43 @@ public class GhostEnemyState : MonoBehaviour
 
     private void HatredUpdate()
     {
+        Vector3 dir = player.transform.position - transform.position;
         Vector2 pos = transform.position;
         Vector2 target = ghost.player.transform.position;
 
-        float dir = (target.x > pos.x + 0.1f) ? 1f : -1f;
 
-        Vector2 move = new Vector2(dir * ghost.moveSpeed, 0f);
+       dir.y = 0.0f; 
+        float dis = dir.magnitude;
+
         float deltaX = Mathf.Abs(target.x - pos.x);
-        if (deltaX > 0.5f)
+        if (deltaX > 0.1f)
         {
-            ghost.FlipController(dir);
-
-            if (!ghost.IsWallDetected())
-                rb.MovePosition(pos + move * Time.fixedDeltaTime);
-        }
+             
+rb.AddForce(dir * ghost.moveSpeed, ForceMode2D.Force);
+Debug.Log(dir * ghost.moveSpeed);
+            
 
         if (Vector2.Distance(pos, target) >= ghost.hatredRadius)
             ChangeState(GhostStateType.Idle);
 
         if (!canHatrePlayer)
             ChangeState(GhostStateType.Locked);
-    }
-
-    private void HatredEnter()
+        }
+        else
+        {
+            
+        }
+}    
+private void HatredEnter()
     {
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        
         audioPlayer.audioSource.loop = false;
         audioPlayer.Play(1);
     }
 
     private void HatredExit()
     {
-        rb.bodyType = RigidbodyType2D.Kinematic;
+       
     }
 
     private void LockedUpdate()
@@ -167,7 +172,7 @@ public class GhostEnemyState : MonoBehaviour
     private void LockedEnter()
     {
         rb.linearVelocity = Vector2.zero;
-        rb.bodyType = RigidbodyType2D.Kinematic;
+
     }
 
 
