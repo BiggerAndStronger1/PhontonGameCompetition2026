@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoopingPlatform Vertical
       objectReference: {fileID: 0}
+    - target: {fileID: 1077500434510063194, guid: c708d67abd411814b823edc8f6cc57d6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1191001123285746184, guid: c708d67abd411814b823edc8f6cc57d6, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 0.28
