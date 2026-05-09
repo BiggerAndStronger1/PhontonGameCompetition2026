@@ -116,6 +116,7 @@ public class PocketWatchUI : MonoBehaviour, ICanvasManager
 
     private void Collect(PropType propType)
     {
+
         if (new List<PropType>() { PropType.SmallGear , PropType.BoomGear, PropType.MineGear}.Contains(propType)){
             foreach (var smallGearSlot in smallGearSlots)
             {

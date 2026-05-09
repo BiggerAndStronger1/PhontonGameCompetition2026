@@ -49,7 +49,9 @@ public class MineGearSkill : Skill
     /// </summary>
     private void UseSkillStandalone()
     {
-        if (EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.MineGear) > 0)
+        int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.MineGear);
+        Debug.Log(count);
+        if (count > 0)
         {
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.MineGear);
             UseSkill();
@@ -59,6 +61,7 @@ public class MineGearSkill : Skill
     protected override void UseSkill()
     {
         base.UseSkill();
+
         audioPlayer.Play(0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -transform.up, Mathf.Infinity, ~LayerMask.GetMask("Player", "Ignore Raycast"));
         if (hit.transform.TryGetComponent<BoxCollider2D>(out var component))
