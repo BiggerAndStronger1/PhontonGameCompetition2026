@@ -21,11 +21,11 @@ public class AudioPlayer : MonoBehaviour,ICanvasManager
 {
     public List<ClipInfo> clipList;
     [Tooltip("auto switches the war and peace audio based on the current world type")]
-    [SerializeField] private bool autoSwitch;
+    public bool autoSwitch;
     [Tooltip("the index of the clip in clipList to play at world state war")]
-    [SerializeField]private int autoSwitchIndexWar;
+    public int autoSwitchIndexWar;
     [Tooltip("the index of the clip in clipList to play at world state peace")]
-    [SerializeField]private int autoSwitchIndexPeace;
+    public int autoSwitchIndexPeace;
     [NonSerialized]
     public AudioSource audioSource;
     [SerializeField] private bool OnCanvas;
@@ -69,6 +69,7 @@ public class AudioPlayer : MonoBehaviour,ICanvasManager
     private void Switch(WorldType type)
     {
         if (!autoSwitch || !ValidIndex(autoSwitchIndexPeace) || !ValidIndex(autoSwitchIndexWar)) return;
+        audioSource.loop = true;
         if (type == WorldType.Peace)
         {
             Play(autoSwitchIndexPeace);
