@@ -55,8 +55,8 @@ public class BoomGearSkill : Skill
     public void CreateBoomGear()
     {
         int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.BoomGear);
-
-        if (count < 0)
+        
+        if (count <= 0)
             return;
 
         EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.BoomGear);

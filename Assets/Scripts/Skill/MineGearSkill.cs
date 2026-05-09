@@ -50,7 +50,7 @@ public class MineGearSkill : Skill
     private void UseSkillStandalone()
     {
         int count = EventManagerReturn1P<PropType, int>.TriggerEvent(GameEvents.InventoryQuery, PropType.MineGear);
-        Debug.Log(count);
+        
         if (count > 0)
         {
             EventManager2P<int, PropType>.TriggerEvent(GameEvents.ConsumeGear, 1, PropType.MineGear);
