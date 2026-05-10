@@ -114,6 +114,10 @@ public enum GameEvents
     /// show the letter before the scene load after the player reached destination (no param event)
     /// </summary>
     ShowLetter,
+    /// <summary>
+    /// plays a video given video name (single param event: VideoIdentifier)
+    /// </summary>
+    PlayVideo,
 }
 
 public class ErrorSuppress
